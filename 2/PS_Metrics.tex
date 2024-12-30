@@ -1,0 +1,36 @@
+  In diesem Kapitel geht es erstmal darum die Mathematische Basis Aufzubauen. Wie aus der Einleitung hervorgeht, wollen wir jeweils zwei Paare von Stimuli auf ihre Ähnlichkeit vergleichen. Seien $a, b, c$ und $d$ solche Stimuli. Dann bedeutet die Notation $(a,b)\succsim(c,d)$, dass Stimuli $a$ und $b$ sich unähnlicher sind, als $c$ und $d$. Analog bedeutet $\sim$, dass die Ähnlichkeit zweier Paare gleich ist.\\
+  Die Idee von einer proximity structure, ist die Mathematische Definition dieser Idee: eine Relation $\succsim$ auf einer Menge $A$ die die Grundeigenschaften einer Metrik erfüllt.
+
+  \begin{defi}[factorial proximity structure]
+Sei $A$ eine Menge und $\succsim$ ist eine vierstellige Relation auf $A$, d.h. eine zweistellige Relation auf $A \times A$. $\langle A, \succsim \rangle$ ist eine proximity structure genau dann, wenn die folgenden Axiome für alle $a, b \in A$ gelten:
+
+\begin{enumerate}
+  \item $\succsim$ ist eine schwache Ordnung von $A \times A$, d.h. sie ist zusammenhängend und transitiv.
+    \item $(a, b) \succsim (a, a)$ wenn $a \neq b$.
+    \item $(a, a) \sim (b, b)$ (Minimalität).
+    \item $(a, b) \sim (b, a)$ (Symmetrie).
+\end{enumerate}
+
+Die Struktur ist factorial genau dann, wenn
+\[
+A = \prod_{i=1}^{n} A_i.
+\]
+\end{defi}
+
+\begin{rem}
+Zusammenhängend heißt, man kann alle distinkten Elemente vergleichen, also für eine Relation $R$ auf einer Menge $X$ gilt für $x, y \in X, x \neq y$ dann $xRy$ oder $yRx$.
+\end{rem}
+
+Da wir die Relation $\succsim$ durch eine Metrik repräsentieren wollen, lohnt es sich einen Begriff dafür einzuführen. Die Idee ist das, was man sich intuitiv vorstellt: man will dass die Metrik die Struktur von $\langle A, \succsim \rangle$ erhält, und die einzige Struktur die wir gegeben haben, ist die Ordnung jeweils zweier Paare.
+
+\begin{defi}[Darstellbarkeit von $\succsim$ durch Metrik]
+Sei $A$ eine Menge und $\succsim$ eine vierstellige Relation auf $A$. Die Struktur $\langle A, \succsim \rangle$ ist genau dann durch eine Metrik darstellbar, wenn es eine reellwertige Funktion $\delta$ auf $A$ gibt, so dass:
+
+\begin{enumerate}
+    \item $\langle A, \delta \rangle$ ist ein metrischer Raum, d.h. $\delta$ ist eine Metrik auf $A$.
+    \item $\delta$ erhält die Relation $\succsim$, d.h. für alle $a, b, c, d \in A$
+    \[
+    \delta(a, b) \geq \delta(c, d) \iff (a, b) \succsim (c, d).
+    \]
+\end{enumerate}
+\end{defi}

@@ -1,0 +1,146 @@
+\documentclass[oldfontcommands]{scrartcl}
+\usepackage[colorlinks,linkcolor=black,urlcolor=black]{hyperref}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{xparse}
+\usepackage{style}
+\usepackage{cleveref}
+\usepackage{mathtools}
+\usepackage[shortlabels]{enumitem}
+\usepackage[style=apa, backend=biber]{biblatex}
+
+\addbibresource{refs.bib}
+
+% TODO: Einwilligung zur Thesis an Studienbüro senden
+
+% \newtheoremstyle{break}%
+% {}{}%
+% {\itshape}{}%
+% {\bfseries}{}% % Note that final punctuation is omitted.
+% {\newline}{}
+%
+% \theoremstyle{break}
+% \theoremstyle{plain} 
+
+\newtheoremstyle{mytheoremstyle} % name
+    {\topsep}                    % Space above
+    {\topsep}                    % Space below
+    {\itshape}                   % Body font
+    {}                           % Indent amount
+    {\bfseries}                  % Theorem head font
+    {.}                          % Punctuation after theorem head
+    {\newline}                   % Space after theorem head
+    {}  % Theorem head spec (can be left empty, meaning ‘normal’)
+
+\theoremstyle{mytheoremstyle}
+
+% \makeatletter
+% \def\thmhead#1#2#3{%
+%   \thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}% 
+%   \newline
+% }
+% \makeatother
+% \renewcommand{\@thmheadpunct}{}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{lem*}{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+
+\newtheoremstyle{mytheoremstyle2} % name
+    {\topsep}                    % Space above
+    {\topsep}                    % Space below
+    {}                           % Body font
+    {}                           % Indent amount
+    {\bfseries}                  % Theorem head font
+    {.}                          % Punctuation after theorem head
+    {\newline}                   % Space after theorem head
+    {}  % Theorem head spec (can be left empty, meaning ‘normal’)
+
+\theoremstyle{mytheoremstyle2}
+
+\newtheorem{defi}[thm]{Definition}
+\newtheorem{ex}[thm]{Example}
+
+\newtheorem{proofpart}{Part}
+\makeatletter
+\@addtoreset{proofpart}{thm}
+\makeatother
+
+
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+
+
+\setcounter{tocdepth}{2}
+
+\title{Representational Measurement of Similarity: The Additive Difference Model, Revisited}
+\author{Arthur Liske, Mathematik}
+
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    Abstract text......
+    % In dieser Ausarbeitung geht es darum, wie man eine Metrik auf ordinalen Ähnlichkeitsdaten herleiten kann, die zusätzlich additiv ist und durch das additive difference model repräsentiert werden kann. Das Hauptresultat ist, dass die $l^p$ Metrik die einzige additive-difference Metrik, die additiv auf Liniensegmenten ist, was eng mit der Homogenität dieser Metrik zusammenhängt.
+    % Zum Herleiten dieses Hauptresultates werden die Grundelemente von Messtheorie, sowie von proximity measurement mithilfe von geometrische Modellen eingeführt.
+    % Diese Ausarbeitung basiert auf dem Paper \cite{tversky1970dimensional} und den Büchern \cite{foundations2} und \cite{TheorieDesMessens}.
+
+  \end{abstract}
+
+  \tableofcontents
+
+  \section{Introduction}
+  % \include{./1/intro.tex}
+
+  \section{Proximity Structures and Metrics}
+  \include{./2/PS_Metrics.tex}
+
+
+  \section{Segmental Additivity}
+
+  \subsection{Segmentally Additive Metrics}
+  % \include{./3/1_seg_add_metrics.tex}
+
+  \subsection{Segmentally Additive Proximity Structures}
+  \include{./3/2_seg_add_PS.tex}
+
+  \section{Additive Difference Models and Structures}
+
+  \subsection{Additive Difference Model}
+  \input{./4/1_AD_Model.tex}
+
+  \subsection{Additive Difference Structure}
+  % \include{./4/2_AD_Structure.tex}
+
+  \section{Combining Segmental Additivity with the AD-Model}
+
+  \input{./5/2-0_lemma.tex}
+
+  
+  \subsubsection{Convexity of $\metric$ Balls}
+  \input{./5/2-1_convex_spheres.tex}
+
+  \input{./5/2_lp_repr_theorem.tex}
+
+  \section{Discussion}
+
+  % \pagebreak
+  %
+  % \phantomsection
+  % \addcontentsline{toc}{section}{Literatur}
+
+  \printbibliography
+
+  \pagebreak
+
+% \appendix
+% \section{Anhang}\label{appendix}
+% \input{appendix}
+
+\end{document}

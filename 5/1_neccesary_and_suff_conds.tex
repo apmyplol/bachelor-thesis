@@ -1,0 +1,131 @@
+\addcontentsline{toc}{subsection}{necessary and sufficient stuff}
+ \begin{thm}[Hinr. und notw. Bedingungen für additive difference Metrik]\label{hinr-notw-beds}~\\
+   Sei $\langle A, \succsim \rangle$ additive-difference proximity structure sodass $f$ die Darstellung der additive-difference Repräsentation nach Satz \ref{add-diff-prox-struct-repr} ist, also
+\[
+f(a, b) = \sum_{i=1}^{n} F_i(|\varphi_i(a) - \varphi_i(b)|).
+\]
+Wir nehmen an, dass der Definitionsbereich jedes $F_i$ ein reelles Intervall ist und $F_i(0) = 0$, $i = 1, \ldots, n$ (durch Transformation, weil $F_i$ Intervallskalen sind).
+
+Damit $\langle A, \succsim \rangle$ darstellbar durch eine Metrik ist und zusätzlich Additivität auf Koordinatenachsen gilt,
+\begin{enumerate}
+  \item ist es notwendig, dass es eine stetige, konvexe Funktion $F$ gibt, so dass $F_i(x) = F(t_i x), t_i > 0, \forall x$ im Definitionsbereich von $F_i$, $i = 1, \ldots, n$; und
+  \item es ist ausreichend, wenn zusätzlich $\log F(e^x)$ konvex ist. (zusätzlich zu den Eigenschaften in 1.)
+\end{enumerate}
+\end{thm}
+
+\begin{remark}[Additiv auf den Koordinatenachsen]~\\
+Additivität auf den Koordinatenachsen bedeutet hier: Wenn $a, b, c \in A$ sich nur auf einem Faktor $A_i$ unterscheiden, dann gilt die $\triangle$-Ungleichung der Metrik mit Gleichheit. In Mathe Sprache heißt das:
+$$ a_j = b_j = c_j \forall j \neq i \text{ und } (a, c) \succsim (a, b), (b,c)  \Rightarrow \delta(a, b) + \delta(b, c) = \delta(a, c) $$
+\end{remark}
+
+\begin{corollar}[Form von $\delta$]~\\
+  Seien die Voraussetzungen wie in Satz \ref{hinr-notw-beds}.
+  Dann wird die Metrik $\delta$ dargestellt durch
+  \begin{equation}
+    \delta(a,b) = F^{-1} \Big \{ \sum_{i=1}^{n} F(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} \label{cor-delta-form} 
+\end{equation}
+  wobei $F$ stetig, konvex und steigend ist.
+
+\end{corollar}
+
+\begin{proof}[Beweis von 1.]~\\
+
+Nach den Annahmen des Satzes existiert eine Metrik $\delta$ auf $A$ und eine steigende Funktion $G$, so dass für alle $a, b \in A$,
+
+$$
+\delta(a, b) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right).
+$$
+
+Angenommen, $a$, $b$ und $c$ unterscheiden sich nur im $i$-ten Faktor und $a|b|c$ (Also wir können Additivität auf der $i$-ten Koordinatenachse für $a, b, c$ benutzen). Daher gilt
+
+\[
+G \left( F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right) + G \left( F_i \left( |\varphi_i(b_i) - \varphi_i(c_i)| \right) \right) = G \left( F_i \left( |\varphi_i(a_i) - \varphi_i(c_i)| \right) \right).
+\]
+
+Definiere $|\varphi_i(a_i) - \varphi_i(b_i)| = x$ und $|\varphi_i(b_i) - \varphi_i(c_i)| = y$, was ergibt
+
+\[
+G[F_i(x)] + G[F_i(y)] = G[F_i(x + y)].
+\]
+
+Definiere $H_i(x) = G[F_i(x)]$. Damit reduziert sich die obige Gleichung auf $H_i(x) + H_i(y) = H_i(x + y)$ für alle $x, y$ im Definitionsbereich von $F_i, 1 \leq i \leq n$ und $H_i$ muss linear sein. Da die Werte positiv sind, ist die einzige monotone Lösung dieser Gleichung $H_i(x) = t_i x$, $t_i > 0$. Da $G$ steigend ist, existiert $G^{-1}$ und es gilt
+
+\[
+G^{-1}[H_i(x)] = G^{-1}[t_i x] = F_i(x)
+\]
+
+wenn $F_i$ definiert ist. Da $G^{-1}$ unabhängig von $i$ ist, können die $F_i$ sich nur im Definitionsbereich bzw. im Wertebereich unterscheiden. ObdA können wir annehmen, dass der Wertebereich von $F_n$ am größten ist. Da der Bereich von $F_n$ den Bereich von $F_i$ umfasst, können wir $F = F_n$ setzen und erhalten damit $F_i(x) = F_n(t_i x) = F(t_i x)$ für $t_i > 0$ und für jedes $x$ im Definitionsbereich von $F_i$.
+Stetigkeit und Konvexität werden in den nächsten Lemmata bewiesen.
+\end{proof}
+
+\begin{lemma}\label{lemma-ungl}
+  Sei $F$ wie in Satz \ref{hinr-notw-beds}. Dann gilt $F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma)$.
+\end{lemma}
+
+\begin{proof}
+
+In der Dreiecksungleichung,
+
+\[
+F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] + F^{-1} \left[ \sum_{i=1}^{n} F(\beta_i) \right] \geq F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i + \beta_i) \right],
+\]
+
+seien $\alpha_1 = \gamma, \alpha_2 = F^{-1}(F(\alpha + \gamma) - F(\gamma)), \alpha_j = 0$ für $3 \leq j \leq n$ und  $\beta_1 = \beta, \beta_j = 0$ für $2 \leq j \leq n$. Damit gilt,
+
+\begin{align*}
+  F(\alpha + \beta + \gamma) &= F \left[ F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] + F^{-1} \left[ \sum_{i=1}^{n} F(\beta_i) \right] \right] \\
+                             &\geq \sum_{i=1}^{n} F(\alpha_i + \beta_i) \quad (\text{durch die Dreiecksungleichung})\\
+                             &= F(\beta + \gamma) + F(\alpha + \gamma) - F(\gamma).
+\end{align*}
+\end{proof}
+
+\begin{lemma}Sei $F$ wie in Satz \ref{hinr-notw-beds}. Dann ist $F$ stetig.\label{lemma-stetig}
+\end{lemma}
+
+\begin{proof}
+
+Da $F$ steigend ist, sind alle Unstetigkeiten Sprungstellen. Aus Analysis wissen wir, dass reelle monotone Funktionen höchstens abzählbar viele Sprungstellen (Unstetigkeitesstellen erster Art) haben. Dies führen wir auf einen Widerspruch.\\
+Angenommen, $F(\alpha)$ ist die untere Grenze einer Sprungstelle, dann existiert $\epsilon > 0$, so dass für alle $\delta > 0$, $F(\alpha + \delta) - F(\alpha) > \epsilon$. Nach Lemma 4 gilt jedoch für jedes $\beta > 0$,
+
+\[
+F(\alpha + \beta + \delta) - F(\alpha + \beta) \geq F(\alpha + \delta) - F(\alpha) > \epsilon,
+\]
+
+und somit gibt es eine Lücke bei jedem $\alpha + \beta$, und $F$ müsste überall unstetig sein. Dies ist unmöglich, also muss $F$ stetig sein.
+\end{proof}
+
+\begin{lemma}~\\
+  Sei $F$ eine streng monoton steigende Funktion, die auf den nichtnegativen reellen Zahlen definiert ist. Dann ist $F$ genau dann konvex, wenn für alle $\alpha, \beta, \gamma \geq 0$ die Ungleichung aus \ref{lemma-ungl} gilt, also
+$$
+F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma).
+$$
+\begin{proof}
+
+$\Rightarrow:$ Angenommen, $F$ ist konvex, und sei $p = \alpha / (\alpha + \beta)$, dann gilt
+
+\begin{align*}
+p(\alpha + \beta + \gamma) + (1 - p)\gamma &= \alpha + \gamma\\
+(1 - p)(\alpha + \beta + \gamma) + p\gamma &= \beta + \gamma.
+\end{align*}
+
+Damit gilt wegen Konvexität
+
+\begin{align*}
+F(\alpha + \gamma) + F(\beta + \gamma) &= F \left[ p (\alpha + \beta + \gamma) + (1 - p) \gamma \right] + F \left[ (1 - p) (\alpha + \beta + \gamma) + p \gamma \right] \\
+&\leq p F(\alpha + \beta + \gamma) + (1 - p) F(\gamma) + (1 - p) F(\alpha + \beta + \gamma) + p F(\gamma) \\
+&= F(\alpha + \beta + \gamma) + F(\gamma).
+\end{align*}
+
+$\Leftarrow:$
+Um die Umkehrung zu beweisen, benutzen wir die Stetigkeit von $F$ aus Lemma \ref{lemma-stetig}. Angenommen, $\alpha > \beta$, dann
+
+\begin{align*}
+F(\alpha) + F(\beta) &= F \left( \frac{\alpha - \beta}{2} + \frac{\alpha - \beta}{2} + \beta \right) + F(\beta) \\
+&\geq 2 F \left( \frac{\alpha - \beta}{2} + \beta \right) \quad \text{(nach Lemma 4)} \\
+&= 2 F \left( \frac{\alpha + \beta}{2} \right),
+\end{align*}
+
+was äquivalent zur Konvexität für ein stetiges $F$ ist.
+\end{proof}
+\end{lemma}
+

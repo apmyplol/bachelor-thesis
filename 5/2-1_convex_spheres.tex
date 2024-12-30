@@ -1,0 +1,153 @@
+In this subsection we will proof the following lemma which is needed to conclude the proof of \cref{main-lemma}. Everything will be assumed as in the \cref{main-lemma}. Note, that all topological terms are with respect to the natural topology of the euclidean space.
+  \begin{lem}[Convexity of $\metric$-Spheres] \label{lem-metr-spheres-convex}
+    If $\cball{\alpha} \subset S$ is bounded, then it is convex.
+  \end{lem}
+
+  First, we will state some definitions and results on basic convex geometry that we need, and prove the theorem at the end of the section. The definitions and results on convex geometry are taken out of \parencite{lecturesConvGeo}.
+
+  First of all, we need the notions of convex combination, the convex hull and extreme points.
+  A convex combination is similar to a linear combination, but has the additional restraint that the coefficients must be positive ad add up to $1$. The convex hull of a set is, like any other hulls, the smallest convex set that contains the set.
+    \begin{defi}[Convex Combination and Hull] \label{conv-defs}
+\leavevmode \vspace{-\baselineskip}
+      \begin{enumerate}
+        \item Let $k \in \mathbb{N}$, let $x_1, \dots, x_k \in \mathbb{R}^{n}$, and let $a_1, \dots, a_k \in [0,1]$ be such that $a_1 + \dots + a_k = 1$. Then $a_1 x_1 + \dots + a_k x_k$ is called a \emph{convex combination} of the points $x_1, \dots x_k$.
+        \item For $A \subset \mathbb{R}^{n}$ the \emph{convex Hull} $\co(A)$ is the smallest convex set containing $A$, i.e. $$\co(A) := \cap \left \{ C \subset \mathbb{R}^n:A \subset C,  C \text{ convex} \right \}$$
+      \end{enumerate}
+    \end{defi}
+
+    The next theorem sums up the relationship between convex combination and convex hulls.
+    \begin{thm} \label{conv-hull-all-conv-combs}
+      For $A \subset \mathbb{R}^{n}$ the convex Hull is the set of all convex combination of points in $A$:
+      $$
+    \co(A) =  \left \{\sum_{i=1}^{k} a_i x_i : k \in \mathbb{N}, x_1, \dots, x_k \in A, a_1, \dots, a_k \in [0,1]: \sum_{i=1}^{k} a_i = 1 \right \}
+      $$
+    \end{thm}
+
+    Moreover, the convex hull preserves compactness, as the following theorem shows.
+    \begin{thm}[convex Hull of compact set is compact] \label{compact-hull-compact}
+    If $A \subset \mathbb{R}^{n}$ is compact, then $\co(A)$ is compact.
+    \end{thm}
+
+    Next, we will introduce extreme points, which are, in a sense, characteristic points of a set that cannot be represented by a (strict) convex combination.
+
+    \begin{defi}[Extreme Point]\label{extreme-point}
+      Let $A \subset \mathbb{R}^{n}$ be closed and convex. A point $x \in A$ is called an \emph{extreme point of $A$} if $x$ cannot be represented as a nontrivial (or strict) convex combination of points of A, that is, if $x = a \cdot y + (1-a) \cdot z$ with $y, z \in A$ and $a \in (0,1)$, implies that $x = y = z$. The set of all extreme points of $A$ is denoted by $\extr(A)$.
+    \end{defi}
+
+
+    For compact and convex sets, the extreme points are enough to "build" the convex hull of the set by doing convex combinations.
+    In particular, this means that for a compact and convex set, every point can be expressed as a convex combination of extreme points.
+
+    \begin{thm}[Minkowski Theorem] \label{minkowski-theorem}
+      Let $A \subset \mathbb{R}^{n}$ be compact and convex. Then $A = \co (\extr A)$.
+    \end{thm}
+
+
+
+    Before moving to the convexity of balls, we will first prove two lemma, which we will need while proving convexity of spheres.
+    The first one is the openness/closedness of $\metric$-balls.
+
+  \begin{lem}[$\metric$-Balls are open/closed] \label{lemma-delta-balls-closed}
+    For every radius $r > 0$, the $\metric$-Balls are open $(\ball{r})$ or closed $(\cball{r})$.
+  \end{lem}
+
+  \begin{proof}
+    $\metric : S' \times S' \to \mathbb{R}_{\geq 0}$ is continuous with $S' \subseteq \mathbb{R}^n$ and therefore $y \mapsto \metro{y} = \metr{0}{y}$ is continuous.
+
+    Consider the closed interval $U' = [0, \alpha] \subset \mathbb{R}_{\geq 0}$.
+Then
+\begin{align*}
+  \metric^{-1}(U') &= \{y \in S' : \metro{y} \in U'\} \\
+                   &= \{y \in S' : \metr{0}{y} \leq \alpha\} \\
+                   &= \cball{\alpha}
+\end{align*}
+Due to topological continuity of $\metric$ (which is equivalent to preimages of closed sets being closed) $\cball{\alpha}$ is closed. By translation invariance this holds for closed balls with any center in $S$. \todo{ref topo stetig?}
+Moreover, we can obtain the same result for open balls by repeating this proof and replacing the closed interval with an open one and $\leq$ with $<$.
+  \end{proof}
+
+The second lemma shows, that extreme points of balls get compressed by a factor of $\alpha \in \mathbb{N}$, if the radius of the ball gets shrinked by the same factor.
+
+    \begin{lem}[compressing extreme points] \label{lem-compr-extr-points}
+      Let $\alpha \in \mathbb{R}_{> 0}$ and $r \in \mathbb{N}_{>0}$. Further let $\E := \extr ( \cball{\alpha})$ and $\CO := \co(\cball{\alpha})$.
+      Then, $y \in \E[\alpha]$ implies $\frac{1}{r}y \in \E[\frac{\alpha}{r}]$.
+    \end{lem}
+
+    \begin{proof}
+% (We use square brackets for $\CO$ to denote, that this set is closed by \todo{ref adden}).
+      We will prove this statement by contraposition.
+
+      Assume, that $\frac{1}{r}y$ is not an extreme point, i.e. $\frac{1}{r}y \in \CO[\frac{\alpha}{r}] \setminus \E[\frac{\alpha}{r}]$.
+      Then we can write $\frac{1}{r}y$ as a strict convex combination of elements $w^i \in \CO[\frac{\alpha}{r}]$: 
+      $$\frac{1}{r}y = \sum_{i=1}^p \lambda_i w^i \quad \text{with } \sum_{i=1}^p \lambda_i = 1, \quad \lambda_i > 0,~ w^i \in \CO[\frac{\alpha}{r}] \text{ and } p \in \mathbb{N} $$
+
+      But because $\CO[\frac{\alpha}{r}] = \co(\cball{\frac{\alpha}{r}})$ holds, we can write any element from $\CO[\frac{\alpha}{r}]$ as a convex combination of elements from $\cball{\frac{\alpha}{r}}$ and therefore we can assume $\w \in \cball{\frac{\alpha}{r}}$.
+
+      By translation invariance and the triangle inequality we get for all $i$:
+      \begin{align*}
+        \metro{r \w} &\leq \metr{0}{\w} + \metr{\w}{r \w} \tag*{\text{triangle inequality}} \\
+                      &= \metro{\w} + \metr{0}{(r-1) \cdot  \w} \tag*{\text{translation invariance}} \\
+                      & \leq \metro{\w} + \metr{0}{\w} + \metr{\w}{(r-1)\cdot \w} \tag*{\text{triangle inequality}} \\
+                      &= 2 \cdot \metro{\w} + \metr{0}{(r-2) \cdot \w} \tag*{\text{translation invariance}} \\
+                      &\dots \\
+                      &\leq r \cdot \metro{\w} \\
+                      &= r \cdot \frac{\alpha}{r} = \alpha \\
+        \implies r \w &\in \cball{\alpha}
+      \end{align*}
+
+      This yields, that $y = \sum_{i=1}^{p} \lambda_i r \w$ is a strict convex combination (because $\lambda_i r \neq 0$) and therefore $y$ is not in $\E$.
+    \end{proof}
+
+
+    Now we can prove the convexity of $\metric$-balls.
+
+
+\todo{ref heine-borel?}
+\begin{proof}[Proof of \cref{lem-metr-spheres-convex}]
+      Let $\E := \extr ( \cball{\alpha})$ and $\CO := \co(\cball{\alpha})$.
+      By \cref{lemma-delta-balls-closed} $\cball{\alpha}$ is closed and by assumption it is also bounded. Therefore, from the Heine-Borel Theorem, it follows that $\cball{\alpha}$ is compact.
+
+      By definition and \cref{compact-hull-compact} it follows, that $\CO$ is compact (and therefore closed, which is the reason why we denote it with square brackets) and convex. Application of the Minkowski Theorem (\cref{minkowski-theorem}) yields:
+     $$ \CO = \co(\extr ( \CO )) $$
+     Further, it holds that $\extr(\CO) = \extr(\cball{\alpha})$ (By doing convex combinations, no new extreme points can be introduced because these are the points, which cannot be represented by a convex combination).
+     Combining this and the statement above yields:
+     $$ \cball{\alpha} \subset \CO = \co ( \extr (\cball{\alpha})). $$
+     Now, if we prove that $\co ( \extr (\cball{\alpha})) \subset \cball{\alpha}$, we get that $\cball{\alpha} = \CO$ which proves the convexity of $\cball{\alpha}$.
+     We simplify this statement before proving it.
+
+\newcommand\yy[1][i]{y^{(#1)}}
+
+\begin{align*}
+    &\centerline{$\co( \underbrace{\extr (\cball{\alpha}}_{\E})) \subset B$} \\[1ex]
+    &\centerline{$\Big \Updownarrow$} \\[1ex]
+    &\sum_{i=1}^{p} \lambda_i \yy \in \cball{\alpha}, \quad p \in \mathbb{N}_{> 0}, 
+    \begin{cases} 
+        \yy \in \E \\[1ex] 
+        \lambda_i \in \mathbb{R}_{\geq 0}, \sum_{i=1}^{p} \lambda_i = 1 
+    \end{cases} \tag{Definition} \\[1ex]
+    &\centerline{$\Big \Uparrow$} \\[1ex]
+    &\sum_{i=1}^{p} \lambda_i \yy \in \cball{\alpha}, \quad p \in \mathbb{N}_{> 0}, 
+    \begin{cases} 
+        \yy \in \E \\[1ex] 
+        \lambda_i \in \mathbb{Q}_{\geq 0}, \sum_{i=1}^{p} \lambda_i = 1 
+      \end{cases} \tag{$B$ closed, $\mathbb{Q}$ dense in $\mathbb{R}$ \footnotemark} \\[1ex]
+    &\centerline{$\Big \Uparrow$} \\[1ex]
+    &\sum_{i=1}^{r} \frac{1}{r} \yy \in \cball{\alpha}, \quad r \in \mathbb{N}_{> 0}, ~ \yy \in \E \tag{$r$ common denominator} 
+\end{align*}
+
+\footnotetext{Density implies, that we can express every real number as a limit of rational numbers. $B$ is closed, and therefore all limits of rational coefficients are included, if the statement holds for rational numbers.}
+
+
+Thus, we will continue proving that for $r \in \mathbb{R}_{>0}$ and $\yy \in \E$ it holds that $\sum_{i=1}^{r} \frac{1}{r} \yy ~ \in \cball{\alpha}$.
+
+For $\yy \in \E$ it holds by \cref{lem-compr-extr-points} that $\frac{1}{r}\yy \in \E[\frac{\alpha}{r}] \subset \cball{\frac{\alpha}{r}}$.
+This means, that for the metric distance of the convex combination the following holds:
+\begin{align*}
+  \metr{0}{\sum_{i=1}^{r} \frac{1}{r} \yy} & \leq \metr{0}{\frac{1}{r}\yy[1]} + \metr{\frac{1}{r}}{\sum_{i=1}^{r} \frac{1}{r}\yy} \tag{triangle inequality}\\
+                                         &= \metr{0}{\frac{1}{r}\yy[1]} + \metr{0}{\sum_{i=2}^{r} \frac{1}{r}\yy} \tag{translation invariance} \\
+                                         & \leq \frac{\alpha}{r} + \metr{0}{\sum_{i=2}^{r} \frac{1}{r}\yy} \tag{translation invariance} \\
+                                         & \dots \tag{repeat} \\
+                                          & \leq r \frac{\alpha}{r} = \alpha
+\end{align*}
+
+This yields that $\sum_{i=1}^{r} \frac{1}{r}\yy \in \cball{\alpha}$ holds which proves the statement.
+  \end{proof}

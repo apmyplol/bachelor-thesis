@@ -1,0 +1,22 @@
+  Die Grundlegende Idee von Proximity measurement ist es, jeweils zwei Stimulipaare auf deren Ähnlichkeit zu vergleichen. Zum Beispiel könnten in einem Experiment Vier Farben $a, b, c, d$ zusammen mit der Frage ''Sind sich die Farben $a$ und $b$ ähnlicher als die Farben $c$ und $d$'' Präsentiert werden. Die Aufgabe wäre dann, immer die Stimulipaare nach Ihren Ähnlichkeiten zu sortieren.
+  Diese Ähnlichkeitsvergleiche will man anschließend durch eine Metrik repräsentieren. Dies macht man, indem man fordert, dass wenn zwei Stimuli $a$ und $b$ ähnlicher sind, als zwei weitere Stimuli $c$ und $d$, dass dann der metrische Abstand zwischen $a$ und $b$ kleiner ist als der Abstand zwischen $c$ und $d$.
+In der Sprache der Messbarkeitstheorie heißt das, man möchte ordinale Daten mithilfe einer ordinalen Skala repräsentieren, die metrische Eigenschaften erfüllt.
+Da im weiteren die Grundlegenden Skalen noch öfters vorkommen, definieren wir diese hier in der Einleitung kurz und intuitiv, ohne die genaue mathematische Definition zu nennen.
+
+  \begin{definition}[Skalentypen]~\\
+    Die Skala ist eine Eigenschaft von Messdaten und enthält Information über deren Struktur. Dabei wird zwischen Vier Grundlegenden Skalen unterschieden, die sich jeweils mathematisch durch die zulässigen Operationen und die zugrundeliegende Struktur unterscheiden.
+    \begin{enumerate}
+      \item Nominalskala: Skala bei der man nur 1-zu-1 Zuordnungen macht. Die zulässigen Transformationen sind alle bijektiven Abbildungen. Beispiele sind z.B. Geschlechter (in Fragebögen z.B. 1 weibl. 2 männl. 3 divers) oder Postleizahlen.
+      \item Ordinalskala Zusätzlich zu 1-zu-1 Zuordnungen hat man eine Reihenfolge. Daher sind die zulässigen Transformationen die streng monotonen Abbildungen. Beispiele sind Noten (1 bis 6) oder Erdbebenstärke.
+      \item Intervallskala Zusätzlich zur Reihenfolge, spielen die Abstände zweier Werte eine Rolle. Damit sind die zulässigen Transformationen affin lineare Abbildungen $f(x) = ax + b, a > 0$. Beispiele sind die Celsius und Fahrenheit Skala.
+      \item Verhältnisskala Zusätzlich zu den Abständen in der Intervallskala, gibt es eine feste Null. Daher sind die zulässigen Transformationen alle linearen Abbildungen $f(x) = ax, a > 0$. Beispiele sind Länge oder die Kelvin Skala.
+    \end{enumerate}
+
+    Da wir uns mit Ordinaldaten beschäftigen werden, spiele diese Skala und streng monotone steigende Abbildungen eine wichtige Rolle. Daher wird streng monoton steigend nur mit steigend bezeichnet.
+
+
+    In den Abschnitten 2 bis 4 geht es erstmal um die Mathematische Basis, die benötigt wird um die Hauptresultate aus Abschnitt 5 herzuleiten. Daher werden die wichtigsten Definitionen und Sätze in den Abschnitten 2 bis 4 erläutert aber nicht bewiesen. An ein paar Stellen sind die Feinheiten der Definitionen auch nicht so wichtig, dort wird dann auf den Anhang verwiesen, wo die genauen Definitionen von einigen Begriffen zu finden sind.
+    Alle übersprungenen Beweise sind in \cite{foundations2} zu finden. Außer den Sätzen in \cite{foundations2} benötigen wir noch 2 Weitere Resultate die nicht Beweisen werden: \cite{mulholland} und \cite{aczel1966lectures}, diese beiden Paper sind auf Moodle zu finden.
+
+
+  \end{definition}

@@ -1,0 +1,189 @@
+
+
+Da Metriken an sich wenig Struktur bieten, lohnt es sich noch eine Eigenschaft mehr mehr zu fordern.\\
+Diese Eigenschaft ist segmental additivity und beschreibt, dass es zu zwei Punkten immer eine Kurve gibt, die diese verbindet und die Abstände additiv sind, das heißt auf dem Segment die Dreiecksungleichung mit Gleichheit gilt. Für uns reicht es zu wissen, dass wenn $b$ auf dem Segment zwischen $a$ und $c$ liegt, dass dann $\delta(a,b) + \delta(b,c) = \delta(a, c)$ gilt.
+Für die genaue Definition siehe Anhang \ref{appendix}.
+Am Ende dieses Abschnittes sind Beispiele für Metriken mit additiven Segmenten angegeben.
+
+
+Der Folgende Satz liefert eine (bis auf positive Skalierung) eindeutige Metrik die die Relation repräsentiert und zusätzlich zur Ordnung, die Eigenschaft segmental solvability erhält.
+
+\begin{thm}[Repräsentationstheorem für segmentally additive proximity structures]~\\
+Sei $\langle A, \succsim \rangle$ eine segmentally additive proximity structure. Dann ist $\langle A, \succsim \rangle$ durch eine Metrik darstellbar und zusätzlich gilt für alle $a, b, c \in A$ gilt:
+\begin{enumerate}
+    \item $\langle abc \rangle \iff \delta(a, b) + \delta(b, c) = \delta(a, c)$.
+    \item wenn $\delta'$ eine andere Metrik auf $A$ ist, die die obigen Bedingungen erfüllt, dann gibt es ein $\alpha > 0$, so dass $\delta' = \alpha \delta$ ($\delta$ ist eine Verhältnisskala).
+\end{enumerate}
+\end{thm}
+
+
+  \begin{defi} 
+    \todo{Metric, open, convex, stetig ... definieren?}
+  
+  \end{defi}
+
+  The definitions and statements from this section are taken out from \parencite{busemann}.
+
+  \begin{defi}[curves and segments]
+\leavevmode \vspace{-\baselineskip}
+\begin{enumerate}
+    \item Let $\metric$ be a metric on $X$. A parametric curve in $\langle X, \metric \rangle$ is a function $\curve$ that maps a closed interval $[a, b] \subset \mathbb{R}$ into $X$ and is continuous. The parametric curve $\curve$ is said to join $\curve(a)$ and $\curve(b)$.
+    
+    \item Let $\curve$ be a parametric curve in $\langle X, \metric \rangle$ with domain $[a, b]$. Its length $\len$ is the supremum of the sums
+\[
+    \sum_{i=1}^{n} \metric \left[ \curve(a_{i-1}), \curve(a_i) \right]
+\]
+    over all finite sequences $a_0, a_1, \dots, a_n$ such that 
+\[
+    a = a_0 \leq a_1 \leq \dots \leq a_n = b.
+\]
+    
+    If $\len < \infty$, then $\curve$ is rectifiable.
+    
+  \item A rectifiable curve is a segment iff its length is equal to the distance between its endpoints, i.e. $\len = \metr{a}{b}$.
+    
+  \item For $a \leq x \leq b$ we denote the length of the sub-curve $\curve(t),~ a \leq t \leq x$ from $a$ to $x$ by $\sublen$. This is also called the \emph{arc length} of the curve. \label{sublen}
+\end{enumerate}
+\end{defi}
+
+\begin{rem}[continuity \& monotonicity of sub length] \label{sublen-cont}
+For a rectifiable curve $\curve(t), ~ a \leq t \leq b$, the arc length $\sublen$ is a continuous, non-decreasing function of $x$.
+\end{rem}
+
+  \begin{defi}[Metric space with additive segments]
+    Let $\metric$ be a metric on $X$. $\langle X, \metric \rangle$ is a metric space with additive segments iff for any $x, y \in  X$ there is a segment joining them.
+  \end{defi}
+
+
+\begin{ex}[Minkowski bzw. $l^p$ bzw. power metric]~\\
+  Die $l^p$ Metrik, die durch $\delta(a, b) = \left[\sum_{i=1}^{n} |\varphi_i(a_i) - \varphi_i(b_i)|^p\right]^{1/p}$ definiert ist, ist für $p \geq 1$ eine Metrik mit additiven Segmenten. Die Segmente sind genau die Verbindungslinien zwischen zwei Punkten, also alle Geraden.
+
+  \begin{proof}
+  Seien $x, z \in \mathbb{R}^{n}$ und $0 \leq t \leq 1$. Dann gilt für $y = (1-t) x + t z$ ($y$ ist genau dann auf dem Geradensegment von $z$ zu $x$, wenn man $y$ so darstellen kann):
+\begin{align*}
+d(x, y) + d(y, z) &= \left[ \sum_{i=1}^{n} \left| x_i - (1 - t) x_i - t z_i \right|^p \right]^{1/p} + \left[ \sum_{i=1}^{n} \left| (1 - t) x_i + t z_i - z_i \right|^p \right]^{1/p} \\
+&= t \left[ \sum_{i=1}^{n} \left| x_i - z_i \right|^p \right]^{1/p} + (1 - t) \left[ \sum_{i=1}^{n} \left| x_i - z_i \right|^p \right]^{1/p} \\
+&= d(x, z).
+\end{align*}
+  \end{proof}
+\end{ex}
+
+\begin{remark}[additive difference model]\label{add-diff-model}
+  Es fällt auf, dass die $l^p$ Metrik eine besondere Form hat, die durch $\delta(x,y) = F^{-1} \left[ \sum_{i=1}^{n} F(|x_i - y_i|) \right]$ gegeben ist. Man kann diese Form auf 4 Stufen abstrahieren:
+  \begin{enumerate}
+  \item Decomposability: Die Distanz ist eine Funktion von Beiträgen die Komponentenweise sind.\\
+    \begin{equation}\label{decomp}
+    \delta(a,b) = F[\psi(a_1, b_1), \ldots , \psi(a_n, b_n)]
+    \end{equation}
+  \item Intradimensional subtractivity: Die Komponentenweise Beiträge sind Beträge der Differenzen in den Dimensionen.\\
+    \begin{equation}\label{subtr}
+    \delta(a,b) = F[ |\varphi_1(a_1) - \varphi_1(b_a)| , \ldots , | \varphi_n(a_n) - \varphi_n(b_n)| ]
+  \end{equation}
+  \item Interdimensionale additivity: Der Abstand ist eine Summe der Komponentenweise Beiträge.
+    \begin{equation}\label{iterdim-add}
+    \delta(a,b) = G \left [ \sum_{i=1}^{n} \psi_i(a_i, b_i) \right]
+  \end{equation}
+  \item additive difference model: Wenn alle 3 Eigenschaften gelten.
+    \begin{equation}\label{add-diff-model}
+    \delta(a,b) = G \left \{ \sum_{i=1}^{n} F_i[ | \varphi_i(a_i) - \varphi_i(b_i)| ] \right \}
+    \end{equation}
+  \end{enumerate}
+
+  Falls die Elemente $a, b$ aus der proximity structure sind, sind noch Folgende Eigenschaften von den Funktionen gefordert:
+  \begin{enumerate}
+    \item $F$  ist steigend in allen Argumenten
+    \item $\psi_i$ ist für alle $i = 1, ..., n$ reellwertig, symmetrischen und erfüllt $\psi_i(a_i, b_i) > \psi_i(a_i, a_i)$ wenn $a_i \neq b_i$
+    \item $\phi_i$ ist reellwertig für alle $i = 1, ..., n$
+    \item $G$ und $F_i$ sind steigend ($i = 1, ..., n$)
+  \end{enumerate}
+
+\end{remark}
+
+  Man sieht, dass die $l^p$ Metrik ein Spezialfall des additive difference models ist.
+  Von besonderem Interesse sind Modelle wo die $F_i$ alle über eine gemeinsame Funktion $F$ (bis auf Streckung/Stauchung des Definitionsbereiches, $F_i(x) = F(t_i x), t_i > 0$) dargestellt werden können und $G = F^{-1}$ gilt. Diese Bedingungen erfüllt die $l^p$ Metrik auch.\\
+  Hier kommt ein weiteres Beispiel für eine solche Metrik.
+
+  \begin{ex}[p-exp Metrik Familie]\label{p-exp-metric-family}~\\
+    Sei das $F$ im additive difference model (\ref{add-diff-model}) gegeben durch 
+    \begin{equation}\label{p-exp-eq}
+      F(t) = q \cdot (e^{t \cdot r} - 1)^p \qquad q, r > 0, p \geq 1
+    \end{equation}
+      Dann ist das Modell eine Metrik.
+    \begin{proof}
+      \begin{enumerate}
+        \item Positivität: $\delta(a,b) = 0$ also $F(|a_i - b_i|) = 0$ für alle $i$, das ist nur der Fall wenn der Exponent Null ist, also $a_i = b_i$ gilt für alle $i$.\\
+          Anderes herum gilt, wenn $a \neq b$ ist, dass dann $a_i \neq b_i$ für mindestens ein $i$, woraus folgt dass $F_i(|a_i - b_i|) > 0$, also auch $\delta(a,b) > 0$.
+        \item Symmetrie: Symmetrie kommt daher, dass $|a_i - b_i| = |b_i - a_i|$ gilt.
+        \item Dreiecksungleichung: Die Dreiecksungleichung kommt aus dem Satz von Mullholland \cite[S.~297]{mulholland}. Das Paper von Mulholland ist auf Moodle zu finden.
+      \end{enumerate}
+    \end{proof}
+  \end{ex}
+
+  \begin{thm}[Mulholland]~\\
+Die Ungleichung
+$$
+ f^{-1} \left[ \sum_i f(|x_i + y_i|) \right] \leq f^{-1}  \left[ \sum_i f(|x_i|) \right] + f^{-1} \left[ \sum_i f(|y_i|) \right].
+$$
+gilt für alle $x, y \in \mathbb{R}^n, n = 1, 2, \ldots$ wann immer die folgenden drei Bedingungen erfüllt sind:
+\begin{enumerate}
+    \item $f$ ist stetig und streng monoton steigend, und $f(0) = 0$.
+    \item $f$ ist konvex auf $[0, \infty)$.
+    \item $\log f(e^x)$ ist konvex für $x \in (-\infty, \infty)$.
+\end{enumerate}
+  \end{thm}
+
+  \begin{proof}[Beweis, dass \ref{p-exp-metric-family} die Bedingungen von Mulholland erfüllt]~\\
+    Zu Punkt 1: Stetigkeit und $f(0) = 0$ ist klar. Für Monotonie gilt, $e^{rt} - 1$ ist steigend, Potenzieren auch und multiplizieren mit $q > 0$ auch, damit ist die Komposition davon auch steigend.
+    Zum Punkt 2: Selbes Argument wie bei Monotonie, nur mit Konvexität und Komposition von konvexen Funktionen ist wieder konvex.
+
+    Zum dritten Punkt, dass $\log F(e^t)$ konvex ist.
+    Es gilt
+    $$ \log q(e^{re^x} -1)^p = \log q + p \cdot  \log(e^{re^x} - 1) $$
+    Addition und Multiplikation mit $p \geq 1$ erhält Konvexität, also reicht es Konvexität von $\log(e^{re^x} - 1)$ zu zeigen.
+
+    Das zeigen wir über die zweite Ableitung, denn wenn die zweite Ableitung strikt positiv ist, ist die Funktion konvex.
+
+    Zweifaches Ableiten liefert
+    $$
+    \frac{r e^{re^x + x} \left( r (-e^x) + e^{re^x} - 1 \right)}{\left( e^{re^x} - 1 \right)^2} \overset{!}{>} 0
+    $$
+
+Wir sehen der Nenner ist immer positiv und ungleich 0, das heißt wir können den Nenner weg lassen. Genauso ist der Faktor $r e^{re^x + x}$ immer positiv und kann somit auch weggelassen werden. Es bleibt also zu zeigen, dass
+    \begin{align*}
+      -r e^x + e^{re^x} - 1  &> 0 \\
+      \iff  e^{re^x}  - r e^x & > 1 
+    \end{align*}
+    gilt.
+
+    Dies kann man in 2 Schritten zeigen: 1. die Linke Seite ist streng monoton steigend und 2. der Grenzwert für $x \rightarrow - \infty$ ist $1$. Somit gilt die Ungleichung für alle $x \in \mathbb{R}$.
+
+    \begin{enumerate}
+      \item Für die Ableitung gilt:
+        $$ re^x \cdot e^{re^x} - re^x = re^x \cdot (e^{re^x} - 1) > 0 $$ da $e^x > 0$ gilt.
+      \item 
+        $$ \lim_{x \rightarrow -\infty} e^{re^x}  - r e^x = 1 - 0 = 1 $$
+
+      Damit ist die Konvexität gezeigt, und die Behauptung folgt aus dem Satz von Mulholland.
+    \end{enumerate}
+  \end{proof}
+
+
+  \begin{remark}[$l^p$ Metrik $\in$ p-exp Metrik Familie]~\\
+    Wenn wir in (\ref{p-exp-eq}) für $q = r^{-p}$ einsetzen, erhalten wir im Grenzwert für $r  \rightarrow 0$ die $l^p$ Metrik.
+    Das ist von Bedeutung, da dies mithilfe des Hauptresultates \ref{lp-eindeutig} zeigt, dass die Metriken der p-exp Familie keine Metriken mit additiven Segmenten sein können, obwohl man die $l^p$ Metrik durch Grenzwertbildung aus dieser Familie darstellen kann.
+    Das bedeutet, dass im Grenzwertprozess aus der Eigenschaft ''additiv auf den Koordinatenachsen'', die Eigenschaft ''additiv auf beliebigen Liniensegmenten'' wird.
+
+    \begin{proof}
+      Setzt man $q = r^{-p}$ erhält man:
+      $$ r^{-p}(e^{rt} - 1)^p = \left( \frac{e^{rt} -1}{r} \right)^p $$
+      Für $r \rightarrow 0$ gehen sowohl Nenner, als auch Zähler, gegen $0$ (wir können den Grenzwert in die Potenz reinziehen, da die Potenzfunktion stetig ist) und wir können den Satz von L'Hospital anwenden.
+      Das liefert:
+      $$ 
+      \lim_{r \rightarrow 0} \left( \frac{e^{rt} -1}{r} \right)^p = \left( \lim_{r \rightarrow 0} \frac{e^{rt} -1}{r} \right)^p = \left( \lim_{r \rightarrow 0} \frac{t \cdot e^{rt} - 1}{1} \right)^p = t^p
+      $$
+    \end{proof}
+  
+  \end{remark}
+
+Nicht jede Funktion, die durch das additive difference model dargestellt werden kann, ist eine Metrik.
+
