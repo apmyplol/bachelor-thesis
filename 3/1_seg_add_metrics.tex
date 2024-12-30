@@ -2,17 +2,17 @@
 
 Da Metriken an sich wenig Struktur bieten, lohnt es sich noch eine Eigenschaft mehr mehr zu fordern.\\
 Diese Eigenschaft ist segmental additivity und beschreibt, dass es zu zwei Punkten immer eine Kurve gibt, die diese verbindet und die Abstände additiv sind, das heißt auf dem Segment die Dreiecksungleichung mit Gleichheit gilt. Für uns reicht es zu wissen, dass wenn $b$ auf dem Segment zwischen $a$ und $c$ liegt, dass dann $\delta(a,b) + \delta(b,c) = \delta(a, c)$ gilt.
-Für die genaue Definition siehe Anhang \ref{appendix}.
+Für die genaue Definition siehe Anhang %\ref{appendix}.
 Am Ende dieses Abschnittes sind Beispiele für Metriken mit additiven Segmenten angegeben.
 
 
 Der Folgende Satz liefert eine (bis auf positive Skalierung) eindeutige Metrik die die Relation repräsentiert und zusätzlich zur Ordnung, die Eigenschaft segmental solvability erhält.
 
-\begin{thm}[Repräsentationstheorem für segmentally additive proximity structures]~\\
-Sei $\langle A, \succsim \rangle$ eine segmentally additive proximity structure. Dann ist $\langle A, \succsim \rangle$ durch eine Metrik darstellbar und zusätzlich gilt für alle $a, b, c \in A$ gilt:
+\begin{thm}[Representation theorem for segmentally additive proximity structures]
+Suppose $\langle A, \succsim \rangle$ is a segmentally additive proximity structure. Then $\langle A, \succsim \rangle$ is representable by a metric, and additionally, for all $a, b, c \in A$:
 \begin{enumerate}
     \item $\langle abc \rangle \iff \delta(a, b) + \delta(b, c) = \delta(a, c)$.
-    \item wenn $\delta'$ eine andere Metrik auf $A$ ist, die die obigen Bedingungen erfüllt, dann gibt es ein $\alpha > 0$, so dass $\delta' = \alpha \delta$ ($\delta$ ist eine Verhältnisskala).
+    \item If $\delta'$ is another metric on $A$ that satisfies the above conditions, then there exists $\alpha > 0$ such that $\delta' = \alpha \delta$ ($\delta$ is a ratio scale).
 \end{enumerate}
 \end{thm}
 
@@ -68,7 +68,7 @@ d(x, y) + d(y, z) &= \left[ \sum_{i=1}^{n} \left| x_i - (1 - t) x_i - t z_i \rig
   \end{proof}
 \end{ex}
 
-\begin{remark}[additive difference model]\label{add-diff-model}
+\begin{rem}[additive difference model]\label{add-diff-model}
   Es fällt auf, dass die $l^p$ Metrik eine besondere Form hat, die durch $\delta(x,y) = F^{-1} \left[ \sum_{i=1}^{n} F(|x_i - y_i|) \right]$ gegeben ist. Man kann diese Form auf 4 Stufen abstrahieren:
   \begin{enumerate}
   \item Decomposability: Die Distanz ist eine Funktion von Beiträgen die Komponentenweise sind.\\
@@ -97,13 +97,13 @@ d(x, y) + d(y, z) &= \left[ \sum_{i=1}^{n} \left| x_i - (1 - t) x_i - t z_i \rig
     \item $G$ und $F_i$ sind steigend ($i = 1, ..., n$)
   \end{enumerate}
 
-\end{remark}
+\end{rem}
 
   Man sieht, dass die $l^p$ Metrik ein Spezialfall des additive difference models ist.
   Von besonderem Interesse sind Modelle wo die $F_i$ alle über eine gemeinsame Funktion $F$ (bis auf Streckung/Stauchung des Definitionsbereiches, $F_i(x) = F(t_i x), t_i > 0$) dargestellt werden können und $G = F^{-1}$ gilt. Diese Bedingungen erfüllt die $l^p$ Metrik auch.\\
   Hier kommt ein weiteres Beispiel für eine solche Metrik.
 
-  \begin{ex}[p-exp Metrik Familie]\label{p-exp-metric-family}~\\
+  \begin{ex}[p-exp Metrik Familie]\label{p-exp-metric-family}
     Sei das $F$ im additive difference model (\ref{add-diff-model}) gegeben durch 
     \begin{equation}\label{p-exp-eq}
       F(t) = q \cdot (e^{t \cdot r} - 1)^p \qquad q, r > 0, p \geq 1
@@ -168,7 +168,7 @@ Wir sehen der Nenner ist immer positiv und ungleich 0, das heißt wir können de
   \end{proof}
 
 
-  \begin{remark}[$l^p$ Metrik $\in$ p-exp Metrik Familie]~\\
+  \begin{rem}[$l^p$ Metrik $\in$ p-exp Metrik Familie]~\\
     Wenn wir in (\ref{p-exp-eq}) für $q = r^{-p}$ einsetzen, erhalten wir im Grenzwert für $r  \rightarrow 0$ die $l^p$ Metrik.
     Das ist von Bedeutung, da dies mithilfe des Hauptresultates \ref{lp-eindeutig} zeigt, dass die Metriken der p-exp Familie keine Metriken mit additiven Segmenten sein können, obwohl man die $l^p$ Metrik durch Grenzwertbildung aus dieser Familie darstellen kann.
     Das bedeutet, dass im Grenzwertprozess aus der Eigenschaft ''additiv auf den Koordinatenachsen'', die Eigenschaft ''additiv auf beliebigen Liniensegmenten'' wird.
@@ -183,7 +183,7 @@ Wir sehen der Nenner ist immer positiv und ungleich 0, das heißt wir können de
       $$
     \end{proof}
   
-  \end{remark}
+  \end{rem}
 
 Nicht jede Funktion, die durch das additive difference model dargestellt werden kann, ist eine Metrik.
 

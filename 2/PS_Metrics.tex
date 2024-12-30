@@ -2,16 +2,16 @@
   Die Idee von einer proximity structure, ist die Mathematische Definition dieser Idee: eine Relation $\succsim$ auf einer Menge $A$ die die Grundeigenschaften einer Metrik erfüllt.
 
   \begin{defi}[factorial proximity structure]
-Sei $A$ eine Menge und $\succsim$ ist eine vierstellige Relation auf $A$, d.h. eine zweistellige Relation auf $A \times A$. $\langle A, \succsim \rangle$ ist eine proximity structure genau dann, wenn die folgenden Axiome für alle $a, b \in A$ gelten:
+Suppose $A$ is a set and $\succsim$ a quaternery relation on $A$, i.e., binary relation on $A \times A$. $\langle A, \succsim \rangle$ is a proximity structure iff the following axioms hold for all $a, b \in A$:
 
 \begin{enumerate}
-  \item $\succsim$ ist eine schwache Ordnung von $A \times A$, d.h. sie ist zusammenhängend und transitiv.
-    \item $(a, b) \succsim (a, a)$ wenn $a \neq b$.
-    \item $(a, a) \sim (b, b)$ (Minimalität).
-    \item $(a, b) \sim (b, a)$ (Symmetrie).
+  \item $\succsim$ is a weak ordering on $A \times A$, i.e., it is connected and transitive.
+    \item $(a, b) \succsim (a, a)$ whenever $a \neq b$.
+    \item $(a, a) \sim (b, b)$ (minimality).
+    \item $(a, b) \sim (b, a)$ (symmetry).
 \end{enumerate}
 
-Die Struktur ist factorial genau dann, wenn
+The structure is factorial iff
 \[
 A = \prod_{i=1}^{n} A_i.
 \]
@@ -23,12 +23,12 @@ Zusammenhängend heißt, man kann alle distinkten Elemente vergleichen, also fü
 
 Da wir die Relation $\succsim$ durch eine Metrik repräsentieren wollen, lohnt es sich einen Begriff dafür einzuführen. Die Idee ist das, was man sich intuitiv vorstellt: man will dass die Metrik die Struktur von $\langle A, \succsim \rangle$ erhält, und die einzige Struktur die wir gegeben haben, ist die Ordnung jeweils zweier Paare.
 
-\begin{defi}[Darstellbarkeit von $\succsim$ durch Metrik]
-Sei $A$ eine Menge und $\succsim$ eine vierstellige Relation auf $A$. Die Struktur $\langle A, \succsim \rangle$ ist genau dann durch eine Metrik darstellbar, wenn es eine reellwertige Funktion $\delta$ auf $A$ gibt, so dass:
+\begin{defi}[Representability of $\succsim$ by a metric]
+A proximity structure $\langle A, \succsim \rangle$ is representable by a metric iff there exists a real-valued function $\delta$ on $A$ such that:
 
 \begin{enumerate}
-    \item $\langle A, \delta \rangle$ ist ein metrischer Raum, d.h. $\delta$ ist eine Metrik auf $A$.
-    \item $\delta$ erhält die Relation $\succsim$, d.h. für alle $a, b, c, d \in A$
+    \item $\langle A, \delta \rangle$ is a metric space, i.e., $\delta$ is a metric on $A$.
+    \item $\delta$ preserves the relation $\succsim$, i.e., for all $a, b, c, d \in A$
     \[
     \delta(a, b) \geq \delta(c, d) \iff (a, b) \succsim (c, d).
     \]
