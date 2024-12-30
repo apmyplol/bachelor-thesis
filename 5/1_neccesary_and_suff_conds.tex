@@ -1,24 +1,24 @@
 \addcontentsline{toc}{subsection}{necessary and sufficient stuff}
  \begin{thm}[Hinr. und notw. Bedingungen für additive difference Metrik]\label{hinr-notw-beds}~\\
-   Sei $\langle A, \succsim \rangle$ additive-difference proximity structure sodass $f$ die Darstellung der additive-difference Repräsentation nach Satz \ref{add-diff-prox-struct-repr} ist, also
+   Suppose $\langle A, \succsim \rangle$ is an additive-difference proximity structure such that $f$ is the additive-difference representation from \ref{add-diff-prox-struct-repr}, i.e.,
 \[
 f(a, b) = \sum_{i=1}^{n} F_i(|\varphi_i(a) - \varphi_i(b)|).
 \]
-Wir nehmen an, dass der Definitionsbereich jedes $F_i$ ein reelles Intervall ist und $F_i(0) = 0$, $i = 1, \ldots, n$ (durch Transformation, weil $F_i$ Intervallskalen sind).
+Suppose further that the domain of each $F_i$ is a real interval and $F_i(0) = 0$, $i = 1, \ldots, n$ (through transformation, since $F_i$ are interval scales).
 
-Damit $\langle A, \succsim \rangle$ darstellbar durch eine Metrik ist und zusätzlich Additivität auf Koordinatenachsen gilt,
+For $\langle A, \succsim \rangle$ to be compatible with a metric, and additionally be additive on the coordinate axes,
 \begin{enumerate}
-  \item ist es notwendig, dass es eine stetige, konvexe Funktion $F$ gibt, so dass $F_i(x) = F(t_i x), t_i > 0, \forall x$ im Definitionsbereich von $F_i$, $i = 1, \ldots, n$; und
-  \item es ist ausreichend, wenn zusätzlich $\log F(e^x)$ konvex ist. (zusätzlich zu den Eigenschaften in 1.)
+  \item it is necessary that there exists a continuous, convex function $F$, such that $F_i(x) = F(t_i x), t_i > 0,$ for all $x$ in the domain of $F_i$, $i = 1, \ldots, n$; and
+  \item sufficient that, in addition (to the conditions in 1.), the function $\log F(e^x)$ is convex.
 \end{enumerate}
 \end{thm}
 
-\begin{remark}[Additiv auf den Koordinatenachsen]~\\
+\begin{rem}[Additiv auf den Koordinatenachsen]~\\
 Additivität auf den Koordinatenachsen bedeutet hier: Wenn $a, b, c \in A$ sich nur auf einem Faktor $A_i$ unterscheiden, dann gilt die $\triangle$-Ungleichung der Metrik mit Gleichheit. In Mathe Sprache heißt das:
 $$ a_j = b_j = c_j \forall j \neq i \text{ und } (a, c) \succsim (a, b), (b,c)  \Rightarrow \delta(a, b) + \delta(b, c) = \delta(a, c) $$
-\end{remark}
+\end{rem}
 
-\begin{corollar}[Form von $\delta$]~\\
+\begin{cor}[Form von $\delta$]~\\
   Seien die Voraussetzungen wie in Satz \ref{hinr-notw-beds}.
   Dann wird die Metrik $\delta$ dargestellt durch
   \begin{equation}
@@ -26,7 +26,7 @@ $$ a_j = b_j = c_j \forall j \neq i \text{ und } (a, c) \succsim (a, b), (b,c)  
 \end{equation}
   wobei $F$ stetig, konvex und steigend ist.
 
-\end{corollar}
+\end{cor}
 
 \begin{proof}[Beweis von 1.]~\\
 
@@ -58,9 +58,10 @@ wenn $F_i$ definiert ist. Da $G^{-1}$ unabhängig von $i$ ist, können die $F_i$
 Stetigkeit und Konvexität werden in den nächsten Lemmata bewiesen.
 \end{proof}
 
-\begin{lemma}\label{lemma-ungl}
-  Sei $F$ wie in Satz \ref{hinr-notw-beds}. Dann gilt $F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma)$.
-\end{lemma}
+\todo{sagen dass conditions wie oben sind}
+\begin{lem}\label{lemma-ungl}
+  $F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma)$.
+\end{lem}
 
 \begin{proof}
 
@@ -79,8 +80,9 @@ seien $\alpha_1 = \gamma, \alpha_2 = F^{-1}(F(\alpha + \gamma) - F(\gamma)), \al
 \end{align*}
 \end{proof}
 
-\begin{lemma}Sei $F$ wie in Satz \ref{hinr-notw-beds}. Dann ist $F$ stetig.\label{lemma-stetig}
-\end{lemma}
+\begin{lem}
+  $F$ is continuous.\label{lemma-stetig}
+\end{lem}
 
 \begin{proof}
 
@@ -94,8 +96,8 @@ F(\alpha + \beta + \delta) - F(\alpha + \beta) \geq F(\alpha + \delta) - F(\alph
 und somit gibt es eine Lücke bei jedem $\alpha + \beta$, und $F$ müsste überall unstetig sein. Dies ist unmöglich, also muss $F$ stetig sein.
 \end{proof}
 
-\begin{lemma}~\\
-  Sei $F$ eine streng monoton steigende Funktion, die auf den nichtnegativen reellen Zahlen definiert ist. Dann ist $F$ genau dann konvex, wenn für alle $\alpha, \beta, \gamma \geq 0$ die Ungleichung aus \ref{lemma-ungl} gilt, also
+\begin{lem}
+  Suppose $F$ is a strictly increasing function defined on the nonnegative reals. Then $F$ is convex iff for all $\alpha, \beta, \gamma \geq 0$ the inequality from \ref{lemma-ungl} holds, i.e.,
 $$
 F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma).
 $$
@@ -127,5 +129,5 @@ F(\alpha) + F(\beta) &= F \left( \frac{\alpha - \beta}{2} + \frac{\alpha - \beta
 
 was äquivalent zur Konvexität für ein stetiges $F$ ist.
 \end{proof}
-\end{lemma}
+\end{lem}
 
