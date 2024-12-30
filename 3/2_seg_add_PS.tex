@@ -2,30 +2,30 @@
 Da wir diese Additivität aus der proximity structure herleiten wollen, müssen wir Eigenschaften definieren, aus der man die Additivität herleiten kann. Dazu benötigen wir Folgenden Begriff:
 
 \begin{defi}
-Für $a, b, c \in  A$ gilt die dreistellige Relation $(a, b, c \rangle$ wenn für alle $a', b', c' \in A$ gilt:
+For $a, b, c \in  A$, the ternary relation $(a, b, c \rangle$ is said to hold iff for all $a', b', c' \in A$:
 \begin{enumerate}
-  \item wenn $(a ,b) \succsim (a', b')$ und  $(a', c') \succsim (a, c)$, dann gilt  $(b', c') \succsim (b, c)$
-  \item Wenn beide der Ungleichungen strikt sind, ist die resultierende Ungleichung auch strikt
+  \item If $(a ,b) \succsim (a', b')$ and  $(a', c') \succsim (a, c)$, then  $(b', c') \succsim (b, c)$
+  \item If either of the preceding inequalities is strict, then the resulting inequality is also strict.
 \end{enumerate}
-Weiter gilt $\langle abc \rangle$ wenn $(a, b, c \rangle$ und $(c, b, a\rangle$ beide gelten.
+Further the relation $\langle abc \rangle$ is said to hold if both $(a, b, c \rangle$ and $(c, b, a\rangle$ hold.
 \end{defi}
 
 
 Die Bedingungen, die notwendig sind, um eine Darstellung durch eine Metrik mit additiven Segmenten zu ermöglichen, sind in der folgenden Definition und dem Satz danach zusammengefasst. Der zweite Teil der Definition wird erst später, für das Hauptresultat (Satz \ref{lp-eindeutig}) relevant, im Prinzip geht es darum dass man sich Grenzwerte und Cauchy Folgen anschauen kann, also der normale Begriff von Vollständigkeit.
 
-\begin{defi}[segmentally additive proximity structure]~\\
-Eine proximity structure $\langle A, \succsim \rangle$, mit einer dreifachen Relation $\langle \rangle$, die in Bezug auf $\succsim$ definiert ist, ist segmentally additive genau dann, wenn die folgenden zwei Axiome für alle $a, c, e, f \in A$ gelten:
+\begin{defi}[segmentally additive proximity structure]
+A proximity structure $\langle A, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, is segmentally additive if and only if the following two axioms hold for all $a, c, e, f \in A$:
 
 \begin{enumerate}
-    \item Wenn $(a, c) \succsim (e, f)$, dann gibt es ein $b \in A$, so dass $(a, b) \sim (e, f)$ und $\langle abc \rangle$. (segmental solvability)
-    \item Wenn $e \neq f$, dann gibt es $b_0, \ldots, b_n \in A$, so dass $b_0 = a, b_n = c$ und $(e, f) \succsim (b_{i-1}, b_i), i = 1, \ldots, n$. (connectedness)
+    \item If $(a, c) \succsim (e, f)$, then there exists $b \in A$ such that $(a, b) \sim (e, f)$ and $\langle abc \rangle$. (segmental solvability)
+    \item If $e \neq f$, then there exist $b_0, \ldots, b_n \in A$, such that $b_0 = a$, $b_n = c$, and $(e, f) \succsim (b_{i-1}, b_i)$ for $i = 1, \ldots, n$. (connectedness)
 \end{enumerate}
 
-Eine segmentally additive proximity structure ist genau dann vollständig, wenn die folgenden zwei Axiome für alle $a, c, e, f \in A$ gelten:
+A segmentally additive proximity structure is complete if and only if the following two axioms hold for all $a, c, e, f \in A$:
 
 \begin{enumerate}
-    \item[3.] Wenn $e \neq f$, dann gibt es $b, d \in A$, wobei $b \neq d$, so dass $(e, f) \succ (b, d)$. (Nichtdiskretheit der Abstände)
-    \item[4.] Sei $a_1, \ldots, a_n, \ldots$ eine Folge von Elementen von $A$, so dass für alle $e, f \in A$, wenn $e \neq f$, dann $(e, f) \succsim (a_i, a_j)$ für alle bis auf endlich viele Paare $(i, j)$. Dann gibt es ein $b \in A$, so dass für alle $e, f \in A$, wenn $e \neq f$, dann $(e, f) \succsim (a_i, b)$ für alle bis auf endlich viele $i$. (Grenzwerte für Cauchy Folgen)
+    \item[3.] If $e \neq f$, then there exist $b, d \in A$, with $b \neq d$, such that $(e, f) \succ (b, d)$. (Non-discreteness of distances)
+    \item[4.] Let $a_1, \ldots, a_n, \ldots$ be a sequence of elements of $A$, such that for all $e, f \in A$, if $e \neq f$, then $(e, f) \succsim (a_i, a_j)$ for all but finitely many pairs $(i, j)$. Then there exists $b \in A$, such that for all $e, f \in A$, if $e \neq f$, then $(e, f) \succsim (a_i, b)$ for all but finitely many $i$. (Limits for Cauchy sequences)
 \end{enumerate}
 
 \end{defi}
