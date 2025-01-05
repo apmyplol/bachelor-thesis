@@ -1,0 +1,133 @@
+\todo{sortieren...}
+\begin{ex}[Minkowski bzw. $l^p$ bzw. power metric]~\\
+  Die $l^p$ Metrik, die durch $\delta(a, b) = \left[\sum_{i=1}^{n} |\varphi_i(a_i) - \varphi_i(b_i)|^p\right]^{1/p}$ definiert ist, ist für $p \geq 1$ eine Metrik mit additiven Segmenten. Die Segmente sind genau die Verbindungslinien zwischen zwei Punkten, also alle Geraden.
+
+  \begin{proof}
+  Seien $x, z \in \mathbb{R}^{n}$ und $0 \leq t \leq 1$. Dann gilt für $y = (1-t) x + t z$ ($y$ ist genau dann auf dem Geradensegment von $z$ zu $x$, wenn man $y$ so darstellen kann):
+\begin{align*}
+d(x, y) + d(y, z) &= \left[ \sum_{i=1}^{n} \left| x_i - (1 - t) x_i - t z_i \right|^p \right]^{1/p} + \left[ \sum_{i=1}^{n} \left| (1 - t) x_i + t z_i - z_i \right|^p \right]^{1/p} \\
+&= t \left[ \sum_{i=1}^{n} \left| x_i - z_i \right|^p \right]^{1/p} + (1 - t) \left[ \sum_{i=1}^{n} \left| x_i - z_i \right|^p \right]^{1/p} \\
+&= d(x, z).
+\end{align*}
+  \end{proof}
+\end{ex}
+
+\begin{rem}[additive difference model]\label{add-diff-model}
+  Es fällt auf, dass die $l^p$ Metrik eine besondere Form hat, die durch $\delta(x,y) = F^{-1} \left[ \sum_{i=1}^{n} F(|x_i - y_i|) \right]$ gegeben ist. Man kann diese Form auf 4 Stufen abstrahieren:
+  \begin{enumerate}
+  \item Decomposability: Die Distanz ist eine Funktion von Beiträgen die Komponentenweise sind.\\
+    \begin{equation}\label{decomp}
+    \delta(a,b) = F[\psi(a_1, b_1), \ldots , \psi(a_n, b_n)]
+    \end{equation}
+  \item Intradimensional subtractivity: Die Komponentenweise Beiträge sind Beträge der Differenzen in den Dimensionen.\\
+    \begin{equation}\label{subtr}
+    \delta(a,b) = F[ |\varphi_1(a_1) - \varphi_1(b_a)| , \ldots , | \varphi_n(a_n) - \varphi_n(b_n)| ]
+  \end{equation}
+  \item Interdimensionale additivity: Der Abstand ist eine Summe der Komponentenweise Beiträge.
+    \begin{equation}\label{iterdim-add}
+    \delta(a,b) = G \left [ \sum_{i=1}^{n} \psi_i(a_i, b_i) \right]
+  \end{equation}
+  \item additive difference model: Wenn alle 3 Eigenschaften gelten.
+    \begin{equation}\label{add-diff-model}
+    \delta(a,b) = G \left \{ \sum_{i=1}^{n} F_i[ | \varphi_i(a_i) - \varphi_i(b_i)| ] \right \}
+    \end{equation}
+  \end{enumerate}
+
+  Falls die Elemente $a, b$ aus der proximity structure sind, sind noch Folgende Eigenschaften von den Funktionen gefordert:
+  \begin{enumerate}
+    \item $F$  ist steigend in allen Argumenten
+    \item $\psi_i$ ist für alle $i = 1, ..., n$ reellwertig, symmetrischen und erfüllt $\psi_i(a_i, b_i) > \psi_i(a_i, a_i)$ wenn $a_i \neq b_i$
+    \item $\phi_i$ ist reellwertig für alle $i = 1, ..., n$
+    \item $G$ und $F_i$ sind steigend ($i = 1, ..., n$)
+  \end{enumerate}
+
+\end{rem}
+
+  Man sieht, dass die $l^p$ Metrik ein Spezialfall des additive difference models ist.
+  Von besonderem Interesse sind Modelle wo die $F_i$ alle über eine gemeinsame Funktion $F$ (bis auf Streckung/Stauchung des Definitionsbereiches, $F_i(x) = F(t_i x), t_i > 0$) dargestellt werden können und $G = F^{-1}$ gilt. Diese Bedingungen erfüllt die $l^p$ Metrik auch.\\
+  Hier kommt ein weiteres Beispiel für eine solche Metrik.
+
+  \begin{ex}[p-exp Metrik Familie]\label{p-exp-metric-family}
+    Sei das $F$ im additive difference model (\ref{add-diff-model}) gegeben durch 
+    \begin{equation}\label{p-exp-eq}
+      F(t) = q \cdot (e^{t \cdot r} - 1)^p \qquad q, r > 0, p \geq 1
+    \end{equation}
+      Dann ist das Modell eine Metrik.
+    \begin{proof}
+      \begin{enumerate}
+        \item Positivität: $\delta(a,b) = 0$ also $F(|a_i - b_i|) = 0$ für alle $i$, das ist nur der Fall wenn der Exponent Null ist, also $a_i = b_i$ gilt für alle $i$.\\
+          Anderes herum gilt, wenn $a \neq b$ ist, dass dann $a_i \neq b_i$ für mindestens ein $i$, woraus folgt dass $F_i(|a_i - b_i|) > 0$, also auch $\delta(a,b) > 0$.
+        \item Symmetrie: Symmetrie kommt daher, dass $|a_i - b_i| = |b_i - a_i|$ gilt.
+        \item Dreiecksungleichung: Die Dreiecksungleichung kommt aus dem Satz von Mullholland \cite[S.~297]{mulholland}. Das Paper von Mulholland ist auf Moodle zu finden.
+      \end{enumerate}
+    \end{proof}
+  \end{ex}
+
+  \begin{thm}[Mulholland]~\\
+Die Ungleichung
+$$
+ f^{-1} \left[ \sum_i f(|x_i + y_i|) \right] \leq f^{-1}  \left[ \sum_i f(|x_i|) \right] + f^{-1} \left[ \sum_i f(|y_i|) \right].
+$$
+gilt für alle $x, y \in \mathbb{R}^n, n = 1, 2, \ldots$ wann immer die folgenden drei Bedingungen erfüllt sind:
+\begin{enumerate}
+    \item $f$ ist stetig und streng monoton steigend, und $f(0) = 0$.
+    \item $f$ ist konvex auf $[0, \infty)$.
+    \item $\log f(e^x)$ ist konvex für $x \in (-\infty, \infty)$.
+\end{enumerate}
+  \end{thm}
+
+  \begin{proof}[Beweis, dass \ref{p-exp-metric-family} die Bedingungen von Mulholland erfüllt]~\\
+    Zu Punkt 1: Stetigkeit und $f(0) = 0$ ist klar. Für Monotonie gilt, $e^{rt} - 1$ ist steigend, Potenzieren auch und multiplizieren mit $q > 0$ auch, damit ist die Komposition davon auch steigend.
+    Zum Punkt 2: Selbes Argument wie bei Monotonie, nur mit Konvexität und Komposition von konvexen Funktionen ist wieder konvex.
+
+    Zum dritten Punkt, dass $\log F(e^t)$ konvex ist.
+    Es gilt
+    $$ \log q(e^{re^x} -1)^p = \log q + p \cdot  \log(e^{re^x} - 1) $$
+    Addition und Multiplikation mit $p \geq 1$ erhält Konvexität, also reicht es Konvexität von $\log(e^{re^x} - 1)$ zu zeigen.
+
+    Das zeigen wir über die zweite Ableitung, denn wenn die zweite Ableitung strikt positiv ist, ist die Funktion konvex.
+
+    Zweifaches Ableiten liefert
+    $$
+    \frac{r e^{re^x + x} \left( r (-e^x) + e^{re^x} - 1 \right)}{\left( e^{re^x} - 1 \right)^2} \overset{!}{>} 0
+    $$
+
+Wir sehen der Nenner ist immer positiv und ungleich 0, das heißt wir können den Nenner weg lassen. Genauso ist der Faktor $r e^{re^x + x}$ immer positiv und kann somit auch weggelassen werden. Es bleibt also zu zeigen, dass
+    \begin{align*}
+      -r e^x + e^{re^x} - 1  &> 0 \\
+      \iff  e^{re^x}  - r e^x & > 1 
+    \end{align*}
+    gilt.
+
+    Dies kann man in 2 Schritten zeigen: 1. die Linke Seite ist streng monoton steigend und 2. der Grenzwert für $x \rightarrow - \infty$ ist $1$. Somit gilt die Ungleichung für alle $x \in \mathbb{R}$.
+
+    \begin{enumerate}
+      \item Für die Ableitung gilt:
+        $$ re^x \cdot e^{re^x} - re^x = re^x \cdot (e^{re^x} - 1) > 0 $$ da $e^x > 0$ gilt.
+      \item 
+        $$ \lim_{x \rightarrow -\infty} e^{re^x}  - r e^x = 1 - 0 = 1 $$
+
+      Damit ist die Konvexität gezeigt, und die Behauptung folgt aus dem Satz von Mulholland.
+    \end{enumerate}
+  \end{proof}
+
+
+  \begin{rem}[$l^p$ Metrik $\in$ p-exp Metrik Familie]~\\
+    Wenn wir in (\ref{p-exp-eq}) für $q = r^{-p}$ einsetzen, erhalten wir im Grenzwert für $r  \rightarrow 0$ die $l^p$ Metrik.
+    Das ist von Bedeutung, da dies mithilfe des Hauptresultates \ref{lp-eindeutig} zeigt, dass die Metriken der p-exp Familie keine Metriken mit additiven Segmenten sein können, obwohl man die $l^p$ Metrik durch Grenzwertbildung aus dieser Familie darstellen kann.
+    Das bedeutet, dass im Grenzwertprozess aus der Eigenschaft ''additiv auf den Koordinatenachsen'', die Eigenschaft ''additiv auf beliebigen Liniensegmenten'' wird.
+
+    \begin{proof}
+      Setzt man $q = r^{-p}$ erhält man:
+      $$ r^{-p}(e^{rt} - 1)^p = \left( \frac{e^{rt} -1}{r} \right)^p $$
+      Für $r \rightarrow 0$ gehen sowohl Nenner, als auch Zähler, gegen $0$ (wir können den Grenzwert in die Potenz reinziehen, da die Potenzfunktion stetig ist) und wir können den Satz von L'Hospital anwenden.
+      Das liefert:
+      $$ 
+      \lim_{r \rightarrow 0} \left( \frac{e^{rt} -1}{r} \right)^p = \left( \lim_{r \rightarrow 0} \frac{e^{rt} -1}{r} \right)^p = \left( \lim_{r \rightarrow 0} \frac{t \cdot e^{rt} - 1}{1} \right)^p = t^p
+      $$
+    \end{proof}
+  
+  \end{rem}
+
+Nicht jede Funktion, die durch das additive difference model dargestellt werden kann, ist eine Metrik.
+
