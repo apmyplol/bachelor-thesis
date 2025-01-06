@@ -1,5 +1,5 @@
 \addcontentsline{toc}{subsection}{necessary and sufficient stuff}
- \begin{thm}[Hinr. und notw. Bedingungen für additive difference Metrik]\label{hinr-notw-beds}~\\
+ \begin{thm}[Necessary and sufficient conditions for additive difference metrics]\label{necc-suff-conds}~\\
    Suppose $\langle A, \succsim \rangle$ is an additive-difference proximity structure such that $f$ is the additive-difference representation from \ref{add-diff-prox-struct-repr}, i.e.,
 \[
 f(a, b) = \sum_{i=1}^{n} F_i(|\varphi_i(a) - \varphi_i(b)|).
@@ -8,15 +8,17 @@ Suppose further that the domain of each $F_i$ is a real interval and $F_i(0) = 0
 
 For $\langle A, \succsim \rangle$ to be compatible with a metric, and additionally be additive on the coordinate axes,
 \begin{enumerate}
-  \item it is necessary that there exists a continuous, convex function $F$, such that $F_i(x) = F(t_i x), t_i > 0,$ for all $x$ in the domain of $F_i$, $i = 1, \ldots, n$; and
-  \item sufficient that, in addition (to the conditions in 1.), the function $\log F(e^x)$ is convex.
+  \item it is necessary that there exists a continuous, convex function $F$, such that $F_i(x) = F(t_i x), t_i > 0,$ for all $x$ in the domain of $F_i$, $i = 1, \ldots, n$; and \label{necc-cond}
+  \item sufficient that, in addition (to the conditions in 1.), the function $\log F(e^x)$ is convex. \label{suff-cond}
 \end{enumerate}
 \end{thm}
 
-\begin{rem}[Additiv auf den Koordinatenachsen]~\\
-Additivität auf den Koordinatenachsen bedeutet hier: Wenn $a, b, c \in A$ sich nur auf einem Faktor $A_i$ unterscheiden, dann gilt die $\triangle$-Ungleichung der Metrik mit Gleichheit. In Mathe Sprache heißt das:
-$$ a_j = b_j = c_j \forall j \neq i \text{ und } (a, c) \succsim (a, b), (b,c)  \Rightarrow \delta(a, b) + \delta(b, c) = \delta(a, c) $$
+\begin{rem}[Additivity on the Coordinate Axes]
+Additivity on the coordinate axes means the following: If $a, b, c \in A$ differ only on one factor $A_i$, then the triangle inequality of the metric holds with equality. In mathematical terms:
+$$ a_j = b_j = c_j \text{ for all } j \neq i \text{ and } (a, c) \succsim (a, b), (b, c)  \Rightarrow \delta(a, b) + \delta(b, c) = \delta(a, c) $$
 \end{rem}
+
+In the following lemmas until the proof of this theorem is finished everything will be assumed as in \cref{necc-suff-conds}. \todo{checken bis wohin genau}
 
 \begin{cor}[Form von $\delta$]~\\
   Seien die Voraussetzungen wie in Satz \ref{hinr-notw-beds}.
@@ -28,106 +30,111 @@ $$ a_j = b_j = c_j \forall j \neq i \text{ und } (a, c) \succsim (a, b), (b,c)  
 
 \end{cor}
 
-\begin{proof}[Beweis von 1.]~\\
+\begin{proof}[Proof of \crefpart{necc-suff-conds}{necc-cond}]
 
-Nach den Annahmen des Satzes existiert eine Metrik $\delta$ auf $A$ und eine steigende Funktion $G$, so dass für alle $a, b \in A$,
+According to the assumptions of the theorem, there exists a metric $\delta$ on $A$ and an increasing function $G$, such that for all $a, b \in A$,
 
 $$
 \delta(a, b) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right).
 $$
 
-Angenommen, $a$, $b$ und $c$ unterscheiden sich nur im $i$-ten Faktor und $a|b|c$ (Also wir können Additivität auf der $i$-ten Koordinatenachse für $a, b, c$ benutzen). Daher gilt
+Assume $a$, $b$, and $c$ differ only in the $i$-th factor and $a|b|c$. Thus, we can use additivity on the $i$-th coordinate axis for $a, b, c$ which yields
 
 \[
 G \left( F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right) + G \left( F_i \left( |\varphi_i(b_i) - \varphi_i(c_i)| \right) \right) = G \left( F_i \left( |\varphi_i(a_i) - \varphi_i(c_i)| \right) \right).
 \]
 
-Definiere $|\varphi_i(a_i) - \varphi_i(b_i)| = x$ und $|\varphi_i(b_i) - \varphi_i(c_i)| = y$, was ergibt
+Defining $|\varphi_i(a_i) - \varphi_i(b_i)| =: x$ and $|\varphi_i(b_i) - \varphi_i(c_i)| =: y$ yields
 
 \[
 G[F_i(x)] + G[F_i(y)] = G[F_i(x + y)].
 \]
 
-Definiere $H_i(x) = G[F_i(x)]$. Damit reduziert sich die obige Gleichung auf $H_i(x) + H_i(y) = H_i(x + y)$ für alle $x, y$ im Definitionsbereich von $F_i, 1 \leq i \leq n$ und $H_i$ muss linear sein. Da die Werte positiv sind, ist die einzige monotone Lösung dieser Gleichung $H_i(x) = t_i x$, $t_i > 0$. Da $G$ steigend ist, existiert $G^{-1}$ und es gilt
+
+Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i, 1 \leq i \leq n$. This means, that $H_i$ must be linear and since the values are positive, the only monotonic solution to this equation is $H_i(x) = t_i x$, $t_i > 0$. Since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
 
 \[
 G^{-1}[H_i(x)] = G^{-1}[t_i x] = F_i(x)
 \]
-
-wenn $F_i$ definiert ist. Da $G^{-1}$ unabhängig von $i$ ist, können die $F_i$ sich nur im Definitionsbereich bzw. im Wertebereich unterscheiden. ObdA können wir annehmen, dass der Wertebereich von $F_n$ am größten ist. Da der Bereich von $F_n$ den Bereich von $F_i$ umfasst, können wir $F = F_n$ setzen und erhalten damit $F_i(x) = F_n(t_i x) = F(t_i x)$ für $t_i > 0$ und für jedes $x$ im Definitionsbereich von $F_i$.
-Stetigkeit und Konvexität werden in den nächsten Lemmata bewiesen.
+where $F_i$ is defined. Since $G^{-1}$ is independent of $i$, the $F_i$ can only differ in range and in the unit of the domain (i.e. the $t_i$ which adjusts the domain where $G^{-1}$ is defined). Without loss of generality, we can assume that the range of $F_n$ is the largest. Since the range of $F_n$ includes the range of $F_i$, we can set $F = F_n$ and obtain $F_i(x) = F_n(t_i x) = F(t_i x)$ for $t_i > 0$ and for every $x$ in the domain of $F_i$.
+Continuity and convexity will be proven in the next lemmas.
 \end{proof}
 
 \todo{sagen dass conditions wie oben sind}
-\begin{lem}\label{lemma-ungl}
-  $F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma)$.
+\begin{lem}\label{necc-lemma-ineq}
+  $$F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma).$$
 \end{lem}
 
 \begin{proof}
 
-In der Dreiecksungleichung,
+In the triangle inequality,
 
 \[
 F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] + F^{-1} \left[ \sum_{i=1}^{n} F(\beta_i) \right] \geq F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i + \beta_i) \right],
 \]
 
-seien $\alpha_1 = \gamma, \alpha_2 = F^{-1}(F(\alpha + \gamma) - F(\gamma)), \alpha_j = 0$ für $3 \leq j \leq n$ und  $\beta_1 = \beta, \beta_j = 0$ für $2 \leq j \leq n$. Damit gilt,
+let $\alpha_1 = \gamma, \alpha_2 = F^{-1}(F(\alpha + \gamma) - F(\gamma)), \alpha_j = 0$ for $3 \leq j \leq n$ and $\beta_1 = \beta, \beta_j = 0$ for $2 \leq j \leq n$. Hence,
 
 \begin{align*}
   F(\alpha + \beta + \gamma) &= F \left[ F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] + F^{-1} \left[ \sum_{i=1}^{n} F(\beta_i) \right] \right] \\
-                             &\geq \sum_{i=1}^{n} F(\alpha_i + \beta_i) \quad (\text{durch die Dreiecksungleichung})\\
+                             &\geq \sum_{i=1}^{n} F(\alpha_i + \beta_i) \tag{by the triangle inequality}\\
                              &= F(\beta + \gamma) + F(\alpha + \gamma) - F(\gamma).
 \end{align*}
 \end{proof}
 
-\begin{lem}
-  $F$ is continuous.\label{lemma-stetig}
+\begin{lem}\label{lemma-continuity}
+  $F$ is continuous.
 \end{lem}
 
 \begin{proof}
 
-Da $F$ steigend ist, sind alle Unstetigkeiten Sprungstellen. Aus Analysis wissen wir, dass reelle monotone Funktionen höchstens abzählbar viele Sprungstellen (Unstetigkeitesstellen erster Art) haben. Dies führen wir auf einen Widerspruch.\\
-Angenommen, $F(\alpha)$ ist die untere Grenze einer Sprungstelle, dann existiert $\epsilon > 0$, so dass für alle $\delta > 0$, $F(\alpha + \delta) - F(\alpha) > \epsilon$. Nach Lemma 4 gilt jedoch für jedes $\beta > 0$,
 
+Since $F$ is increasing, all discontinuities are gaps. Real analysis yields, that real monotonic functions have at most countable many gaps. We will derive a contradiction from this.
+
+Assume $F(\alpha)$ is the lower boundary of a gap, then there exists $\epsilon > 0$ such that for all $\delta > 0$, $F(\alpha + \delta) - F(\alpha) > \epsilon$. However, by \cref{necc-lemma-ineq}, for every $\beta > 0$,
 \[
 F(\alpha + \beta + \delta) - F(\alpha + \beta) \geq F(\alpha + \delta) - F(\alpha) > \epsilon,
 \]
 
-und somit gibt es eine Lücke bei jedem $\alpha + \beta$, und $F$ müsste überall unstetig sein. Dies ist unmöglich, also muss $F$ stetig sein.
+and so there is a gap at any $\alpha + \beta$, and $F$ would have to be discontinuous everywhere. This is impossible, so $F$ must be continuous.
 \end{proof}
 
 \begin{lem}
-  Suppose $F$ is a strictly increasing function defined on the nonnegative reals. Then $F$ is convex iff for all $\alpha, \beta, \gamma \geq 0$ the inequality from \ref{lemma-ungl} holds, i.e.,
+  Suppose $F$ is a strictly increasing function defined on the nonnegative reals. Then $F$ is convex iff for all $\alpha, \beta, \gamma \geq 0$ the inequality from \ref{necc-lemma-ineq} holds, i.e.,
 $$
 F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma).
 $$
 \begin{proof}
 
-$\Rightarrow:$ Angenommen, $F$ ist konvex, und sei $p = \alpha / (\alpha + \beta)$, dann gilt
+\begin{proofpart}[$\Rightarrow$]
+  
+ Suppose, $F$ is convex, and let $p = \alpha / (\alpha + \beta)$, then
 
 \begin{align*}
 p(\alpha + \beta + \gamma) + (1 - p)\gamma &= \alpha + \gamma\\
 (1 - p)(\alpha + \beta + \gamma) + p\gamma &= \beta + \gamma.
 \end{align*}
 
-Damit gilt wegen Konvexität
+Hence, by convexity,
 
 \begin{align*}
 F(\alpha + \gamma) + F(\beta + \gamma) &= F \left[ p (\alpha + \beta + \gamma) + (1 - p) \gamma \right] + F \left[ (1 - p) (\alpha + \beta + \gamma) + p \gamma \right] \\
 &\leq p F(\alpha + \beta + \gamma) + (1 - p) F(\gamma) + (1 - p) F(\alpha + \beta + \gamma) + p F(\gamma) \\
 &= F(\alpha + \beta + \gamma) + F(\gamma).
 \end{align*}
+\end{proofpart}
 
-$\Leftarrow:$
-Um die Umkehrung zu beweisen, benutzen wir die Stetigkeit von $F$ aus Lemma \ref{lemma-stetig}. Angenommen, $\alpha > \beta$, dann
+\begin{proofpart}[$\Leftarrow$]
+To prove the converse, we will use the continuity of $F$ by \cref{lemma-continuity}. Suppose, $\alpha > \beta$, then
 
 \begin{align*}
 F(\alpha) + F(\beta) &= F \left( \frac{\alpha - \beta}{2} + \frac{\alpha - \beta}{2} + \beta \right) + F(\beta) \\
-&\geq 2 F \left( \frac{\alpha - \beta}{2} + \beta \right) \quad \text{(nach Lemma 4)} \\
+                     &\geq 2 F \left( \frac{\alpha - \beta}{2} + \beta \right) \tag{by \cref{lemma-continuity}} \\
 &= 2 F \left( \frac{\alpha + \beta}{2} \right),
 \end{align*}
 
-was äquivalent zur Konvexität für ein stetiges $F$ ist.
+which is equivalent to convexity for a continuous $F$.
+\end{proofpart}
 \end{proof}
 \end{lem}
 
