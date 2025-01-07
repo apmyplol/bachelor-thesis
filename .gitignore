@@ -1,4 +1,5 @@
 aux/
+.aux/
 Erklaerung_zur_Abschlussarbeit_Vorlage-fuer_digitale_Abgabe.pdf
 main.bbl
 main.fdb_latexmk
