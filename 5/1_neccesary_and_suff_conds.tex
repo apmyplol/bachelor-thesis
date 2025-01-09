@@ -1,5 +1,5 @@
 \addcontentsline{toc}{subsection}{necessary and sufficient stuff}
- \begin{thm}[Necessary and sufficient conditions for additive difference metrics]\label{necc-suff-conds}~\\
+ \begin{thm}[Necessary and sufficient conditions for additive difference metrics]\label{necc-suff-conds}
    Suppose $\langle A, \succsim \rangle$ is an additive-difference proximity structure such that $f$ is the additive-difference representation from \ref{add-diff-prox-struct-repr}, i.e.,
 \[
 f(a, b) = \sum_{i=1}^{n} F_i(|\varphi_i(a) - \varphi_i(b)|).
@@ -99,7 +99,7 @@ F(\alpha + \beta + \delta) - F(\alpha + \beta) \geq F(\alpha + \delta) - F(\alph
 and so there is a gap at any $\alpha + \beta$, and $F$ would have to be discontinuous everywhere. This is impossible, so $F$ must be continuous.
 \end{proof}
 
-\begin{lem}
+\begin{lem}[Characterization of Convexity]
   Suppose $F$ is a strictly increasing function defined on the nonnegative reals. Then $F$ is convex iff for all $\alpha, \beta, \gamma \geq 0$ the inequality from \ref{necc-lemma-ineq} holds, i.e.,
 $$
 F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma).
