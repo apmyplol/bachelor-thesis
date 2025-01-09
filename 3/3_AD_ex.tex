@@ -1,53 +1,5 @@
-\todo{sortieren...}
-\begin{ex}[Minkowski bzw. $l^p$ bzw. power metric]~\\
-  Die $l^p$ Metrik, die durch $\delta(a, b) = \left[\sum_{i=1}^{n} |\varphi_i(a_i) - \varphi_i(b_i)|^p\right]^{1/p}$ definiert ist, ist für $p \geq 1$ eine Metrik mit additiven Segmenten. Die Segmente sind genau die Verbindungslinien zwischen zwei Punkten, also alle Geraden.
 
-  \begin{proof}
-  Seien $x, z \in \mathbb{R}^{n}$ und $0 \leq t \leq 1$. Dann gilt für $y = (1-t) x + t z$ ($y$ ist genau dann auf dem Geradensegment von $z$ zu $x$, wenn man $y$ so darstellen kann):
-\begin{align*}
-d(x, y) + d(y, z) &= \left[ \sum_{i=1}^{n} \left| x_i - (1 - t) x_i - t z_i \right|^p \right]^{1/p} + \left[ \sum_{i=1}^{n} \left| (1 - t) x_i + t z_i - z_i \right|^p \right]^{1/p} \\
-&= t \left[ \sum_{i=1}^{n} \left| x_i - z_i \right|^p \right]^{1/p} + (1 - t) \left[ \sum_{i=1}^{n} \left| x_i - z_i \right|^p \right]^{1/p} \\
-&= d(x, z).
-\end{align*}
-  \end{proof}
-\end{ex}
-
-\begin{rem}[additive difference model]\label{add-diff-model}
-  Es fällt auf, dass die $l^p$ Metrik eine besondere Form hat, die durch $\delta(x,y) = F^{-1} \left[ \sum_{i=1}^{n} F(|x_i - y_i|) \right]$ gegeben ist. Man kann diese Form auf 4 Stufen abstrahieren:
-  \begin{enumerate}
-  \item Decomposability: Die Distanz ist eine Funktion von Beiträgen die Komponentenweise sind.\\
-    \begin{equation}\label{decomp}
-    \delta(a,b) = F[\psi(a_1, b_1), \ldots , \psi(a_n, b_n)]
-    \end{equation}
-  \item Intradimensional subtractivity: Die Komponentenweise Beiträge sind Beträge der Differenzen in den Dimensionen.\\
-    \begin{equation}\label{subtr}
-    \delta(a,b) = F[ |\varphi_1(a_1) - \varphi_1(b_a)| , \ldots , | \varphi_n(a_n) - \varphi_n(b_n)| ]
-  \end{equation}
-  \item Interdimensionale additivity: Der Abstand ist eine Summe der Komponentenweise Beiträge.
-    \begin{equation}\label{iterdim-add}
-    \delta(a,b) = G \left [ \sum_{i=1}^{n} \psi_i(a_i, b_i) \right]
-  \end{equation}
-  \item additive difference model: Wenn alle 3 Eigenschaften gelten.
-    \begin{equation}\label{add-diff-model}
-    \delta(a,b) = G \left \{ \sum_{i=1}^{n} F_i[ | \varphi_i(a_i) - \varphi_i(b_i)| ] \right \}
-    \end{equation}
-  \end{enumerate}
-
-  Falls die Elemente $a, b$ aus der proximity structure sind, sind noch Folgende Eigenschaften von den Funktionen gefordert:
-  \begin{enumerate}
-    \item $F$  ist steigend in allen Argumenten
-    \item $\psi_i$ ist für alle $i = 1, ..., n$ reellwertig, symmetrischen und erfüllt $\psi_i(a_i, b_i) > \psi_i(a_i, a_i)$ wenn $a_i \neq b_i$
-    \item $\phi_i$ ist reellwertig für alle $i = 1, ..., n$
-    \item $G$ und $F_i$ sind steigend ($i = 1, ..., n$)
-  \end{enumerate}
-
-\end{rem}
-
-  Man sieht, dass die $l^p$ Metrik ein Spezialfall des additive difference models ist.
-  Von besonderem Interesse sind Modelle wo die $F_i$ alle über eine gemeinsame Funktion $F$ (bis auf Streckung/Stauchung des Definitionsbereiches, $F_i(x) = F(t_i x), t_i > 0$) dargestellt werden können und $G = F^{-1}$ gilt. Diese Bedingungen erfüllt die $l^p$ Metrik auch.\\
-  Hier kommt ein weiteres Beispiel für eine solche Metrik.
-
-  \begin{ex}[p-exp Metrik Familie]\label{p-exp-metric-family}
+  \begin{ex}[p-exp Metric Family]\label{p-exp-metric-family}
     Sei das $F$ im additive difference model (\ref{add-diff-model}) gegeben durch 
     \begin{equation}\label{p-exp-eq}
       F(t) = q \cdot (e^{t \cdot r} - 1)^p \qquad q, r > 0, p \geq 1
@@ -111,7 +63,7 @@ Wir sehen der Nenner ist immer positiv und ungleich 0, das heißt wir können de
     \end{enumerate}
   \end{proof}
 
-
+  %TODO: remark überprüfen und nach hinten stellen
   \begin{rem}[$l^p$ Metrik $\in$ p-exp Metrik Familie]~\\
     Wenn wir in (\ref{p-exp-eq}) für $q = r^{-p}$ einsetzen, erhalten wir im Grenzwert für $r  \rightarrow 0$ die $l^p$ Metrik.
     Das ist von Bedeutung, da dies mithilfe des Hauptresultates \ref{lp-eindeutig} zeigt, dass die Metriken der p-exp Familie keine Metriken mit additiven Segmenten sein können, obwohl man die $l^p$ Metrik durch Grenzwertbildung aus dieser Familie darstellen kann.
@@ -130,4 +82,3 @@ Wir sehen der Nenner ist immer positiv und ungleich 0, das heißt wir können de
   \end{rem}
 
 Nicht jede Funktion, die durch das additive difference model dargestellt werden kann, ist eine Metrik.
-
