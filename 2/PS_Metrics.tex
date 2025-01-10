@@ -1,8 +1,8 @@
   In diesem Kapitel geht es erstmal darum die Mathematische Basis Aufzubauen. Wie aus der Einleitung hervorgeht, wollen wir jeweils zwei Paare von Stimuli auf ihre Ähnlichkeit vergleichen. Seien $a, b, c$ und $d$ solche Stimuli. Dann bedeutet die Notation $(a,b)\succsim(c,d)$, dass Stimuli $a$ und $b$ sich unähnlicher sind, als $c$ und $d$. Analog bedeutet $\sim$, dass die Ähnlichkeit zweier Paare gleich ist.\\
   Die Idee von einer proximity structure, ist die Mathematische Definition dieser Idee: eine Relation $\succsim$ auf einer Menge $A$ die die Grundeigenschaften einer Metrik erfüllt.
 
-  \begin{defi}[factorial proximity structure]
-Suppose $A$ is a set and $\succsim$ a quaternery relation on $A$, i.e., binary relation on $A \times A$. $\langle A, \succsim \rangle$ is a proximity structure iff the following axioms hold for all $a, b \in A$:
+  \begin{defi}[Factorial Proximity Structure]
+Suppose $A$ is a set and $\succsim$ a quaternary relation on $A$, i.e., binary relation on $A \times A$. $\langle A, \succsim \rangle$ is a proximity structure iff the following axioms hold for all $a, b \in A$:
 
 \begin{enumerate}
   \item $\succsim$ is a weak ordering on $A \times A$, i.e., it is connected and transitive.
@@ -24,7 +24,7 @@ A = \prod_{i=1}^{n} A_i.
 
 Da wir die Relation $\succsim$ durch eine Metrik repräsentieren wollen, lohnt es sich einen Begriff dafür einzuführen. Die Idee ist das, was man sich intuitiv vorstellt: man will dass die Metrik die Struktur von $\langle A, \succsim \rangle$ erhält, und die einzige Struktur die wir gegeben haben, ist die Ordnung jeweils zweier Paare.
 
-\begin{defi}[Representability of $\succsim$ by a metric]
+\begin{defi}[Representability of $\succsim$ by a Metric]
 A proximity structure $\langle A, \succsim \rangle$ is representable by a metric iff there exists a real-valued function $\delta$ on $A$ such that:
 
 \begin{enumerate}

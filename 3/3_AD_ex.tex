@@ -22,7 +22,7 @@ Let the $F$ in the additive difference model (\ref{add-diff-model}) be given by
 
       The triangle inequality follows from Mullholland's theorem \parencite[p.~297]{mulholland}.
 
-  \begin{thm}[Mulholland's inequality]
+  \begin{thm}[Mulholland's Inequality]
 The inequality
 $$
 f^{-1} \left[ \sum_{i=1}^n f(|x_i + y_i|) \right] \leq f^{-1}  \left[ \sum_{i=1}^n f(|x_i|) \right] + f^{-1} \left[ \sum_{i=1}^n f(|y_i|) \right].
@@ -37,7 +37,7 @@ holds for all $x, y \in \mathbb{R}^n, n = 1, 2, \ldots$ whenever the following t
 
 \begin{proofpart}[Proof that \cref{p-exp-eq} satisfies Mulholland's conditions]
 
-
+  %TODO: ref composition of convex, continuous and inreasing functions?
 Regarding Point 1: Continuity and $f(0) = 0$ are clear. For monotonicity, note that $e^{rt} - 1$ is increasing, exponentiation is also increasing, and multiplying by $q > 0$ preserves monotonicity. Thus, the composition is also increasing.\\
 Regarding point 2: The same reasoning as for monotonicity applies, except with convexity. The composition of convex functions is convex.\\
 
@@ -60,6 +60,7 @@ The denominator is always positive and non-zero, so we can ignore it. Similarly,
     \end{align*}
     holds.
 
+    %TODO: ref f' > 0 -> f increasing
 This can be shown in two steps. First, we show that the left-hand side is strictly increasing. Second, we prove that its limit as $x \rightarrow -\infty$ is $1$.
 Therefore, the inequality holds for all $x \in \mathbb{R}$.
 
@@ -76,22 +77,26 @@ Thus, convexity is established, and the claim follows from Mulholland's theorem.
 
     \end{proof}
 
-  %TODO: remark überprüfen und nach hinten stellen
-  \begin{rem}[$l^p$ Metrik $\in$ p-exp Metrik Familie]~\\
-    Wenn wir in (\ref{p-exp-eq}) für $q = r^{-p}$ einsetzen, erhalten wir im Grenzwert für $r  \rightarrow 0$ die $l^p$ Metrik.
-    Das ist von Bedeutung, da dies mithilfe des Hauptresultates \ref{lp-eindeutig} zeigt, dass die Metriken der p-exp Familie keine Metriken mit additiven Segmenten sein können, obwohl man die $l^p$ Metrik durch Grenzwertbildung aus dieser Familie darstellen kann.
-    Das bedeutet, dass im Grenzwertprozess aus der Eigenschaft ''additiv auf den Koordinatenachsen'', die Eigenschaft ''additiv auf beliebigen Liniensegmenten'' wird.
+  \begin{rem}[Minkowski metric is part of the p-exp metric family]
+
+If we set $q = r^{-p}$ in (\ref{p-exp-eq}), we obtain the Minkowski metric in the limit as $r \rightarrow 0$.
 
     \begin{proof}
-      Setzt man $q = r^{-p}$ erhält man:
-      $$ r^{-p}(e^{rt} - 1)^p = \left( \frac{e^{rt} -1}{r} \right)^p $$
-      Für $r \rightarrow 0$ gehen sowohl Nenner, als auch Zähler, gegen $0$ (wir können den Grenzwert in die Potenz reinziehen, da die Potenzfunktion stetig ist) und wir können den Satz von L'Hospital anwenden.
-      Das liefert:
-      $$ 
-      \lim_{r \rightarrow 0} \left( \frac{e^{rt} -1}{r} \right)^p = \left( \lim_{r \rightarrow 0} \frac{e^{rt} -1}{r} \right)^p = \left( \lim_{r \rightarrow 0} \frac{t \cdot e^{rt} - 1}{1} \right)^p = t^p
-      $$
+Setting $q = r^{-p}$ yields
+      $$ r^{-p}(e^{rt} - 1)^p = \left( \frac{e^{rt} -1}{r} \right)^p .$$
+      %TODO: ref Lhospital?
+As $r \rightarrow 0$, both the numerator and denominator tend to $0$ (we can pull the limit inside the exponent since the exponentiation is continuous), therefore we can apply L'Hôpital's rule.
+      Hence
+      \begin{align*}
+        \lim_{r \rightarrow 0} \left( \frac{e^{rt} -1}{r} \right)^p &= \left( \lim_{r \rightarrow 0} \frac{e^{rt} -1}{r} \right)^p \tag{continuity} \\
+                                                                    &= \left( \lim_{r \rightarrow 0} \frac{t \cdot e^{rt} - 1}{1} \right)^p \tag{L'Hôpital's rule}\\
+                                                                    &= t^p.
+      \end{align*}
     \end{proof}
   
   \end{rem}
+  %TODO: remark überprüfen und nach hinten stellen
+    Das ist von Bedeutung, da dies mithilfe des Hauptresultates \ref{lp-eindeutig} zeigt, dass die Metriken der p-exp Familie keine Metriken mit additiven Segmenten sein können, obwohl man die $l^p$ Metrik durch Grenzwertbildung aus dieser Familie darstellen kann.
+    Das bedeutet, dass im Grenzwertprozess aus der Eigenschaft ''additiv auf den Koordinatenachsen'', die Eigenschaft ''additiv auf beliebigen Liniensegmenten'' wird.
 
-Nicht jede Funktion, die durch das additive difference model dargestellt werden kann, ist eine Metrik.
+Not every function that can be represented by the additive difference model is a metric.
