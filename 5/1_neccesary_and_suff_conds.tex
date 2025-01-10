@@ -13,31 +13,47 @@ For $\langle A, \succsim \rangle$ to be compatible with a metric, and additional
 \end{enumerate}
 \end{thm}
 
-\begin{rem}[Additivity on the Coordinate Axes]
+\begin{rem}[Additivity on the coordinate axes]
 Additivity on the coordinate axes means the following: If $a, b, c \in A$ differ only on one factor $A_i$, then the triangle inequality of the metric holds with equality. In mathematical terms:
 $$ a_j = b_j = c_j \text{ for all } j \neq i \text{ and } (a, c) \succsim (a, b), (b, c)  \Rightarrow \delta(a, b) + \delta(b, c) = \delta(a, c) $$
 \end{rem}
 
 In the following lemmas until the proof of this theorem is finished everything will be assumed as in \cref{necc-suff-conds}. \todo{checken bis wohin genau}
 
-\begin{cor}[Form von $\delta$]~\\
-  Seien die Voraussetzungen wie in Satz \ref{hinr-notw-beds}.
-  Dann wird die Metrik $\delta$ dargestellt durch
-  \begin{equation}
+The following remark ties this result closer to the Minkowski metric, and provides a form which the metric must take. This will play an important role in the main theorem. %TODO: ref adden
+\begin{rem}[Form of $\delta$]
+  Examining \cref{necc-proof} more closely yields, that $G=F^{-1}$ must hold and the representation of $\delta$ takes the form
+  \begin{equation*}
     \delta(a,b) = F^{-1} \Big \{ \sum_{i=1}^{n} F(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} \label{cor-delta-form} 
-\end{equation}
-  wobei $F$ stetig, konvex und steigend ist.
+\end{equation*}
+  where $F$ is continuous, convex and increasing.\\
+  This follows form two arguments.
+  Firstly, incorporating the $t_i$ into the $\varphi_i$
+  \begin{align*}
+    G \Big \{ \sum_{i=1}^{n} F_i(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} &= G \Big \{ \sum_{i=1}^{n} F(t_i| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} \\
+                                                                              &= G \Big \{ \sum_{i=1}^{n} F(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \}
+  \end{align*}
+  yields the desired form inside the sum.
 
-\end{cor}
+  Secondly, by using $F_i(x) = F_n(t_i x)$ and $F_i(x) = G^{-1}(t_i x)$.
+  The first equation applied for $i=n$ yields $F_n(x) = F_n(t_n x)$ which implies $t_n = 1$. Using this in the second equation for $i=n$ yields $F(x) = F_n(x) = G^{-1}(t_n x) = G^{-1}(x)$. Hence, by taking the inverse on both sides, we get the desired form for $\delta$.
 
-\begin{proof}[Proof of \crefpart{necc-suff-conds}{necc-cond}]
+\end{rem}
 
-According to the assumptions of the theorem, there exists a metric $\delta$ on $A$ and an increasing function $G$, such that for all $a, b \in A$,
+
+\begin{proof}[Proof of \crefpart{necc-suff-conds}{necc-cond}]\label{necc-proof}
+
+According to the assumptions of the theorem, the additive difference representaion $f(a,b)$ is compatible with a metric $\delta$ on $A$, i.e.,
+$$
+f(a,b) \leq f(c,d) \iff \delta(a,b) \leq \delta(c,d) \quad \text{for all } a, b, c, d \in A .
+$$
+Therefore, there exists an increasing function $G$, such that for all $a, b \in A$
 
 $$
 \delta(a, b) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right).
 $$
-
+%TODO: link adden & Begründung checken
+Another possible perspective on this is, that by \todo{ref} $f$ is an interval scale, therefore also is an ordinal scale. Since the ordinal ordering of all pairs of elements from $A$ is same for $f$ and $\delta$, there must be an increasing function which transforms one scale into the other and preserves the ordinal orderings.
 Assume $a$, $b$, and $c$ differ only in the $i$-th factor and $a|b|c$. Thus, we can use additivity on the $i$-th coordinate axis for $a, b, c$ which yields
 
 \[
