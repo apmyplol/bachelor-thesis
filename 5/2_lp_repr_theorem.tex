@@ -1,104 +1,104 @@
 % \blindtext
 \addcontentsline{toc}{subsection}{Theorem name}
 \begin{thm}[Eindeutigkeitssatz zu $l^p$ Metriken]\label{lp-uniqueness-theorem}
-Suppose $\langle A, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.\\
-Then there exists a unique $r \geq 1$ and real-valued functions $\varphi_i$, defined on $A_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $a, b, c, d \in A$,
-\[
-(a, b) \succsim (c, d) \iff \delta(a, b) \geq \delta(c, d),
-\]
-where
-\[
-\delta(a, b) = \left[\sum_{i=1}^{n} |\varphi_i(a) - \varphi_i(b)|^r\right]^{1/r}.
-\]
+	Suppose $\langle A, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.\\
+	Then there exists a unique $r \geq 1$ and real-valued functions $\varphi_i$, defined on $A_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $a, b, c, d \in A$,
+	\[
+		(a, b) \succsim (c, d) \iff \delta(a, b) \geq \delta(c, d),
+	\]
+	where
+	\[
+		\delta(a, b) = \left[\sum_{i=1}^{n} |\varphi_i(a) - \varphi_i(b)|^r\right]^{1/r}.
+	\]
 \end{thm}
 
 
 
 \begin{proof}
-  Der Beweis passiert in mehreren Schritten. Zuerst sagen wir etwas über die Definitions- und Zielbereiche der Funktionen $F_i$ und finden damit Grenzen für den Definitionsbereich von $F$.
-  Danach argumentieren wir, dass wir $F$ bis auf die positiven reellen Zahlen $[0, \infty)$ erweitern können und dass diese Erweiterung eine Funktionsgleichung impliziert, die nur von $f(x) = kx^p$ erfüllt wird.
-  Im letzten Schritt zeigen wir, dass $F$ auf ganz $\mathbb{R}^+$ gleich der Erweiterung sein muss und damit $\delta$ eine $l^p$ Metrik sein muss.
+	Der Beweis passiert in mehreren Schritten. Zuerst sagen wir etwas über die Definitions- und Zielbereiche der Funktionen $F_i$ und finden damit Grenzen für den Definitionsbereich von $F$.
+	Danach argumentieren wir, dass wir $F$ bis auf die positiven reellen Zahlen $[0, \infty)$ erweitern können und dass diese Erweiterung eine Funktionsgleichung impliziert, die nur von $f(x) = kx^p$ erfüllt wird.
+	Im letzten Schritt zeigen wir, dass $F$ auf ganz $\mathbb{R}^+$ gleich der Erweiterung sein muss und damit $\delta$ eine $l^p$ Metrik sein muss.
 
-  \todo{Übersicht vom Beweis aufschreiben}
+	\todo{Übersicht vom Beweis aufschreiben}
 
-  \begin{equation} \label{homogen-eq}
-F^{-1} \left [ \sum_{i=1}^{n} F(t \alpha_i) \right ] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right ]
-  \end{equation}
+	\begin{equation} \label{homogen-eq}
+		F^{-1} \left [ \sum_{i=1}^{n} F(t \alpha_i) \right ] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right ]
+	\end{equation}
 
-  \todo{necessary sufficient stuff benutzen und zeigen, dass wir das Lemma nutzen können!}
+	\todo{necessary sufficient stuff benutzen und zeigen, dass wir das Lemma nutzen können!}
 
-  \begin{proofpart}
+	\begin{proofpart}
 
-  By \cref{necc-suff-conds}, the additive difference model
+		By \cref{necc-suff-conds}, the additive difference model
 
-\[
-\delta(a, b) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right)
-\]
-yields a metric (that is additive on the coordinate axes) if $F_i(\alpha) = F(t_i \alpha)$ and $F = G^{-1}$ for $i=1, ..., n$. Thus, $F^{-1}$ is defined for all numbers $\sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right)$, and each $F_i$ coincides with $F$ on its domain (except for the factor $t_i$, which scales the argument and adjusts the domain).\\
-Since the domains of $F_i$ are intervals (because $\delta$ is a metric with additive segments) \todo{begründung checken}, we can choose $\omega > 0$ such that for each $i = 1, \ldots, n$ and any $\alpha$ with $0 \leq \alpha \leq \omega/t_i$, $\alpha$ lies within the domain of $F_i$.\\
-In particular, if we set $\omega_i = \omega/t_i$, then $F^{-1} \left[ \sum_{i=1}^{n} F_i(\omega_i) \right] = F^{-1} \left[ nF(\omega) \right] =: \Omega$ is defined. Thus, $F = G^{-1}$ is defined at least on the interval $[0, \Omega]$. We can now extend $F$ as follows.
-\end{proofpart}
-
-
-\begin{proofpart}
-For $\alpha < \omega$, we have by \cref{homogen-eq},
-
-\begin{align*}
-  F^{-1}[nF(\alpha)] &= F^{-1}[nF(\alpha \omega/\omega)] \\
-                     &= (\alpha/\omega) F^{-1}[nF(\omega)] \\
-                     &= \alpha \Omega/\omega.
-\end{align*}
-
-Thus $F$ satisfies the following, by plugging in the correct values for $\alpha$ ($\tilde  \alpha = \alpha \frac{\omega}{\Omega}$ and $\tilde \alpha = F^{-1}( \frac{\alpha}{n} )$)
+		\[
+			\delta(a, b) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right)
+		\]
+		yields a metric (that is additive on the coordinate axes) if $F_i(\alpha) = F(t_i \alpha)$ and $F = G^{-1}$ for $i=1, ..., n$. Thus, $F^{-1}$ is defined for all numbers $\sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right)$, and each $F_i$ coincides with $F$ on its domain (except for the factor $t_i$, which scales the argument and adjusts the domain).\\
+		Since the domains of $F_i$ are intervals (because $\delta$ is a metric with additive segments) \todo{begründung checken}, we can choose $\omega > 0$ such that for each $i = 1, \ldots, n$ and any $\alpha$ with $0 \leq \alpha \leq \omega/t_i$, $\alpha$ lies within the domain of $F_i$.\\
+		In particular, if we set $\omega_i = \omega/t_i$, then $F^{-1} \left[ \sum_{i=1}^{n} F_i(\omega_i) \right] = F^{-1} \left[ nF(\omega) \right] =: \Omega$ is defined. Thus, $F = G^{-1}$ is defined at least on the interval $[0, \Omega]$. We can now extend $F$ as follows.
+	\end{proofpart}
 
 
-\begin{equation}
-  F(a) = nF(a \omega/\Omega), \quad 0 \leq a \leq \Omega; \label{f-erw}
-\end{equation}
-\begin{equation}
-  F^{-1}(a) = (\Omega/\omega) F^{-1}(a/n), \quad 0 \leq a \leq nF(\omega). \label{f-1-erw}
-\end{equation}
+	\begin{proofpart}
+		For $\alpha < \omega$, we have by \cref{homogen-eq},
 
-These two equations can now be used to extend the domain of $F$ and $F^{-1}$.\\
-We use \cref{f-erw} by defining $F$ through the right-hand side (for values where the right-hand side is defined, i.e., for $0 \leq a \leq \Omega^2/\omega$). Since $\Omega^2/\omega > \Omega$, this indeed extends $F$ beyond the interval $[0, \Omega]$.\\
-Similarly, $F^{-1}$ satisfies equation \cref{f-1-erw} for the extended interval $0 \leq a \leq nF(\Omega) = n^2 F(\omega)$.\\
-Moreover, \cref{homogen-eq} is now valid for $0 \leq t \alpha_i \leq \Omega$:
+		\begin{align*}
+			F^{-1}[nF(\alpha)] & = F^{-1}[nF(\alpha \omega/\omega)]   \\
+			                   & = (\alpha/\omega) F^{-1}[nF(\omega)] \\
+			                   & = \alpha \Omega/\omega.
+		\end{align*}
 
-\begin{align*}
-  F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] &= F^{-1} \left[ \sum_{i=1}^{n} nF(t \alpha_i \omega / \Omega) \right] \tag{by \cref{f-erw}} \\
-                                      &= F^{-1} \left[ n \sum_{i=1}^{n} F(t \alpha_i \omega / \Omega) \right] \\
-                                      &= \frac{\Omega}{\omega} F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i \omega / \Omega) \right] \tag{by \cref{f-1-erw}} \\
-                                      &= \frac{\Omega}{\omega} t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i \omega / \Omega) \right] \tag{by homogeneity applied for $\alpha_i \omega / \Omega \leq \omega$} \\
-                                      &= t F^{-1} \left[ n \sum_{i=1}^{n} F(\alpha_i \omega / \Omega) \right] \tag{by \cref{f-1-erw}} \\
-                                      &= t F^{-1} \left[ \sum_{i=1}^{n} n F(\alpha_i \omega / \Omega) \right] \\
-                                      &= t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \tag{by \cref{f-erw}} \\
-\end{align*}
+		Thus $F$ satisfies the following, by plugging in the correct values for $\alpha$ ($\tilde  \alpha = \alpha \frac{\omega}{\Omega}$ and $\tilde \alpha = F^{-1}( \frac{\alpha}{n} )$)
 
 
-Repeatedly applying the arguments, extends the intervals in which $F$ is defined and in which homogeneity (\cref{homogen-eq}) is valid by a factor of $\Omega/\omega$ each time. Thus, we can extend $F$ to $[0, \infty)$ while preserving homogeneity for $0 \leq t \leq  1$.
-\end{proofpart}
+		\begin{equation}
+			F(a) = nF(a \omega/\Omega), \quad 0 \leq a \leq \Omega; \label{f-erw}
+		\end{equation}
+		\begin{equation}
+			F^{-1}(a) = (\Omega/\omega) F^{-1}(a/n), \quad 0 \leq a \leq nF(\omega). \label{f-1-erw}
+		\end{equation}
+
+		These two equations can now be used to extend the domain of $F$ and $F^{-1}$.\\
+		We use \cref{f-erw} by defining $F$ through the right-hand side (for values where the right-hand side is defined, i.e., for $0 \leq a \leq \Omega^2/\omega$). Since $\Omega^2/\omega > \Omega$, this indeed extends $F$ beyond the interval $[0, \Omega]$.\\
+		Similarly, $F^{-1}$ satisfies equation \cref{f-1-erw} for the extended interval $0 \leq a \leq nF(\Omega) = n^2 F(\omega)$.\\
+		Moreover, \cref{homogen-eq} is now valid for $0 \leq t \alpha_i \leq \Omega$:
+
+		\begin{align*}
+			F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} nF(t \alpha_i \omega / \Omega) \right] \tag{by \cref{f-erw}}                                                                        \\
+			                                                   & = F^{-1} \left[ n \sum_{i=1}^{n} F(t \alpha_i \omega / \Omega) \right]                                                                                             \\
+			                                                   & = \frac{\Omega}{\omega} F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i \omega / \Omega) \right] \tag{by \cref{f-1-erw}}                                                 \\
+			                                                   & = \frac{\Omega}{\omega} t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i \omega / \Omega) \right] \tag{by homogeneity applied for $\alpha_i \omega / \Omega \leq \omega$} \\
+			                                                   & = t F^{-1} \left[ n \sum_{i=1}^{n} F(\alpha_i \omega / \Omega) \right] \tag{by \cref{f-1-erw}}                                                                     \\
+			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} n F(\alpha_i \omega / \Omega) \right]                                                                                             \\
+			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \tag{by \cref{f-erw}}                                                                                         \\
+		\end{align*}
 
 
-\begin{proofpart}
-The function obtained through this extension must therefore coincide with the original $F$ on at least the interval $[0, \Omega)$. Furthermore, applying \cref{f-1-erw} on the mean-value function $F^{-1} \left[ \left( \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right) \right]$ yields:
+		Repeatedly applying the arguments, extends the intervals in which $F$ is defined and in which homogeneity (\cref{homogen-eq}) is valid by a factor of $\Omega/\omega$ each time. Thus, we can extend $F$ to $[0, \infty)$ while preserving homogeneity for $0 \leq t \leq  1$.
+	\end{proofpart}
 
-\begin{equation} \label{azcel-eq}
-  F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = tF^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right].
-\end{equation}
 
-According to Theorem 84 \parencite{hardy1952inequalities}, the only monotonic functions satisfying this equation for $0 \leq \alpha < \infty$ are functions of the form $k\alpha^r$ (see also \cite[S. 153]{aczel1966lectures}).
+	\begin{proofpart}
+		The function obtained through this extension must therefore coincide with the original $F$ on at least the interval $[0, \Omega)$. Furthermore, applying \cref{f-1-erw} on the mean-value function $F^{-1} \left[ \left( \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right) \right]$ yields:
 
-Therefore, $F(\alpha) = k \alpha^r$ must hold on at least the interval $[0, \Omega]$.
-Now, for any $|\varphi_i(a_i) - \varphi_i(b_i)|$, we can find $t > 0$ small enough such that $t|\varphi_i(a_i) - \varphi_i(b_i)| < \omega, i = 1, \ldots, n$. Applying monotonicity yields (we can assume $t \leq 1$):
+		\begin{equation} \label{azcel-eq}
+			F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = tF^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right].
+		\end{equation}
 
-\begin{align*}
-  \delta(a, b) &= F^{-1} \left( \sum_{i=1}^{n} F \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right) \\
-               &= \frac{1}{t} F^{-1} \left( \sum_{i=1}^{n} F \left( t |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right) \\
-               &= \frac{1}{t} \left( \sum_{i=1}^{n} \left( t|\varphi_i(a_i) - \varphi_i(b_i)| \right)^r \right)^{1/r} \tag{ since $t |\varphi_i(\alpha_i) - \varphi_i(\beta_i)| \leq \omega$}\\
-               &= \left( \sum_{i=1}^{n} |\varphi_i(a_i) - \varphi_i(b_i)|^r \right)^{1/r} \\
-\end{align*}
-Thus, $\delta$ is an $l^p$ metric and, by Theorem \todo{ref add-diff-prox-struct-repr}, $F= k \cdot \alpha^r$ and hence $F_i = k (t_i \alpha)^r$ or $F_i(\alpha) = k \alpha^r$ if we incorporate the $t_i$ into the $\varphi_i$. Finally, the restriction $1 \leq r < \infty$ follows from the triangle inequality or, more precisely, from Minkowski's inequality.
+		According to Theorem 84 \parencite{hardy1952inequalities}, the only monotonic functions satisfying this equation for $0 \leq \alpha < \infty$ are functions of the form $k\alpha^r$ (see also \cite[S. 153]{aczel1966lectures}).
 
-\end{proofpart}
+		Therefore, $F(\alpha) = k \alpha^r$ must hold on at least the interval $[0, \Omega]$.
+		Now, for any $|\varphi_i(a_i) - \varphi_i(b_i)|$, we can find $t > 0$ small enough such that $t|\varphi_i(a_i) - \varphi_i(b_i)| < \omega, i = 1, \ldots, n$. Applying monotonicity yields (we can assume $t \leq 1$):
+
+		\begin{align*}
+			\delta(a, b) & = F^{-1} \left( \sum_{i=1}^{n} F \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right)                                                                                     \\
+			             & = \frac{1}{t} F^{-1} \left( \sum_{i=1}^{n} F \left( t |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right)                                                                       \\
+			             & = \frac{1}{t} \left( \sum_{i=1}^{n} \left( t|\varphi_i(a_i) - \varphi_i(b_i)| \right)^r \right)^{1/r} \tag{ since $t |\varphi_i(\alpha_i) - \varphi_i(\beta_i)| \leq \omega$} \\
+			             & = \left( \sum_{i=1}^{n} |\varphi_i(a_i) - \varphi_i(b_i)|^r \right)^{1/r}                                                                                                     \\
+		\end{align*}
+		Thus, $\delta$ is an $l^p$ metric and, by Theorem \todo{ref add-diff-prox-struct-repr}, $F= k \cdot \alpha^r$ and hence $F_i = k (t_i \alpha)^r$ or $F_i(\alpha) = k \alpha^r$ if we incorporate the $t_i$ into the $\varphi_i$. Finally, the restriction $1 \leq r < \infty$ follows from the triangle inequality or, more precisely, from Minkowski's inequality.
+
+	\end{proofpart}
 \end{proof}
 

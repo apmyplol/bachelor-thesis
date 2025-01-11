@@ -2,31 +2,31 @@
 Da wir diese Additivität aus der proximity structure herleiten wollen, müssen wir Eigenschaften definieren, aus der man die Additivität herleiten kann. Dazu benötigen wir Folgenden Begriff:
 
 \begin{defi}[Ternary Relation on Proximity Structures]
-For $a, b, c \in  A$, the ternary relation $(a, b, c \rangle$ is said to hold iff for all $a', b', c' \in A$:
-\begin{enumerate}
-  \item If $(a ,b) \succsim (a', b')$ and  $(a', c') \succsim (a, c)$, then  $(b', c') \succsim (b, c)$
-  \item If either of the preceding inequalities is strict, then the resulting inequality is also strict.
-\end{enumerate}
-Further the relation $\langle abc \rangle$ is said to hold if both $(a, b, c \rangle$ and $(c, b, a\rangle$ hold.
+	For $a, b, c \in  A$, the ternary relation $(a, b, c \rangle$ is said to hold iff for all $a', b', c' \in A$:
+	\begin{enumerate}
+		\item If $(a ,b) \succsim (a', b')$ and  $(a', c') \succsim (a, c)$, then  $(b', c') \succsim (b, c)$
+		\item If either of the preceding inequalities is strict, then the resulting inequality is also strict.
+	\end{enumerate}
+	Further the relation $\langle abc \rangle$ is said to hold if both $(a, b, c \rangle$ and $(c, b, a\rangle$ hold.
 \end{defi}
 
 
 Die Bedingungen, die notwendig sind, um eine Darstellung durch eine Metrik mit additiven Segmenten zu ermöglichen, sind in der folgenden Definition und dem Satz danach zusammengefasst. Der zweite Teil der Definition wird erst später, für das Hauptresultat (Satz \ref{lp-eindeutig}) relevant, im Prinzip geht es darum dass man sich Grenzwerte und Cauchy Folgen anschauen kann, also der normale Begriff von Vollständigkeit.
 
 \begin{defi}[Segmentally Additive Proximity Structure]
-A proximity structure $\langle A, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, is segmentally additive if and only if the following two axioms hold for all $a, c, e, f \in A$:
+	A proximity structure $\langle A, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, is segmentally additive if and only if the following two axioms hold for all $a, c, e, f \in A$:
 
-\begin{enumerate}
-    \item If $(a, c) \succsim (e, f)$, then there exists $b \in A$ such that $(a, b) \sim (e, f)$ and $\langle abc \rangle$. (segmental solvability)
-    \item If $e \neq f$, then there exist $b_0, \ldots, b_n \in A$, such that $b_0 = a$, $b_n = c$, and $(e, f) \succsim (b_{i-1}, b_i)$ for $i = 1, \ldots, n$. (connectedness)
-\end{enumerate}
+	\begin{enumerate}
+		\item If $(a, c) \succsim (e, f)$, then there exists $b \in A$ such that $(a, b) \sim (e, f)$ and $\langle abc \rangle$. (segmental solvability)
+		\item If $e \neq f$, then there exist $b_0, \ldots, b_n \in A$, such that $b_0 = a$, $b_n = c$, and $(e, f) \succsim (b_{i-1}, b_i)$ for $i = 1, \ldots, n$. (connectedness)
+	\end{enumerate}
 
-A segmentally additive proximity structure is complete if and only if the following two axioms hold for all $a, c, e, f \in A$:
+	A segmentally additive proximity structure is complete if and only if the following two axioms hold for all $a, c, e, f \in A$:
 
-\begin{enumerate}
-    \item[3.] If $e \neq f$, then there exist $b, d \in A$, with $b \neq d$, such that $(e, f) \succ (b, d)$. (Non-discreteness of distances)
-    \item[4.] Let $a_1, \ldots, a_n, \ldots$ be a sequence of elements of $A$, such that for all $e, f \in A$, if $e \neq f$, then $(e, f) \succsim (a_i, a_j)$ for all but finitely many pairs $(i, j)$. Then there exists $b \in A$, such that for all $e, f \in A$, if $e \neq f$, then $(e, f) \succsim (a_i, b)$ for all but finitely many $i$. (Limits for Cauchy sequences)
-\end{enumerate}
+	\begin{enumerate}
+		\item[3.] If $e \neq f$, then there exist $b, d \in A$, with $b \neq d$, such that $(e, f) \succ (b, d)$. (Non-discreteness of distances)
+		\item[4.] Let $a_1, \ldots, a_n, \ldots$ be a sequence of elements of $A$, such that for all $e, f \in A$, if $e \neq f$, then $(e, f) \succsim (a_i, a_j)$ for all but finitely many pairs $(i, j)$. Then there exists $b \in A$, such that for all $e, f \in A$, if $e \neq f$, then $(e, f) \succsim (a_i, b)$ for all but finitely many $i$. (Limits for Cauchy sequences)
+	\end{enumerate}
 
 \end{defi}
 
