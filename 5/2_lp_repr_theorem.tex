@@ -74,21 +74,46 @@
 			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \tag{by \cref{f-erw}}                                                                                         \\
 		\end{align*}
 
-
-		Repeatedly applying the arguments, extends the intervals in which $F$ is defined and in which homogeneity (\cref{homogen-eq}) is valid by a factor of $\Omega/\omega$ each time. Thus, we can extend $F$ to $[0, \infty)$ while preserving homogeneity for $0 \leq t \leq  1$.
+		Repeatedly applying the arguments, extends the intervals in which $F$ is defined and in which homogeneity (\cref{homogen-eq}) is valid by a factor of $\Omega/\omega$ each time. Thus, we can extend $F$ to $[0, \infty)$ while preserving homogeneity for $0 \leq t \leq  1$. Further, the derived equation must also hold for $t \in [0, \infty)$.
+  Let $a_i > 0$ and $t > 1$. Then there exists $t' = \frac{1}{t} < 1$ such that $t' \cdot t a_i = a_i$. Therefore
+  \begin{align*}
+    t t' F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] &= F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \tag{$t t' = 1$}\\
+                                                          &= F^{-1} \left[ \sum_{i=1}^{n} F(t t'\alpha_i) \right] \tag{$t t' = 1$} \\
+                                                          &= t' F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right]
+  \end{align*}
+  The last step holds, because both $t'<1$ and $t a_i < \infty$ hold.
+  Dividing both sides by $t'$ yields
+		\begin{equation}
+      F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \quad \text{ for } a, t < \infty \label{f-ext-eq}
+		\end{equation}
+		The function obtained through this extension must therefore coincide with the original $F$ on at least the interval $[0, \Omega)$.
 	\end{proofpart}
 
 
 	\begin{proofpart}
-		The function obtained through this extension must therefore coincide with the original $F$ on at least the interval $[0, \Omega)$. Furthermore, applying \cref{f-1-erw} on the mean-value function $F^{-1} \left[ \left( \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right) \right]$ yields:
+		Next, we derive a functional equation by applying \cref{f-1-erw} on \cref{f-ext-eq}.\\
+		Firstly, applying \cref{f-1-erw} on the left hand side yields
+		\begin{equation*}
+			\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] .
+		\end{equation*}
 
-		\begin{equation} \label{azcel-eq}
-			F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = tF^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right].
-		\end{equation}
+		Applying \cref{f-1-erw} once more on the right hand side, yields
+		\begin{equation*}
+			\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] =\Omega / \omega t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right] .
+		\end{equation*}
+		Hence
+		\begin{equation*} \label{azcel-eq}
+			F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right] .
+		\end{equation*}
+		must hold.
 
-		According to Theorem 84 \parencite{hardy1952inequalities}, the only monotonic functions satisfying this equation for $0 \leq \alpha < \infty$ are functions of the form $k\alpha^r$ (see also \cite[S. 153]{aczel1966lectures}).
+		According to Theorem 84 \parencite{hardy1952inequalities}, the only monotonic functions satisfying this equation for $0 \leq \alpha < \infty$ are functions of the form $k\alpha^r$ (see also \cite[p. 153]{aczel1966lectures}).
 
-		Therefore, $F(\alpha) = k \alpha^r$ must hold on at least the interval $[0, \Omega]$.
+		Therefore, $F(\alpha) = k \alpha^r$ must hold on at least the interval $[0, \Omega)$.
+	\end{proofpart}
+
+	\begin{proofpart}
+
 		Now, for any $|\varphi_i(a_i) - \varphi_i(b_i)|$, we can find $t > 0$ small enough such that $t|\varphi_i(a_i) - \varphi_i(b_i)| < \omega, i = 1, \ldots, n$. Applying monotonicity yields (we can assume $t \leq 1$):
 
 		\begin{align*}
