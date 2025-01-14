@@ -1,146 +1,78 @@
-\documentclass[oldfontcommands]{scrartcl}
-\usepackage[colorlinks,linkcolor=black,urlcolor=black]{hyperref}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage[utf8]{inputenc}
-\usepackage{xcolor}
-\usepackage{xparse}
-\usepackage{style}
-\usepackage{cleveref}
-\usepackage{mathtools}
-\usepackage[shortlabels]{enumitem}
-\usepackage[style=apa, backend=biber]{biblatex}
+\documentclass[12pt,a4paper,twoside]{report}
+
+\input{0_packages.tex}
+
+\input{0_commands.tex}
 
 \addbibresource{refs.bib}
 
-% TODO: Send Thesis consent to study office
 
-% \newtheoremstyle{break}%
-% {}{}%
-% {\itshape}{}%
-% {\bfseries}{}% % Note that final punctuation is omitted.
-% {\newline}{}
-%
-% \theoremstyle{break}
-% \theoremstyle{plain} 
-
-\newtheoremstyle{mytheoremstyle} % name
-    {\topsep}                    % Space above
-    {\topsep}                    % Space below
-    {\itshape}                   % Body font
-    {}                           % Indent amount
-    {\bfseries}                  % Theorem head font
-    {.}                          % Punctuation after theorem head
-    {\newline}                   % Space after theorem head
-    {}  % Theorem head spec (can be left empty, meaning ‘normal’)
-
-\theoremstyle{mytheoremstyle}
-
-% \makeatletter
-% \def\thmhead#1#2#3{%
-%   \thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}% 
-%   \newline
-% }
-% \makeatother
-% \renewcommand{\@thmheadpunct}{}
-
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem*{lem*}{Lemma}
-\newtheorem{cor}[thm]{Corollary}
-
-\newtheoremstyle{mytheoremstyle2} % name
-    {\topsep}                    % Space above
-    {\topsep}                    % Space below
-    {}                           % Body font
-    {}                           % Indent amount
-    {\bfseries}                  % Theorem head font
-    {.}                          % Punctuation after theorem head
-    {\newline}                   % Space after theorem head
-    {}  % Theorem head spec (can be left empty, meaning ‘normal’)
-
-\theoremstyle{mytheoremstyle2}
-
-\newtheorem{defi}[thm]{Definition}
-\newtheorem{ex}[thm]{Example}
-
-\newtheorem{proofpart}{Part}
-\makeatletter
-\@addtoreset{proofpart}{thm}
-\makeatother
-
-
-
-\theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
 
 
 \setcounter{tocdepth}{2}
 
-\title{Representational Measurement of Similarity: The Additive Difference Model, Revisited}
-\author{Arthur Liske, Mathematik}
-
-\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
-
-\includeonly{./5/2_lp_repr_theorem.tex}
+% \includeonly{./5/2-0_lemma}
+% \includeonly{./3/1_AD_Model.tex, ./3/3_AD_ex.tex, ./3/2_AD_Structure.tex, ./1/intro.tex, ./2/PS_Metrics.tex, ./4/1_seg_add_metrics.tex, ./4/2_seg_add_PS.tex, ./4/3_seg_add_metrics_ex.tex, ./5/1_neccesary_and_suff_conds.tex, ./5/2-0_lemma.tex}
 
 \begin{document}
 
-\maketitle
+\pagestyle{empty}
 
-\begin{abstract}
-	In dieser Ausarbeitung geht es darum, wie man eine Metrik auf ordinalen Ähnlichkeitsdaten herleiten kann, die zusätzlich additiv ist und durch das additive difference model repräsentiert werden kann. Das Hauptresultat ist, dass die $l^p$ Metrik die einzige additive-difference Metrik, die additiv auf Liniensegmenten ist, was eng mit der Homogenität dieser Metrik zusammenhängt.
-	Zum Herleiten dieses Hauptresultates werden die Grundelemente von Messtheorie, sowie von proximity measurement mithilfe von geometrische Modellen eingeführt.
-	Diese Ausarbeitung basiert auf dem Paper \cite{tversky1970dimensional} und den Büchern \cite{foundations2} und \cite{TheorieDesMessens}.
-
-\end{abstract}
+\input{./1/titlepage.tex}
 
 \tableofcontents
 
-\section{Introduction}
-\include{./1/intro}
+\pagestyle{headings}
 
-\section{Proximity Structures and Metrics}
+
+% \begin{abstract}
+  %TODO: translate text, can / must I write an abstract? In the Uni Template there is no abstract
+	% In dieser Ausarbeitung geht es darum, wie man eine Metrik auf ordinalen Ähnlichkeitsdaten herleiten kann, die zusätzlich additiv ist und durch das additive difference model repräsentiert werden kann. Das Hauptresultat ist, dass die $l^p$ Metrik die einzige additive-difference Metrik, die additiv auf Liniensegmenten ist, was eng mit der Homogenität dieser Metrik zusammenhängt.
+	% Zum Herleiten dieses Hauptresultates werden die Grundelemente von Messtheorie, sowie von proximity measurement mithilfe von geometrische Modellen eingeführt.
+	% Diese Ausarbeitung basiert auf dem Paper \parencite{tversky1970dimensional} und den Büchern \parencite{foundations2} und \parencite{TheorieDesMessens}.
+
+% \end{abstract}
+
+%---  1  ---
+% section intro and proximity structures
+\include{./1/intro}
 \include{./2/PS_Metrics}
 
 
-
-\section{Additive Difference Models and Structures}
-
-\subsection{Additive Difference Model}
+%---  2  ---
+% Section additive difference model and structures
 \include{./3/1_AD_Model}
-
-\subsection{Additive Difference Structure}
 \include{./3/2_AD_Structure}
-
-\subsection{Examples}
 \include{./3/3_AD_ex}
 
 
-
-\section{Segmental Additivity}
-
-\subsection{Segmentally Additive Metrics}
+%---  3  ---
+% Section segmental additivity metrics and segmentally additive structures
 \include{./4/1_seg_add_metrics}
-
-\subsection{Segmentally Additive Proximity Structures}
 \include{./4/2_seg_add_PS}
-
-\subsection{Examples}
 \include{./4/3_seg_add_metrics_ex}
 
 
-\section{Combining Segmental Additivity with the AD-Model}
+%---  4  ---
+% combining additive difference model with segmental additivity
+
+% ---- 1: Theorem with necessary and sufficient conditions for additive difference models that are also segmentally additive
 \include{./5/1_neccesary_and_suff_conds}
 
-\include{./5/2-0_lemma}
-
-
-\subsubsection{Convexity of $\metric$ Balls}
-\include{./5/2-1_convex_spheres}
-
+% ----2: Main theorem of this thesis
 \include{./5/2_lp_repr_theorem}
 
-\section{Discussion}
+% ---- lemma: 
+\include{./5/2-0_lemma}
+
+% ----- 2: convexity of spheres for lemma
+\include{./5/2-1_convex_spheres}
+
+
+
+%---  5  --- discussion
+\include{./6/discussion}
+
 
 % \pagebreak
 %
@@ -149,10 +81,13 @@
 
 \printbibliography
 
+\printindex
 \pagebreak
 
 % \appendix
 % \section{Anhang}\label{appendix}
 % \input{appendix}
 
+% TODO: Send Thesis consent to study office
+% \include{erklaerung}
 \end{document}

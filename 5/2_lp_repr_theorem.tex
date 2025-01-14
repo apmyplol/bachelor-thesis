@@ -1,5 +1,5 @@
-% \blindtext
-\addcontentsline{toc}{subsection}{Theorem name}
+%TODO: change name
+\section{Uniqueness-Representation Theorem}
 \begin{thm}[Eindeutigkeitssatz zu $l^p$ Metriken]\label{lp-uniqueness-theorem}
 	Suppose $\langle A, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.\\
 	Then there exists a unique $r \geq 1$ and real-valued functions $\varphi_i$, defined on $A_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $a, b, c, d \in A$,
@@ -15,19 +15,19 @@
 
 
 \begin{proof}
-	Der Beweis passiert in mehreren Schritten. Zuerst sagen wir etwas über die Definitions- und Zielbereiche der Funktionen $F_i$ und finden damit Grenzen für den Definitionsbereich von $F$.
-	Danach argumentieren wir, dass wir $F$ bis auf die positiven reellen Zahlen $[0, \infty)$ erweitern können und dass diese Erweiterung eine Funktionsgleichung impliziert, die nur von $f(x) = kx^p$ erfüllt wird.
-	Im letzten Schritt zeigen wir, dass $F$ auf ganz $\mathbb{R}^+$ gleich der Erweiterung sein muss und damit $\delta$ eine $l^p$ Metrik sein muss.
+  This proof proceeds in multiple steps.
+  First, we make observations about the domains and ranges of the functions $F_i$, use this to find bounds for the domain of $F$. Using these bounds, we argue that $F$ can be extended to the positive reals.
+  Next, we derive from this a functional equation, that is only satisfied by $f(x) = k x^p$.
+  Finally, we prove that $F$ is equal to this extension on the whole domain, and therefore $\metric$ is a Minkowski metric.
 
-	\todo{Übersicht vom Beweis aufschreiben}
-
+  \setcounter{proofpart}{-1}
 	\begin{equation} \label{homogen-eq}
 		F^{-1} \left [ \sum_{i=1}^{n} F(t \alpha_i) \right ] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right ]
 	\end{equation}
 
 	\todo{necessary sufficient stuff benutzen und zeigen, dass wir das Lemma nutzen können!}
 
-	\begin{proofpart}
+  \begin{proofpart}[Establishing the basics and using the \cref{main-lemma}]
 
 		By \cref{necc-suff-conds}, the additive difference model
 
@@ -40,7 +40,7 @@
 	\end{proofpart}
 
 
-	\begin{proofpart}
+  \begin{proofpart}[Extending the bounds of $F$]
 		For $\alpha < \omega$, we have by \cref{homogen-eq},
 
 		\begin{align*}
@@ -90,7 +90,7 @@
 	\end{proofpart}
 
 
-	\begin{proofpart}
+  \begin{proofpart}[Deriving functional equation]
 		Next, we derive a functional equation by applying \cref{f-1-erw} on \cref{f-ext-eq}.\\
 		Firstly, applying \cref{f-1-erw} on the left hand side yields
 		\begin{equation*}
@@ -107,12 +107,12 @@
 		\end{equation*}
 		must hold.
 
-		According to Theorem 84 \parencite{hardy1952inequalities}, the only monotonic functions satisfying this equation for $0 \leq \alpha < \infty$ are functions of the form $k\alpha^r$ (see also \cite[p. 153]{aczel1966lectures}).
+		According to Theorem 84 \parencite{hardy1952inequalities}, the only monotonic functions satisfying this equation for $0 \leq \alpha < \infty$ are functions of the form $k\alpha^r$ (see also \parencite[p. 153]{aczel1966lectures}).
 
 		Therefore, $F(\alpha) = k \alpha^r$ must hold on at least the interval $[0, \Omega)$.
 	\end{proofpart}
 
-	\begin{proofpart}
+  \begin{proofpart}[Proving equality for positive reals]
 
 		Now, for any $|\varphi_i(a_i) - \varphi_i(b_i)|$, we can find $t > 0$ small enough such that $t|\varphi_i(a_i) - \varphi_i(b_i)| < \omega, i = 1, \ldots, n$. Applying monotonicity yields (we can assume $t \leq 1$):
 
@@ -122,7 +122,7 @@
 			             & = \frac{1}{t} \left( \sum_{i=1}^{n} \left( t|\varphi_i(a_i) - \varphi_i(b_i)| \right)^r \right)^{1/r} \tag{ since $t |\varphi_i(\alpha_i) - \varphi_i(\beta_i)| \leq \omega$} \\
 			             & = \left( \sum_{i=1}^{n} |\varphi_i(a_i) - \varphi_i(b_i)|^r \right)^{1/r}                                                                                                     \\
 		\end{align*}
-		Thus, $\delta$ is an $l^p$ metric and, by Theorem \todo{ref add-diff-prox-struct-repr}, $F= k \cdot \alpha^r$ and hence $F_i = k (t_i \alpha)^r$ or $F_i(\alpha) = k \alpha^r$ if we incorporate the $t_i$ into the $\varphi_i$. Finally, the restriction $1 \leq r < \infty$ follows from the triangle inequality or, more precisely, from Minkowski's inequality.
+		Thus, $\delta$ is a Minkowski metric and, by Theorem \todo{ref add-diff-prox-struct-repr}, $F= k \cdot \alpha^r$ and hence $F_i = k (t_i \alpha)^r$ or $F_i(\alpha) = k \alpha^r$ if we incorporate the $t_i$ into the $\varphi_i$. Finally, the restriction $1 \leq r < \infty$ follows from the triangle inequality or, more precisely, from Minkowski's inequality.
 
 	\end{proofpart}
 \end{proof}
