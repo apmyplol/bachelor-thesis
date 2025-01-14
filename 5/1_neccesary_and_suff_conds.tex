@@ -32,6 +32,7 @@ The following remark ties this result closer to the Minkowski metric, and provid
 	where $F$ is continuous, convex and increasing.\\
 	This follows form two arguments.
 	Firstly, incorporating the $t_i$ into the $\varphi_i$
+  %TODO: maybe phi_i' = t_i phi_i definieren und substituieren anstatt incorporating sagen? 
 	\begin{align*}
 		G \Big \{ \sum_{i=1}^{n} F_i(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} & = G \Big \{ \sum_{i=1}^{n} F(t_i| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} \\
 		                                                                          & = G \Big \{ \sum_{i=1}^{n} F(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \}
@@ -39,7 +40,7 @@ The following remark ties this result closer to the Minkowski metric, and provid
 	yields the desired form inside the sum.
 
 	Secondly, by using $F_i(x) = F_n(t_i x)$ and $F_i(x) = G^{-1}(t_i x)$.
-	The first equation applied for $i=n$ yields $F_n(x) = F_n(t_n x)$ which implies $t_n = 1$. Using this in the second equation for $i=n$ yields $F(x) = F_n(x) = G^{-1}(t_n x) = G^{-1}(x)$. Hence, by taking the inverse on both sides, we get the desired form for $\delta$.
+	The first equation applied for $i=n$ yields $F_n(x) = F_n(t_n x)$ which implies $t_n = 1$. Using this in the second equation for $i=n$ yields $F(x) = F_n(x) = G^{-1}(t_n x) = G^{-1}(x)$. Hence, by taking the inverse on both sides (which is possible due to $F$ and $G$ both being increasing), we get the desired form for $\delta$.
 
 \end{rem}
 
@@ -53,11 +54,11 @@ The following remark ties this result closer to the Minkowski metric, and provid
 	Therefore, there exists an increasing function $G$, such that for all $a, b \in A$
 
 	$$
-		\delta(a, b) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right).
+		\delta(a, b) = G(f(a,b)) =  G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right).
 	$$
-	%TODO: link adden & Begründung checken
-	Another possible perspective on this is, that by \todo{ref} $f$ is an interval scale, therefore also is an ordinal scale. Since the ordinal ordering of all pairs of elements from $A$ is same for $f$ and $\delta$, there must be an increasing function which transforms one scale into the other and preserves the ordinal orderings.
-	Assume $a$, $b$, and $c$ differ only in the $i$-th factor and $a|b|c$. Thus, we can use additivity on the $i$-th coordinate axis for $a, b, c$ which yields
+	%TODO: link adden & Ausformulieren, metrik induziert ordering welches ordinal scale ist
+	A possible perspective on this is, that by \todo{ref} $f$ is an interval scale and therefore preserves orderings. Since the ordinal ordering of all pairs of elements from $A$ is same for $f$ and $\delta$, there must be an increasing function which transforms one scale into the other and preserves the ordinal orderings.\\
+	Assume $a$, $b$, and $c$ differ only in the $i$-th factor and $a|b|c$. Thus, we can use additivity on the $i$-th coordinate axis for $a, b, c \in A$ which yields
 
 	\[
 		G \left( F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right) + G \left( F_i \left( |\varphi_i(b_i) - \varphi_i(c_i)| \right) \right) = G \left( F_i \left( |\varphi_i(a_i) - \varphi_i(c_i)| \right) \right).
@@ -70,12 +71,15 @@ The following remark ties this result closer to the Minkowski metric, and provid
 	\]
 
 
-	Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i, 1 \leq i \leq n$. This means, that $H_i$ must be linear and since the values are positive, the only monotonic solution to this equation is $H_i(x) = t_i x$, $t_i > 0$. Since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
+	Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i, 1 \leq i \leq n$. This means, that $H_i$ must be linear and since the values are positive (because we are still observing metrics), the only monotonic solution to this equation is $H_i(x) = t_i x$ for $t_i > 0$. Since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
 
 	\[
 		G^{-1}[H_i(x)] = G^{-1}[t_i x] = F_i(x)
 	\]
-	where $F_i$ is defined. Since $G^{-1}$ is independent of $i$, the $F_i$ can only differ in range and in the unit of the domain (i.e. the $t_i$ which adjusts the domain where $G^{-1}$ is defined). Without loss of generality, we can assume that the range of $F_n$ is the largest. Since the range of $F_n$ includes the range of $F_i$, we can set $F = F_n$ and obtain $F_i(x) = F_n(t_i x) = F(t_i x)$ for $t_i > 0$ and for every $x$ in the domain of $F_i$.
+  %TODO: An beispiel ausprobieren mit where F_i is defined, diesen Abschnitt nochmal ausformulieren
+  % F_n largest domain = t_n smallest?
+  % t_i' einführen maybe
+	where $F_i$ is defined. Since $G^{-1}$ is independent of $i$, the $F_i$ can only differ in range and in the unit of the domain (i.e. the $t_i$ which defines the domain of $F_i$ by adjusting the domain of $G^{-1}$). Without loss of generality, we can assume that the range of $F_n$ is the largest. Since the range of $F_n$ includes the range of $F_i$, we can set $F = F_n$ and obtain $F_i(x) = F_n(t_i x) = F(t_i x)$ for $t_i > 0$ and for every $x$ in the domain of $F_i$.
 	Continuity and convexity will be proven in the next lemmas.
 \end{proof}
 

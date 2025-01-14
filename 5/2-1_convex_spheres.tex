@@ -63,7 +63,7 @@ The first one is the openness/closedness of $\metric$-balls.
 		                 & = \{y \in S' : \metr{0}{y} \leq \alpha\} \\
 		                 & = \cball{\alpha}
 	\end{align*}
-	Due to topological continuity of $\metric$ (which is equivalent to preimages of closed sets being closed) $\cball{\alpha}$ is closed. By translation invariance this holds for closed balls with any center in $S$. \todo{ref topo stetig?}
+	due to topological continuity of $\metric$ (which is equivalent to preimages of closed sets being closed) $\cball{\alpha}$ is closed. By translation invariance this holds for closed balls with any center in $S$. \todo{ref topo stetig?}\\
 	Moreover, we can obtain the same result for open balls by repeating this proof and replacing the closed interval with an open one and $\leq$ with $<$.
 \end{proof}
 
@@ -110,7 +110,7 @@ Now we can prove the convexity of $\metric$-balls.
 
 	By definition and \cref{compact-hull-compact} it follows, that $\CO$ is compact (and therefore closed, which is the reason why we denote it with square brackets) and convex. Application of the Minkowski Theorem (\cref{minkowski-theorem}) yields:
 	$$ \CO = \co(\extr ( \CO )) $$
-	Further, it holds that $\extr(\CO) = \extr(\cball{\alpha})$ (By doing convex combinations, no new extreme points can be introduced because these are the points, which cannot be represented by a convex combination).
+	Further, it holds that $\extr(\CO) = \extr(\cball{\alpha})$ (By doing convex combinations, no new extreme points can be introduced because these are the points, which cannot be represented by a convex combination). %TODO: check argumentation
 	Combining this and the statement above yields:
 	$$ \cball{\alpha} \subset \CO = \co ( \extr (\cball{\alpha})). $$
 	Now, if we prove that $\co ( \extr (\cball{\alpha})) \subset \cball{\alpha}$, we get that $\cball{\alpha} = \CO$ which proves the convexity of $\cball{\alpha}$.

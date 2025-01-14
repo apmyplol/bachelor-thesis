@@ -10,7 +10,6 @@
 
 
 \begin{proof}
-	% \setcounter{proofpart}{-1}
 	First, we will prove positivity and symmetry of this function, and then turn to the triangle inequality which is a result of theorem which provides a generalization of the Mikowski inequality.
 	\begin{proofpart}[Positivity and Symmetry]
 		Positivity and symmetry are both straight forward.
@@ -36,6 +35,7 @@
 		\end{enumerate}
 	\end{thm}
 
+	% \setcounter{proofpart}{1}
 	\begin{proofpart}[Proof that \cref{p-exp-eq} satisfies Mulholland's conditions]
 
 		%TODO: ref composition of convex, continuous and inreasing functions?
@@ -50,7 +50,7 @@
 		We prove this by examining the second derivative. If the second derivative is strictly positive, the function is convex.
 		%TODO: ref?
 
-		Differentiating twice gives
+		Differentiating twice yields
 		$$
 			\frac{r e^{re^x + x} \left( r (-e^x) + e^{re^x} - 1 \right)}{\left( e^{re^x} - 1 \right)^2} \overset{!}{>} 0.
 		$$
