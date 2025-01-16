@@ -1,7 +1,10 @@
 Definitions:
 
+  Chap 0:
+    scale types
+
   Chap 1:
-    (factorial) prox structure
+    (factorial) prox structure, (connectedness)
     representability by metric
 
   Chap 2: AD
@@ -40,15 +43,15 @@ Missing Definitions:
     closed & open interval
     boudedness in metric space (for heine borel)
 
-    Other:
-      closed & open set topology
-      compactness
-      convex hull
-      extreme points
-      (strict) convex combination
+  Other:
+    closed & open set topology
+    compactness
+    convex hull
+    extreme points
+    (strict) convex combination
 
-    Chap2:
-      Additive Difference Structure
+  Chap2:
+    Additive Difference Structure
       
 
 
@@ -61,9 +64,9 @@ Proving:
   Thm: Necessary and sufficient conditions for additive difference metrics
     Representation by G: metric induces ordinal scale ~> todo
     Form of H_i: Basic argumentation, linear function definition ~> todo check if only linear functions satisfy this
-    Inequality 1 ~> todo add name
-    F continuous
-    characterization of convexity
+    Lem: Inequality 1
+    Lem: F continuous
+    Lem: characterization of convexity
   Rem: form G = F^-1
 
   Thm: unique representation theorem ~> todo change name
@@ -71,10 +74,10 @@ Proving:
     Part3 ~> todo understand what is written in the todo
 
 
-  Main Lemma: ~> todo add name
-    Lem: distance between open and compact set ~> todo add name
+  Thm (main Lemma): ~> todo add name, tex & text check everywhere where mentioned
+    Lem: distance between open and compact set
     Lem: Arbitrary small delta balls
-    Lem: Convexity of spheres
+    Thm: Convexity of spheres ~> todo tex & text check
       Lem: Open / closedness of delta balls
       Lem: compressing extreme points
 

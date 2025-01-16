@@ -25,7 +25,7 @@
 		F^{-1} \left [ \sum_{i=1}^{n} F(t \alpha_i) \right ] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right ]
 	\end{equation}
 
-	\todo{necessary sufficient stuff benutzen und zeigen, dass wir das Lemma nutzen können!}
+  %TODO: formulate part 0 and argue that we can apply the lemma
 
 	\begin{proofpart}[Establishing the basics and using the \cref{main-lemma}]
 
@@ -35,7 +35,8 @@
 			\delta(a, b) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right)
 		\]
 		yields a metric (that is additive on the coordinate axes) if $F_i(\alpha) = F(t_i \alpha)$ and $F = G^{-1}$ for $i=1, ..., n$. Thus, $F^{-1}$ is defined for all numbers $\sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right)$, and each $F_i$ coincides with $F$ on its domain (except for the factor $t_i$, which scales the argument and adjusts the domain).\\
-		Since the domains of $F_i$ are intervals (because $\delta$ is a metric with additive segments) \todo{begründung checken}, we can choose $\omega > 0$ such that for each $i = 1, \ldots, n$ and any $\alpha$ with $0 \leq \alpha \leq \omega/t_i$, $\alpha$ lies within the domain of $F_i$.\\
+    %TODO: check the argumentation, that additive segments implies intervals
+		Since the domains of $F_i$ are intervals (because $\delta$ is a metric with additive segments), we can choose $\omega > 0$ such that for each $i = 1, \ldots, n$ and any $\alpha$ with $0 \leq \alpha \leq \omega/t_i$, $\alpha$ lies within the domain of $F_i$.\\
 		In particular, if we set $\omega_i = \omega/t_i$, then $F^{-1} \left[ \sum_{i=1}^{n} F_i(\omega_i) \right] = F^{-1} \left[ nF(\omega) \right] =: \Omega$ is defined. Thus, $F = G^{-1}$ is defined at least on the interval $[0, \Omega]$. We can now extend $F$ as follows.
 	\end{proofpart}
 	\begin{proofpart}[Extending the bounds of $F$]
@@ -110,6 +111,7 @@
 			             & = \frac{1}{t} \left( \sum_{i=1}^{n} \left( t|\varphi_i(a_i) - \varphi_i(b_i)| \right)^r \right)^{1/r} \tag{ since $t |\varphi_i(\alpha_i) - \varphi_i(\beta_i)| \leq \omega$} \\
 			             & = \left( \sum_{i=1}^{n} |\varphi_i(a_i) - \varphi_i(b_i)|^r \right)^{1/r}
 		\end{align*}
+    %TODO: understand what this ref add means
 		Thus, $\delta$ is a Minkowski metric and, by Theorem \todo{ref add-diff-prox-struct-repr}, $F= k \cdot \alpha^r$ and hence $F_i = k (t_i \alpha)^r$ or $F_i(\alpha) = k \alpha^r$ if we incorporate the $t_i$ into the $\varphi_i$. Finally, the restriction $1 \leq r < \infty$ follows from the triangle inequality or, more precisely, from Minkowski's inequality.
 
 	\end{proofpart}

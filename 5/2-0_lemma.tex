@@ -13,13 +13,14 @@ Notation:
 	\item $\extr(A)$: extreme Points of $A$.
 \end{itemize}
 
-In this section we will prove the main lemma, which is needed for the proof of the main result %TODO: ref adden.
+In this section we will prove the main lemma, which is needed for the proof of the main result \cref{lp-uniqueness-theorem}.
 First, we will state the lemma, then give some remarks on the lemma and prove one statement needed for the lemma and then finally prove it.
 The proof is divided into 5 parts and a whole subsection which is devoted to showing a statement that is needed in the proof.
 Everything in this section will be assumed as in this Theorem. For example, if we write $\metric$, this implies not any metric but the metric from the lemma with its properties.
 Moreover all topological terms(open, closed, continuous) are meant with respect to the natural topology of $\mathbb{R}^{n}$ (i.e. the topology induced by the $\metric_{\infty}$ and the euclidean metric), not the topology induced by $\metric$ or the induced topology on $S$. This will be especially important for the subsection on convexity of the balls.
 We will begin with the statement:
 
+% TODO: change to thm and edit text everywhere, find fitting name for this theorem
 \begin{lem}[Main Lemma] \label{main-lemma}
 	Let $S$ be an open convex subset of $n$-dimensional Euclidean space. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity \footnote{i.e. $\metric$ takes the form $\metr{x}{y} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$.} with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates \footnote{Linear coordinates means that the vector representations are cartesian as opposed to, for example, polar, where each coordinate entry is not the value on the corresponding factor of the cartesian product.} in $S$. If $\langle S, \metric \rangle$ is a metric with additive segments, then $\metric$ is homogeneous, i.e., for any $x, z \in S$ and any real $0 \leq t \leq 1$,
 	\begin{align*}
@@ -52,7 +53,6 @@ Now we will continue with a remark that makes it possible to move the set such t
 Before moving to the proof, we will fist show two statements that we will need right at the start.
 The first one asserts that the distance between a compact and a closed set is greater zero.
 
-\todo{ref?}
 \begin{lem} \label{lemma-distance}
 	If $I \subset \mathbb{R}^{n}$ is compact, $Y \subset \mathbb{R}^{n}$ is closed and $I$ and $Y$ are disjoint, then there exists $\varepsilon > 0$ such that $\metr[\infty]{p}{y} > \varepsilon$ for all $p \in I$ and $y \in Y$.
 \end{lem}
