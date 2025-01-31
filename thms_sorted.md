@@ -89,6 +89,9 @@ Citing:
     continuity & monotonicity of sub length ~> cite busemann
 
 
+    increasing -> discontinuities are gaps
+    characterization of convexity: second derivative positive, f(a+b) thing
+
 idk?:
   Mulholland
   Hardy
@@ -110,13 +113,11 @@ idk?:
       increasing function has inverse
 
     convexity & composition,
-      characterization of convexity: second derivative positive, f(a+b) thing
 
     limit properties (sum etc.), limit of functions
 
     L Hospital, Heine Borel
 
-    increasing -> discontinuities are gaps
     real analysis -> countable many gaps
 
   Other:

@@ -44,7 +44,8 @@ Now we will continue with a remark that makes it possible to move the set such t
 		      From now on, we will assume that $0 \in S$, because by the argument just provided, we can shift $S$ and $\metric$ such that $0 \in S$.
 		      Thus we can proceed to proof the statement using the shorthand notation, by which we need to show that:
 		      $$ \metro{t \cdot  z} = t \cdot \metro{z} \qquad \forall t \in [0, 1] \text{ and } \forall z \in S' .$$ \label{rem-lemma-translate-to-zero}
-		\item Since $\metric$ is defined by $\metr{x}{y} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$ and $\metric$ is a metric, $F(x) = 0$ iff $x=0$ must hold. Moreover the function $F$ has to be defined on a set, where at least the "greatest possible difference" in coordinate $i$ is a possible $i$-th argument. This means $F$ is defined on a cartesian product of open, real intervals of the form $[0,a_i)$ where $$a_i = \sup \left \{ |x_i - y_i| : (x_1, \dots, x_n), (y_1, \dots, y_n) \in S \right \} \in \mathbb{R}_{> 0} \cup \{\infty\}.$$ These $a_i$ are these "greatest possible differences" on the $i$-th coordinate.\label{rem-lemma-domains}
+          %TODO: Bei (iii) auf S.5 fehlt mir auch ein bisschen das Argument. Irgendeine Voraussetzung an F muss da noch eingehen. Nur weil \delta eine Metrik ist, muss ja nicht der Definitionsbereich ein kartesisches Produkt sein, oder uebersehe ich da etwas? 
+		\item Since $\metric$ is defined by $\metr{x}{y} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$ and $\metric$ is a metric, $F(x) = 0$ iff $x=0$ must hold. Moreover the function $F$ has to be defined on a set, where at least the "greatest possible difference" in coordinate $i$ is a possible $i$-th argument. This means $F$ is defined on a cartesian product of half-open, real intervals of the form $[0,a_i)$ where $$a_i = \sup \left \{ |x_i - y_i| : (x_1, \dots, x_n), (y_1, \dots, y_n) \in S \right \} \in \mathbb{R}_{> 0} \cup \{\infty\}.$$ These $a_i$ are these "greatest possible differences" on the $i$-th coordinate.\label{rem-lemma-domains}
 		\item  Moreover, due to the continuity of $F$ and $| \cdot |$, the metric $\metric$ is continuous. \label{rem-lemma-continuity}
 	\end{enumerate}
 \end{rem}
@@ -122,7 +123,7 @@ After this, we will expand this statement to the rationals and then use continui
 		Since $S$ is open, $\mathbb{R}^{n} \setminus S$ is closed. The set $I := \{t z : t \in [0,1]\}$ is compact, since continuous images($t \mapsto t z$) of compact sets ($t \in [0,1]$) are compact\todo{ref?}.
 		Thus, by \cref{lemma-distance} there exists a distance $\varepsilon > 0$ such that $\metr[\infty]{p}{y} < \varepsilon$ for all $p \in I$ and $y \in \mathbb{R}^{n} \setminus S$.
 		This means, for all points on the line from $0$ to $z$ the ball with radius $\varepsilon$ is a subset of $S$, i.e. for all $t \in [0,1]: \ballp[\infty]{\varepsilon}{tz} \subset S$.
-		By \cref{lemma-small-delta-balls}, there exists $\alpha > 0$ such that $\ball{\alpha} \subset \ball[\infty]{\alpha}$, and by translation invariance this holds for all points on the line: $\ball{\alpha}{t z} \subset S$ for all $t \in [0,1]$.
+    By \cref{lemma-small-delta-balls}, there exists $\alpha > 0$ such that $\ball{\alpha} \subset \ball[\infty]{\alpha}$, and by translation invariance this holds for all points on the line: $\ballp{\alpha}{tz} \subset S$ for all $t \in [0,1]$.
 		Now let $m \in \mathbb{N}$ such that $\frac{1}{m} \metro{z} < \alpha$.
 		In particular, this means that $\ball{\alpha}$ and therefore, $\ball{\frac{1}{m} \metro{z}}$ is bounded (with respect to the $\infty$ metric).
 

@@ -113,7 +113,11 @@ The following remark ties this result closer to the Minkowski metric, and provid
 \begin{proof}
 
 
-	Since $F$ is increasing, all discontinuities are gaps. Real analysis yields, that real monotonic functions have at most countable many gaps. We will derive a contradiction from this.
+  Since $F$ is increasing and defined on an interval, all discontinuities are gaps \parencite[p. 335]{elementaryAna} \footnotemark. Real analysis yields, that real monotonic functions have at most countable many gaps. We will derive a contradiction from this.
+
+  \footnotetext{\parencite{elementaryAna} prove the following statement: Let $f$ be a real-valued monotonic function defined on an interval $[a, b]$. Then the set of points of discontinuity of $f$ in that interval is countable.\\ Combining this statement with the paragraph above it, yields that these discontinuities must be gaps.\\
+  Since any interval (open, half-open and unbouded intervals) can be represented by a countable union of closed intervals, this theorem can be extended to arbitrary intervals since countable unions of countable sets are still countable.\\
+This can be done by using $(a,b) = \bigcup_{n=1}^{\infty}[a+1/n, b-1/n]$, or $(a, \infty) = \bigcup_{n=1}^{\infty}[a+1/n, a+n]$. Similar arguments apply to other types of intervals.}
 
 	Assume $F(\alpha)$ is the lower boundary of a gap, then there exists $\epsilon > 0$ such that for all $\delta > 0$, $F(\alpha + \delta) - F(\alpha) > \epsilon$. However, by \cref{necc-lemma-ineq}, for every $\beta > 0$,
 	\[
@@ -157,7 +161,7 @@ The following remark ties this result closer to the Minkowski metric, and provid
 				                     & = 2 F \left( \frac{\alpha + \beta}{2} \right),
 			\end{align*}
 
-			which is equivalent to convexity for a continuous $F$.
+      which implies convexity for a continuous $F$ \parencite[p. 51, Exercise 6]{lecturesConvGeo}.
 		\end{proofpart}
 	\end{proof}
 \end{lem}

@@ -38,18 +38,15 @@
 	% \setcounter{proofpart}{1}
 	\begin{proofpart}[Proof that \cref{p-exp-eq} satisfies Mulholland's conditions]
 
-		%TODO: ref composition of convex, continuous and inreasing functions?
 		Regarding Point 1: Continuity and $f(0) = 0$ are clear. For monotonicity, note that $e^{rt} - 1$ is increasing, exponentiation is also increasing, and multiplying by $q > 0$ preserves monotonicity. Thus, the composition is also increasing.\\
-    %TODO: composition of convex is not enough, see wikipedia.
-		Regarding point 2: The same reasoning as for monotonicity applies, except with convexity. The composition of convex functions is convex.\\
+    Regarding point 2: Similar reasoning applies for convexity. The composition of convex functions is convex, if the outer function is non-decreasing \parencite[p. 481, Note 207]{elementaryAna}. Since multiplication by a positive constant and exponentiation for exponents greater than $1$ is both convex and increasing, the resulting function must be convex. \\
 
 		We now proceed to prove the convexity of $\log F(e^t)$.
 		By logarithmic properties, it holds that
 		$$ \log q(e^{re^x} -1)^p = \log q + p \cdot  \log(e^{re^x} - 1). $$
 		Arbitrary addition and multiplication by $p \geq 1$ preserve convexity, so it suffices to show the convexity of $\log(e^{re^x} - 1)$.
 
-		We prove this by examining the second derivative. If the second derivative is strictly positive, the function is convex.
-		%TODO: ref?
+    We prove this by examining the second derivative. If the second derivative is strictly positive, the function is convex \parencite[p. 57, Remark 2.13]{lecturesConvGeo}.
 
 		Differentiating twice yields
 		$$
@@ -62,7 +59,6 @@
 		\end{align*}
 		holds.
 
-		%TODO: ref f' > 0 -> f increasing
 		This can be shown in two steps. First, we show that the left-hand side is strictly increasing. Second, we prove that its limit as $x \rightarrow -\infty$ is $1$.
 		Therefore, the inequality holds for all $x \in \mathbb{R}$.
 
@@ -86,7 +82,6 @@
 	\begin{proof}
 		Setting $q = r^{-p}$ yields
 		$$ r^{-p}(e^{rt} - 1)^p = \left( \frac{e^{rt} -1}{r} \right)^p .$$
-		%TODO: ref Lhospital?
 		As $r \rightarrow 0$, both the numerator and denominator tend to $0$ (we can pull the limit inside the exponent since the exponentiation is continuous), therefore we can apply L'Hôpital's rule.
 		Hence
 		\begin{align*}
