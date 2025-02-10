@@ -22,7 +22,7 @@ We will begin with the statement:
 
 % TODO: change to thm and edit text everywhere, find fitting name for this theorem
 \begin{lem}[Main Lemma] \label{main-lemma}
-	Let $S$ be an open convex subset of $n$-dimensional Euclidean space. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity \footnote{i.e. $\metric$ takes the form $\metr{x}{y} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$.} with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates \footnote{Linear coordinates means that the vector representations are cartesian as opposed to, for example, polar, where each coordinate entry is not the value on the corresponding factor of the cartesian product.} in $S$. If $\langle S, \metric \rangle$ is a metric with additive segments, then $\metric$ is homogeneous, i.e., for any $x, z \in S$ and any real $0 \leq t \leq 1$,
+	Let $S$ be an open convex subset of $n$-dimensional Euclidean space. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity \footnote{i.e. $\metric$ takes the form $\metr{x}{y} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$.} with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates \footnote{Linear coordinates means that the vector representations are cartesian as opposed to, for example, polar, where each coordinate entry is not the value on the corresponding factor of the cartesian product.} in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $x, z \in S$ and any real $0 \leq t \leq 1$,
 	\begin{align*}
 		\metric[x, x + t(z - x)] = t\metric(x, z).
 	\end{align*}
@@ -101,7 +101,7 @@ Now, we will move to the proof of the main lemma. It is suggested to first read 
 First we will restate the lemma in the form, in which we will prove it.
 
 \begin{lem*}[Restatement of the Lemma]
-	Let $S$ be an open convex subset of $n$-dimensional Euclidean space with $0 \in S$. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity with respect to linear coordinates in $S$. If $\langle S, \metric \rangle$ is a metric with additive segments, then $\metric$ is homogeneous, i.e., for any $z \in S$ and any real $0 \leq t \leq 1$,
+	Let $S$ be an open convex subset of $n$-dimensional Euclidean space with $0 \in S$. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity with with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $z \in S$ and any real $0 \leq t \leq 1$,
 	\begin{align*}
 		\metro{tz} = t\metro{z}.
 	\end{align*}
