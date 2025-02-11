@@ -25,7 +25,6 @@
 		F^{-1} \left [ \sum_{i=1}^{n} F(t \alpha_i) \right ] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right ]
 	\end{equation}
 
-  %TODO: formulate part 0 and argue that we can apply the lemma
 
 	\begin{proofpart}[Establishing the basics and using the \cref{main-lemma}]
 
@@ -37,7 +36,7 @@
 
     where $F$ is continuous and convex and increasing.
     %TODO: warum sind die intervalle halboffen? Das muss aus der prox struct kommen iwie
-    %TODO: das reicht nicht für das lemma, weil das set hier ist nicht offen, aber für Lemma brauchen wir offen??
+    % Argumentation mit 0 rauslassen nochmal checken
     By the same argument as in \cref{rem-lemma-domains}, $\metric$ must be defined on a cartesian product of intervals of the form $[0,\alpha _i)$ where $\alpha_i$ are the ranges of $| \varphi_i(a_i) - \varphi_i(b_i)|$ for $i=1, \dots, n$. This cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore the requirements for\cref{main-lemma} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for for $\ve{x}, \ve{z} \neq \ve{0}$:
     $$
     \metr{\ve{x}}{\ve{x}+ t(\ve{z}-\ve{x})} = t \metr{\ve{x}}{\ve{z}}.

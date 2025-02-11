@@ -6,27 +6,27 @@
 % Von besonderem Interesse sind Modelle wo die $F_i$ alle über eine gemeinsame Funktion $F$ (bis auf Streckung/Stauchung des Definitionsbereiches, $F_i(x) = F(t_i x), t_i > 0$) dargestellt werden können und $G = F^{-1}$ gilt. Diese Bedingungen erfüllt die $l^p$ Metrik auch.\\
 % Hier kommt ein weiteres Beispiel für eine solche Metrik (p-exp fam).
 
-\begin{defi}[Additive Difference Model]
+\begin{defi}[Additive Difference Model] 
 	\leavevmode \vspace{-\baselineskip}
 	% Es fällt auf, dass die $l^p$ Metrik eine besondere Form hat, die durch $\delta(x,y) = F^{-1} \left[ \sum_{i=1}^{n} F(|x_i - y_i|) \right]$ gegeben ist. Man kann diese Form auf 4 Stufen abstrahieren:
 	\begin{enumerate}
-		\item \emph{Decomposability}: The distance between stimuli is a function of componentwise contributions.\\
+    \item \emph{Decomposability}: The distance between stimuli is a function of componentwise contributions.\\ \index{Decomposability}
 		      \begin{equation}\label{decomp}
 			      \metric(a,b) = F[\psi_1(a_1, b_1), \ldots , \psi_n(a_n, b_n)],
 		      \end{equation}
 		      where $F$ is an increasing \footnote{We use the terms increasing and decreasing to denote real-valued functions that are strictly monotonically increasing and decreasing, respectively.} real-valued function in each of its $n$ real arguments and $\psi_i$ is a real-valued symmetric function satisfying $\psi_i(a_i, b_i) > \psi_i(a_i, a_i)$ when $a_i \neq b_i$ for all $i = 1, ..., n$.
-		\item \emph{Intradimensional subtractivity}: Each componentwise contribution is the absolute value of an appropriate scale difference.\\
+        \item \emph{Intradimensional subtractivity}: Each componentwise contribution is the absolute value of an appropriate scale difference.\\ \index{Intradimensional subtractivity}
 		      \begin{equation}\label{subtr}
 			      \metric(a,b) = F[ |\varphi_1(a_1) - \varphi_1(b_1)| , \ldots , | \varphi_n(a_n) - \varphi_n(b_n)| ],
 		      \end{equation}
 		      where $F$ is as in \cref{decomp} and $\psi_i$ is replaced with $|\varphi_i(a_i) - \varphi_i(b_i)|$ for some real-valued function $\varphi_i$ defined on $A_i$ for $i = 1, ..., n$.
-		\item \emph{Interdimensional additivity}: The distance is a function of the sum of componentwise contributions.
+        \item \emph{Interdimensional additivity}: The distance is a function of the sum of componentwise contributions. \index{Intradimensional additivity}
 		      \begin{equation}\label{iterdim-add}
 			      \metric(a,b) = G \left [ \sum_{i=1}^{n} \psi_i(a_i, b_i) \right],
 		      \end{equation}
 		      where $\psi_i$ are as in \cref{decomp} and $G$ is an increasing function in one argument.
 		\item \emph{Additive-difference model}: If both, additivity and subtractivity are assumed, we get the additive difference model.
-		      \begin{equation}\label{add-diff-model}
+		      \begin{equation}\label{add-diff-model} \index{Additive Difference Model}
 			      \metric(a,b) = G \left \{ \sum_{i=1}^{n} F_i[ | \varphi_i(a_i) - \varphi_i(b_i)| ] \right \},
 		      \end{equation}
 		      where $G$ and $F_i$, for $i=1, \ldots ,n$ , are all increasing functions in one argument.
