@@ -1,28 +1,28 @@
 \section{Additive Difference Structure}
 % In diesem Abschnitt geht es darum, wann eine factorial proximity structure durch das additive difference model (siehe \ref{add-diff-model}) dargestellt werden kann. Die Axiome die dafür benötigt sind, werden hier nicht genauer dargestellt (siehe Anhang \ref{appendix}), sonder nur genannt.
 %
-% \begin{definition}[additive difference structure]\label{add-diff-struct}~\\
-% Eine factorial proximity structure $\langle A, \succsim \rangle$ mit $n \geq 3$ Faktoren ist eine additive difference structure, wenn die Folgenden Axiome erfüllt sind:
-% \begin{enumerate}
-%   \item Betweenness
-%   \item restricted solvability
-%   \item Archimedean axiom
-%   \item Independence
-% \end{enumerate}
-% \end{definition}
-%
+\begin{defi}[additive difference structure]\label{add-diff-struct}
+Eine factorial proximity structure $\langle A, \succsim \rangle$ mit $n \geq 3$ Faktoren ist eine additive difference structure, wenn die Folgenden Axiome erfüllt sind:
+\begin{enumerate}
+  \item Betweenness
+  \item restricted solvability
+  \item Archimedean axiom
+  \item Independence
+\end{enumerate}
+\end{defi}
+
 % Diese Axiome liefern zusammen nach Folgendem Satz, dass die Struktur durch ein additive difference model darstellbar ist, welches die Ordnung behält. Die Axiome einzeln bzw. jeweils 2 oder 3 zusammen liefern die Bausteine des additive difference models, also decomposability, intradimensional subtractivity und interdimensional additivity. Falls $n=2$ gilt, kann man eine Bedingung, die Thomsen condition, hinzufügen, um das selbe Resultat zu erhalten.
 %
-% \begin{thm}[Repräsentationstheorem für additive difference proximity structures]\label{add-diff-prox-struct-repr}~\\
-% Sei $\langle A, \succsim \rangle$ eine additive-difference factorial proximity structure.\\
-% Dann gibt es reellwertige Funktionen $\varphi_1, \ldots, \varphi_n$, die auf $A_1, \ldots, A_n$ definiert sind, und steigende Funktionen $F_1, \ldots, F_n$, die jeweils auf $\mathbb{R}$ definiert sind, so dass für alle $a, b, c, d \in A$,
-% \begin{align*}
-%   (a_1, \ldots, a_n, b_1, \ldots, b_n) &\succsim (c_1, \ldots, c_n, d_1, \ldots, d_n) \\
-% &\iff \\
-%   \sum_{i=1}^{n} F_i(|\varphi_i(a_i) - \varphi_i(b_i)|) &\geq \sum_{i=1}^{n} F_i(|\varphi_i(c_i) - \varphi_i(d_i)|).
-% \end{align*}
-% Außerdem sind die $\varphi_i$ Intervallskalen und die $F_i$ Intervallskalen mit einer gemeinsamen Einheit ($i = 1, \ldots, n$).
-% \end{thm}
+\begin{thm}[Representation Theorem for Additive Difference Proximity Structures]\label{add-diff-prox-struct-repr}
+Let \(\langle A, \succsim \rangle\) be an additive-difference factorial proximity structure.  
+Then there exist real-valued functions \(\varphi_1, \ldots, \varphi_n\) defined on \(A_1, \ldots, A_n\), and increasing functions \(F_1, \ldots, F_n\) each defined on \(\mathbb{R}\), such that for all \(a, b, c, d \in A\),  
+\begin{align*}
+  (a_1, \ldots, a_n, b_1, \ldots, b_n) &\succsim (c_1, \ldots, c_n, d_1, \ldots, d_n) \\
+&\iff \\
+  \sum_{i=1}^{n} F_i(|\varphi_i(a_i) - \varphi_i(b_i)|) &\geq \sum_{i=1}^{n} F_i(|\varphi_i(c_i) - \varphi_i(d_i)|).
+\end{align*}
+Furthermore, the \(\varphi_i\) are interval scales, and the \(F_i\) are interval scales with a common unit (\(i = 1, \ldots, n\)).
+\end{thm}
 
 \addcontentsline{toc}{subsection}{AD repr theorem}
 
