@@ -1,6 +1,8 @@
 \section{Proximity Structures and Metrics}
-In diesem Kapitel geht es erstmal darum die Mathematische Basis Aufzubauen. Wie aus der Einleitung hervorgeht, wollen wir jeweils zwei Paare von Stimuli auf ihre Ähnlichkeit vergleichen. Seien $a, b, c$ und $d$ solche Stimuli. Dann bedeutet die Notation $(a,b)\succsim(c,d)$, dass Stimuli $a$ und $b$ sich unähnlicher sind, als $c$ und $d$. Analog bedeutet $\sim$, dass die Ähnlichkeit zweier Paare gleich ist.\\
-Die Idee von einer proximity structure, ist die Mathematische Definition dieser Idee: eine Relation $\succsim$ auf einer Menge $A$ die die Grundeigenschaften einer Metrik erfüllt.
+To be able to compare two stimuli pairs in a mathematical sense, we introduce a relation on a stimuli set that compares two stimuli pairs.
+If we have four stimuli $a, b, c$ and $d$, then $(a,b)\succsim(c,d)$ denotes that, the stimuli $a$ and $b$ are less similar than the stimuli $c$ and $d$ (or more precisely, the dissimilarity between $a$ and $b$ is at least as great as that between $c$ and $d$). Analogously, $\sim$ means that the similarity of two pairs is equal.
+This essence of a \emph{proximity structure} is exactly that, with some additional constraints.
+
 
 \begin{defi}[Factorial Proximity Structure] \index{Proximity Structure}
 	Suppose $A$ is a set and $\succsim$ a quaternary relation on $A$, i.e., binary relation on $A \times A$. $\langle A, \succsim \rangle$ is a proximity structure iff the following axioms hold for all $a, b \in A$:
@@ -18,12 +20,26 @@ Die Idee von einer proximity structure, ist die Mathematische Definition dieser 
 	\]
 \end{defi}
 
-\begin{rem}[Connectedness]
-	Connected means, that comparison of all distinct elements is possible, i.e., for a relation $R$ on a set $X$ it hold for all $x, y \in X$ with $x \neq y$ that either $xRy$ or $yRx$.
-	% Zusammenhängend heißt, man kann alle distinkten Elemente vergleichen, also für eine Relation $R$ auf einer Menge $X$ gilt für $x, y \in X, x \neq y$ dann $xRy$ oder $yRx$.
-\end{rem}
+\begin{rem*}[Connectedness]
+	Connected means, that comparison of all distinct elements is possible, i.e., for a relation $R$ on a set $X$ it holds for all $x, y \in X$ with $x \neq y$ that either $xRy$ or $yRx$.
+\end{rem*}
 
-Da wir die Relation $\succsim$ durch eine Metrik repräsentieren wollen, lohnt es sich einen Begriff dafür einzuführen. Die Idee ist das, was man sich intuitiv vorstellt: man will dass die Metrik die Struktur von $\langle A, \succsim \rangle$ erhält, und die einzige Struktur die wir gegeben haben, ist die Ordnung jeweils zweier Paare.
+%TODO: axiome erklären
+
+The mathematical concept, that we want to tie proximity structures to, is the concept of metric. A metric is defined as follows:
+\begin{defi}[Metric] \index{Metric} \index{Metric!space}
+  Let $X$ be a set. A real-valued function $\metric$ on $X \times X$ is a \emph{metric}, iff the following properties hold for all $x, y, z \in X$:
+\begin{enumerate}[1.]
+  \item $\metr{x}{y} > 0$ unless $x=y$ and $\metr{x}{x} = 0$
+  \item $\metr{x}{y} = \metr{y}{x}$
+  \item $\metr{x}{y} + \metr{y}{z} \geq \metr{x}{z}$
+\end{enumerate}
+We call $\langle X, \metric \rangle$ a \emph{metric space}.
+\end{defi}
+
+Metrics are measures of distance in a space. The third property is called the \emph{triangle inequality} and is central to the intuition of measuring distances. The triangle inequality can be formulated as follows: Adding a detour through $y$ on the way from $x$ to $z$ can only increase the distance.
+
+Since we aim to connect these two concepts, we will introduce a term for that which aligns with the intuitive approach: We want the metric to preserve the structure of $\langle A, \succsim \rangle$. The only structure we have is the ordering of two stimuli pairs, and we want the metric to preserve exactly this ordering.
 
 \begin{defi}[Representability of $\succsim$ by a Metric] \index{Proximity Structure!representable by a metric}
 	A proximity structure $\langle A, \succsim \rangle$ is representable by a metric iff there exists a real-valued function $\delta$ on $A$ such that:
@@ -36,3 +52,15 @@ Da wir die Relation $\succsim$ durch eine Metrik repräsentieren wollen, lohnt e
 		      \]
 	\end{enumerate}
 \end{defi}
+
+
+However, simple metrics do not impose enough structure, and we therefore require the metrics to satisfy additional conditions.
+If we observe most metrics, such as the widely used Minkowski $r$-metric or Minkowski distance (also called the power or $L^p$ metric) defined by
+\begin{defi}[Minkowski Metric] \index{Metric!Minkowski} \index{Metric!Power} \index{Minkowski!metric} \index{Minkowski!distance}
+  For $n \in \mathbb{N}_{>0}$ and $r \geq 1$ the Minkowski Metric of two vectors $\ve{x}, \ve{y} \in \mathbb{R}^{n}$ is defined as
+\begin{equation*}
+\metr[r]{\ve{x}}{\ve{y}} = \left ( \sum_{i=1}^{n} |x_i - y_i|^r \right)^{1/r}.
+\end{equation*}
+\end{defi}
+
+For $r \geq 1$, this is indeed a metric, as the Minkowski inequality establishes the triangle inequality; see \parencite[p. 189-191 Theorem 9]{handbookMeans}. \index{Minkowski!inequality}
