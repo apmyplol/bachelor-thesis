@@ -123,7 +123,7 @@ After this, we will expand this statement to the rationals and then use continui
 	%-------------- Proof part 0 ----------------------------%
 	\begin{proofpart}[Asserting a common distance for all points on the line segment] \label{lemma-part0}
 		Let $z \in S$.
-		Since $S$ is open, $\mathbb{R}^{n} \setminus S$ is closed. The set $I := \{t z : t \in [0,1]\}$ is compact, since continuous images($t \mapsto t z$) of compact sets ($t \in [0,1]$) are compact\todo{ref?}.
+		Since $S$ is open, $\mathbb{R}^{n} \setminus S$ is closed. The set $I := \{t z : t \in [0,1]\}$ is compact, since continuous images($t \mapsto t z$) of compact sets ($t \in [0,1]$) are compact.
 		Thus, by \cref{lemma-distance} there exists a distance $\varepsilon > 0$ such that $\metr[\infty]{p}{y} < \varepsilon$ for all $p \in I$ and $y \in \mathbb{R}^{n} \setminus S$.
 		This means, for all points on the line from $0$ to $z$ the ball with radius $\varepsilon$ is a subset of $S$, i.e. for all $t \in [0,1]: \ballp[\infty]{\varepsilon}{tz} \subset S$.
     By \cref{lemma-small-delta-balls}, there exists $\alpha > 0$ such that $\ball{\alpha} \subset \ball[\infty]{\alpha}$, and by translation invariance this holds for all points on the line: $\ballp{\alpha}{tz} \subset S$ for all $t \in [0,1]$.

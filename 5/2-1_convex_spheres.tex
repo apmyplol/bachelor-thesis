@@ -64,7 +64,7 @@ The first one is the openness/closedness of $\metric$-balls.
 		                 & = \{y \in S' : \metr{0}{y} \leq \alpha\} \\
 		                 & = \cball{\alpha}
 	\end{align*}
-	due to topological continuity of $\metric$ (which is equivalent to preimages of closed sets being closed) $\cball{\alpha}$ is closed. By translation invariance this holds for closed balls with any center in $S$. \todo{ref topo stetig?}\\
+	due to topological continuity of $\metric$ (which is equivalent to preimages of closed sets being closed) $\cball{\alpha}$ is closed. By translation invariance this holds for closed balls with any center in $S$.\\
 	Moreover, we can obtain the same result for open balls by repeating this proof and replacing the closed interval with an open one and $\leq$ with $<$.
 \end{proof}
 
@@ -75,9 +75,12 @@ The second lemma shows, that extreme points of balls get compressed by a factor 
 	Then, $y \in \E[\alpha]$ implies $\frac{1}{r}y \in \E[\frac{\alpha}{r}]$.
 \end{lem}
 
-\begin{proof}
-	% (We use square brackets for $\CO$ to denote, that this set is closed by \todo{ref adden}).
-	We will prove this statement by contraposition.
+\begin{rem*}
+  We use square brackets for $\CO$ to denote that this set is closed. For the reasoning, see the first argument in \cref{proof-metr-spheres-convex}.
+\end{rem*}
+
+\begin{proof}~\\
+	We prove this statement by contraposition.
 
 	Assume, that $\frac{1}{r}y$ is not an extreme point, i.e. $\frac{1}{r}y \in \CO[\frac{\alpha}{r}] \setminus \E[\frac{\alpha}{r}]$.
 	Then we can write $\frac{1}{r}y$ as a strict convex combination of elements $w^i \in \CO[\frac{\alpha}{r}]$:
@@ -104,8 +107,7 @@ The second lemma shows, that extreme points of balls get compressed by a factor 
 Now we can prove the convexity of $\metric$-balls.
 
 
-\todo{ref heine-borel?}
-\begin{proof}[Proof of \cref{lem-metr-spheres-convex}]
+\begin{proof}[Proof of \cref{lem-metr-spheres-convex}] \label{proof-metr-spheres-convex}
 	Let $\E := \extr ( \cball{\alpha})$ and $\CO := \co(\cball{\alpha})$.
 	By \cref{lemma-delta-balls-closed} $\cball{\alpha}$ is closed and by assumption it is also bounded. Therefore, from the Heine-Borel Theorem, it follows that $\cball{\alpha}$ is compact.
 
