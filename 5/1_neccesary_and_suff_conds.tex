@@ -1,12 +1,10 @@
 \chapter{Combining Segmental Additivity with the AD-Model}
 \chaptermark{Segmental Additivity in the AD Model}
 
-% \chapter[medium-length title for TOC, if wanted]{full title name}
-%TODO: think of new name, but note that the current one is out of line
 \section{Conditions for AD-Metrics}
 % \addcontentsline{toc}{section}{Theorem: Necessary and sufficient conditions for additive difference metrics}
 \begin{thm}[Necessary and sufficient conditions for additive difference metrics]\label{necc-suff-conds} \index{TODO}
-	Suppose $\langle A, \succsim \rangle$ is an additive-difference proximity structure such that $f$ is the additive-difference representation from \ref{add-diff-prox-struct-repr}, i.e.,
+	Suppose $\langle A, \succsim \rangle$ is an additive-difference proximity structure such that $f$ is the additive-difference representation from \cref{add-diff-prox-struct-repr}, i.e.,
 	\[
 		f(a, b) = \sum_{i=1}^{n} F_i(|\varphi_i(a) - \varphi_i(b)|).
 	\]
@@ -34,8 +32,7 @@ The following remark ties this result closer to the Minkowski metric, and provid
 	\end{equation*}
 	where $F$ is continuous, convex and increasing.\\
 	This follows form two arguments.
-	Firstly, incorporating the $t_i$ into the $\varphi_i$
-  %TODO: maybe phi_i' = t_i phi_i definieren und substituieren anstatt incorporating sagen? 
+  Firstly, incorporating the $t_i$ into the $\varphi_i$ (which is possible because, by \cref{add-diff-prox-struct-repr}, the $\varphi_i$ are interval scales)
 	\begin{align*}
 		G \Big \{ \sum_{i=1}^{n} F_i(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} & = G \Big \{ \sum_{i=1}^{n} F(t_i| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} \\
 		                                                                          & = G \Big \{ \sum_{i=1}^{n} F(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \}
@@ -54,13 +51,12 @@ The following remark ties this result closer to the Minkowski metric, and provid
 	$$
 		f(a,b) \leq f(c,d) \iff \delta(a,b) \leq \delta(c,d) \quad \text{for all } a, b, c, d \in A .
 	$$
-	Therefore, there exists an increasing function $G$, such that for all $a, b \in A$
+  Therefore, there exists an increasing function $G$ \footnotemark{} , such that for all $a, b \in A$
 
 	$$
 		\delta(a, b) = G(f(a,b)) =  G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right).
 	$$
-	%TODO: link adden & Ausformulieren, metrik induziert ordering welches ordinal scale ist
-	A possible perspective on this is, that by \todo{ref} $f$ is an interval scale and therefore preserves orderings. Since the ordinal ordering of all pairs of elements from $A$ is same for $f$ and $\delta$, there must be an increasing function which transforms one scale into the other and preserves the ordinal orderings.\\
+  \footnotetext{A possible perspective on this is, that the metric $\metric$ induces an ordinal scale for pairs of elements. The same holds for the function $f$ and these orderings are the same. Because ordinal scales, by definition, are invariant under increasing bijections, there must exist an increasing function $G$, which transforms the $f$-scale into the $\metric$-scale.}
 	Assume $a$, $b$, and $c$ differ only in the $i$-th factor and $a|b|c$. Thus, we can use additivity on the $i$-th coordinate axis for $a, b, c \in A$ which yields
 
 	\[
@@ -74,16 +70,13 @@ The following remark ties this result closer to the Minkowski metric, and provid
 	\]
 
 
-    %TODO: Form of H_i: check if only linear functions satisfy this
-	Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i, 1 \leq i \leq n$. This means, that $H_i$ must be linear and since the values are positive (because we are still observing metrics), the only monotonic solution to this equation is $H_i(x) = t_i x$ for $t_i > 0$. Since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
+  Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i, 1 \leq i \leq n$. By \cref{add-diff-prox-struct-repr}, the domain is $\mathbb{R}$. This is Cauchy's functional equation and, under the assumption of monotonicity, the only solution is $H_i = t_i x$ for $t_i \in \mathbb{R}$, as shown in \parencite[p. 15]{aczelFunctionalEquationsSeveral1989}. Since the values are positive (as we are dealing with metrics), $H_i = t_i x$ with $t_i > 0$ must hold for all $i=1, ..., n$. Additionally, since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
 
 	\[
 		G^{-1}[H_i(x)] = G^{-1}[t_i x] = F_i(x)
 	\]
-  %TODO: An beispiel ausprobieren mit where F_i is defined, diesen Abschnitt nochmal ausformulieren
-  % F_n largest domain = t_n smallest?
-  % t_i' einführen maybe
-	where $F_i$ is defined. Since $G^{-1}$ is independent of $i$, the $F_i$ can only differ in range and in the unit of the domain (i.e. the $t_i$ which defines the domain of $F_i$ by adjusting the domain of $G^{-1}$). Without loss of generality, we can assume that the range of $F_n$ is the largest. Since the range of $F_n$ includes the range of $F_i$, we can set $F = F_n$ and obtain $F_i(x) = F_n(t_i x) = F(t_i x)$ for $t_i > 0$ and for every $x$ in the domain of $F_i$.
+
+	where $F_i$ is defined. Since $G^{-1}$ is independent of $i$, the $F_i$ can only differ in range and in the unit of the domain (i.e. the scaling factor $t_i$ which defines the domain of $F_i$ by adjusting the domain of $G^{-1}$). Without loss of generality, we can assume that the range of $F_n$ is the largest among the $F_i$. This assumption allows us to define $F = F_n$ as the reference function, and the other $F_i$ can be expressed as $F_i(x) = F_n(t_i x) = F(t_i x)$ for $t_i > 0$ and for every $x$ in the domain of $F_i$.
 	Continuity and convexity will be proven in the next lemmas.
 \end{proof}
 

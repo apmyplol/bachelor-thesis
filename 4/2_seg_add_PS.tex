@@ -1,5 +1,3 @@
-%TODO: introduce segmentally additive proximity structure
-
 \section{Segmentally Additive Proximity Structures}
 
 Da wir diese Additivität aus der proximity structure herleiten wollen, müssen wir Eigenschaften definieren, aus der man die Additivität herleiten kann. Dazu benötigen wir Folgenden Begriff:
@@ -35,4 +33,12 @@ Die Bedingungen, die notwendig sind, um eine Darstellung durch eine Metrik mit a
 
 
 \addcontentsline{toc}{subsection}{seg add representability}
-%TODO: Add Theorem for segmentally additive proximity structure
+
+
+\begin{thm}[Representation Theorem for Segmentally Additive Proximity Structures]\label{seg-add-ps-repr-thm} \index{Representation theorem!segmentally additive proximity structure}
+	Suppose $\langle A, \succsim \rangle$ is a segmentally additive proximity structure. Then $\langle A, \succsim \rangle$ is representable by a metric, and additionally, for all $a, b, c \in A$:
+	\begin{enumerate}
+		\item $\langle abc \rangle \iff \delta(a, b) + \delta(b, c) = \delta(a, c)$.
+		\item If $\delta'$ is another metric on $A$ that satisfies the above conditions, then there exists $\alpha > 0$ such that $\delta' = \alpha \delta$ ($\delta$ is a ratio scale).
+	\end{enumerate}
+\end{thm}

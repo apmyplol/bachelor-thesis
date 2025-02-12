@@ -111,10 +111,10 @@ Now we can prove the convexity of $\metric$-balls.
 	Let $\E := \extr ( \cball{\alpha})$ and $\CO := \co(\cball{\alpha})$.
 	By \cref{lemma-delta-balls-closed} $\cball{\alpha}$ is closed and by assumption it is also bounded. Therefore, from the Heine-Borel Theorem, it follows that $\cball{\alpha}$ is compact.
 
-	By definition and \cref{compact-hull-compact} it follows, that $\CO$ is compact (and therefore closed, which is the reason why we denote it with square brackets) and convex. Application of the Minkowski Theorem (\cref{minkowski-theorem}) yields:
-	$$ \CO = \co(\extr ( \CO )) $$
-	Further, it holds that $\extr(\CO) = \extr(\cball{\alpha})$ (By doing convex combinations, no new extreme points can be introduced because these are the points, which cannot be represented by a convex combination). %TODO: check argumentation
-	Combining this and the statement above yields:
+	By definition and \cref{compact-hull-compact} it follows, that $\CO$ is compact (and therefore closed, which is the reason why we denote it with square brackets) and convex. Application of the Minkowski Theorem (\cref{minkowski-theorem}) yields
+	$$ \CO = \co(\extr ( \CO )). $$
+	Further, it holds that $\extr(\CO) = \extr(\cball{\alpha})$ (By doing convex combinations, no new extreme points can be introduced because these are the points, which cannot be represented by a convex combination).
+  Combining this and the statement above yields:
 	$$ \cball{\alpha} \subset \CO = \co ( \extr (\cball{\alpha})). $$
 	Now, if we prove that $\co ( \extr (\cball{\alpha})) \subset \cball{\alpha}$, we get that $\cball{\alpha} = \CO$ which proves the convexity of $\cball{\alpha}$.
 	We simplify this statement before proving it.
