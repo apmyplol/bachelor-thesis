@@ -17,7 +17,7 @@ Definitions:
     metric space with additive segments
 
     ternary relation om prox structs
-    segmentally additive proximity structure ~> todo best way to introduce
+    segmentally additive proximity structure
 
   Chap 4: combining
     additive on the coordinate axes
@@ -62,16 +62,16 @@ Proving:
   Ex: segmental additivity of the minkowski metric
 
   Thm: Necessary and sufficient conditions for additive difference metrics
-    Representation by G: metric induces ordinal scale ~> todo
-    Form of H_i: Basic argumentation, linear function definition ~> todo check if only linear functions satisfy this
+    Representation by G: metric induces ordinal scale
+    Form of H_i: Basic argumentation, linear function definition
     Lem: Inequality 1
     Lem: F continuous
     Lem: characterization of convexity
   Rem: form G = F^-1
 
-  Thm: unique representation theorem ~> todo change name
-    Part0 ~> todo formulate part and apply lemma
-    Part3 ~> todo understand what is written in the todo
+  Thm: unique representation theorem
+    Part0
+    Part3
 
 
   Thm (main Lemma): ~> todo add name, tex & text check everywhere where mentioned

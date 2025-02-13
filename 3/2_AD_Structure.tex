@@ -1,8 +1,8 @@
-\section{Additive Difference Structure}
+\section{Additive Difference Structure} \label{sec-AD-ps}
 % In diesem Abschnitt geht es darum, wann eine factorial proximity structure durch das additive difference model (siehe \ref{add-diff-model}) dargestellt werden kann. Die Axiome die dafür benötigt sind, werden hier nicht genauer dargestellt (siehe Anhang \ref{appendix}), sonder nur genannt.
 %
-\begin{defi}[additive difference structure]\label{add-diff-struct}
-Eine factorial proximity structure $\langle A, \succsim \rangle$ mit $n \geq 3$ Faktoren ist eine additive difference structure, wenn die Folgenden Axiome erfüllt sind:
+\begin{defi}[Additive-Difference Structure]\label{def-add-diff-ps} \index{Additive-difference!structure}
+  A factorial proximity structure $\langle A, \succsim \rangle$ with $n \geq 3$ Factors is an \emph{additive-difference(AD) structure}, iff the following axioms are hold:
 \begin{enumerate}
   \item Betweenness
   \item restricted solvability
@@ -13,7 +13,7 @@ Eine factorial proximity structure $\langle A, \succsim \rangle$ mit $n \geq 3$ 
 
 % Diese Axiome liefern zusammen nach Folgendem Satz, dass die Struktur durch ein additive difference model darstellbar ist, welches die Ordnung behält. Die Axiome einzeln bzw. jeweils 2 oder 3 zusammen liefern die Bausteine des additive difference models, also decomposability, intradimensional subtractivity und interdimensional additivity. Falls $n=2$ gilt, kann man eine Bedingung, die Thomsen condition, hinzufügen, um das selbe Resultat zu erhalten.
 %
-\begin{thm}[Representation Theorem for Additive Difference Proximity Structures]\label{add-diff-prox-struct-repr}
+\begin{thm}[Representation and Uniqueness Theorem for AD Structures]\label{thm-repr-add-diff-struct} \index{Representation and uniqueness theorem!for additive-difference structures}
 Let \(\langle A, \succsim \rangle\) be an additive-difference factorial proximity structure.  
 Then there exist real-valued functions \(\varphi_1, \ldots, \varphi_n\) defined on \(A_1, \ldots, A_n\), and increasing functions \(F_1, \ldots, F_n\) each defined on \(\mathbb{R}\), such that for all \(a, b, c, d \in A\),  
 \begin{align*}

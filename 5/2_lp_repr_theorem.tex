@@ -1,6 +1,5 @@
-%TODO: change name
-\section{Uniqueness-Representation Theorem}
-\begin{thm}[Eindeutigkeitssatz zu $l^p$ Metriken]\label{lp-uniqueness-theorem}
+\section{Unique Representation Theorem}
+\begin{thm}[Unique Representation Theorem: The Power Metric as the Sole Representation for Segmentally Additive AD Structures]\label{thm-uniquene-repr-minkowski}
 	Suppose $\langle A, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.\\
 	Then there exists a unique $r \geq 1$ and real-valued functions $\varphi_i$, defined on $A_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $a, b, c, d \in A$,
 	\[
@@ -21,14 +20,14 @@
 	Finally, we prove that $F$ is equal to this extension on the whole domain, and therefore $\metric$ is a Minkowski metric.
 
 	\setcounter{proofpart}{-1}
-	\begin{equation} \label{homogen-eq}
+	\begin{equation} \label{proof-homogen-eq}
 		F^{-1} \left [ \sum_{i=1}^{n} F(t \alpha_i) \right ] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right ]
 	\end{equation}
 
 
 	\begin{proofpart}[Establishing the basics and using the \cref{main-lemma}]
 
-    By \cref{necc-suff-conds} and \cref{rem-metric-form}, $\metric$ must be of the form 
+    By \cref{thm-necc-suff-conds} and \cref{rem-metric-form}, $\metric$ must be of the form 
 
     \begin{equation*}
     \metr{a}{b} = F^{-1} \left [ \sum_{i=1}^{n} F(| \varphi_i(a_i) - \varphi_i(b_i)|)  \right]
@@ -56,7 +55,7 @@
     We will show, that the only solutions to this equation are of the form $F(\alpha) = k \alpha^r$, i.e. the power functions.
 
     First, we start by observing the domains and the ranges of $F$.
-		By \cref{necc-suff-conds}, the additive difference model
+		By \cref{thm-necc-suff-conds}, the additive difference model
     \begin{equation*}
 			\delta(a, b) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right)
     \end{equation*}
@@ -65,8 +64,8 @@
 		In particular, if we set $\omega_i = \omega/t_i$, then $F^{-1} \left[ \sum_{i=1}^{n} F_i(\omega_i) \right] = F^{-1} \left[ nF(\omega) \right] =: \Omega$ is defined. Thus, $F = G^{-1}$ is defined at least on the interval $[0, \Omega]$. We can now extend $F$ as follows.
 	\end{proofpart}
 	\begin{proofpart}[Extending the bounds of $F$]
-		For $\alpha < \omega$, we have by \cref{homogen-eq},
-    \begin{align} \label{extension_prereq}
+		For $\alpha < \omega$, we have by \cref{proof-homogen-eq},
+    \begin{align} \label{proof-extension_prereq}
       \begin{split}
 			F^{-1}[nF(\alpha)] & = F^{-1}[nF(\alpha \omega/\omega)]   \\
 			                   & = (\alpha/\omega) F^{-1}[nF(\omega)] \\
@@ -75,21 +74,21 @@
 		\end{align}
 		Thus $F$ satisfies the following, by plugging in the correct values for $\alpha$ ($\tilde  \alpha = \alpha \frac{\omega}{\Omega}$ and $\tilde \alpha = F^{-1}( \frac{\alpha}{n} )$)
 		\begin{align}
-			F(a)      & = nF(a \omega/\Omega), \quad 0 \leq a \leq \Omega; \label{f-erw}               \\
-			F^{-1}(a) & = (\Omega/\omega) F^{-1}(a/n), \quad 0 \leq a \leq nF(\omega). \label{f-1-erw}
+			F(a)      & = nF(a \omega/\Omega), \quad 0 \leq a \leq \Omega; \label{proof-f-erw}               \\
+			F^{-1}(a) & = (\Omega/\omega) F^{-1}(a/n), \quad 0 \leq a \leq nF(\omega). \label{proof-f-1-erw}
 		\end{align}
 		These two equations can now be used to extend the domain of $F$ and $F^{-1}$.\\
-		We use \cref{f-erw} by defining $F$ through the right-hand side (for values where the right-hand side is defined, i.e., for $0 \leq a \leq \Omega^2/\omega$). Since $\Omega^2/\omega > \Omega$, this indeed extends $F$ beyond the interval $[0, \Omega]$.\\
-		Similarly, $F^{-1}$ satisfies equation \cref{f-1-erw} for the extended interval $0 \leq a \leq nF(\Omega) = n^2 F(\omega)$.\\
-		Moreover, \cref{homogen-eq} is now valid for $0 \leq t \leq 1$ and $0 \leq \alpha_i \leq \Omega$:
+		We use \cref{proof-f-erw} by defining $F$ through the right-hand side (for values where the right-hand side is defined, i.e., for $0 \leq a \leq \Omega^2/\omega$). Since $\Omega^2/\omega > \Omega$, this indeed extends $F$ beyond the interval $[0, \Omega]$.\\
+		Similarly, $F^{-1}$ satisfies equation \cref{proof-f-1-erw} for the extended interval $0 \leq a \leq nF(\Omega) = n^2 F(\omega)$.\\
+		Moreover, \cref{proof-homogen-eq} is now valid for $0 \leq t \leq 1$ and $0 \leq \alpha_i \leq \Omega$:
 		\begin{align*}
-			F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} nF(t \alpha_i \omega / \Omega) \right] \tag{by \cref{f-erw}}                                                                        \\
+			F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} nF(t \alpha_i \omega / \Omega) \right] \tag{by \cref{proof-f-erw}}                                                                        \\
 			                                                   & = F^{-1} \left[ n \sum_{i=1}^{n} F(t \alpha_i \omega / \Omega) \right]                                                                                             \\
-			                                                   & = \frac{\Omega}{\omega} F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i \omega / \Omega) \right] \tag{by \cref{f-1-erw}}                                                 \\
+			                                                   & = \frac{\Omega}{\omega} F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i \omega / \Omega) \right] \tag{by \cref{proof-f-1-erw}}                                                 \\
 			                                                   & = \frac{\Omega}{\omega} t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i \omega / \Omega) \right] \tag{by homogeneity applied for $\alpha_i \omega / \Omega \leq \omega$} \\
-			                                                   & = t F^{-1} \left[ n \sum_{i=1}^{n} F(\alpha_i \omega / \Omega) \right] \tag{by \cref{f-1-erw}}                                                                     \\
+			                                                   & = t F^{-1} \left[ n \sum_{i=1}^{n} F(\alpha_i \omega / \Omega) \right] \tag{by \cref{proof-f-1-erw}}                                                                     \\
 			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} n F(\alpha_i \omega / \Omega) \right]                                                                                             \\
-			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \tag{by \cref{f-erw}}
+			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \tag{by \cref{proof-f-erw}}
 		\end{align*}
     Further, the extended function is both increasing and continuous since the extension is based on scaling of the domain and the range of the original function.
     For continuity let $a_n \rightarrow a$ with $\omega < a < \Omega$. Then
@@ -102,9 +101,9 @@
     which is equivalent to $F$ begin continuous on the extended domain.
 
     For monotonicity we can use a similar argument. Let $a < b$ with $\omega < a, b < \Omega$. Then $a \frac{\omega}{\Omega} < b \frac{\omega}{\Omega}$ holds. Plugging that into $F$ and multiplying by $n$ yields $nF \left(a \frac{\omega}{\Omega}\right) <nF \left( b \frac{\omega}{\Omega}\right)$ due to $F$ being increasing on the original domain. Therefore $a < b$ implies $F(a) < F(b)$ which is equivalent to $F$ increasing.
-    Thus, we have established strict increasing monotonicity, continuity and \cref{homogen-eq} for the extended function.
+    Thus, we have established strict increasing monotonicity, continuity and \cref{proof-homogen-eq} for the extended function.
 
-		Repeatedly applying the arguments, extends the intervals in which $F$ is defined and in which monotonicity, continuity and homogeneity (\cref{homogen-eq}) are valid by a factor of $\Omega/\omega$ each time. Thus, we can extend $F$ to $[0, \infty)$ while preserving these properties. We can prove further, that the homogeneity equation must also hold for $t \in [0, \infty)$.
+		Repeatedly applying the arguments, extends the intervals in which $F$ is defined and in which monotonicity, continuity and homogeneity (\cref{proof-homogen-eq}) are valid by a factor of $\Omega/\omega$ each time. Thus, we can extend $F$ to $[0, \infty)$ while preserving these properties. We can prove further, that the homogeneity equation must also hold for $t \in [0, \infty)$.
 		Let $a_i > 0$ and $t > 1$. Then there exists $t' = \frac{1}{t} < 1$ such that $t' \cdot t a_i = a_i$. Therefore
 		\begin{align*}
 			t t' F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \tag{$t t' = 1$}     \\
@@ -114,7 +113,7 @@
 		The last step holds, because both $t'<1$ and $t a_i < \infty$ hold.
 		Dividing both sides by $t'$ yields
 		\begin{equation}
-			F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \quad \text{ for } a, t < \infty \label{f-ext-eq}
+			F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \quad \text{ for } a, t < \infty \label{proof-f-ext-eq}
 		\end{equation}
     To sum up, we have obtained an extended function which satisfies monotonicity, continuity and homogeneity for $t \in [0, \infty)$. This extended function must coincide with tie original $F$ on at least the interval $[0, \Omega]$ (because this was the domain of $F$ that we deduced, before extending it).
 	\end{proofpart}
@@ -123,28 +122,28 @@
 
 
     Next, we derive a functional equation that allows us to use results on quasi-arithmetic homogeneous means \parencite[p. 68]{hardy1952inequalities}. The theorem states as follows:
-    \begin{thm*}[Uniqueness of homogeneous quasi-arithmetic means, \cref{power-mean-uniquemess}]
+    \begin{thm*}[Uniqueness of homogeneous quasi-arithmetic means, \cref{thm-power-mean-uniqueness}]
       Suppose that $\phi$ is continuous and strictly increasing in the open interval $(0,\infty)$ and that
       \begin{equation*}
       \mean{t \ve{a}} = t \mean{ \ve{a}} \quad  \text{with} \quad \mean{\ve{a} } = \phi^{-1} \left ( \sum_{i=1}^{n} w_i \phi(a_i) \right)
       \end{equation*}
       for all positive $\ve{a}, \ve{w}, t$. Then $\mean{a} = \meanr{a}$. (i.e. $\mean{\ve{a}}$ is either a power mean with $\phi(x) = a x^r + b$ and $a, b, r \in \mathbb{R}, r > 0$ or a geometric mean with $\phi(x) = a \log (x)$, $a \in \mathbb{R}$.)
     \end{thm*}
-    The proof of this statement will be presented in \cref{HLP_proof}, here we will apply the theorem for our proof.
+    The proof of this statement will be presented in \cref{sect-HLP_proof}, here we will apply the theorem for our proof.
 
     Since all requirements, except the functional equation, are already met by our extension, we will derive this equation now.
     
 
-		Firstly, applying \cref{f-1-erw} on the left hand side yields
+		Firstly, applying \cref{proof-f-1-erw} on the left hand side yields
 		\begin{equation*}
 			\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] .
 		\end{equation*}
-		Applying \cref{f-1-erw} once more on the right hand side, yields
+		Applying \cref{proof-f-1-erw} once more on the right hand side, yields
 		\begin{equation*}
 			\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] =\Omega / \omega t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right] .
 		\end{equation*}
 		Hence
-		\begin{equation*} \label{azcel-eq}
+		\begin{equation*} \label{proof-azcel-eq}
 			F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right]
 		\end{equation*}
 		must hold.
@@ -161,7 +160,7 @@ Wenn ich die Formulierung auf Wikipedia (\href{https://en.wikipedia.org/wiki/Qua
 Jetzt ist mir nicht klar, ob der Fall von den allgemeinen Gewichten direkt aus dem Fall von $1/n$ Gewichten folgt, weil ich sehe das nicht und hab es auch (bisher) nicht geschafft das zu beweisen.
 
 
-Ich habe auch andersrum versucht, für die Funktion hier herzuleiten, dass Homogenität für die allgemeinen Gewichte gilt, aber habe das auch nicht geschafft. Im Grunde brauche ich dafür die Gleichung \cref{extension_prereq} mit $n = \omega = \lambda$ wobei $\lambda > 0$ gilt, also
+Ich habe auch andersrum versucht, für die Funktion hier herzuleiten, dass Homogenität für die allgemeinen Gewichte gilt, aber habe das auch nicht geschafft. Im Grunde brauche ich dafür die Gleichung \cref{proof-extension_prereq} mit $n = \omega = \lambda$ wobei $\lambda > 0$ gilt, also
 $$
 F^{-1} \left [ \lambda F(\alpha) \right] = \frac{\alpha}{\lambda} F^{-1}\left [ \lambda F(\lambda) \right].
 $$
@@ -184,7 +183,7 @@ Wenn ich diese Gleichung hätte, könnte ich daraus die Homogenität für positi
 			             & = \frac{1}{t} \left( \sum_{i=1}^{n} \left( t|\varphi_i(a_i) - \varphi_i(b_i)| \right)^r \right)^{1/r} \tag{ since $t |\varphi_i(\alpha_i) - \varphi_i(\beta_i)| \leq \omega$} \\
 			             & = \left( \sum_{i=1}^{n} |\varphi_i(a_i) - \varphi_i(b_i)|^r \right)^{1/r}
 		\end{align*}
-    Thus, $\delta$ is a Minkowski metric and, by \cref{add-diff-prox-struct-repr}, the $F_i$ are interval scales, allowing for affine linear transformations. However, since we set $F_i(0)=0$, the affinity vanishes, and we are left with $F_i(\alpha)= k \cdot \alpha^r$. Finally, the restriction $1 \leq r < \infty$ follows from the triangle inequality or, more precisely, from Minkowski's inequality; see \parencite[p. 189-191 Theorem 9]{handbookMeans}.
+    Thus, $\delta$ is a Minkowski metric and, by \cref{thm-repr-add-diff-struct}, the $F_i$ are interval scales, allowing for affine linear transformations. However, since we set $F_i(0)=0$, the affinity vanishes, and we are left with $F_i(\alpha)= k \cdot \alpha^r$. Finally, the restriction $1 \leq r < \infty$ follows from the triangle inequality or, more precisely, from Minkowski's inequality; see \parencite[p. 189-191 Theorem 9]{handbookMeans}.
 
 	\end{proofpart}
 \end{proof}

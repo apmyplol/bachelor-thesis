@@ -1,10 +1,10 @@
-\subsection*{Preliminary lemma}
+\subsection*{Preliminary lemma} \label{sect-homogeneity-lemma}
 
 % Nur kurze zusammenfassung der Notation zur Übersicht
 Notation:
 \begin{itemize}
 	\item $\curve$: parametric curve, $\len$: length of curve, $\sublen$: length of subcurve from $a$ to $x$
-	\item $\metric_{\infty}$: $\infty$-metric, if no subscript then $\metric$ is the additive difference metric
+	\item $\metric_{\infty}$: $\infty$-metric, if no subscript then $\metric$ is the additive-difference metric
 	\item $\metric$: metric, $\metr{a}{b}$ metric distance between $a$ and $b$, $\metro{a}:= \metr{0}{a}$
 	\item $\ball{r} := \{x \in \mathbb{R}^{n}: \metro{x} < r\} $: the open Ball with radius $r$ around $0$ wrt. the metric $\metric$,
 	\item $\cball{r} := \{x \in \mathbb{R}^{n}: \metro{x} \leq r\} $: the closed Ball with radius $r$ around $0$ wrt. the metric $\delta$,
@@ -13,7 +13,7 @@ Notation:
 	\item $\extr(A)$: extreme Points of $A$.
 \end{itemize}
 
-In this section we will prove the main lemma, which is needed for the proof of the main result \cref{lp-uniqueness-theorem}.
+In this section we will prove the main lemma, which is needed for the proof of the main result \cref{thm-uniquene-repr-minkowski}.
 First, we will state the lemma, then give some remarks on the lemma and prove one statement needed for the lemma and then finally prove it.
 The proof is divided into 5 parts and a whole subsection which is devoted to showing a statement that is needed in the proof.
 Everything in this section will be assumed as in this Theorem. For example, if we write $\metric$, this implies not any metric but the metric from the lemma with its properties.
@@ -155,7 +155,7 @@ After this, we will expand this statement to the rationals and then use continui
 
 	%-------------- Proof part 2 ----------------------------%
 	\begin{proofpart}[$t \metro{z} \geq \metro{t z}$ for $t = \frac{1}{m} < d$ with $m \in \mathbb{N}$] \label{lemma-part2}
-		Since $\metric$ is a metric with additive segments, there exists a segment from $0$ to $z$ with length $\metro{z}$. \cref{sublen-cont} yields, that the arc length is a continuous, non-decreasing function. This means, we can divide the segment into $m$ subsegments with length $\frac{1}{m} \metro{z}$ and choose $\y[0], \dots, \y[m]$ equally spaced on the segment such that $\metr{\y[i]}{\y[i-1]} = \frac{1}{m} \metro{z}$ and $\y[0] = 0$ and $\y[m] = z$.
+		Since $\metric$ is a metric with additive segments, there exists a segment from $0$ to $z$ with length $\metro{z}$. \cref{curve-sublen-cont} yields, that the arc length is a continuous, non-decreasing function. This means, we can divide the segment into $m$ subsegments with length $\frac{1}{m} \metro{z}$ and choose $\y[0], \dots, \y[m]$ equally spaced on the segment such that $\metr{\y[i]}{\y[i-1]} = \frac{1}{m} \metro{z}$ and $\y[0] = 0$ and $\y[m] = z$.
 		Using this, we can define $\x := \y[i] - \y[i-1]$. Translation invariance yields $\metro{\x} =\metr{\y[i]}{\y[i-1]} = \frac{1}{m} \metro{z}$ and, due to the choice of $m$ in \cref{lemma-part0} $\x \in S$ holds. Note, that this is still true, if we increase $m$.
 
 		Further, we can observe that $\frac{1}{m} z$ is a convex combination of $\x$:

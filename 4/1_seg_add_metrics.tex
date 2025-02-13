@@ -1,6 +1,6 @@
-\chapter{Segmental Additivity}
+\chapter{Segmental Additivity} \label{chap-seg-additivity}
 
-\section{Segmentally Additive Metrics}
+\section{Segmentally Additive Metrics} \label{sec-seg-add-metrics}
 
 
 Da Metriken an sich wenig Struktur bieten, lohnt es sich noch eine Eigenschaft mehr mehr zu fordern.\\
@@ -10,15 +10,6 @@ Am Ende dieses Abschnittes sind Beispiele für Metriken mit additiven Segmenten 
 
 
 Der Folgende Satz liefert eine (bis auf positive Skalierung) eindeutige Metrik die die Relation repräsentiert und zusätzlich zur Ordnung, die Eigenschaft segmental solvability erhält.
-
-
-\begin{thm}[Representation Theorem for Segmentally Additive Proximity Structures]\label{seg-add-ps-repr-thm} \index{Representation theorem!segmentally additive proximity structure}
-	Suppose $\langle A, \succsim \rangle$ is a segmentally additive proximity structure. Then $\langle A, \succsim \rangle$ is representable by a metric, and additionally, for all $a, b, c \in A$:
-	\begin{enumerate}
-		\item $\langle abc \rangle \iff \delta(a, b) + \delta(b, c) = \delta(a, c)$.
-		\item If $\delta'$ is another metric on $A$ that satisfies the above conditions, then there exists $\alpha > 0$ such that $\delta' = \alpha \delta$ ($\delta$ is a ratio scale).
-	\end{enumerate}
-\end{thm}
 
 The definitions and statements from this section are taken out from \parencite[Chapter 1]{busemann}.
 
@@ -42,15 +33,15 @@ The definitions and statements from this section are taken out from \parencite[C
 
         \item A rectifiable curve is a segment iff its length is equal to the distance between its endpoints, i.e. $\len = \metr{a}{b}$. \index{Segment}
 
-        \item For $a \leq x \leq b$ we denote the length of the sub-curve $\curve(t),~ a \leq t \leq x$ from $a$ to $x$ by $\sublen$. This is also called the \emph{arc length} of the curve. \label{sublen} \index{Parametric Curve!arc-length}
+        \item For $a \leq x \leq b$ we denote the length of the sub-curve $\curve(t),~ a \leq t \leq x$ from $a$ to $x$ by $\sublen$. This is also called the \emph{arc length} of the curve. \label{def-curve-sublen} \index{Parametric Curve!arc-length}
 	\end{enumerate}
 \end{defi}
 
-\begin{rem}[Continuity \& monotonicity of sub length] \label{sublen-cont}
+\begin{rem}[Continuity \& Monotonicity of Sub Length] \label{thm-curve-sublen-cont}
 	For a rectifiable curve $\curve(t), ~ a \leq t \leq b$, the arc length $\sublen$ is a continuous, non-decreasing function of $x$.
 \end{rem}
 
-\begin{defi}[Metric Space with Additive Segments] \index{Metric Space!with additive segments}
+\begin{defi}[Metric Space with Additive Segments] \index{Metric Space!with additive segments} \label{def-metric-space-add-segments}
 	Let $\metric$ be a metric on $X$. $\langle X, \metric \rangle$ is a metric space with additive segments iff for any $x, y \in  X$ there is a segment joining them.
 \end{defi}
 

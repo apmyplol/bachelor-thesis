@@ -1,4 +1,4 @@
-\subsection{Convexity of $\metric$ Balls}
+\subsection{Convexity of $\metric$ Balls} \label{sec-ball-convexity}
 
 In this subsection we will proof the following lemma which is needed to conclude the proof of \cref{main-lemma}. Everything will be assumed as in the \cref{main-lemma}. Note, that all topological terms are with respect to the natural topology of the euclidean space.
 \begin{lem}[Convexity of $\metric$-Spheres] \label{lem-metr-spheres-convex} %TODO: change to lemma, check text where this is being mentioned
@@ -9,7 +9,7 @@ First, we will state some definitions and results on basic convex geometry that 
 
 First of all, we need the notions of convexity, convex combinations, the convex hull and extreme points.
 A set is convex if for all two pairs of points of that set, the linear interpolation between these points stays inside the set. By increasing the amount of points, we get what is called the convex combination of these points, which is similar to a linear combination, but has the additional restraint that the coefficients must be positive and add up to $1$. The convex hull of a set is, like any other hulls, the smallest convex set that contains the set.
-\begin{defi}[Convex Combination and Hull] \label{conv-defs}
+\begin{defi}[Convex Combination and Hull] \label{def-conv-and-comb-hull}
 	\leavevmode \vspace{-\baselineskip}
 	\begin{enumerate}
     \item A set $A \subset \mathbb{R}^{n}$ is \emph{convex}, iff $(1 - a) x + a y \in A$ for all $x, y \in A$ and $a \in [0,1]$. \index{Convex!set}
@@ -19,7 +19,7 @@ A set is convex if for all two pairs of points of that set, the linear interpola
 \end{defi}
 
 The next theorem sums up the relationship between convex combination and convex hulls.
-\begin{thm} \label{conv-hull-all-conv-combs}
+\begin{thm} \label{thm-conv-hull-all-conv-combs}
 	For $A \subset \mathbb{R}^{n}$ the convex Hull is the set of all convex combination of points in $A$:
 	$$
 		\co(A) =  \left \{\sum_{i=1}^{k} a_i x_i : k \in \mathbb{N}, x_1, \dots, x_k \in A, a_1, \dots, a_k \in [0,1]: \sum_{i=1}^{k} a_i = 1 \right \}
@@ -27,13 +27,13 @@ The next theorem sums up the relationship between convex combination and convex 
 \end{thm}
 
 Moreover, the convex hull preserves compactness, as the following theorem shows.
-\begin{thm}[convex Hull of compact set is compact] \label{compact-hull-compact}
+\begin{thm}[convex Hull of compact set is compact] \label{thm-compact-hull-compact}
 	If $A \subset \mathbb{R}^{n}$ is compact, then $\co(A)$ is compact.
 \end{thm}
 
 Next, we will introduce extreme points, which are, in a sense, characteristic points of a set that cannot be represented by a (strict) convex combination.
 
-\begin{defi}[Extreme Point]\label{extreme-point} \index{extreme point}
+\begin{defi}[Extreme Point]\label{def-extreme-point} \index{Extreme point}
 	Let $A \subset \mathbb{R}^{n}$ be closed and convex. A point $x \in A$ is called an \emph{extreme point of $A$} if $x$ cannot be represented as a nontrivial (or strict) convex combination of points of A, that is, if $x = a \cdot y + (1-a) \cdot z$ with $y, z \in A$ and $a \in (0,1)$, implies that $x = y = z$. The set of all extreme points of $A$ is denoted by $\extr(A)$.
 \end{defi}
 
@@ -41,7 +41,7 @@ Next, we will introduce extreme points, which are, in a sense, characteristic po
 For compact and convex sets, the extreme points are enough to "build" the convex hull of the set by doing convex combinations.
 In particular, this means that for a compact and convex set, every point can be expressed as a convex combination of extreme points.
 
-\begin{thm}[Minkowski Theorem] \label{minkowski-theorem}
+\begin{thm}[Minkowski Theorem] \label{thm-minkowski}
 	Let $A \subset \mathbb{R}^{n}$ be compact and convex. Then $A = \co (\extr A)$.
 \end{thm}
 
@@ -111,7 +111,7 @@ Now we can prove the convexity of $\metric$-balls.
 	Let $\E := \extr ( \cball{\alpha})$ and $\CO := \co(\cball{\alpha})$.
 	By \cref{lemma-delta-balls-closed} $\cball{\alpha}$ is closed and by assumption it is also bounded. Therefore, from the Heine-Borel Theorem, it follows that $\cball{\alpha}$ is compact.
 
-	By definition and \cref{compact-hull-compact} it follows, that $\CO$ is compact (and therefore closed, which is the reason why we denote it with square brackets) and convex. Application of the Minkowski Theorem (\cref{minkowski-theorem}) yields
+	By definition and \cref{thm-compact-hull-compact} it follows, that $\CO$ is compact (and therefore closed, which is the reason why we denote it with square brackets) and convex. Application of the Minkowski Theorem (\cref{thm-minkowski}) yields
 	$$ \CO = \co(\extr ( \CO )). $$
 	Further, it holds that $\extr(\CO) = \extr(\cball{\alpha})$ (By doing convex combinations, no new extreme points can be introduced because these are the points, which cannot be represented by a convex combination).
   Combining this and the statement above yields:

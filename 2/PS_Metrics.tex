@@ -4,8 +4,8 @@ If we have four stimuli $a, b, c$ and $d$, then $(a,b)\succsim(c,d)$ denotes tha
 This essence of a \emph{proximity structure} is exactly that, with some additional constraints.
 
 
-\begin{defi}[Factorial Proximity Structure] \index{Proximity Structure}
-	Suppose $A$ is a set and $\succsim$ a quaternary relation on $A$, i.e., binary relation on $A \times A$. $\langle A, \succsim \rangle$ is a proximity structure iff the following axioms hold for all $a, b \in A$:
+\begin{defi}[Proximity Structure] \index{Proximity structure} \label{def-prox-struct}
+	Suppose $A$ is a set and $\succsim$ a quaternary relation on $A$, i.e., binary relation on $A \times A$. $\langle A, \succsim \rangle$ is a proximity structure (PS) iff the following axioms hold for all $a, b \in A$:
 
 	\begin{enumerate}
 		\item $\succsim$ is a weak ordering on $A \times A$, i.e., it is connected and transitive.
@@ -14,7 +14,7 @@ This essence of a \emph{proximity structure} is exactly that, with some addition
 		\item $(a, b) \sim (b, a)$ (symmetry).
 	\end{enumerate}
 
-  The structure is factorial iff \index{Proximity Structure!factorial}
+  The structure is factorial iff \index{Proximity structure!factorial} \label{def-fact-prox-struct}
 	\[
 		A = \prod_{i=1}^{n} A_i.
 	\]
@@ -27,7 +27,7 @@ This essence of a \emph{proximity structure} is exactly that, with some addition
 %TODO: axiome erklären
 
 The mathematical concept, that we want to tie proximity structures to, is the concept of metric. A metric is defined as follows:
-\begin{defi}[Metric] \index{Metric} \index{Metric!space}
+\begin{defi}[Metric] \index{Metric} \index{Metric space} \label{def-metric}
   Let $X$ be a set. A real-valued function $\metric$ on $X \times X$ is a \emph{metric}, iff the following properties hold for all $x, y, z \in X$:
 \begin{enumerate}[1.]
   \item $\metr{x}{y} > 0$ unless $x=y$ and $\metr{x}{x} = 0$
@@ -41,7 +41,7 @@ Metrics are measures of distance in a space. The third property is called the \e
 
 Since we aim to connect these two concepts, we will introduce a term for that which aligns with the intuitive approach: We want the metric to preserve the structure of $\langle A, \succsim \rangle$. The only structure we have is the ordering of two stimuli pairs, and we want the metric to preserve exactly this ordering.
 
-\begin{defi}[Representability of $\succsim$ by a Metric] \index{Proximity Structure!representable by a metric}
+\begin{defi}[Representability of $\succsim$ by a Metric] \index{Proximity structure!representable by a metric} \label{def-representable-by-metric}
 	A proximity structure $\langle A, \succsim \rangle$ is representable by a metric iff there exists a real-valued function $\delta$ on $A$ such that:
 
 	\begin{enumerate}
@@ -54,9 +54,9 @@ Since we aim to connect these two concepts, we will introduce a term for that wh
 \end{defi}
 
 
-However, simple metrics do not impose enough structure, and we therefore require the metrics to satisfy additional conditions.
-If we observe most metrics, such as the widely used Minkowski $r$-metric or Minkowski distance (also called the power or $L^p$ metric) defined by
-\begin{defi}[Minkowski Metric] \index{Metric!Minkowski} \index{Metric!Power} \index{Minkowski!metric} \index{Minkowski!distance}
+However, simple metrics do not impose enough structure, and we therefore require the metrics to satisfy additional conditions which we can observe in often used metrics.
+One of the most used metrics is the Minkowski $r$-metric or Minkowski distance (also called the power or $L^p$ metric) and is defined in the following way.
+\begin{defi}[Minkowski Metric] \index{Metric!Minkowski} \index{Metric!Power} \index{Minkowski!metric} \index{Minkowski!distance} \label{def-minkowski-metric}
   For $n \in \mathbb{N}_{>0}$ and $r \geq 1$ the Minkowski Metric of two vectors $\ve{x}, \ve{y} \in \mathbb{R}^{n}$ is defined as
 \begin{equation*}
 \metr[r]{\ve{x}}{\ve{y}} = \left ( \sum_{i=1}^{n} |x_i - y_i|^r \right)^{1/r}.
@@ -64,3 +64,20 @@ If we observe most metrics, such as the widely used Minkowski $r$-metric or Mink
 \end{defi}
 
 For $r \geq 1$, this is indeed a metric, as the Minkowski inequality establishes the triangle inequality; see \parencite[p. 189-191 Theorem 9]{handbookMeans}. \index{Minkowski!inequality}
+
+If we closely inspect this metric, we can observe two interesting properties.
+The first one is, comes directly from the definition of the metric. For two vectors we compute the metric by doing four steps:
+\begin{enumerate}[1.]
+  \item decompose two vectors $\ve{x}$ and $\ve{y}$ into their underlying coordinates $(x_1, \dots x_n)$ and $(y_1, \dots, y_n)$
+  \item calculate the coodinate-wise differences $|x_i - y_i|$ and transform then with a bijection $F(x)$ (in this case $x^r$)
+  \item sum up the transformed differences for all coordinates
+  \item transform the sum using the inverse $F^{-1}$ (in this case $x^{1/r}$)
+\end{enumerate}
+
+This generalization of the metric, yields the Additive-Difference Model (\cref{def-add-diff-model}) which will be covered in \cref{chap-AD-model-and-ps}.
+
+The second thing we can observe in the Minkowski Metric is the fact, that distances across straight lines are additive (we will show this in \cref{ex-minkowski-seg-additive}). This is not the case for all metrics, but only for a special class of metrics. This class of metrics will be inspected in \cref{chap-seg-additivity}.
+
+One interesting question is, finding conditions that assert a metric representations for a proximity structure (that preserve the $\succsim$ relation in the way we just defined). The concrete representation that are of interest to us, are the additive-difference model (which in itself is not a metric, and we therefore will combine it with a metric) and segmentally additive metrics. In both cases, this can be done by inspecting the constraints that each representation imposes on the proximity structure, and then deducing sufficient conditions for the proximity structure that allow such representations.
+In this thesis, we will briefly introduce and explain these conditions, but will not prove them. For that refer to \parencite[Chapter 14]{foundations2}.
+Instead, we will focus on the Uniqueness Representation Theorem for segmentally additive AD Models and prove it given the representations. %TODO: text anpassen zu richtigen theorem namen

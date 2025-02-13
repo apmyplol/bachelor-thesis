@@ -1,8 +1,8 @@
 \section{Examples}
 
-\begin{ex}[p-exp Metric Family]\label{p-exp-metric-family}
-	Let the $F$ in the additive difference model (\ref{add-diff-model}) be given by
-	\begin{equation}\label{p-exp-eq}
+\begin{ex}[p-exp Metric Family]\label{def-p-exp-metric-family}
+	Let the $F$ in the additive difference model (\ref{def-add-diff-model}) be given by
+	\begin{equation}\label{def-p-exp-eq}
 		F(t) = q \cdot (e^{t \cdot r} - 1)^p \qquad q, r > 0, p \geq 1.
 	\end{equation}
 	The model defined by this $F$ is a metric.
@@ -36,7 +36,7 @@
 	\end{thm}
 
 	% \setcounter{proofpart}{1}
-	\begin{proofpart}[Proof that \cref{p-exp-eq} satisfies Mulholland's conditions]
+	\begin{proofpart}[Proof that \cref{def-p-exp-eq} satisfies Mulholland's conditions]
 
 		Regarding Point 1: Continuity and $f(0) = 0$ are clear. For monotonicity, note that $e^{rt} - 1$ is increasing, exponentiation is also increasing, and multiplying by $q > 0$ preserves monotonicity. Thus, the composition is also increasing.\\
     Regarding point 2: Similar reasoning applies for convexity. The composition of convex functions is convex, if the outer function is non-decreasing \parencite[p. 481, Note 207]{elementaryAna}. Since multiplication by a positive constant and exponentiation for exponents greater than $1$ is both convex and increasing, the resulting function must be convex. \\
@@ -77,7 +77,7 @@
 
 \begin{rem}[Minkowski metric is part of the p-exp metric family]
 
-	If we set $q = r^{-p}$ in (\ref{p-exp-eq}), we obtain the Minkowski metric in the limit as $r \rightarrow 0$.
+	If we set $q = r^{-p}$ in (\ref{def-p-exp-eq}), we obtain the Minkowski metric in the limit as $r \rightarrow 0$.
 
 	\begin{proof}
 		Setting $q = r^{-p}$ yields
@@ -93,7 +93,8 @@
 
 \end{rem}
 %TODO: check this remark and reposition maybe
-Das ist von Bedeutung, da dies mithilfe des Hauptresultates \ref{lp-eindeutig} zeigt, dass die Metriken der p-exp Familie keine Metriken mit additiven Segmenten sein können, obwohl man die $l^p$ Metrik durch Grenzwertbildung aus dieser Familie darstellen kann.
-Das bedeutet, dass im Grenzwertprozess aus der Eigenschaft ''additiv auf den Koordinatenachsen'', die Eigenschaft ''additiv auf beliebigen Liniensegmenten'' wird.
+% glaube der remark unten stimmt nicht. Interessanter ist zu zeigen, dass p-exp nicht segmentally additive ist aber durch grenzwertbildung es segmentally additive wird
+% Das ist von Bedeutung, da dies mithilfe des Hauptresultates \ref{lp-eindeutig} zeigt, dass die Metriken der p-exp Familie keine Metriken mit additiven Segmenten sein können, obwohl man die $l^p$ Metrik durch Grenzwertbildung aus dieser Familie darstellen kann.
+% Das bedeutet, dass im Grenzwertprozess aus der Eigenschaft ''additiv auf den Koordinatenachsen'', die Eigenschaft ''additiv auf beliebigen Liniensegmenten'' wird.
 
 Not every function that can be represented by the additive difference model is a metric.
