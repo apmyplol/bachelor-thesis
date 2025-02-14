@@ -2,7 +2,7 @@
 % In diesem Abschnitt geht es darum, wann eine factorial proximity structure durch das additive difference model (siehe \ref{add-diff-model}) dargestellt werden kann. Die Axiome die dafür benötigt sind, werden hier nicht genauer dargestellt (siehe Anhang \ref{appendix}), sonder nur genannt.
 %
 \begin{defi}[Additive-Difference Structure]\label{def-add-diff-ps} \index{Additive-difference!structure}
-  A factorial proximity structure $\langle A, \succsim \rangle$ with $n \geq 3$ Factors is an \emph{additive-difference(AD) structure}, iff the following axioms are hold:
+  A factorial proximity structure $\langle \ps{A}, \succsim \rangle$ with $n \geq 3$ Factors is an \emph{additive-difference(AD) structure}, iff the following axioms are hold:
 \begin{enumerate}
   \item Betweenness
   \item restricted solvability
@@ -17,12 +17,12 @@
 \addcontentsline{toc}{subsection}{Representation and Uniqueness Theorem for AD Structures}
 
 \begin{thm}[Representation and Uniqueness Theorem for AD Structures]\label{thm-repr-add-diff-struct} \index{Theorem!representation and uniqueness!for additive-difference structures}
-Let \(\langle A, \succsim \rangle\) be an additive-difference factorial proximity structure.  
-Then there exist real-valued functions \(\varphi_1, \ldots, \varphi_n\) defined on \(A_1, \ldots, A_n\), and increasing functions \(F_1, \ldots, F_n\) each defined on \(\mathbb{R}\), such that for all \(a, b, c, d \in A\),  
+  Let \(\langle \ps{A}, \succsim \rangle\) be an additive-difference factorial proximity structure.  
+  Then there exist real-valued functions \(\varphi_1, \ldots, \varphi_n\) defined on \(\ps{A}_1, \ldots, \ps{A}_n\), and increasing functions \(F_1, \ldots, F_n\) each defined on \(\mathbb{R}\), such that for all \(\ps{a}, \ps{b}, \ps{c}, \ps{d} \in \ps{A}\),  
 \begin{align*}
-  (a_1, \ldots, a_n, b_1, \ldots, b_n) &\succsim (c_1, \ldots, c_n, d_1, \ldots, d_n) \\
+  (\ps{a}_1, \ldots, \ps{a}_n, \ps{b}_1, \ldots, \ps{b}_n) &\succsim (\ps{c}_1, \ldots, \ps{c}_n, \ps{d}_1, \ldots, \ps{d}_n) \\
 &\iff \\
-  \sum_{i=1}^{n} F_i(|\varphi_i(a_i) - \varphi_i(b_i)|) &\geq \sum_{i=1}^{n} F_i(|\varphi_i(c_i) - \varphi_i(d_i)|).
+  \sum_{i=1}^{n} F_i(|\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|) &\geq \sum_{i=1}^{n} F_i(|\varphi_i(\ps{c}_i) - \varphi_i(\ps{d}_i)|).
 \end{align*}
 Furthermore, the \(\varphi_i\) are interval scales, and the \(F_i\) are interval scales with a common unit (\(i = 1, \ldots, n\)).
 \end{thm}

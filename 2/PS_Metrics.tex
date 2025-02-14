@@ -5,18 +5,18 @@ This essence of a \emph{proximity structure} is exactly that, with some addition
 
 
 \begin{defi}[Proximity Structure] \index{Proximity structure} \label{def-prox-struct}
-	Suppose $A$ is a set and $\succsim$ a quaternary relation on $A$, i.e., binary relation on $A \times A$. $\langle A, \succsim \rangle$ is a proximity structure (PS) iff the following axioms hold for all $a, b \in A$:
+  Suppose $\ps{A}$ is a set and $\succsim$ a quaternary relation on $\ps{A}$, i.e., binary relation on $\ps{A} \times \ps{A}$. $\langle \ps{A}, \succsim \rangle$ is a \emph{proximity structure} (PS) iff the following axioms hold for all $\ps{a}, \ps{b} \in \ps{A}$:
 
 	\begin{enumerate}
-		\item $\succsim$ is a weak ordering on $A \times A$, i.e., it is connected and transitive.
-		\item $(a, b) \succsim (a, a)$ whenever $a \neq b$.
-		\item $(a, a) \sim (b, b)$ (minimality).
-		\item $(a, b) \sim (b, a)$ (symmetry).
+    \item $\succsim$ is a weak ordering on $\ps{A} \times \ps{A}$, i.e., it is connected and transitive.
+    \item $(\ps{a}, \ps{b}) \succsim (\ps{a}, \ps{a})$ whenever $\ps{a} \neq \ps{b}$.
+    \item $(\ps{a}, \ps{a}) \sim (\ps{b}, \ps{b})$ (minimality).
+    \item $(\ps{a}, \ps{b}) \sim (\ps{b}, \ps{a})$ (symmetry).
 	\end{enumerate}
 
-  The structure is factorial iff \index{Proximity structure!factorial} \label{def-fact-prox-struct}
+  The structure is \emph{factorial} iff \index{Proximity structure!factorial} \label{def-fact-prox-struct}
 	\[
-		A = \prod_{i=1}^{n} A_i.
+    \ps{A} = \prod_{i=1}^{n} \ps{A}_i.
 	\]
 \end{defi}
 
@@ -42,13 +42,13 @@ Metrics are measures of distance in a space. The third property is called the \e
 Since we aim to connect these two concepts, we will introduce a term for that which aligns with the intuitive approach: We want the metric to preserve the structure of $\langle A, \succsim \rangle$. The only structure we have is the ordering of two stimuli pairs, and we want the metric to preserve exactly this ordering.
 
 \begin{defi}[Representability of $\succsim$ by a Metric] \index{Proximity structure!representable by a metric} \label{def-representable-by-metric}
-	A proximity structure $\langle A, \succsim \rangle$ is representable by a metric iff there exists a real-valued function $\delta$ on $A$ such that:
+  A proximity structure $\langle \ps{A}, \succsim \rangle$ is representable by a metric iff there exists a real-valued function $\delta$ on $\ps{A}$ such that:
 
 	\begin{enumerate}
-		\item $\langle A, \delta \rangle$ is a metric space, i.e., $\delta$ is a metric on $A$.
-		\item $\delta$ preserves the relation $\succsim$, i.e., for all $a, b, c, d \in A$
+    \item $\langle \ps{A}, \delta \rangle$ is a metric space, i.e., $\delta$ is a metric on $\ps{A}$.
+    \item $\delta$ preserves the relation $\succsim$, i.e., for all $\ps{a}, \ps{b}, \ps{c}, \ps{d} \in \ps{A}$
 		      \[
-			      \delta(a, b) \geq \delta(c, d) \iff (a, b) \succsim (c, d).
+            \delta(\ps{a}, \ps{b}) \geq \delta(\ps{c}, \ps{d}) \iff (\ps{a}, \ps{b}) \succsim (\ps{c}, \ps{d}).
 		      \]
 	\end{enumerate}
 \end{defi}

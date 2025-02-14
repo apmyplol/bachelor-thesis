@@ -5,13 +5,13 @@
 % \addcontentsline{toc}{section}{Theorem: Necessary and sufficient conditions for additive difference metrics}
 \begin{thm}[Conditions for Metric\footnotemark Representation of AD Structures]\label{thm-necc-suff-conds} 
   \footnotetext{Metric representation that are additive on the coordinate axes}
-	Suppose $\langle A, \succsim \rangle$ is an additive-difference proximity structure such that $f$ is the additive-difference representation from \cref{thm-repr-add-diff-struct}, i.e.,
+  Suppose $\langle \ps{A}, \succsim \rangle$ is an additive-difference proximity structure such that $f$ is the additive-difference representation from \cref{thm-repr-add-diff-struct}, i.e.,
 	\[
-		f(a, b) = \sum_{i=1}^{n} F_i(|\varphi_i(a) - \varphi_i(b)|).
+    f(\ps{a}, \ps{b}) = \sum_{i=1}^{n} F_i(|\varphi_i(\ps{a}) - \varphi_i(\ps{b})|).
 	\]
 	Suppose further that the domain of each $F_i$ is a real interval and $F_i(0) = 0$, $i = 1, \ldots, n$ (through transformation, since $F_i$ are interval scales).
 
-	For $\langle A, \succsim \rangle$ to be compatible with a metric, and additionally be additive on the coordinate axes,
+  For $\langle \ps{A}, \succsim \rangle$ to be compatible with a metric, and additionally be additive on the coordinate axes,
 	\begin{enumerate}
 		\item it is necessary that there exists a continuous, convex function $F$, such that $F_i(x) = F(t_i x), t_i > 0,$ for all $x$ in the domain of $F_i$, $i = 1, \ldots, n$; and \label{thm-necc-cond}
 		\item sufficient that, in addition (to the conditions in 1.), the function $\log F(e^x)$ is convex. \label{thm-suff-cond}
@@ -19,8 +19,8 @@
 \end{thm}
 
 \begin{rem}[Additivity on the Coordinate Axes]
-	Additivity on the coordinate axes means the following: If $a, b, c \in A$ differ only on one factor $A_i$, then the triangle inequality of the metric holds with equality. In mathematical terms:
-	$$ a_j = b_j = c_j \text{ for all } j \neq i \text{ and } (a, c) \succsim (a, b), (b, c)  \Rightarrow \delta(a, b) + \delta(b, c) = \delta(a, c) $$
+  Additivity on the coordinate axes means the following: If $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$ differ only on one factor $\ps{A}_i$, then the triangle inequality of the metric holds with equality. In mathematical terms:
+  $$ \ps{a}_j = \ps{b}_j = \ps{c}_j \text{ for all } j \neq i \text{ and } (\ps{a}, \ps{c}) \succsim (\ps{a}, \ps{b}), (\ps{b}, \ps{c})  \Rightarrow \delta(\ps{a}, \ps{b}) + \delta(\ps{b}, \ps{c}) = \delta(\ps{a}, \ps{c}) $$
 \end{rem}
 
 In the following lemmas, until the proof of this theorem is finished, everything will be assumed as in \cref{thm-necc-suff-conds}, unless otherwise stated.
@@ -30,14 +30,14 @@ The following remark ties this result closer to the Minkowski metric, and provid
 \begin{rem}[Form of $\delta$] \label{rem-metric-form}
 	Examining \cref{proof-necc-suff-conds} more closely yields, that $G=F^{-1}$ must hold and the representation of $\delta$ takes the form
 	\begin{equation*}
-		\delta(a,b) = F^{-1} \Big \{ \sum_{i=1}^{n} F(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} \label{cor-delta-form}
+    \delta(\ps{a},\ps{b}) = F^{-1} \Big \{ \sum_{i=1}^{n} F(| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i) |) \Big \} \label{cor-delta-form}
 	\end{equation*}
 	where $F$ is continuous, convex and increasing.\\
 	This follows form two arguments.
   Firstly, incorporating the $t_i$ into the $\varphi_i$ (which is possible because, by \cref{thm-repr-add-diff-struct}, the $\varphi_i$ are interval scales)
 	\begin{align*}
-		G \Big \{ \sum_{i=1}^{n} F_i(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} & = G \Big \{ \sum_{i=1}^{n} F(t_i| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \} \\
-		                                                                          & = G \Big \{ \sum_{i=1}^{n} F(| \varphi_i(a_i) - \varphi_i(b_i) |) \Big \}
+    G \Big \{ \sum_{i=1}^{n} F_i(| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i) |) \Big \} & = G \Big \{ \sum_{i=1}^{n} F(t_i| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i) |) \Big \} \\
+                                                                                        & = G \Big \{ \sum_{i=1}^{n} F(| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i) |) \Big \}
 	\end{align*}
 	yields the desired form inside the sum.
 
@@ -49,23 +49,23 @@ The following remark ties this result closer to the Minkowski metric, and provid
 
 \begin{proof}[Proof of \crefpart{necc-suff-conds}{necc-cond}]\label{proof-necc-suff-conds}
 
-	According to the assumptions of the theorem, the additive difference representaion $f(a,b)$ is compatible with a metric $\delta$ on $A$, i.e.,
+  According to the assumptions of the theorem, the additive difference representaion $f(\ps{a},\ps{b})$ is compatible with a metric $\delta$ on $\ps{A}$, i.e.,
 	$$
-		f(a,b) \leq f(c,d) \iff \delta(a,b) \leq \delta(c,d) \quad \text{for all } a, b, c, d \in A .
+  f(\ps{a},\ps{b}) \leq f(\ps{c},\ps{d}) \iff \delta(\ps{a},\ps{b}) \leq \delta(\ps{c},\ps{d}) \quad \text{for all } \ps{a}, \ps{b}, \ps{c}, \ps{d} \in \ps{A} .
 	$$
-  Therefore, there exists an increasing function $G$ \footnotemark{} , such that for all $a, b \in A$
+  Therefore, there exists an increasing function $G$ \footnotemark{} , such that for all $\ps{a}, \ps{b} \in \ps{A}$
 
 	$$
-		\delta(a, b) = G(f(a,b)) =  G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right).
+  \delta(\ps{a}, \ps{b}) = G(f(\ps{a},\ps{b})) =  G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right) \right).
 	$$
   \footnotetext{A possible perspective on this is, that the metric $\metric$ induces an ordinal scale for pairs of elements. The same holds for the function $f$ and these orderings are the same. Because ordinal scales, by definition, are invariant under increasing bijections, there must exist an increasing function $G$, which transforms the $f$-scale into the $\metric$-scale.}
-	Assume $a$, $b$, and $c$ differ only in the $i$-th factor and $a|b|c$. Thus, we can use additivity on the $i$-th coordinate axis for $a, b, c \in A$ which yields
+  Assume $\ps{a}$, $\ps{b}$, and $\ps{c}$ differ only in the $i$-th factor and $\ps{a}|\ps{b}|\ps{c}$. Thus, we can use additivity on the $i$-th coordinate axis for $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$ which yields
 
 	\[
-		G \left( F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right) + G \left( F_i \left( |\varphi_i(b_i) - \varphi_i(c_i)| \right) \right) = G \left( F_i \left( |\varphi_i(a_i) - \varphi_i(c_i)| \right) \right).
+    G \left( F_i \left( |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right) \right) + G \left( F_i \left( |\varphi_i(\ps{b}_i) - \varphi_i(\ps{c}_i)| \right) \right) = G \left( F_i \left( |\varphi_i(\ps{a}_i) - \varphi_i(\ps{c}_i)| \right) \right).
 	\]
 
-	Defining $|\varphi_i(a_i) - \varphi_i(b_i)| =: x$ and $|\varphi_i(b_i) - \varphi_i(c_i)| =: y$ yields
+  Defining $|\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| =: x$ and $|\varphi_i(\ps{b}_i) - \varphi_i(\ps{c}_i)| =: y$ yields
 
 	\[
 		G[F_i(x)] + G[F_i(y)] = G[F_i(x + y)].

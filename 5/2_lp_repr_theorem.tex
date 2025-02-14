@@ -1,13 +1,13 @@
 \section{Unique Representation Theorem}
 \begin{thm}[Unique Representation Theorem: The Power Metric as the Sole Representation for Segmentally Additive AD Structures]\label{thm-uniquene-repr-minkowski} \index{Theorem!unique representation}
-	Suppose $\langle A, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.\\
-	Then there exists a unique $r \geq 1$ and real-valued functions $\varphi_i$, defined on $A_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $a, b, c, d \in A$,
+  Suppose $\langle \ps{A}, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.\\
+  Then there exists a unique $r \geq 1$ and real-valued functions $\varphi_i$, defined on $\ps{A}_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $\ps{a}, \ps{b}, \ps{c}, \ps{d} \in \ps{A}$,
 	\[
-		(a, b) \succsim (c, d) \iff \delta(a, b) \geq \delta(c, d),
+    (\ps{a}, \ps{b}) \succsim (\ps{c}, \ps{d}) \iff \delta(\ps{a}, \ps{b}) \geq \delta(\ps{c}, \ps{d}),
 	\]
 	where
 	\[
-		\delta(a, b) = \left[\sum_{i=1}^{n} |\varphi_i(a) - \varphi_i(b)|^r\right]^{1/r}.
+    \delta(\ps{a}, \ps{b}) = \left[\sum_{i=1}^{n} |\varphi_i(\ps{a}) - \varphi_i(\ps{b})|^r\right]^{1/r}.
 	\]
 \end{thm}
 
@@ -20,9 +20,6 @@
 	Finally, we prove that $F$ is equal to this extension on the whole domain, and therefore $\metric$ is a Minkowski metric.
 
 	\setcounter{proofpart}{-1}
-	\begin{equation} \label{proof-homogen-eq}
-		F^{-1} \left [ \sum_{i=1}^{n} F(t \alpha_i) \right ] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right ]
-	\end{equation}
 
 
 	\begin{proofpart}[Establishing the basics and using the \cref{thm-homogeneity}]
@@ -30,20 +27,22 @@
     By \cref{thm-necc-suff-conds} and \cref{rem-metric-form}, $\metric$ must be of the form 
 
     \begin{equation*}
-    \metr{a}{b} = F^{-1} \left [ \sum_{i=1}^{n} F(| \varphi_i(a_i) - \varphi_i(b_i)|)  \right]
+      \metr{\ps{a}}{\ps{b}} = F^{-1} \left [ \sum_{i=1}^{n} F(| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|)  \right]
     \end{equation*}
 
     where $F$ is continuous, convex and increasing.
     %TODO: warum sind die intervalle halboffen? Das muss aus der prox struct kommen iwie
     % Argumentation mit 0 rauslassen nochmal checken
-    By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a cartesian product of intervals of the form $[0,\alpha _i)$ where $\alpha_i$ are the ranges of $| \varphi_i(a_i) - \varphi_i(b_i)|$ for $i=1, \dots, n$. This cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore the requirements for \cref{thm-homogeneity} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for for $\ve{x}, \ve{z} \neq \ve{0}$:
+    By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a cartesian product of intervals of the form $[0,\alpha _i)$ where $\alpha_i$ are the ranges of $| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for $i=1, \dots, n$. This cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore the requirements for \cref{thm-homogeneity} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for for $\ve{x}, \ve{z} \neq \ve{0}$:
     $$
     \metr{\ve{x}}{\ve{x}+ t(\ve{z}-\ve{x})} = t \metr{\ve{x}}{\ve{z}}.
     $$
     Applying homogeneity for the definition of $\metric$ above and setting $\alpha_i = |\varphi_i(b_i) - \varphi_i(a_i)|$ yields
-    $$
-    F^{-1} \left [ \sum_{i=1}^{n} F(t \alpha_i)  \right] = t \cdot F^{-1} \left [ \sum_{i=1}^{n} F(\alpha_i)  \right].
-    $$
+    
+    \begin{equation}\label{proof-homogen-eq}
+      F^{-1} \left [ \sum_{i=1}^{n} F(t \alpha_i)  \right] = t \cdot F^{-1} \left [ \sum_{i=1}^{n} F(\alpha_i)  \right].
+    \end{equation}
+    
     However, due to translation invariance, homogeneity also holds for $\ve{x} = \ve{0}$.
     \footnote{ By adding $0 = \ve{y} - \ve{y}$ for some $y$ in the domain, we get homogeneity:
 \begin{equation*}
@@ -57,7 +56,7 @@
     First, we start by observing the domains and the ranges of $F$.
 		By \cref{thm-necc-suff-conds}, the additive difference model
     \begin{equation*}
-			\delta(a, b) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right)
+      \delta(\ps{a}, \ps{b}) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right) \right)
     \end{equation*}
     yields a metric (that is additive on the coordinate axes) if $F_i(\alpha) = F(t_i \alpha)$ and $F = G^{-1}$ for $i=1, ..., n$. Thus, $F^{-1}$ is defined for all numbers $\sum_{i=1}^{n} F_i \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right)$, and each $F_i$ coincides with $F$ on its domain (except for the factor $t_i$, which scales the argument and adjusts the domain).\\
 		Since the domains of $F_i$ are intervals (because $\delta$ is a metric with additive segments and therefore for any point in the domain of $F_i$, the interval between zero and that point must also be in the domain), we can choose $\omega > 0$ such that for each $i = 1, \ldots, n$ and any $\alpha$ with $0 \leq \alpha \leq \omega/t_i$, $\alpha$ lies within the domain of $F_i$.\\
@@ -175,13 +174,13 @@ Wenn ich diese Gleichung hätte, könnte ich daraus die Homogenität für positi
 
 	\begin{proofpart}[Proving equality for positive reals]
 
-		Now, for any $|\varphi_i(a_i) - \varphi_i(b_i)|$, we can find $t > 0$ small enough such that $t|\varphi_i(a_i) - \varphi_i(b_i)| < \omega$ for $i = 1, \ldots, n$. Applying monotonicity yields (we can assume $t \leq 1$):
+    Now, for any $|\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$, we can find $t > 0$ small enough such that $t|\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| < \omega$ for $i = 1, \ldots, n$. Applying monotonicity yields (we can assume $t \leq 1$):
 
 		\begin{align*}
-			\delta(a, b) & = F^{-1} \left( \sum_{i=1}^{n} F \left( |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right)                                                                                     \\
-			             & = \frac{1}{t} F^{-1} \left( \sum_{i=1}^{n} F \left( t |\varphi_i(a_i) - \varphi_i(b_i)| \right) \right)                                                                       \\
-			             & = \frac{1}{t} \left( \sum_{i=1}^{n} \left( t|\varphi_i(a_i) - \varphi_i(b_i)| \right)^r \right)^{1/r} \tag{ since $t |\varphi_i(\alpha_i) - \varphi_i(\beta_i)| \leq \omega$} \\
-			             & = \left( \sum_{i=1}^{n} |\varphi_i(a_i) - \varphi_i(b_i)|^r \right)^{1/r}
+      \delta(\ps{a}, \ps{b}) & = F^{-1} \left( \sum_{i=1}^{n} F \left( |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right) \right)                                                                                     \\
+                             & = \frac{1}{t} F^{-1} \left( \sum_{i=1}^{n} F \left( t |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right) \right)                                                                       \\
+                             & = \frac{1}{t} \left( \sum_{i=1}^{n} \left( t|\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right)^r \right)^{1/r} \tag{ since $t |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \leq \omega$} \\
+                             & = \left( \sum_{i=1}^{n} |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|^r \right)^{1/r}
 		\end{align*}
     Thus, $\delta$ is a Minkowski metric and, by \cref{thm-repr-add-diff-struct}, the $F_i$ are interval scales, allowing for affine linear transformations. However, since we set $F_i(0)=0$, the affinity vanishes, and we are left with $F_i(\alpha)= k \cdot \alpha^r$. Finally, the restriction $1 \leq r < \infty$ follows from the triangle inequality or, more precisely, from Minkowski's inequality; see \parencite[p. 189-191 Theorem 9]{handbookMeans}.
 
