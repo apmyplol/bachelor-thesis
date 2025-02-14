@@ -56,7 +56,7 @@ Since we aim to connect these two concepts, we will introduce a term for that wh
 
 However, simple metrics do not impose enough structure, and we therefore require the metrics to satisfy additional conditions which we can observe in often used metrics.
 One of the most used metrics is the Minkowski $r$-metric or Minkowski distance (also called the power or $L^p$ metric) and is defined in the following way.
-\begin{defi}[Minkowski Metric] \index{Metric!Minkowski} \index{Metric!Power} \index{Minkowski!metric} \index{Minkowski!distance} \label{def-minkowski-metric}
+\begin{defi}[Minkowski Metric] \index{Metric!Minkowski} \index{Metric!power} \index{Minkowski!metric} \index{Minkowski!distance} \label{def-minkowski-metric}
   For $n \in \mathbb{N}_{>0}$ and $r \geq 1$ the Minkowski Metric of two vectors $\ve{x}, \ve{y} \in \mathbb{R}^{n}$ is defined as
 \begin{equation*}
 \metr[r]{\ve{x}}{\ve{y}} = \left ( \sum_{i=1}^{n} |x_i - y_i|^r \right)^{1/r}.
@@ -80,4 +80,4 @@ The second thing we can observe in the Minkowski Metric is the fact, that distan
 
 One interesting question is, finding conditions that assert a metric representations for a proximity structure (that preserve the $\succsim$ relation in the way we just defined). The concrete representation that are of interest to us, are the additive-difference model (which in itself is not a metric, and we therefore will combine it with a metric) and segmentally additive metrics. In both cases, this can be done by inspecting the constraints that each representation imposes on the proximity structure, and then deducing sufficient conditions for the proximity structure that allow such representations.
 In this thesis, we will briefly introduce and explain these conditions, but will not prove them. For that refer to \parencite[Chapter 14]{foundations2}.
-Instead, we will focus on the Uniqueness Representation Theorem for segmentally additive AD Models and prove it given the representations. %TODO: text anpassen zu richtigen theorem namen
+Instead, we will focus on the unique representation theorem for segmentally additive AD models (\cref{thm-uniquene-repr-minkowski}) and prove it given the representations.

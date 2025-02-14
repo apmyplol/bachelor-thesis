@@ -1,4 +1,4 @@
-\subsection*{Preliminary lemma} \label{sect-homogeneity-lemma}
+\subsection{Homogeneity Theorem} \label{sect-homogeneity-theorem}
 
 % Nur kurze zusammenfassung der Notation zur Übersicht
 Notation:
@@ -13,23 +13,30 @@ Notation:
 	\item $\extr(A)$: extreme Points of $A$.
 \end{itemize}
 
-In this section we will prove the main lemma, which is needed for the proof of the main result \cref{thm-uniquene-repr-minkowski}.
-First, we will state the lemma, then give some remarks on the lemma and prove one statement needed for the lemma and then finally prove it.
-The proof is divided into 5 parts and a whole subsection which is devoted to showing a statement that is needed in the proof.
-Everything in this section will be assumed as in this Theorem. For example, if we write $\metric$, this implies not any metric but the metric from the lemma with its properties.
+In this section we will prove the homogeneity theorem, which is needed for the proof of the main result, \cref{thm-uniquene-repr-minkowski}.
+The proof is divided into 5 parts and a whole subsection which is devoted to showing the convexity of $\metric$-balls which is needed for the proof.
+First, we will state the theorem, give some remarks on it and prove some lemmas. Then we will prove the homogeneity theorem.
+Everything in this section is assumed as in this theorem. For example, if we write $\metric$, this implies not any metric but the metric from this theorem with its properties.
 Moreover all topological terms(open, closed, continuous) are meant with respect to the natural topology of $\mathbb{R}^{n}$ (i.e. the topology induced by the $\metric_{\infty}$ and the euclidean metric), not the topology induced by $\metric$ or the induced topology on $S$. This will be especially important for the subsection on convexity of the balls.
-We will begin with the statement:
 
-% TODO: change to thm and edit text everywhere, find fitting name for this theorem
-\begin{lem}[Main Lemma] \label{main-lemma}
+It is suggested to first read this section (including the proof) to get the main ideas and a big picture understanding, and then read the next section.
+
+For readers unfamiliar with convexity, we restate the definition of a convex set. The idea behind convexity is, that for every two points from a set, the line between these two points is also inside that set.
+\begin{defi}[Convexity]
+A set $A \subset \mathbb{R}^{n}$ is \emph{convex}, iff $(1 - a) x + a y \in A$ for all $x, y \in A$ and $a \in [0,1]$. \index{Convex!set}
+\end{defi}
+
+Now, we begin with the statement:
+
+\begin{thm}[Homogeneity Theorem] \label{thm-homogeneity}
 	Let $S$ be an open convex subset of $n$-dimensional Euclidean space. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity \footnote{i.e. $\metric$ takes the form $\metr{x}{y} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$.} with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates \footnote{Linear coordinates means that the vector representations are cartesian as opposed to, for example, polar, where each coordinate entry is not the value on the corresponding factor of the cartesian product.} in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $x, z \in S$ and any real $0 \leq t \leq 1$,
 	\begin{align*}
 		\metric[x, x + t(z - x)] = t\metric(x, z).
 	\end{align*}
 
-\end{lem}
+\end{thm}
 
-Now we will continue with a remark that makes it possible to move the set such that $0 \in S$ by using the translation invariance of $\metric$.
+Now we continue with a remark that makes it possible to move the set such that $0 \in S$ by using the translation invariance of $\metric$.
 
 \begin{rem}[Translation invariance and domain of $\metric$ and $F$] \label{lemma-rem}
 
@@ -41,7 +48,7 @@ Now we will continue with a remark that makes it possible to move the set such t
 			                      & = \metr{x}{z}
 		      \end{align*}
 		\item Because $\metric$ is invariant to translation in its domain, we can move $S$ and redefine the metric on the shifted set. We do this by defining $S' = \{s - x : s \in S\}$ for $x \in S$ and $\metric'(a,b) := \metr{a+x}{b+x}$ for $a, b \in S'$. Since $0 \in S'$, we also can introduce the following shorthand Notation $\metric'(x') := \metric'(0, x')$ for $x' \in S'$.
-		      From now on, we will assume that $0 \in S$, because by the argument just provided, we can shift $S$ and $\metric$ such that $0 \in S$.
+		      From now on, we assume that $0 \in S$, because by the argument just provided, we can shift $S$ and $\metric$ such that $0 \in S$.
 		      Thus we can proceed to proof the statement using the shorthand notation, by which we need to show that:
 		      $$ \metro{t \cdot  z} = t \cdot \metro{z} \qquad \forall t \in [0, 1] \text{ and } \forall z \in S' .$$ \label{rem-lemma-translate-to-zero}
           %TODO: Bei (iii) auf S.5 fehlt mir auch ein bisschen das Argument. Irgendeine Voraussetzung an F muss da noch eingehen. Nur weil \delta eine Metrik ist, muss ja nicht der Definitionsbereich ein kartesisches Produkt sein, oder uebersehe ich da etwas? 
@@ -54,15 +61,15 @@ Now we will continue with a remark that makes it possible to move the set such t
 \end{rem}
 
 
-Before moving to the proof, we will fist show two statements that we will need right at the start.
-The first one asserts that the distance between a compact and a closed set is greater zero.
+Before proceeding to the proof, we first establish two preliminary statements that will be needed at the beginning.
+The first one asserts that the distance between a compact and a closed set is greater than zero.
 
 \begin{lem} \label{lemma-distance}
 	If $I \subset \mathbb{R}^{n}$ is compact, $Y \subset \mathbb{R}^{n}$ is closed and $I$ and $Y$ are disjoint, then there exists $\varepsilon > 0$ such that $\metr[\infty]{p}{y} > \varepsilon$ for all $p \in I$ and $y \in Y$.
 \end{lem}
 
 \begin{proof}
-	We will prove this statement by contradiction.
+	We prove this statement by contradiction.
 	Assume that for all $\varepsilon > 0$ there exists $p \in I$ and $y \in Y$ such that $\metr[\infty]{p}{y} < \varepsilon$. This means, we can construct two sequences $p_n \in I$ and $y_n \in Y$ such that $\metr[\infty]{p_n}{y_n} \to 0$ as $n \to \infty$.
 	$I$ is compact, thus there exists a convergent subsequence $p_{n_m}$ such that $p_{n_m} \to p \in I$ for $n \rightarrow \infty$.
 	With the triangle inequality we get
@@ -100,10 +107,9 @@ The second one allows us to make arbitrary small $\metric$-balls which we will c
 \end{proof}
 
 
-Now, we will move to the proof of the main lemma. It is suggested to first read the proof to get the main ideas and a big picture understanding, and then read the next section which covers the convexity of spheres which will be of great importance.
-First we will restate the lemma in the form, in which we will prove it.
+We now proceed to the proof of the homogeneity theorem. First, we restate the theorem in the form in which we will prove it.
 
-\begin{lem*}[Restatement of the Lemma]
+\begin{lem*}[Restatement of the Homogeneity Theorem]
 	Let $S$ be an open convex subset of $n$-dimensional Euclidean space with $0 \in S$. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity with with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $z \in S$ and any real $0 \leq t \leq 1$,
 	\begin{align*}
 		\metro{tz} = t\metro{z}.
@@ -112,7 +118,7 @@ First we will restate the lemma in the form, in which we will prove it.
 
 The proof consists of 4 parts.
 First we will find a radius such that all balls with this radius on line from $0$ to $z$ are in $S$.
-Then we will prove this lemma for $t = \frac{1}{m}$ for $m \in \mathbb{N}$ by proving the two inequalities.
+Then we will prove the theorem for $t = \frac{1}{m}$ for $m \in \mathbb{N}$ by proving the two inequalities.
 After this, we will expand this statement to the rationals and then use continuity to expand it to all real numbers between $0$ and $1$.
 
 \begin{proof}

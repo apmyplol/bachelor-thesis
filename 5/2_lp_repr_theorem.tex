@@ -1,5 +1,5 @@
 \section{Unique Representation Theorem}
-\begin{thm}[Unique Representation Theorem: The Power Metric as the Sole Representation for Segmentally Additive AD Structures]\label{thm-uniquene-repr-minkowski}
+\begin{thm}[Unique Representation Theorem: The Power Metric as the Sole Representation for Segmentally Additive AD Structures]\label{thm-uniquene-repr-minkowski} \index{Theorem!unique representation}
 	Suppose $\langle A, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.\\
 	Then there exists a unique $r \geq 1$ and real-valued functions $\varphi_i$, defined on $A_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $a, b, c, d \in A$,
 	\[
@@ -25,7 +25,7 @@
 	\end{equation}
 
 
-	\begin{proofpart}[Establishing the basics and using the \cref{main-lemma}]
+	\begin{proofpart}[Establishing the basics and using the \cref{thm-homogeneity}]
 
     By \cref{thm-necc-suff-conds} and \cref{rem-metric-form}, $\metric$ must be of the form 
 
@@ -36,7 +36,7 @@
     where $F$ is continuous, convex and increasing.
     %TODO: warum sind die intervalle halboffen? Das muss aus der prox struct kommen iwie
     % Argumentation mit 0 rauslassen nochmal checken
-    By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a cartesian product of intervals of the form $[0,\alpha _i)$ where $\alpha_i$ are the ranges of $| \varphi_i(a_i) - \varphi_i(b_i)|$ for $i=1, \dots, n$. This cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore the requirements for \cref{main-lemma} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for for $\ve{x}, \ve{z} \neq \ve{0}$:
+    By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a cartesian product of intervals of the form $[0,\alpha _i)$ where $\alpha_i$ are the ranges of $| \varphi_i(a_i) - \varphi_i(b_i)|$ for $i=1, \dots, n$. This cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore the requirements for \cref{thm-homogeneity} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for for $\ve{x}, \ve{z} \neq \ve{0}$:
     $$
     \metr{\ve{x}}{\ve{x}+ t(\ve{z}-\ve{x})} = t \metr{\ve{x}}{\ve{z}}.
     $$
