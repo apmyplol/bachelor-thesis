@@ -74,10 +74,10 @@ Proving:
     Part3
 
 
-  Thm (main Lemma): ~> todo add name, tex & text check everywhere where mentioned
+  Thm (main Lemma):
     Lem: distance between open and compact set
     Lem: Arbitrary small delta balls
-    Thm: Convexity of spheres ~> todo tex & text check
+    Thm: Convexity of spheres
       Lem: Open / closedness of delta balls
       Lem: compressing extreme points
 

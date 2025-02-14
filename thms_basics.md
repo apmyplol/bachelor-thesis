@@ -55,8 +55,7 @@ Note sure:
     - increasing real on interval -> at most countable many gaps
 
   - convexity:
-    <!--  TODO: check if convex functions & characterizations can be introduced when proving mulholland eq? -->
-    composition
+      composition
     - characterization: second derivative positive
     characterization: f(a+b) thing
 
@@ -66,7 +65,7 @@ cite?:
   Aczel
   Minkowski Theorem
   
-  Minkowski Inequality ~> todo check if really needed
+  Minkowski Inequality
 
   Thm: Representation Theorem for Segmentally Additive Proximity Structures
 
