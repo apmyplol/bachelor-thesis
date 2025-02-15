@@ -23,7 +23,7 @@
 
 
 % --- vector
-\newcommand\ve[1]{\underline{\mathbf{#1}}}
+\newcommand\ve[1]{\mathbf{#1}}
 % --- element aus proximit structure
 \newcommand\ps[1]{\mathcal{#1}}
 
@@ -36,14 +36,18 @@
 
 % shortcuts for the main lemma and its proof
 % Part a) >=
-\newcommand\z[1][k]{z^{(#1)}}
+
+\NewDocumentCommand{\z}{o}{%
+  \ve{z\IfValueTF{#1}{^{(#1)}}{}}%
+}
+% \newcommand\z[1][]{\ve{z^{(#1)}}}
 
 % Part b) <=
 
-\newcommand\y[1][i]{y^{(#1)}}
-\newcommand\x[1][i]{x^{(#1)}}
+\newcommand\y[1][i]{\ve{y^{(#1)}}}
+\newcommand\x[1][i]{\ve{x^{(#1)}}}
 
-\newcommand\w[1][i]{w^{(#1)}}
+\newcommand\w[1][i]{\ve{w^{(#1)}}}
 
 % convex Hull, extreme Points
 \DeclareMathOperator{\co}{conv}

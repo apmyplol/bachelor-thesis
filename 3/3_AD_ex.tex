@@ -14,8 +14,8 @@
 	\begin{proofpart}[Positivity and Symmetry]
 		Positivity and symmetry are both straight forward.
 		\begin{enumerate}
-			\item Positivity: $\delta(a,b) = 0$ implies $F(|a_i - b_i|) = 0$ for all $i=1, \dots, n$, which is only possible if $|a_i - b_i| \cdot r = 0$, meaning $a_i = b_i$ for all $i=1, \dots, n$.\\
-			      Conversely, if $a \neq b$, then $a_i \neq b_i$ for at least one $i$ in $1, \dots n$, which implies $F_i(|a_i - b_i|) > 0$, and thus $\delta(a,b) > 0$.
+      \item Positivity: $\delta(\ve{a},\ve{b}) = 0$ implies $F(|a_i - b_i|) = 0$ for all $i=1, \dots, n$, which is only possible if $|a_i - b_i| \cdot r = 0$, meaning $a_i = b_i$ for all $i=1, \dots, n$.\\
+        Conversely, if $\ve{a} \neq \ve{b}$, then $a_i \neq b_i$ for at least one $i$ in $1, \dots n$, which implies $F_i(|a_i - b_i|) > 0$, and thus $\delta(\ve{a},\ve{b}) > 0$.
 			\item Symmetry: Symmetry follows directly from the fact that $|a_i - b_i| = |b_i - a_i|$ holds.
 		\end{enumerate}
 	\end{proofpart}
@@ -27,7 +27,7 @@
 		$$
 			f^{-1} \left[ \sum_{i=1}^n f(|x_i + y_i|) \right] \leq f^{-1}  \left[ \sum_{i=1}^n f(|x_i|) \right] + f^{-1} \left[ \sum_{i=1}^n f(|y_i|) \right].
 		$$
-		holds for all $x, y \in \mathbb{R}^n, n = 1, 2, \ldots$ whenever the following three conditions are satisfied:
+    holds for all $\ve{x}, \ve{y} \in \mathbb{R}^n, n = 1, 2, \ldots$ whenever the following three conditions are satisfied:
 		\begin{enumerate}
 			\item $f$ is continuous, increasing and $f(0) = 0$.
 			\item $f$ is convex on $[0, \infty)$.
@@ -92,9 +92,10 @@
 	\end{proof}
 
 \end{rem}
+
 %TODO: check this remark and reposition maybe
 % glaube der remark unten stimmt nicht. Interessanter ist zu zeigen, dass p-exp nicht segmentally additive ist aber durch grenzwertbildung es segmentally additive wird
 % Das ist von Bedeutung, da dies mithilfe des Hauptresultates \ref{lp-eindeutig} zeigt, dass die Metriken der p-exp Familie keine Metriken mit additiven Segmenten sein können, obwohl man die $l^p$ Metrik durch Grenzwertbildung aus dieser Familie darstellen kann.
 % Das bedeutet, dass im Grenzwertprozess aus der Eigenschaft ''additiv auf den Koordinatenachsen'', die Eigenschaft ''additiv auf beliebigen Liniensegmenten'' wird.
-
+% TODO: add example for additive difference model not a metric
 Not every function that can be represented by the additive difference model is a metric.
