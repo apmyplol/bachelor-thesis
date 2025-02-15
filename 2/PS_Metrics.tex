@@ -4,7 +4,7 @@ If we have four stimuli $a, b, c$ and $d$, then $(a,b)\succsim(c,d)$ denotes tha
 This essence of a \emph{proximity structure} is exactly that, with some additional constraints.
 
 
-\begin{defi}[Proximity Structure] \index{Proximity structure} \label{def-prox-struct}
+\begin{defi}[Proximity Structure] \index{Proximity structure} \label{def-prox-struct} \gls{PS}
   Suppose $\ps{A}$ is a set and $\succsim$ a quaternary relation on $\ps{A}$, i.e., binary relation on $\ps{A} \times \ps{A}$. $\langle \ps{A}, \succsim \rangle$ is a \emph{proximity structure} (PS) iff the following axioms hold for all $\ps{a}, \ps{b} \in \ps{A}$:
 
 	\begin{enumerate}
@@ -27,7 +27,7 @@ This essence of a \emph{proximity structure} is exactly that, with some addition
 %TODO: axiome erklären
 
 The mathematical concept, that we want to tie proximity structures to, is the concept of metric. A metric is defined as follows:
-\begin{defi}[Metric] \index{Metric} \index{Metric space} \label{def-metric}
+\begin{defi}[Metric] \index{Metric} \index{Metric space} \label{def-metric} \gls{metric} \gls{metricSpace}
   Let $X$ be a set. A real-valued function $\metric$ on $X \times X$ is a \emph{metric}, iff the following properties hold for all $x, y, z \in X$:
 \begin{enumerate}[1.]
   \item $\metr{x}{y} > 0$ unless $x=y$ and $\metr{x}{x} = 0$
@@ -56,7 +56,7 @@ Since we aim to connect these two concepts, we will introduce a term for that wh
 
 However, simple metrics do not impose enough structure, and we therefore require the metrics to satisfy additional conditions which we can observe in often used metrics.
 One of the most used metrics is the Minkowski $r$-metric or Minkowski distance (also called the power or $L^p$ metric) and is defined in the following way.
-\begin{defi}[Minkowski Metric] \index{Metric!Minkowski} \index{Metric!power} \index{Minkowski!metric} \index{Minkowski!distance} \label{def-minkowski-metric}
+\begin{defi}[Minkowski Metric] \index{Metric!Minkowski} \index{Metric!power} \index{Minkowski!metric} \index{Minkowski!distance} \label{def-minkowski-metric} \gls{minkMetric}
   For $n \in \mathbb{N}_{>0}$ and $r \geq 1$ the Minkowski Metric of two vectors $\ve{x}, \ve{y} \in \mathbb{R}^{n}$ is defined as
 \begin{equation*}
 \metr[r]{\ve{x}}{\ve{y}} = \left ( \sum_{i=1}^{n} |x_i - y_i|^r \right)^{1/r}.

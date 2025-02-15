@@ -1,9 +1,14 @@
 \subsection{Homogeneity Theorem} \label{sect-homogeneity-theorem}
 
+%TODO: Notation und Begriffe einführe:
+% max metric, open & closed ball, metric notation
+\gls{max-metr}
+\gls{openball}
+\gls{closedball}
+
 % Nur kurze zusammenfassung der Notation zur Übersicht
 Notation:
 \begin{itemize}
-	\item $\curve$: parametric curve, $\len$: length of curve, $\sublen$: length of subcurve from $a$ to $x$
 	\item $\metric_{\infty}$: $\infty$-metric, if no subscript then $\metric$ is the additive-difference metric
 	\item $\metric$: metric, $\metr{a}{b}$ metric distance between $a$ and $b$, $\metro{a}:= \metr{0}{a}$
 	\item $\ball{r} := \{x \in \mathbb{R}^{n}: \metro{x} < r\} $: the open Ball with radius $r$ around $0$ wrt. the metric $\metric$,
@@ -77,7 +82,7 @@ The first one asserts that the distance between a compact and a closed set is gr
   Hence,  $\ve{p}$ is a limit point of $Y$, and since  $Y$  is closed,  $\ve{p} \in Y$ must hold which contradicts the assumption.
 \end{proof}
 
-The second one allows us to make arbitrary small $\metric$-balls which we will combine with the statement before to assure a distance in $\metric$ and not $\metric_{\infty}$.
+The second one allows us to make arbitrary small $\metric$-balls which we will combine with the statement before to assure a distance in $\metric$ and not only in $\metric_{\infty}$.
 
 \begin{lem}[arbitrary small $\metric$-Balls] \label{lemma-small-delta-balls}
 	Let $\varepsilon > 0$ such that $\ball[\infty]{\varepsilon} \subset S$. Then there exists $\alpha > 0$ such that $\ball{\alpha} \subset \ball[\infty]{\varepsilon}$.
@@ -192,24 +197,31 @@ After this, we will expand this statement to the rationals and then use continui
 		\begin{align*}
       \metr{\ve{0}}{\z}          & \leq \metr{\ve{0}}{\z[1]} + \metr{\z[1]}{\z[2]} + \dots + \metr{\z[m-1]}{\z[m]} \\
                                  & = n \cdot \frac{1}{n} \metr{\ve{0}}{\z}                                          \\
-                                 & = \metr{\ve{0}}{\z}                                                              \\[1ex]
-      \implies \metr{\ve{0}}{\z} & = \metr{\ve{0}}{\z[1]} + \metr{\z[1]}{\z[2]} + \dots + \metr{\z[m-1]}{\z[m]}
+                                 & = \metr{\ve{0}}{\z}.                                                            
 		\end{align*}
 
-    %TODO: maybe zsm in einen align block und referencen, tags adden bissi wenig text
-    For the distance $\metr{\ve{0}}{\z[2]}$, we get the following two inequalities:
-		\begin{enumerate}
-      \item $$ \metr{\ve{0}}{\z[2]} \leq \metr{\ve{0}}{\z[1]} + \metr{\z[1]}{\z[2]} = \frac{2}{m} \metr{\ve{0}}{\z} $$
-			\item \begin{align*}
-          \metr{\ve{0}}{\z}     & \leq \metr{\ve{0}}{\z[2]} + \metr{\z[2]}{\z}                                                  \\
-          \metr{\ve{0}}{\z[2]} & \geq \metr{\ve{0}}{\z} - \underbrace{\metr{\z[2]}{\z}}_{\leq \sum_i \metr{\z[2+i]}{\z[2+i+1]}} \\
-                               & \geq \metr{\ve{0}}{\z} - \sum_{i=0}^{m-3} \metr{\z[2+i]}{\z[2+i+1]}                           \\
-                               & = \metr{\ve{0}}{\z} - \frac{m-2}{m} \metr{\ve{0}}{\z}                                              \\
-                               & = \frac{2}{m} \metr{\ve{0}}{\z}
-			      \end{align*}
-		\end{enumerate}
+    This implies
 
-    These two inequalities yield $\metr{\ve{0}}{\z[2]} = \frac{2}{m} \metr{\ve{0}}{\z}$.
+    \begin{equation} \label{proof-eq-additive}
+      \metr{\ve{0}}{\z} = \metr{\ve{0}}{\z[1]} + \metr{\z[1]}{\z[2]} + \dots + \metr{\z[m-1]}{\z[m]}.
+    \end{equation}
+
+    For the distance $\metr{\ve{0}}{\z[2]}$, we get the following two inequalities.
+    Firstly,
+    \begin{equation}
+      \metr{\ve{0}}{\z[2]} \leq \metr{\ve{0}}{\z[1]} + \metr{\z[1]}{\z[2]} = \frac{2}{m} \metr{\ve{0}}{\z}.
+    \end{equation}
+
+    Secondly,
+		\begin{align}
+      \metr{\ve{0}}{\z}     & \leq \metr{\ve{0}}{\z[2]} + \metr{\z[2]}{\z}              \notag                                      \\
+      \metr{\ve{0}}{\z[2]} & \geq \metr{\ve{0}}{\z} - \underbrace{\metr{\z[2]}{\z}}_{\leq \sum_i \metr{\z[2+i]}{\z[2+i+1]}} \tag{Rearrange} \\
+                           & \geq \metr{\ve{0}}{\z} - \sum_{i=0}^{m-3} \metr{\z[2+i]}{\z[2+i+1]}             \tag{$\triangle$ inequality}              \\
+                           & = \metr{\ve{0}}{\z} - \frac{m-2}{m} \metr{\ve{0}}{\z}                         \tag{using \cref{proof-eq-additive}}                     \\
+                               & = \frac{2}{m} \metr{\ve{0}}{\z}. \notag
+		\end{align}
+
+    Combining these two inequalities yields $\metr{\ve{0}}{\z[2]} = \frac{2}{m} \metr{\ve{0}}{\z}$.
     By repeating this for $\metr{\ve{0}}{\z[k]}$ for every $k = 2, \dots, m-1$, we get the equality for every rational number for $m$ big enough. However every rational number with a denominator smaller than $m$ can be represented by another rational number with denominator greater than $m$. This yields, that the result is true for every rational $t$.
 	\end{proofpart}
 

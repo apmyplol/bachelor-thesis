@@ -7,10 +7,10 @@
 	\begin{proof}
     Let $\ve{x}, \ve{z} \in \mathbb{R}^{n}$ and $0 \leq t \leq 1$. Then, for $\ve{y} = (1-t) \ve{x} + t \ve{z}$ ($\ve{y}$ is on the line segment between $\ve{z}$ and $\ve{x}$, iff $\ve{y}$ can be represented in this way) it holds that:
 		\begin{align*}
-      d(\ve{x}, \ve{y}) + d(\ve{y}, \ve{z}) & = \left[ \sum_{i=1}^{n} \left| x_i - (1 - t) x_i - t z_i \right|^p \right]^{1/p} + \left[ \sum_{i=1}^{n} \left| (1 - t) x_i + t z_i - z_i \right|^p \right]^{1/p} \\
+      \metr[r]{\ve{x}}{\ve{y}} + \metr[r]{\ve{y}}{\ve{z}} & = \left[ \sum_{i=1}^{n} \left| x_i - (1 - t) x_i - t z_i \right|^p \right]^{1/p} + \left[ \sum_{i=1}^{n} \left| (1 - t) x_i + t z_i - z_i \right|^p \right]^{1/p} \\
                         & = \left[ \sum_{i=1}^{n} \left| x_i - x_i + t x_i - t z_i \right|^p \right]^{1/p} + \left[ \sum_{i=1}^{n} \left| x_i  - t x_i + t z_i - z_i \right|^p \right]^{1/p} \\
 			                  & = t \left[ \sum_{i=1}^{n} \left| x_i - z_i \right|^p \right]^{1/p} + (1 - t) \left[ \sum_{i=1}^{n} \left| x_i - z_i \right|^p \right]^{1/p}                       \\
-                        & = d(\ve{x}, \ve{z}).
+                        & = \metr[r]{\ve{x}}{\ve{z}}.
 		\end{align*}
 	\end{proof}
 \end{ex}

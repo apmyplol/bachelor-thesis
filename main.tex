@@ -4,7 +4,10 @@
 
 \input{0_commands.tex}
 
+\input{0_glossary.tex}
+
 \addbibresource{refs.bib}
+
 
 
 
@@ -29,7 +32,6 @@
 % section intro and proximity structures
 \include{./1/intro}
 \include{./2/PS_Metrics}
-
 
 %---  2  ---
 % Section additive difference model and structures
@@ -68,21 +70,19 @@
 %---  5  --- discussion
 \include{./6/discussion}
 
-
 % \pagebreak
 %
 % \phantomsection
 % \addcontentsline{toc}{section}{Literatur}
 
 \printbibliography
-
+\printglossary
 \printindex
 \pagebreak
 
 % \appendix
 % \section{Anhang}\label{appendix}
 % \input{appendix}
-
 \includepdf{./erklaerung_signed.pdf}
 
 \end{document}
