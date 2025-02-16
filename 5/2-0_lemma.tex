@@ -170,7 +170,7 @@ After this, we will expand this statement to the rationals and then use continui
 
 		Further, we can observe that $\frac{1}{m} \z$ is a convex combination of $\x$:
 		$$
-			\sum_{i=1}^m \frac{1}{m} \x = \sum_{i=1}^m \frac{1}{m} (\y[1] - \y[0] + \y[2] - \y[1] + \dots + \y[m]) = \frac{1}{m} (-\y[0] + \y[m]) = \frac{1}{m} z
+    \sum_{i=1}^m \frac{1}{m} \x = \sum_{i=1}^m \frac{1}{m} (\y[1] - \y[0] + \y[2] - \y[1] + \dots + \y[m]) = \frac{1}{m} (-\y[0] + \y[m]) = \frac{1}{m} \z
 		$$
 
 		We showed before, that $\metro{\x} = \frac{1}{m}\metro{\z}$, which implies $\x \in  \cball{\frac{1}{m}\metro{\z}}$.
@@ -186,7 +186,7 @@ After this, we will expand this statement to the rationals and then use continui
 
 
 	%-------------- Proof part 3 ----------------------------%
-	\begin{proofpart}[$t \metro{\z} = \metro{t \z}$ for $t = \frac{k}{m}$ and $t \in \{0, \dots, m\}$] \label{lemma-part3}
+	\begin{proofpart}[$t \metro{\z} = \metro{t \z}$ for $t = \frac{k}{m}$ and $k \in \{0, \dots, m\}$] \label{lemma-part3}
 		% To show this part, we will first use translation invariance to prove $\metro{\frac1m z} = \frac1m \metro{z}$ from all points $\z$.
     For $\z[1]$ we already have $\metr{\ve{0}}{\z[1]} = \frac{1}{m} \metr{\ve{0}}{\z}$.
 		Now, for consecutive points, by translation invariance, it holds that

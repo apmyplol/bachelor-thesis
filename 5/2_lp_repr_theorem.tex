@@ -3,7 +3,7 @@
   Suppose $\langle \ps{A}, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.\\
   Then there exists a unique $r \geq 1$ and real-valued functions $\varphi_i$, defined on $\ps{A}_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $\ps{a}, \ps{b}, \ps{c}, \ps{d} \in \ps{A}$,
 	\[
-    (\ps{a}, \ps{b}) \succsim (\ps{c}, \ps{d}) \iff \delta(\ps{a}, \ps{b}) \geq \delta(\ps{c}, \ps{d}),
+    (\ps{a}, \ps{b}) \succsim (\ps{c}, \ps{d}) \text{ iff } \delta(\ps{a}, \ps{b}) \geq \delta(\ps{c}, \ps{d}),
 	\]
 	where
 	\[
@@ -44,7 +44,7 @@
     \end{equation}
     
     However, due to translation invariance, homogeneity also holds for $\ve{x} = \ve{0}$.
-    \footnote{ By adding $0 = \ve{y} - \ve{y}$ for some $y$ in the domain, we get homogeneity:
+    \footnote{ By adding $0 = \ve{y} - \ve{y}$ for some $\ve{y}$ in the domain, we get homogeneity for $\ve{0}$:
 \begin{equation*}
   \metr{\ve{0}}{t \ve{z}} =F^{-1} \left [ \sum_{i=1}^{n} F(t (y_i - (y_i - z_i))) \right] 
                           = t F^{-1} \left [ \sum_{i=1}^{n} F(y_i - (y_i - z_i)) \right]
@@ -63,6 +63,8 @@
 		In particular, if we set $\omega_i = \omega/t_i$, then $F^{-1} \left[ \sum_{i=1}^{n} F_i(\omega_i) \right] = F^{-1} \left[ nF(\omega) \right] =: \Omega$ is defined. Thus, $F = G^{-1}$ is defined at least on the interval $[0, \Omega]$. We can now extend $F$ as follows.
 	\end{proofpart}
 	\begin{proofpart}[Extending the bounds of $F$]
+    %TODO: a < w / t_i oder?
+    % Außerdem checken wo alpha konstant gemeint ist und wo nicht
 		For $\alpha < \omega$, we have by \cref{proof-homogen-eq},
     \begin{align} \label{proof-extension_prereq}
       \begin{split}
