@@ -1,22 +1,16 @@
 \subsection{Homogeneity Theorem} \label{sect-homogeneity-theorem}
 
-%TODO: Notation und Begriffe einführe:
-% max metric, open & closed ball, metric notation
-\gls{max-metr}
-\gls{openball}
-\gls{closedball}
+
+Before beginning this section, we will first introduce some notation.\\
+$\metric_{\infty}$ is used to represent the $\infty$-metric (also called the maximum metric) which is induced by the maximum norm\footnote{The maximum norm is defined by $\|x,y\|_\infty := \max_{i \leq n} \{|x_i - y_i|\}.$}. This metric induces the natural topology of the euclidean space.
+$\ball{r} := \{x \in \mathbb{R}^{n}: \metro{x} < r\} $ denotes the open Ball with radius $r$ around $0$ with respect to the metric $\metric$; similarly $\cball{r}$ denotes the closed ball. We use $\infty$ as a subscript, to indicate that the ball is with respect to $\metric_{\infty}$.\\
+
+% \gls{max-metr}
+% \gls{openball}
+% \gls{closedball}
 
 % Nur kurze zusammenfassung der Notation zur Übersicht
-Notation:
-\begin{itemize}
-	\item $\metric_{\infty}$: $\infty$-metric, if no subscript then $\metric$ is the additive-difference metric
-	\item $\metric$: metric, $\metr{a}{b}$ metric distance between $a$ and $b$, $\metro{a}:= \metr{0}{a}$
-	\item $\ball{r} := \{x \in \mathbb{R}^{n}: \metro{x} < r\} $: the open Ball with radius $r$ around $0$ wrt. the metric $\metric$,
-	\item $\cball{r} := \{x \in \mathbb{R}^{n}: \metro{x} \leq r\} $: the closed Ball with radius $r$ around $0$ wrt. the metric $\delta$,
-	\item $\|x,y\|_\infty := \max_{i \leq n} \{|x_i - y_i|\}$: the maximum metric. We just use $\infty$ to shorten the notation, e.g. in $\ball[\infty]{r}$.
-	\item $\co(A)$: convex Hull of $A$.
-	\item $\extr(A)$: extreme Points of $A$.
-\end{itemize}
+
 
 In this section we will prove the homogeneity theorem, which is needed for the proof of the main result, \cref{thm-uniquene-repr-minkowski}.
 The proof is divided into 5 parts and a whole subsection which is devoted to showing the convexity of $\metric$-balls which is needed for the proof.
@@ -58,9 +52,11 @@ Now we continue with a remark that makes it possible to move the set such that $
           $$ \metro{t \cdot  \ve{z}} = t \cdot \metro{\ve{z}} \qquad \forall t \in [0, 1] \text{ and } \forall \ve{z} \in S' .$$ \label{rem-lemma-translate-to-zero}
           %TODO: Bei (iii) auf S.5 fehlt mir auch ein bisschen das Argument. Irgendeine Voraussetzung an F muss da noch eingehen. Nur weil \delta eine Metrik ist, muss ja nicht der Definitionsbereich ein kartesisches Produkt sein, oder uebersehe ich da etwas? 
           % Nochmal überprüfen, ob meine argumentation passt
-        \item Since $\metric$ is defined by $\metr{\ve{x}}{\ve{y}} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$ and $\metric$ is a metric, $F(\ve{x}) = 0$ iff $\ve{x}=0$ must hold. Moreover the function $F$ has to be defined on a set, where at least the "greatest possible difference" in coordinate $i$ is a possible $i$-th argument. We denote this value as $a_i$ and define it as 
-      $$a_i := \sup \left \{ |x_i - y_i| : (x_1, \dots, x_n), (y_1, \dots, y_n) \in S \right \} \in \mathbb{R}_{> 0} \cup \{\infty\}.$$
-      Since $\metric$ is segmentally additive, every value between $0$ and $a_i$ must be in the domain of $\metric$. Since this is true for all $i$, this implies that $F$ is defined on a cartesian product of half-open, real intervals of the form $[0,a_i)$. \label{rem-lemma-domains}
+          %TODO: warum sind die intervalle halboffen? Das muss aus der prox struct kommen iwie
+          % Argumentation mit 0 rauslassen nochmal checken
+        \item Since $\metric$ is defined by $\metr{\ve{x}}{\ve{y}} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$ and $\metric$ is a metric, $F(\ve{x}) = 0$ iff $\ve{x}=0$ must hold. Moreover the function $F$ has to be defined on a set, where at least the "greatest possible difference" in coordinate $i$ is a possible $i$-th argument. We denote this value as $\rho_i$ and define it as 
+      $$\rho_i := \sup \left \{ |x_i - y_i| : (x_1, \dots, x_n), (y_1, \dots, y_n) \in S \right \} \in \mathbb{R}_{> 0} \cup \{\infty\}.$$
+      Since $\metric$ is segmentally additive, every value between $0$ and $\rho_i$ must be in the domain of $\metric$. Since this is true for all $i$, this implies that $F$ is defined on a cartesian product of half-open, real intervals of the form $[0,\rho_i)$. \label{rem-lemma-domains}
 		\item  Moreover, due to the continuity of $F$ and $| \cdot |$, the metric $\metric$ is continuous. \label{rem-lemma-continuity}
 	\end{enumerate}
 \end{rem}

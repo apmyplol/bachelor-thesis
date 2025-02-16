@@ -1,18 +1,18 @@
 \section{Unique Representation Theorem}
 \begin{thm}[Unique Representation Theorem: The Power Metric as the Sole Representation for Segmentally Additive AD Structures]\label{thm-uniquene-repr-minkowski} \index{Theorem!unique representation}
   Suppose $\langle \ps{A}, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.\\
-  Then there exists a unique $r \geq 1$ and real-valued functions $\varphi_i$, defined on $\ps{A}_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $\ps{a}, \ps{b}, \ps{c}, \ps{d} \in \ps{A}$,
+  Then there exists a unique $p \geq 1$ and real-valued functions $\varphi_i$, defined on $\ps{A}_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $\ps{a}, \ps{b}, \ps{c}, \ps{d} \in \ps{A}$,
 	\[
     (\ps{a}, \ps{b}) \succsim (\ps{c}, \ps{d}) \text{ iff } \delta(\ps{a}, \ps{b}) \geq \delta(\ps{c}, \ps{d}),
 	\]
 	where
 	\[
-    \delta(\ps{a}, \ps{b}) = \left[\sum_{i=1}^{n} |\varphi_i(\ps{a}) - \varphi_i(\ps{b})|^r\right]^{1/r}.
+    \delta(\ps{a}, \ps{b}) = \left[\sum_{i=1}^{n} |\varphi_i(\ps{a}) - \varphi_i(\ps{b})|^p\right]^{1/p}.
 	\]
 \end{thm}
 
 
-\newcommand\ta{\mathcal{x}}
+\newcommand\ta{x}
 
 \begin{proof}
 	This proof proceeds in multiple steps.
@@ -32,9 +32,7 @@
     \end{equation*}
 
     where $F$ is continuous, convex and increasing.
-    %TODO: warum sind die intervalle halboffen? Das muss aus der prox struct kommen iwie
-    % Argumentation mit 0 rauslassen nochmal checken
-    By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a cartesian product of intervals of the form $[0,a_i)$ where $a_i$ are the ranges of $| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for $i=1, \dots, n$. This cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore the requirements for \cref{thm-homogeneity} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for for $\ve{x}, \ve{z} \neq \ve{0}$:
+    By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a cartesian product of intervals of the form $[0,\rho_i)$ where $\rho_i$ are the ranges of $| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for $i=1, \dots, n$. This cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore the requirements for \cref{thm-homogeneity} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for for $\ve{x}, \ve{z} \neq \ve{0}$:
     $$
     \metr{\ve{x}}{\ve{x}+ t(\ve{z}-\ve{x})} = t \metr{\ve{x}}{\ve{z}}.
     $$
@@ -65,7 +63,7 @@
 	\end{proofpart}
 	\begin{proofpart}[Extending the bounds of $F$]
     % Außerdem checken wo alpha konstant gemeint ist und wo nicht
-		For $\ta < \omega / t_i$, we have by \cref{proof-homogen-eq},
+		For $\ta < \omega$, we have by \cref{proof-homogen-eq},
     \begin{align} \label{proof-extension_prereq}
       \begin{split}
 			F^{-1}[nF(\ta)] & = F^{-1}[nF(\ta \omega/\omega)]   \\
@@ -92,11 +90,11 @@
 			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] \tag{by \cref{proof-f-erw}}
 		\end{align*}
     Further, the extended function is both increasing and continuous since the extension is based on scaling of the domain and the range of the original function.
-    For continuity let $\ta_n \rightarrow \ta$ with $\omega < \ta < \Omega$. Then
+    For continuity let $\ta_k \rightarrow \ta$ with $\omega < \ta < \Omega$. Then
     \begin{align*}
-      \lim_{n \rightarrow \infty} F(\ta_n) &= \lim_{n \rightarrow \infty} n F \left ( \ta_n \frac{\omega}{\Omega} \right) \tag{Definition of $F(t)$ for $\omega \leq t \leq \Omega$}  \\
-                                         &= n F \left ( \lim_{n \rightarrow \infty} \ta_n \frac{\omega}{\Omega} \right) \tag{Continuity of $F(t)$ for $0 \leq t \leq \omega$} \\
-                                         &= n F \left ( \ta \frac{\omega}{\Omega} \right) \tag{Convergence of $\ta_n$} \\
+      \lim_{k \rightarrow \infty} F(\ta_k) &= \lim_{k \rightarrow \infty} n F \left ( \ta_k \frac{\omega}{\Omega} \right) \tag{Definition of $F(t)$ for $\omega \leq t \leq \Omega$}  \\
+                                         &= n F \left ( \lim_{k \rightarrow \infty} \ta_k \frac{\omega}{\Omega} \right) \tag{Continuity of $F(t)$ for $0 \leq t \leq \omega$} \\
+                                         &= n F \left ( \ta \frac{\omega}{\Omega} \right) \tag{Convergence of $\ta_k$} \\
                                          &= F(\ta) \tag{Definition of $F(t)$ for $\omega \leq t \leq \Omega$} 
     \end{align*}
     which is equivalent to $F$ begin continuous on the extended domain.
@@ -126,9 +124,9 @@
     \begin{thm*}[Uniqueness of homogeneous quasi-arithmetic means, \cref{thm-power-mean-uniqueness}]
       Suppose that $\phi$ is continuous and strictly increasing in the open interval $(0,\infty)$ and that
       \begin{equation*}
-      \mean{t \ve{a}} = t \mean{ \ve{a}} \quad  \text{with} \quad \mean{\ve{a} } = \phi^{-1} \left ( \sum_{i=1}^{n} w_i \phi(a_i) \right)
+      \mean{t \ve{x}} = t \mean{ \ve{x}} \quad  \text{with} \quad \mean{\ve{x} } = \phi^{-1} \left ( \sum_{i=1}^{n} w_i \phi(x_i) \right)
       \end{equation*}
-      for all positive $\ve{a}, \ve{w}$ and $t$. Then $\mean{a} = \meanr{a}$. (i.e. $\mean{\ve{a}}$ is either a power mean with $\phi(x) = \alpha x^p + \beta$ and $\alpha, \beta, p \in \mathbb{R}, p > 0$ or a geometric mean with $\phi(x) = \alpha \log (x)$, $\alpha \in \mathbb{R}$.)
+      for all positive $\ve{x}, \ve{w}$ and $t$. Then $\mean{x} = \meanr{x}$. (i.e. $\mean{\ve{x}}$ is either a power mean with $\phi(x) = \alpha x^p + \beta$ and $\alpha, \beta, p \in \mathbb{R}, p > 0$ or a geometric mean with $\phi(x) = \alpha \log (x)$, $\alpha \in \mathbb{R}$.)
     \end{thm*}
     The proof of this statement will be presented in \cref{sect-HLP_proof}, here we will apply the theorem for our proof.
 

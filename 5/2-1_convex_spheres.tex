@@ -13,7 +13,7 @@ Recall, that a set is convex if for all two pairs of points of that set, the lin
 	\leavevmode \vspace{-\baselineskip}
 	\begin{enumerate}
     \item Let $k \in \mathbb{N}$, let $\ve{x_1}, \dots, \ve{x_k} \in \mathbb{R}^{n}$, and let $\lambda_1, \dots, \lambda_k \in [0,1]$ be such that $\lambda_1 + \dots + \lambda_k = 1$. Then $\lambda_1 \ve{x_1} + \dots + \lambda_k \ve{x_k}$ is called a \emph{convex combination} of the points $\ve{x_1}, \dots, \ve{x_k}$. \index{Convex!combination}
-    \item For $A \subset \mathbb{R}^{n}$ the \emph{convex Hull} $\co(A)$ is the smallest convex set containing $A$, i.e. $$\co(A) := \cap \left \{ C \subset \mathbb{R}^n:A \subset C,  C \text{ convex} \right \}$$ \index{Convex!hull} \gls{convhull}
+    \item For $A \subset \mathbb{R}^{n}$ the \emph{convex Hull} $\co(A)$ is the smallest convex set containing $A$, i.e. $$\co(A) := \cap \left \{ C \subset \mathbb{R}^n:A \subset C,  C \text{ convex} \right \}$$ \index{Convex!hull} %\gls{convhull}
 	\end{enumerate}
 \end{defi}
 
@@ -32,7 +32,7 @@ Moreover, the convex hull preserves compactness, as the following theorem shows.
 
 Next, we will introduce extreme points, which are, in a sense, characteristic points of a set that cannot be represented by a (strict) convex combination.
 
-\begin{defi}[Extreme Point]\label{def-extreme-point} \index{Extreme point} \gls{extr-point}
+\begin{defi}[Extreme Point]\label{def-extreme-point} \index{Extreme point} %\gls{extr-point}
   Let $A \subset \mathbb{R}^{n}$ be closed and convex. A point $\ve{x} \in A$ is called an \emph{extreme point of $A$} if $\ve{x}$ cannot be represented as a nontrivial (or strict) convex combination of points of A, that is, if $\ve{x} = \lambda \cdot \ve{y} + (1-\lambda) \cdot \ve{z}$ with $\ve{y}, \ve{z} \in A$ and $\lambda \in (0,1)$, implies that $\ve{x} = \ve{y} = \ve{z}$. The set of all extreme points of $A$ is denoted by $\extr(A)$.
 \end{defi}
 
