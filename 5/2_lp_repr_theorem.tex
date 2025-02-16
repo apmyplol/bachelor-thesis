@@ -161,8 +161,13 @@ Jetzt ist mir nicht klar, ob der Fall von den allgemeinen Gewichten direkt aus d
 
 Ich habe auch andersrum versucht, für die Funktion hier herzuleiten, dass Homogenität für die allgemeinen Gewichte gilt, aber habe das auch nicht geschafft. Im Grunde brauche ich dafür die Gleichung \cref{proof-extension_prereq} mit $n = \omega = \lambda$ wobei $\lambda > 0$ gilt, also
 $$
-F^{-1} \left [ \lambda F(\alpha) \right] = \frac{\alpha}{\lambda} F^{-1}\left [ \lambda F(\lambda) \right].
+F^{-1} \left [ \lambda F(x) \right] = \frac{x}{\lambda} F^{-1}\left [ \lambda F(\lambda) \right].
 $$
+Tatsächlich würde auch
+$$
+F^{-1} \left [ \lambda F(x) \right] = x \cdot C(\lambda)
+$$
+ausreichen, wobei $C(\lambda)$ nur von $\lambda$ abhängt.
 Wenn ich diese Gleichung hätte, könnte ich daraus die Homogenität für positive Gewichte herleiten, aber leider habe ich es auch nicht geschafft diese Gleichung herzuleiten. Das $n$ kommt ja daher, dass man dort ursprünglich eine Summe hatte und die Homogenität für eine Summe gilt. Aber wenn man versucht das $n$ zu einem $\lambda$ zu machen, verliert man die Summe... Vielleicht übersehe ich wie man das Problem ganz einfach lösen kann, aber ich stecke hier gerade ziemlich fest. Vielleicht haben Sie ja eine Idee wie man das lösen kann und könnten mir einen Tipp geben, was ich übersehe.
   %   First of all, we will repeat \cref{extension_prereq} and replace $n$ with a real $\lambda > 0$.
   %   Let $x' (x, 0, ..., 0)$ be a 
