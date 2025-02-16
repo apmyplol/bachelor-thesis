@@ -82,9 +82,11 @@ The following remark ties this result closer to the Minkowski metric, and provid
 	Continuity and convexity will be proven in the next lemmas.
 \end{proof}
 
-%TODO: lemmata variablen changen
+\renewcommand\aa{x}
+\newcommand\bb{y}
+\newcommand\cc{z}
 \begin{lem}\label{necc-lemma-ineq}
-	$$F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma).$$
+	$$F(\aa + \bb + \cc) + F(\cc) \geq F(\aa + \cc) + F(\bb + \cc).$$
 \end{lem}
 
 \begin{proof}
@@ -92,15 +94,15 @@ The following remark ties this result closer to the Minkowski metric, and provid
 	In the triangle inequality,
 
 	\[
-		F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] + F^{-1} \left[ \sum_{i=1}^{n} F(\beta_i) \right] \geq F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i + \beta_i) \right],
+		F^{-1} \left[ \sum_{i=1}^{n} F(\aa_i) \right] + F^{-1} \left[ \sum_{i=1}^{n} F(\bb_i) \right] \geq F^{-1} \left[ \sum_{i=1}^{n} F(\aa_i + \bb_i) \right],
 	\]
 
-	let $\alpha_1 = \gamma, \alpha_2 = F^{-1}(F(\alpha + \gamma) - F(\gamma)), \alpha_j = 0$ for $3 \leq j \leq n$ and $\beta_1 = \beta, \beta_j = 0$ for $2 \leq j \leq n$. Hence,
+	let $\aa_1 = \cc, \aa_2 = F^{-1}(F(\aa + \cc) - F(\cc)), \aa_j = 0$ for $3 \leq j \leq n$ and $\bb_1 = \bb, \bb_j = 0$ for $2 \leq j \leq n$. Hence,
 
 	\begin{align*}
-		F(\alpha + \beta + \gamma) & = F \left[ F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] + F^{-1} \left[ \sum_{i=1}^{n} F(\beta_i) \right] \right] \\
-		                           & \geq \sum_{i=1}^{n} F(\alpha_i + \beta_i) \tag{by the triangle inequality}                                            \\
-		                           & = F(\beta + \gamma) + F(\alpha + \gamma) - F(\gamma).
+		F(\aa + \bb + \cc) & = F \left[ F^{-1} \left[ \sum_{i=1}^{n} F(\aa_i) \right] + F^{-1} \left[ \sum_{i=1}^{n} F(\bb_i) \right] \right] \\
+		                           & \geq \sum_{i=1}^{n} F(\aa_i + \bb_i) \tag{by the triangle inequality}                                            \\
+		                           & = F(\bb + \cc) + F(\aa + \cc) - F(\cc).
 	\end{align*}
 \end{proof}
 
@@ -117,46 +119,47 @@ The following remark ties this result closer to the Minkowski metric, and provid
   Since any interval (open, half-open and unbouded intervals) can be represented by a countable union of closed intervals, this theorem can be extended to arbitrary intervals since countable unions of countable sets are still countable.\\
 This can be done by using $(a,b) = \bigcup_{n=1}^{\infty}[a+1/n, b-1/n]$, or $(a, \infty) = \bigcup_{n=1}^{\infty}[a+1/n, a+n]$. Similar arguments apply to other types of intervals.}
 
-	Assume $F(\alpha)$ is the lower boundary of a gap, then there exists $\epsilon > 0$ such that for all $\delta > 0$, $F(\alpha + \delta) - F(\alpha) > \epsilon$. However, by \cref{necc-lemma-ineq}, for every $\beta > 0$,
-	\[
-		F(\alpha + \beta + \delta) - F(\alpha + \beta) \geq F(\alpha + \delta) - F(\alpha) > \epsilon,
-	\]
+Assume $F(\aa)$ is the lower boundary of a gap, then there exists $\varepsilon > 0$ such that for all $\delta > 0$ \footnotemark, it must hold that $F(\aa + \delta) - F(\aa) > \varepsilon$. However, by \cref{necc-lemma-ineq}, for every $\bb > 0$,
 
-	and so there is a gap at any $\alpha + \beta$, and $F$ would have to be discontinuous everywhere. This is impossible, so $F$ must be continuous.
+		$$F(\aa + \bb + \delta) - F(\aa + \bb) \geq F(\aa + \delta) - F(\aa) > \varepsilon,$$
+
+	and so there is a gap at any $\aa + \bb$, and $F$ would have to be discontinuous everywhere. This is impossible, so $F$ must be continuous.
+
+\footnotetext{Here, $\delta$ differs from our usual usage and is not a metric; rather it follows the standard notation for continuity and is only used in this proof this way.}
 \end{proof}
 
 \begin{lem}[Characterization of Convexity]
-	Suppose $F$ is a strictly increasing function defined on the nonnegative reals. Then $F$ is convex iff for all $\alpha, \beta, \gamma \geq 0$ the inequality from \ref{necc-lemma-ineq} holds, i.e.,
+	Suppose $F$ is a strictly increasing function defined on the nonnegative reals. Then $F$ is convex iff for all $\aa, \bb, \cc \geq 0$ the inequality from \ref{necc-lemma-ineq} holds, i.e.,
 	$$
-		F(\alpha + \beta + \gamma) + F(\gamma) \geq F(\alpha + \gamma) + F(\beta + \gamma).
+		F(\aa + \bb + \cc) + F(\cc) \geq F(\aa + \cc) + F(\bb + \cc).
 	$$
 	\begin{proof}
 
 		\begin{proofpart}[$\Rightarrow$]
 
-			Suppose, $F$ is convex, and let $p = \alpha / (\alpha + \beta)$, then
+			Suppose, $F$ is convex, and let $\lambda = \aa / (\aa + \bb)$, then
 
 			\begin{align*}
-				p(\alpha + \beta + \gamma) + (1 - p)\gamma & = \alpha + \gamma \\
-				(1 - p)(\alpha + \beta + \gamma) + p\gamma & = \beta + \gamma.
+				\lambda(\aa + \bb + \cc) + (1 - \lambda)\cc & = \aa + \cc \\
+				(1 - \lambda)(\aa + \bb + \cc) +  \lambda \cc & = \bb + \cc.
 			\end{align*}
 
 			Hence, by convexity,
 
 			\begin{align*}
-				F(\alpha + \gamma) + F(\beta + \gamma) & = F \left[ p (\alpha + \beta + \gamma) + (1 - p) \gamma \right] + F \left[ (1 - p) (\alpha + \beta + \gamma) + p \gamma \right] \\
-				                                       & \leq p F(\alpha + \beta + \gamma) + (1 - p) F(\gamma) + (1 - p) F(\alpha + \beta + \gamma) + p F(\gamma)                        \\
-				                                       & = F(\alpha + \beta + \gamma) + F(\gamma).
+				F(\aa + \cc) + F(\bb + \cc) & = F \left[ \lambda (\aa + \bb + \cc) + (1 - \lambda) \cc \right] + F \left[ (1 - \lambda) (\aa + \bb + \cc) + \lambda \cc \right] \\
+				                                       & \leq \lambda F(\aa + \bb + \cc) + (1 - \lambda) F(\cc) + (1 - \lambda) F(\aa + \bb + \cc) + \lambda F(\cc)                        \\
+				                                       & = F(\aa + \bb + \cc) + F(\cc).
 			\end{align*}
 		\end{proofpart}
 
 		\begin{proofpart}[$\Leftarrow$]
-			To prove the converse, we will use the continuity of $F$ by \cref{lemma-continuity}. Suppose, $\alpha > \beta$, then
+			To prove the converse, we will use the continuity of $F$ by \cref{lemma-continuity}. Suppose, $\aa > \bb$, then
 
 			\begin{align*}
-				F(\alpha) + F(\beta) & = F \left( \frac{\alpha - \beta}{2} + \frac{\alpha - \beta}{2} + \beta \right) + F(\beta) \\
-				                     & \geq 2 F \left( \frac{\alpha - \beta}{2} + \beta \right) \tag{by \cref{lemma-continuity}} \\
-				                     & = 2 F \left( \frac{\alpha + \beta}{2} \right),
+				F(\aa) + F(\bb) & = F \left( \frac{\aa - \bb}{2} + \frac{\aa - \bb}{2} + \bb \right) + F(\bb) \\
+				                     & \geq 2 F \left( \frac{\aa - \bb}{2} + \bb \right) \tag{by \cref{lemma-continuity}} \\
+				                     & = 2 F \left( \frac{\aa + \bb}{2} \right),
 			\end{align*}
 
       which implies convexity for a continuous $F$ \parencite[p. 51, Exercise 6]{lecturesConvGeo}.

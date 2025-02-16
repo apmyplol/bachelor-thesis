@@ -12,11 +12,12 @@
 \end{thm}
 
 
+\newcommand\ta{\mathcal{x}}
 
 \begin{proof}
 	This proof proceeds in multiple steps.
 	First, we make observations about the domains and ranges of the functions $F_i$, use this to find bounds for the domain of $F$. Using these bounds, we argue that $F$ can be extended to the positive reals.
-	Next, we derive from this a functional equation, that is only satisfied by $f(x) = k x^p$.
+	Next, we derive from this a functional equation, that is only satisfied by $f(x) = \alpha x^p$ for $\alpha > 0$.
 	Finally, we prove that $F$ is equal to this extension on the whole domain, and therefore $\metric$ is a Minkowski metric.
 
 	\setcounter{proofpart}{-1}
@@ -33,14 +34,14 @@
     where $F$ is continuous, convex and increasing.
     %TODO: warum sind die intervalle halboffen? Das muss aus der prox struct kommen iwie
     % Argumentation mit 0 rauslassen nochmal checken
-    By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a cartesian product of intervals of the form $[0,\alpha _i)$ where $\alpha_i$ are the ranges of $| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for $i=1, \dots, n$. This cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore the requirements for \cref{thm-homogeneity} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for for $\ve{x}, \ve{z} \neq \ve{0}$:
+    By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a cartesian product of intervals of the form $[0,a_i)$ where $a_i$ are the ranges of $| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for $i=1, \dots, n$. This cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore the requirements for \cref{thm-homogeneity} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for for $\ve{x}, \ve{z} \neq \ve{0}$:
     $$
     \metr{\ve{x}}{\ve{x}+ t(\ve{z}-\ve{x})} = t \metr{\ve{x}}{\ve{z}}.
     $$
-    Applying homogeneity for the definition of $\metric$ above and setting $\alpha_i = |\varphi_i(\ps{b}_i) - \varphi_i(\ps{a}_i)|$ yields
+    Applying homogeneity for the definition of $\metric$ above and setting $\ta_i = |\varphi_i(\ps{b}_i) - \varphi_i(\ps{a}_i)|$ yields
     
     \begin{equation}\label{proof-homogen-eq}
-      F^{-1} \left [ \sum_{i=1}^{n} F(t \alpha_i)  \right] = t \cdot F^{-1} \left [ \sum_{i=1}^{n} F(\alpha_i)  \right].
+      F^{-1} \left [ \sum_{i=1}^{n} F(t \ta_i)  \right] = t \cdot F^{-1} \left [ \sum_{i=1}^{n} F(\ta_i)  \right].
     \end{equation}
     
     However, due to translation invariance, homogeneity also holds for $\ve{x} = \ve{0}$.
@@ -51,70 +52,70 @@
                           = t \metr{\ve{0}}{\ve{z}}.
 \end{equation*}}
 
-    We will show, that the only solutions to this equation are of the form $F(\alpha) = k \alpha^r$, i.e. the power functions.
+    We will show, that the only solutions to this equation are of the form $F(x) = \alpha x^p$, i.e. the power functions.
 
     First, we start by observing the domains and the ranges of $F$.
 		By \cref{thm-necc-suff-conds}, the additive difference model
     \begin{equation*}
       \delta(\ps{a}, \ps{b}) = G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right) \right)
     \end{equation*}
-    yields a metric (that is additive on the coordinate axes) if $F_i(\alpha) = F(t_i \alpha)$ and $F = G^{-1}$ for $i=1, ..., n$. Thus, $F^{-1}$ is defined for all numbers $\sum_{i=1}^{n} F_i \left( |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right)$, and each $F_i$ coincides with $F$ on its domain (except for the factor $t_i$, which scales the argument and adjusts the domain).\\
-		Since the domains of $F_i$ are intervals (because $\delta$ is a metric with additive segments and therefore for any point in the domain of $F_i$, the interval between zero and that point must also be in the domain), we can choose $\omega > 0$ such that for each $i = 1, \ldots, n$ and any $\alpha$ with $0 \leq \alpha \leq \omega/t_i$, $\alpha$ lies within the domain of $F_i$.\\
+    yields a metric (that is additive on the coordinate axes) if $F_i(\ta) = F(t_i \ta)$ and $F = G^{-1}$ for $i=1, ..., n$. Thus, $F^{-1}$ is defined for all numbers $\sum_{i=1}^{n} F_i \left( |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right)$, and each $F_i$ coincides with $F$ on its domain (except for the factor $t_i$, which scales the argument and adjusts the domain).\\
+		Since the domains of $F_i$ are intervals (because $\delta$ is a metric with additive segments and therefore for any point in the domain of $F_i$, the interval between zero and that point must also be in the domain), we can choose $\omega > 0$ such that for each $i = 1, \ldots, n$ and any $\ta$ with $0 \leq \ta \leq \omega/t_i$, $\ta$ lies within the domain of $F_i$.\\
 		In particular, if we set $\omega_i = \omega/t_i$, then $F^{-1} \left[ \sum_{i=1}^{n} F_i(\omega_i) \right] = F^{-1} \left[ nF(\omega) \right] =: \Omega$ is defined. Thus, $F = G^{-1}$ is defined at least on the interval $[0, \Omega]$. We can now extend $F$ as follows.
 	\end{proofpart}
 	\begin{proofpart}[Extending the bounds of $F$]
     %TODO: a < w / t_i oder?
     % Außerdem checken wo alpha konstant gemeint ist und wo nicht
-		For $\alpha < \omega$, we have by \cref{proof-homogen-eq},
+		For $\ta < \omega / t_i$, we have by \cref{proof-homogen-eq},
     \begin{align} \label{proof-extension_prereq}
       \begin{split}
-			F^{-1}[nF(\alpha)] & = F^{-1}[nF(\alpha \omega/\omega)]   \\
-			                   & = (\alpha/\omega) F^{-1}[nF(\omega)] \\
-			                   & = \alpha \Omega/\omega.
+			F^{-1}[nF(\ta)] & = F^{-1}[nF(\ta \omega/\omega)]   \\
+			                   & = (\ta/\omega) F^{-1}[nF(\omega)] \\
+			                   & = \ta \Omega/\omega.
       \end{split}
 		\end{align}
-		Thus $F$ satisfies the following, by plugging in the correct values for $\alpha$ ($\tilde  \alpha = \alpha \frac{\omega}{\Omega}$ and $\tilde \alpha = F^{-1}( \frac{\alpha}{n} )$)
+		Thus $F$ satisfies the following, by plugging in the correct values for $\ta$ ($\ta \frac{\omega}{\Omega}$ and $F^{-1}( \frac{\ta}{n} )$)
 		\begin{align}
-			F(a)      & = nF(a \omega/\Omega), \quad 0 \leq a \leq \Omega; \label{proof-f-erw}               \\
-			F^{-1}(a) & = (\Omega/\omega) F^{-1}(a/n), \quad 0 \leq a \leq nF(\omega). \label{proof-f-1-erw}
+			F(\ta)      & = nF(\ta \omega/\Omega), \quad 0 \leq \ta \leq \Omega; \label{proof-f-erw}               \\
+			F^{-1}(\ta) & = (\Omega/\omega) F^{-1}(\ta/n), \quad 0 \leq \ta \leq nF(\omega). \label{proof-f-1-erw}
 		\end{align}
 		These two equations can now be used to extend the domain of $F$ and $F^{-1}$.\\
-		We use \cref{proof-f-erw} by defining $F$ through the right-hand side (for values where the right-hand side is defined, i.e., for $0 \leq a \leq \Omega^2/\omega$). Since $\Omega^2/\omega > \Omega$, this indeed extends $F$ beyond the interval $[0, \Omega]$.\\
-		Similarly, $F^{-1}$ satisfies equation \cref{proof-f-1-erw} for the extended interval $0 \leq a \leq nF(\Omega) = n^2 F(\omega)$.\\
-		Moreover, \cref{proof-homogen-eq} is now valid for $0 \leq t \leq 1$ and $0 \leq \alpha_i \leq \Omega$:
+		We use \cref{proof-f-erw} by defining $F$ through the right-hand side (for values where the right-hand side is defined, i.e., for $0 \leq \ta \leq \Omega^2/\omega$). Since $\Omega^2/\omega > \Omega$, this indeed extends $F$ beyond the interval $[0, \Omega]$.\\
+		Similarly, $F^{-1}$ satisfies equation \cref{proof-f-1-erw} for the extended interval $0 \leq \ta \leq nF(\Omega) = n^2 F(\omega)$.\\
+		Moreover, \cref{proof-homogen-eq} is now valid for $0 \leq t \leq 1$ and $0 \leq \ta_i \leq \Omega$:
 		\begin{align*}
-			F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} nF(t \alpha_i \omega / \Omega) \right] \tag{by \cref{proof-f-erw}}                                                                        \\
-			                                                   & = F^{-1} \left[ n \sum_{i=1}^{n} F(t \alpha_i \omega / \Omega) \right]                                                                                             \\
-			                                                   & = \frac{\Omega}{\omega} F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i \omega / \Omega) \right] \tag{by \cref{proof-f-1-erw}}                                                 \\
-			                                                   & = \frac{\Omega}{\omega} t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i \omega / \Omega) \right] \tag{by homogeneity applied for $\alpha_i \omega / \Omega \leq \omega$} \\
-			                                                   & = t F^{-1} \left[ n \sum_{i=1}^{n} F(\alpha_i \omega / \Omega) \right] \tag{by \cref{proof-f-1-erw}}                                                                     \\
-			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} n F(\alpha_i \omega / \Omega) \right]                                                                                             \\
-			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \tag{by \cref{proof-f-erw}}
+			F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} nF(t \ta_i \omega / \Omega) \right] \tag{by \cref{proof-f-erw}}                                                                        \\
+			                                                   & = F^{-1} \left[ n \sum_{i=1}^{n} F(t \ta_i \omega / \Omega) \right]                                                                                             \\
+			                                                   & = \frac{\Omega}{\omega} F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i \omega / \Omega) \right] \tag{by \cref{proof-f-1-erw}}                                                 \\
+			                                                   & = \frac{\Omega}{\omega} t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i \omega / \Omega) \right] \tag{by homogeneity applied for $\ta_i \omega / \Omega \leq \omega$} \\
+			                                                   & = t F^{-1} \left[ n \sum_{i=1}^{n} F(\ta_i \omega / \Omega) \right] \tag{by \cref{proof-f-1-erw}}                                                                     \\
+			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} n F(\ta_i \omega / \Omega) \right]                                                                                             \\
+			                                                   & = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] \tag{by \cref{proof-f-erw}}
 		\end{align*}
     Further, the extended function is both increasing and continuous since the extension is based on scaling of the domain and the range of the original function.
-    For continuity let $a_n \rightarrow a$ with $\omega < a < \Omega$. Then
+    For continuity let $\ta_n \rightarrow \ta$ with $\omega < \ta < \Omega$. Then
     \begin{align*}
-      \lim_{n \rightarrow \infty} F(a_n) &= \lim_{n \rightarrow \infty} n F \left ( a_n \frac{\omega}{\Omega} \right) \tag{Definition of $F(t)$ for $\omega \leq t \leq \Omega$}  \\
-                                         &= n F \left ( \lim_{n \rightarrow \infty} a_n \frac{\omega}{\Omega} \right) \tag{Continuity of $F(t)$ for $0 \leq t \leq \omega$} \\
-                                         &= n F \left ( a \frac{\omega}{\Omega} \right) \tag{Convergence of $a_n$} \\
-                                         &= F(a) \tag{Definition of $F(t)$ for $\omega \leq t \leq \Omega$} 
+      \lim_{n \rightarrow \infty} F(\ta_n) &= \lim_{n \rightarrow \infty} n F \left ( \ta_n \frac{\omega}{\Omega} \right) \tag{Definition of $F(t)$ for $\omega \leq t \leq \Omega$}  \\
+                                         &= n F \left ( \lim_{n \rightarrow \infty} \ta_n \frac{\omega}{\Omega} \right) \tag{Continuity of $F(t)$ for $0 \leq t \leq \omega$} \\
+                                         &= n F \left ( \ta \frac{\omega}{\Omega} \right) \tag{Convergence of $\ta_n$} \\
+                                         &= F(\ta) \tag{Definition of $F(t)$ for $\omega \leq t \leq \Omega$} 
     \end{align*}
     which is equivalent to $F$ begin continuous on the extended domain.
 
-    For monotonicity we can use a similar argument. Let $a < b$ with $\omega < a, b < \Omega$. Then $a \frac{\omega}{\Omega} < b \frac{\omega}{\Omega}$ holds. Plugging that into $F$ and multiplying by $n$ yields $nF \left(a \frac{\omega}{\Omega}\right) <nF \left( b \frac{\omega}{\Omega}\right)$ due to $F$ being increasing on the original domain. Therefore $a < b$ implies $F(a) < F(b)$ which is equivalent to $F$ increasing.
+    For monotonicity we can use a similar argument. Let $\ta < \ta'$ with $\omega < \ta, \ta' < \Omega$. Then $\ta \frac{\omega}{\Omega} < \ta' \frac{\omega}{\Omega}$ holds. Plugging that into $F$ and multiplying by $n$ yields $nF \left(\ta \frac{\omega}{\Omega}\right) <nF \left( \ta' \frac{\omega}{\Omega}\right)$ due to $F$ being increasing on the original domain. Therefore $\ta < \ta'$ implies $F(\ta) < F(\ta')$ which is equivalent to $F$ increasing.
     Thus, we have established strict increasing monotonicity, continuity and \cref{proof-homogen-eq} for the extended function.
 
 		Repeatedly applying the arguments, extends the intervals in which $F$ is defined and in which monotonicity, continuity and homogeneity (\cref{proof-homogen-eq}) are valid by a factor of $\Omega/\omega$ each time. Thus, we can extend $F$ to $[0, \infty)$ while preserving these properties. We can prove further, that the homogeneity equation must also hold for $t \in [0, \infty)$.
-		Let $a_i > 0$ and $t > 1$. Then there exists $t' = \frac{1}{t} < 1$ such that $t' \cdot t a_i = a_i$. Therefore
+		Let $\ta_i > 0$ and $t > 1$. Then there exists $t' = \frac{1}{t} < 1$ such that $t' \cdot t \ta_i = \ta_i$. Therefore
 		\begin{align*}
-			t t' F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \tag{$t t' = 1$}     \\
-			                                                      & = F^{-1} \left[ \sum_{i=1}^{n} F(t t'\alpha_i) \right] \tag{$t t' = 1$} \\
-			                                                      & = t' F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right]
+			t t' F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] \tag{$t t' = 1$}     \\
+			                                                      & = F^{-1} \left[ \sum_{i=1}^{n} F(t t'\ta_i) \right] \tag{$t t' = 1$} \\
+			                                                      & = t' F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right]
 		\end{align*}
-		The last step holds, because both $t'<1$ and $t a_i < \infty$ hold.
+		The last step holds, because both $t'<1$ and $t \ta_i < \infty$ hold.
 		Dividing both sides by $t'$ yields
 		\begin{equation}
-			F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] \quad \text{ for } a, t < \infty \label{proof-f-ext-eq}
+			F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] \quad \text{ for } \ta, t < \infty \label{proof-f-ext-eq}
 		\end{equation}
     To sum up, we have obtained an extended function which satisfies monotonicity, continuity and homogeneity for $t \in [0, \infty)$. This extended function must coincide with tie original $F$ on at least the interval $[0, \Omega]$ (because this was the domain of $F$ that we deduced, before extending it).
 	\end{proofpart}
@@ -128,7 +129,7 @@
       \begin{equation*}
       \mean{t \ve{a}} = t \mean{ \ve{a}} \quad  \text{with} \quad \mean{\ve{a} } = \phi^{-1} \left ( \sum_{i=1}^{n} w_i \phi(a_i) \right)
       \end{equation*}
-      for all positive $\ve{a}, \ve{w}$ and $t$. Then $\mean{a} = \meanr{a}$. (i.e. $\mean{\ve{a}}$ is either a power mean with $\phi(x) = a x^r + b$ and $a, b, r \in \mathbb{R}, r > 0$ or a geometric mean with $\phi(x) = a \log (x)$, $a \in \mathbb{R}$.)
+      for all positive $\ve{a}, \ve{w}$ and $t$. Then $\mean{a} = \meanr{a}$. (i.e. $\mean{\ve{a}}$ is either a power mean with $\phi(x) = \alpha x^p + \beta$ and $\alpha, \beta, p \in \mathbb{R}, p > 0$ or a geometric mean with $\phi(x) = \alpha \log (x)$, $\alpha \in \mathbb{R}$.)
     \end{thm*}
     The proof of this statement will be presented in \cref{sect-HLP_proof}, here we will apply the theorem for our proof.
 
@@ -137,21 +138,21 @@
 
 		Firstly, applying \cref{proof-f-1-erw} on the left hand side yields
 		\begin{equation*}
-			\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] .
+			\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \ta_i) \right] = F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] .
 		\end{equation*}
 		Applying \cref{proof-f-1-erw} once more on the right hand side, yields
 		\begin{equation*}
-			\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = F^{-1} \left[ \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\alpha_i) \right] =\Omega / \omega t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right] .
+			\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \ta_i) \right] = F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] =\Omega / \omega t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\ta_i) \right] .
 		\end{equation*}
 		Hence
 		\begin{equation*} \label{proof-azcel-eq}
-			F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \alpha_i) \right] = t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\alpha_i) \right]
+			F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \ta_i) \right] = t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\ta_i) \right]
 		\end{equation*}
 		must hold.
 
-		According to Theorem 84 \parencite{hardy1952inequalities}, the only monotonic functions satisfying this equation for $0 \leq \alpha < \infty$ are functions of the form $k\alpha^r$ (see also \parencite[p. 153]{aczel1966lectures}).
+		According to Theorem 84 \parencite{hardy1952inequalities}, the only monotonic functions satisfying this equation for $0 \leq \ta < \infty$ are functions of the form $\alpha x^p$ (see also \parencite[p. 153]{aczel1966lectures}).
 
-		Therefore, $F(\alpha) = k \alpha^r$ must hold on at least the interval $[0, \Omega)$.
+		Therefore, $F(x) = \alpha x^p$ must hold on at least the interval $[0, \Omega)$.
 
 
     \subsubsection{\textcolor{orange}{Problem:}}
@@ -181,10 +182,11 @@ Wenn ich diese Gleichung hätte, könnte ich daraus die Homogenität für positi
 		\begin{align*}
       \delta(\ps{a}, \ps{b}) & = F^{-1} \left( \sum_{i=1}^{n} F \left( |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right) \right)                                                                                     \\
                              & = \frac{1}{t} F^{-1} \left( \sum_{i=1}^{n} F \left( t |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right) \right)                                                                       \\
-                             & = \frac{1}{t} \left( \sum_{i=1}^{n} \left( t|\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right)^r \right)^{1/r} \tag{ since $t |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \leq \omega$} \\
-                             & = \left( \sum_{i=1}^{n} |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|^r \right)^{1/r}
+                             & = \frac{1}{t} \left( \sum_{i=1}^{n} \left( t|\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right)^p \right)^{1/p} \tag{ since $t |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \leq \omega$} \\
+                             & = \left( \sum_{i=1}^{n} |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|^p \right)^{1/p}\\
+                             &= \metr[p]{\varphi_i(\ps{a}_i)}{\varphi_i(\ps{b}_i)}
 		\end{align*}
-    Thus, $\delta$ is a Minkowski metric and, by \cref{thm-repr-add-diff-struct}, the $F_i$ are interval scales, allowing for affine linear transformations. However, since we set $F_i(0)=0$, the affinity vanishes, and we are left with $F_i(\alpha)= k \cdot \alpha^r$. Finally, the restriction $1 \leq r < \infty$ follows from the triangle inequality or, more precisely, from Minkowski's inequality; see \parencite[p. 189-191 Theorem 9]{handbookMeans}.
+    Thus, $\delta$ is a Minkowski metric and, by \cref{thm-repr-add-diff-struct}, the $F_i$ are interval scales, allowing for affine linear transformations. However, since we set $F_i(0)=0$, the affinity vanishes, and we are left with $F_i(x)= \alpha \cdot x^p$. Finally, the restriction $1 \leq p < \infty$ follows from the triangle inequality or, more precisely, from Minkowski's inequality; see \parencite[p. 189-191 Theorem 9]{handbookMeans}.
 
 	\end{proofpart}
 \end{proof}

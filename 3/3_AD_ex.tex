@@ -1,9 +1,11 @@
 \section{Examples}
-
+\newcommand\p{q}
+\renewcommand\r{p}
+\newcommand\q{\alpha}
 \begin{ex}[p-exp Metric Family]\label{def-p-exp-metric-family} \index{p-exp metric family}
 	Let the $F$ in the additive difference model (\ref{def-add-diff-model}) be given by
 	\begin{equation}\label{def-p-exp-eq}
-		F(t) = q \cdot (e^{t \cdot r} - 1)^p \qquad q, r > 0, p \geq 1.
+		F(x) = \q \cdot (e^{\p \cdot x} - 1)^\r \qquad \q, \p > 0, \r \geq 1.
 	\end{equation}
 	The model defined by this $F$ is a metric.
 \end{ex}
@@ -14,9 +16,9 @@
 	\begin{proofpart}[Positivity and Symmetry]
 		Positivity and symmetry are both straight forward.
 		\begin{enumerate}
-      \item Positivity: $\delta(\ve{a},\ve{b}) = 0$ implies $F(|a_i - b_i|) = 0$ for all $i=1, \dots, n$, which is only possible if $|a_i - b_i| \cdot r = 0$, meaning $a_i = b_i$ for all $i=1, \dots, n$.\\
-        Conversely, if $\ve{a} \neq \ve{b}$, then $a_i \neq b_i$ for at least one $i$ in $1, \dots n$, which implies $F_i(|a_i - b_i|) > 0$, and thus $\delta(\ve{a},\ve{b}) > 0$.
-			\item Symmetry: Symmetry follows directly from the fact that $|a_i - b_i| = |b_i - a_i|$ holds.
+      \item Positivity: $\delta(\ve{x},\ve{y}) = 0$ implies $F(|x_i - y_i|) = 0$ for all $i=1, \dots, n$, which is only possible if $|x_i - y_i| \cdot r = 0$, meaning $x_i = y_i$ for all $i=1, \dots, n$.\\
+        Conversely, if $\ve{x} \neq \ve{y}$, then $x_i \neq y_i$ for at least one $i$ in $1, \dots n$, which implies $F_i(|x_i - y_i|) > 0$, and thus $\delta(\ve{x},\ve{y}) > 0$.
+			\item Symmetry: Symmetry follows directly from the fact that $|x_i - y_i| = |y_i - x_i|$ holds.
 		\end{enumerate}
 	\end{proofpart}
 
@@ -38,25 +40,25 @@
 	% \setcounter{proofpart}{1}
 	\begin{proofpart}[Proof that \cref{def-p-exp-eq} satisfies Mulholland's conditions]
 
-		Regarding Point 1: Continuity and $f(0) = 0$ are clear. For monotonicity, note that $e^{rt} - 1$ is increasing, exponentiation is also increasing, and multiplying by $q > 0$ preserves monotonicity. Thus, the composition is also increasing.\\
+		Regarding Point 1: Continuity and $f(0) = 0$ are clear. For monotonicity, note that $e^{\p x} - 1$ is increasing, exponentiation is also increasing, and multiplying by $\q > 0$ preserves monotonicity. Thus, the composition is also increasing.\\
     Regarding point 2: Similar reasoning applies for convexity. The composition of convex functions is convex, if the outer function is non-decreasing \parencite[p. 481, Note 207]{elementaryAna}. Since multiplication by a positive constant and exponentiation for exponents greater than $1$ is both convex and increasing, the resulting function must be convex. \\
 
-		We now proceed to prove the convexity of $\log F(e^t)$.
+		We now proceed to prove the convexity of $\log F(e^x)$.
 		By logarithmic properties, it holds that
-		$$ \log q(e^{re^x} -1)^p = \log q + p \cdot  \log(e^{re^x} - 1). $$
-		Arbitrary addition and multiplication by $p \geq 1$ preserve convexity, so it suffices to show the convexity of $\log(e^{re^x} - 1)$.
+		$$ \log \q(e^{\p e^x} -1)^\r = \log \q + \r \cdot  \log(e^{\p e^x} - 1). $$
+		Arbitrary addition and multiplication by $\r \geq 1$ preserve convexity, so it suffices to show the convexity of $\log(e^{\p e^x} - 1)$.
 
     We prove this by examining the second derivative. If the second derivative is strictly positive, the function is convex \parencite[p. 57, Remark 2.13]{lecturesConvGeo}.
 
 		Differentiating twice yields
 		$$
-			\frac{r e^{re^x + x} \left( r (-e^x) + e^{re^x} - 1 \right)}{\left( e^{re^x} - 1 \right)^2} \overset{!}{>} 0.
+			\frac{\p  e^{\p e^x + x} \left( \p  (-e^x) + e^{\p e^x} - 1 \right)}{\left( e^{\p e^x} - 1 \right)^2} \overset{!}{>} 0.
 		$$
-		The denominator is always positive and non-zero, so we can ignore it. Similarly, the factor $r e^{re^x + x}$ is always positive and can also be omitted. It remains to show that
+		The denominator is always positive and non-zero, so we can ignore it. Similarly, the factor $\p  e^{\p e^x + x}$ is always positive and can also be omitted. It remains to show that
 		\begin{align*}
-			-r e^x + e^{re^x} - 1   & > 0 \\
+			-\p  e^x + e^{\p e^x} - 1   & > 0 \\
       \text{iff }\\
-      e^{re^x}  - r e^x & > 1
+      e^{\p e^x}  - \p  e^x & > 1
 		\end{align*}
 		holds.
 
@@ -65,9 +67,9 @@
 
 		\begin{enumerate}
 			\item For the first point, we show that the derivative is greater than zero. Differentiation yields
-			      $$ re^x \cdot e^{re^x} - re^x = re^x \cdot (e^{re^x} - 1) > 0 $$ since $e^x > 0$.
+			      $$ \p e^x \cdot e^{\p e^x} - \p e^x = \p e^x \cdot (e^{\p e^x} - 1) > 0 $$ since $e^x > 0$.
 			\item
-			      $$ \lim_{x \rightarrow -\infty} e^{re^x}  - r e^x = \lim_{x \rightarrow -\infty} e^{re^x}  - \lim_{x \rightarrow -\infty} r e^x =  1 - 0 = 1 $$
+			      $$ \lim_{x \rightarrow -\infty} e^{\p e^x}  - \p  e^x = \lim_{x \rightarrow -\infty} e^{\p e^x}  - \lim_{x \rightarrow -\infty} \p  e^x =  1 - 0 = 1 $$
 
 			      Thus, convexity is established, and the claim follows from Mulholland's theorem.
 		\end{enumerate}
@@ -78,17 +80,17 @@
 
 \begin{rem}[Minkowski metric is part of the p-exp metric family]
 
-	If we set $q = r^{-p}$ in (\ref{def-p-exp-eq}), we obtain the Minkowski metric in the limit as $r \rightarrow 0$.
+	If we set $\q = \p ^{-\r}$ in (\ref{def-p-exp-eq}), we obtain the Minkowski metric in the limit as $\p  \rightarrow 0$.
 
 	\begin{proof}
-		Setting $q = r^{-p}$ yields
-		$$ r^{-p}(e^{rt} - 1)^p = \left( \frac{e^{rt} -1}{r} \right)^p .$$
-		As $r \rightarrow 0$, both the numerator and denominator tend to $0$ (we can pull the limit inside the exponent since the exponentiation is continuous), therefore we can apply L'Hôpital's rule.
+		Setting $\q = \p ^{-\r}$ yields
+		$$ \p ^{-\r}(e^{\p x} - 1)^\r = \left( \frac{e^{\p x} -1}{\p } \right)^\r .$$
+		As $\p  \rightarrow 0$, both the numerator and denominator tend to $0$ (we can pull the limit inside the exponent since the exponentiation is continuous), therefore we can apply L'Hôpital's rule.
 		Hence
 		\begin{align*}
-			\lim_{r \rightarrow 0} \left( \frac{e^{rt} -1}{r} \right)^p & = \left( \lim_{r \rightarrow 0} \frac{e^{rt} -1}{r} \right)^p \tag{continuity}                \\
-			                                                            & = \left( \lim_{r \rightarrow 0} \frac{t \cdot e^{rt} - 1}{1} \right)^p \tag{L'Hôpital's rule} \\
-			                                                            & = t^p.
+			\lim_{\p  \rightarrow 0} \left( \frac{e^{\p x} -1}{\p } \right)^\r & = \left( \lim_{\p  \rightarrow 0} \frac{e^{\p x} -1}{\p } \right)^\r \tag{continuity}                \\
+			                                                            & = \left( \lim_{\p  \rightarrow 0} \frac{x \cdot e^{\p x} - 1}{1} \right)^\r \tag{L'Hôpital's rule} \\
+			                                                            & = x^\r.
 		\end{align*}
 	\end{proof}
 

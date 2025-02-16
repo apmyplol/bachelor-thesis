@@ -28,7 +28,7 @@ It is suggested to first read this section (including the proof) to get the main
 
 For readers unfamiliar with convexity, we restate the definition of a convex set. The idea behind convexity is, that for every two points from a set, the line between these two points is also inside that set.
 \begin{defi}[Convexity]
-  A set $A \subset \mathbb{R}^{n}$ is \emph{convex}, iff $(1 - a) \ve{x} + a \ve{y} \in A$ for all $\ve{x}, \ve{y} \in A$ and $a \in [0,1]$. \index{Convex!set}
+  A set $A \subset \mathbb{R}^{n}$ is \emph{convex}, iff $(1 - \lambda) \ve{x} + \lambda \ve{y} \in A$ for all $\ve{x}, \ve{y} \in A$ and $\lambda \in [0,1]$. \index{Convex!set}
 \end{defi}
 
 Now, we begin with the statement:
@@ -41,7 +41,7 @@ Now, we begin with the statement:
 
 \end{thm}
 
-Now we continue with a remark that makes it possible to move the set such that $0 \in S$ by using the translation invariance of $\metric$.
+Now we continue with a remark that makes it possible to move the set such that $\ve{0} \in S$ by using the translation invariance of $\metric$.
 
 \begin{rem}[Translation invariance and domain of $\metric$ and $F$] \label{lemma-rem}
 
@@ -70,44 +70,45 @@ Before proceeding to the proof, we first establish two preliminary statements th
 The first one asserts that the distance between a compact and a closed set is greater than zero.
 
 \begin{lem} \label{lemma-distance}
-  If $I \subset \mathbb{R}^{n}$ is compact, $Y \subset \mathbb{R}^{n}$ is closed and $I$ and $Y$ are disjoint, then there exists $\varepsilon > 0$ such that $\metr[\infty]{\ve{p}}{\ve{y}} > \varepsilon$ for all $\ve{p} \in I$ and $\ve{y} \in Y$.
+  If $K \subset \mathbb{R}^{n}$ is compact, $C \subset \mathbb{R}^{n}$ is closed and $K$ and $C$ are disjoint, then there exists $\varepsilon > 0$ such that $\metr[\infty]{\ve{p}}{\ve{y}} > \varepsilon$ for all $\ve{p} \in K$ and $\ve{p'} \in C$.
 \end{lem}
 
 \begin{proof}
 	We prove this statement by contradiction.
-  Assume that for all $\varepsilon > 0$ there exists $\ve{p} \in I$ and $\ve{y} \in Y$ such that $\metr[\infty]{\ve{p}}{\ve{y}} < \varepsilon$. This means, we can construct two sequences $\ve{p_n} \in I$ and $\ve{y_n} \in Y$ such that $\metr[\infty]{\ve{p_n}}{\ve{y_n}} \to 0$ as $n \to \infty$.
-  $I$ is compact, thus there exists a convergent subsequence $\ve{p_{n_m}}$ such that $\ve{p_{n_m}} \to \ve{p} \in I$ for $n \rightarrow \infty$.
+  Assume that for all $\varepsilon > 0$ there exists $\ve{p} \in K$ and $\ve{p'} \in C$ such that $\metr[\infty]{\ve{p}}{\ve{p'}} < \varepsilon$. This means, we can construct two sequences $\ve{p_n} \in K$ and $\ve{p'_n} \in C$ such that $\metr[\infty]{\ve{p_n}}{\ve{p'_n}} \to 0$ as $n \to \infty$.
+  $K$ is compact, thus there exists a convergent subsequence $\ve{p_{n_m}}$ such that $\ve{p_{n_m}} \to \ve{p} \in K$ for $n \rightarrow \infty$.
 	With the triangle inequality we get
-  $$\metr[\infty]{\ve{p}}{\ve{y_{n_m}}} \leq \metr[\infty]{\ve{p}}{\ve{p_{n_m}}} + \metr[\infty]{\ve{p_{n_m}}}{\ve{y_{n_m}}} \to \ve{0} \text{ as } m \to \infty.$$
-  Hence,  $\ve{p}$ is a limit point of $Y$, and since  $Y$  is closed,  $\ve{p} \in Y$ must hold which contradicts the assumption.
+  $$\metr[\infty]{\ve{p}}{\ve{p'_{n_m}}} \leq \metr[\infty]{\ve{p}}{\ve{p_{n_m}}} + \metr[\infty]{\ve{p_{n_m}}}{\ve{p'_{n_m}}} \to \ve{0} \text{ as } m \to \infty.$$
+  Hence,  $\ve{p}$ is a limit point of $C$, and since  $C$  is closed,  $\ve{p} \in C$ must hold which contradicts the assumption.
 \end{proof}
 
 The second one allows us to make arbitrary small $\metric$-balls which we will combine with the statement before to assure a distance in $\metric$ and not only in $\metric_{\infty}$.
 
+
 \begin{lem}[arbitrary small $\metric$-Balls] \label{lemma-small-delta-balls}
-	Let $\varepsilon > 0$ such that $\ball[\infty]{\varepsilon} \subset S$. Then there exists $\alpha > 0$ such that $\ball{\alpha} \subset \ball[\infty]{\varepsilon}$.
+	Let $\varepsilon > 0$ such that $\ball[\infty]{\varepsilon} \subset S$. Then there exists $\dis > 0$ such that $\ball{\dis} \subset \ball[\infty]{\varepsilon}$.
 \end{lem}
 
 \begin{proof}
-  Since $\metric$ is a metric defined by $\metric(\ve{x},\ve{y}) = F[|x_1 - y_1|, \dots, |x_n - y_n|]$, we can define the $j$-th partial function of $F$ by setting all other arguments to zero, i.e. $F^j(u_j) := F(0, \dots, u_j, \dots, 0)$.
+  Since $\metric$ is a metric defined by $\metric(\ve{x},\ve{y}) = F[|x_1 - y_1|, \dots, |x_n - y_n|]$, we can define the $j$-th partial function of $F$ by setting all other arguments to zero, i.e. $F^j(x_j) := F(0, \dots, x_j, \dots, 0)$.
 
 	$F$ is strictly increasing in every argument implies that $F^j$ is increasing and the continuity of $F$ directly translates to $F^j$ being continuous.
-	Moreover, due to \crefpart{lemma-rem}{rem-lemma-domains}, $F^j(u_j) = 0$ if and only if $u_j = 0$ holds.
+	Moreover, due to \crefpart{lemma-rem}{rem-lemma-domains}, $F^j(x_j) = 0$ if and only if $x_j = 0$ holds.
 
 	Together, this means that $F^j$ is an increasing, continuous real function with $F^j(0) = 0$.
 
 
-	By setting $\alpha_j = F^j(\varepsilon)$ we get by monotonicity, that $F^j(u_j) < \alpha_j \implies u_j < \varepsilon$. Note, that $F^j(\varepsilon)$ is defined, because  $\ball[\infty]{\varepsilon} \subset S'$ implies that $\varepsilon$ is a possible distance for each coordinate. (See also \crefpart{lemma-rem}{rem-lemma-domains}. Using the $a_i$ from the remark, we get that $\varepsilon < a_i$ holds for all $i$ and thus $F^j(\varepsilon)$ is defined for all $j = 1, \dots n$.)
+	By setting $\dis_j = F^j(\varepsilon)$ we get by monotonicity, that $F^j(x_j) < \dis_j \implies x_j < \varepsilon$. Note, that $F^j(\varepsilon)$ is defined, because  $\ball[\infty]{\varepsilon} \subset S'$ implies that $\varepsilon$ is a possible distance for each coordinate. (See also \crefpart{lemma-rem}{rem-lemma-domains}. Using the $a_i$ from the remark, we get that $\varepsilon < a_i$ holds for all $i$ and thus $F^j(\varepsilon)$ is defined for all $j = 1, \dots n$.)
 
-	Doing this for $j = 1, \dots, n$ yields $\alpha_1, \dots, \alpha_n$.
-	By setting $\alpha = \min \{\alpha_1, \dots, \alpha_n\}$ the above holds for every partial function $F^j$ which yields the boundary for the $\infty$ Metric:
+	Doing this for $j = 1, \dots, n$ yields $\dis_1, \dots, \dis_n$.
+	By setting $\dis = \min \{\dis_1, \dots, \dis_n\}$ the above holds for every partial function $F^j$ which yields the boundary for the $\infty$ Metric:
 	$$
-  F^j(u_j) < \alpha \leq \alpha_j \implies u_j < \varepsilon \quad \forall j = 1, \dots, n \implies \|\ve{u}\|_{\infty} < \varepsilon.
+  F^j(x_j) < \dis \leq \dis_j \implies x_j < \varepsilon \quad \forall j = 1, \dots, n \implies \|\ve{x}\|_{\infty} < \varepsilon.
 	$$
 
 	Using the monotonicity of $F$ we get
 	$$
-  \metro{\ve{u}} = F(\ve{u}) < \alpha \implies F^j(u_j) < \alpha \implies \|\ve{u}\|_\infty < \varepsilon.
+  \metro{\ve{x}} = F(\ve{x}) < \dis \implies F^j(x_j) < \dis \implies \|\ve{x}\|_\infty < \varepsilon.
 	$$
 \end{proof}
 
@@ -134,12 +135,12 @@ After this, we will expand this statement to the rationals and then use continui
 	%-------------- Proof part 0 ----------------------------%
 	\begin{proofpart}[Asserting a common distance for all points on the line segment] \label{lemma-part0}
     Let $\ve{z} \in S$.
-    Since $S$ is open, $\mathbb{R}^{n} \setminus S$ is closed. The set $I := \{t \ve{z} : t \in [0,1]\}$ is compact, since continuous images($t \mapsto t \ve{z}$) of compact sets ($t \in [0,1]$) are compact.
-    Thus, by \cref{lemma-distance} there exists a distance $\varepsilon > 0$ such that $\metr[\infty]{\ve{p}}{\ve{y}} < \varepsilon$ for all $\ve{p} \in I$ and $\ve{y} \in \mathbb{R}^{n} \setminus S$.
+    Since $S$ is open, $\mathbb{R}^{n} \setminus S$ is closed. The set $K := \{t \ve{z} : t \in [0,1]\}$ is compact, since continuous images($t \mapsto t \ve{z}$) of compact sets ($t \in [0,1]$) are compact.
+    Thus, by \cref{lemma-distance} there exists a distance $\varepsilon > 0$ such that $\metr[\infty]{\ve{p}}{\ve{p'}} < \varepsilon$ for all $\ve{p} \in K$ and $\ve{p'} \in \mathbb{R}^{n} \setminus S$.
     This means, for all points on the line from $\ve{0}$ to $\ve{z}$ the ball with radius $\varepsilon$ is a subset of $S$, i.e. for all $t \in [0,1]: \ballp[\infty]{\varepsilon}{t\ve{z}} \subset S$.
-    By \cref{lemma-small-delta-balls}, there exists $\alpha > 0$ such that $\ball{\alpha} \subset \ball[\infty]{\alpha}$, and by translation invariance this holds for all points on the line: $\ballp{\alpha}{t\ve{z}} \subset S$ for all $t \in [0,1]$.
-    Now let $m \in \mathbb{N}$ such that $\frac{1}{m} \metro{\ve{z}} < \alpha$.
-    In particular, this means that $\ball{\alpha}$ and therefore, $\ball{\frac{1}{m} \metro{\ve{z}}}$ is bounded (with respect to the $\infty$ metric).
+    By \cref{lemma-small-delta-balls}, there exists $\dis > 0$ such that $\ball{\dis} \subset \ball[\infty]{\varepsilon}$, and by translation invariance this holds for all points on the line: $\ballp{\dis}{t\ve{z}} \subset S$ for all $t \in [0,1]$.
+    Now let $m \in \mathbb{N}$ such that $\frac{1}{m} \metro{\ve{z}} < \dis$.
+    In particular, this means that $\ball{\dis}$ and therefore, $\ball{\frac{1}{m} \metro{\ve{z}}}$ is bounded (with respect to the $\infty$ metric).
 
 	\end{proofpart}
 
@@ -165,12 +166,12 @@ After this, we will expand this statement to the rationals and then use continui
 
 	%-------------- Proof part 2 ----------------------------%
 	\begin{proofpart}[$t \metro{\z} \geq \metro{t \z}$ for $t = \frac{1}{m} < d$ with $m \in \mathbb{N}$] \label{lemma-part2}
-    Since $\metric$ is a metric with additive segments, there exists a segment from $\ve{0}$ to $\z$ with length $\metro{\z}$. By \cref{thm-curve-sublen-cont} the arc length is a continuous, non-decreasing function. This means, we can divide the segment into $m$ subsegments with length $\frac{1}{m} \metro{\z}$ and choose $\y[0], \dots, \y[m]$ equally spaced on the segment such that $\metr{\y[i]}{\y[i-1]} = \frac{1}{m} \metro{\z}$ and $\y[0] = \ve{0}$ and $\y[m] = \z$.
-		Using this, we can define $\x := \y[i] - \y[i-1]$. Translation invariance yields $\metro{\x} =\metr{\y[i]}{\y[i-1]} = \frac{1}{m} \metro{\z}$ and, due to the choice of $m$ in \cref{lemma-part0},  $\x \in S$ holds. Note, that this is still true, if we increase $m$.
+    Since $\metric$ is a metric with additive segments, there exists a segment from $\ve{0}$ to $\z$ with length $\metro{\z}$. By \cref{thm-curve-sublen-cont} the arc length is a continuous, non-decreasing function. This means, we can divide the segment into $m$ subsegments with length $\frac{1}{m} \metro{\z}$ and choose $\y[0], \dots, \y[m]$ equally spaced on the segment such that $\metr{\y[k]}{\y[k-1]} = \frac{1}{m} \metro{\z}$ and $\y[0] = \ve{0}$ and $\y[m] = \z$.
+		Using this, we can define $\x := \y[k] - \y[k-1]$. Translation invariance yields $\metro{\x} =\metr{\y[k]}{\y[k-1]} = \frac{1}{m} \metro{\z}$ and, due to the choice of $m$ in \cref{lemma-part0},  $\x \in S$ holds. Note, that this is still true, if we increase $m$.
 
 		Further, we can observe that $\frac{1}{m} \z$ is a convex combination of $\x$:
 		$$
-    \sum_{i=1}^m \frac{1}{m} \x = \sum_{i=1}^m \frac{1}{m} (\y[1] - \y[0] + \y[2] - \y[1] + \dots + \y[m]) = \frac{1}{m} (-\y[0] + \y[m]) = \frac{1}{m} \z
+    \sum_{k=1}^m \frac{1}{m} \x = \frac{1}{m} (\y[1] - \y[0] + \y[2] - \y[1] + \dots + \y[m]) = \frac{1}{m} (-\y[0] + \y[m]) = \frac{1}{m} \z
 		$$
 
 		We showed before, that $\metro{\x} = \frac{1}{m}\metro{\z}$, which implies $\x \in  \cball{\frac{1}{m}\metro{\z}}$.
@@ -215,8 +216,8 @@ After this, we will expand this statement to the rationals and then use continui
     Secondly,
 		\begin{align}
       \metr{\ve{0}}{\z}     & \leq \metr{\ve{0}}{\z[2]} + \metr{\z[2]}{\z}              \notag                                      \\
-      \metr{\ve{0}}{\z[2]} & \geq \metr{\ve{0}}{\z} - \underbrace{\metr{\z[2]}{\z}}_{\leq \sum_i \metr{\z[2+i]}{\z[2+i+1]}} \tag{Rearrange} \\
-                           & \geq \metr{\ve{0}}{\z} - \sum_{i=0}^{m-3} \metr{\z[2+i]}{\z[2+i+1]}             \tag{$\triangle$ inequality}              \\
+      \metr{\ve{0}}{\z[2]} & \geq \metr{\ve{0}}{\z} - \underbrace{\metr{\z[2]}{\z}}_{\leq \sum_k \metr{\z[2+k]}{\z[2+k+1]}} \tag{Rearrange} \\
+                           & \geq \metr{\ve{0}}{\z} - \sum_{k=0}^{m-3} \metr{\z[2+k]}{\z[2+k+1]}             \tag{$\triangle$ inequality}              \\
                            & = \metr{\ve{0}}{\z} - \frac{m-2}{m} \metr{\ve{0}}{\z}                         \tag{using \cref{proof-eq-additive}}                     \\
                                & = \frac{2}{m} \metr{\ve{0}}{\z}. \notag
 		\end{align}
