@@ -19,8 +19,11 @@
 \end{thm}
 
 \begin{rem}[Additivity on the Coordinate Axes] %\gls{ps-abc-between}
+  %TODO: maybe place definition where axioms are explained
   Additivity on the coordinate axes means the following: If $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$ differ only on one factor $\ps{A}_i$, then the triangle inequality of the metric holds with equality. In mathematical terms:
-  $$ \ps{a}_j = \ps{b}_j = \ps{c}_j \text{ for all } j \neq i \text{ and } (\ps{a}, \ps{c}) \succsim (\ps{a}, \ps{b}), (\ps{b}, \ps{c})  \Rightarrow \delta(\ps{a}, \ps{b}) + \delta(\ps{b}, \ps{c}) = \delta(\ps{a}, \ps{c}) $$
+  $$ \ps{a}_j = \ps{b}_j = \ps{c}_j \text{ for all } j \neq i \text{ and } (\ps{a}_i, \ps{c}_i) \succsim (\ps{a}_i, \ps{b}_i), (\ps{b}_i, \ps{c}_i)$$ imply that $\delta(\ps{a}, \ps{b}) + \delta(\ps{b}, \ps{c}) = \delta(\ps{a}, \ps{c}).$
+  This can be also formulated in terms of betweenness: $\ps{b}$ is between $\ps{a}$ and $\ps{c}$, iff $(\ps{a}_i, \ps{c}_i) \succsim (\ps{a}_i, \ps{b}_i), (\ps{b}_i, \ps{c}_i)$ holds for all $i=1, \dots n$. We denote that as $\ps{a}|\ps{b}|\ps{c}$.
+  Therefore additivity on coordinate axes means, that $\ps{a}, \ps{b}$ and $\ps{c}$ differ only on one factor and $\ps{a}|\ps{b}|\ps{c}$.  \index{Proximity structure!betweenness}
 \end{rem}
 
 In the following lemmas, until the proof of this theorem is finished, everything will be assumed as in \cref{thm-necc-suff-conds}, unless otherwise stated.
