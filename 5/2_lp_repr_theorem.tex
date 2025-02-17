@@ -63,7 +63,7 @@
 	\end{proofpart}
 	\begin{proofpart}[Extending the bounds of $F$]
     % Außerdem checken wo alpha konstant gemeint ist und wo nicht
-		For $\ta < \omega$, we have by \cref{proof-homogen-eq},
+		For $\ta < \omega$, we have by \Cref{proof-homogen-eq},
     \begin{align} \label{proof-extension_prereq}
       \begin{split}
 			F^{-1}[nF(\ta)] & = F^{-1}[nF(\ta \omega/\omega)]   \\
@@ -77,9 +77,9 @@
 			F^{-1}(\ta) & = (\Omega/\omega) F^{-1}(\ta/n), \quad 0 \leq \ta \leq nF(\omega). \label{proof-f-1-erw}
 		\end{align}
 		These two equations can now be used to extend the domain of $F$ and $F^{-1}$.\\
-		We use \cref{proof-f-erw} by defining $F$ through the right-hand side (for values where the right-hand side is defined, i.e., for $0 \leq \ta \leq \Omega^2/\omega$). Since $\Omega^2/\omega > \Omega$, this indeed extends $F$ beyond the interval $[0, \Omega]$.\\
-		Similarly, $F^{-1}$ satisfies equation \cref{proof-f-1-erw} for the extended interval $0 \leq \ta \leq nF(\Omega) = n^2 F(\omega)$.\\
-		Moreover, \cref{proof-homogen-eq} is now valid for $0 \leq t \leq 1$ and $0 \leq \ta_i \leq \Omega$:
+		We use \Cref{proof-f-erw} by defining $F$ through the right-hand side (for values where the right-hand side is defined, i.e., for $0 \leq \ta \leq \Omega^2/\omega$). Since $\Omega^2/\omega > \Omega$, this indeed extends $F$ beyond the interval $[0, \Omega]$.\\
+		Similarly, $F^{-1}$ satisfies \Cref{proof-f-1-erw} for the extended interval $0 \leq \ta \leq nF(\Omega) = n^2 F(\omega)$.\\
+		Moreover, \Cref{proof-homogen-eq} is now valid for $0 \leq t \leq 1$ and $0 \leq \ta_i \leq \Omega$:
 		\begin{align*}
 			F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} nF(t \ta_i \omega / \Omega) \right] \tag{by \cref{proof-f-erw}}                                                                        \\
 			                                                   & = F^{-1} \left[ n \sum_{i=1}^{n} F(t \ta_i \omega / \Omega) \right]                                                                                             \\
@@ -100,7 +100,7 @@
     which is equivalent to $F$ begin continuous on the extended domain.
 
     For monotonicity we can use a similar argument. Let $\ta < \ta'$ with $\omega < \ta, \ta' < \Omega$. Then $\ta \frac{\omega}{\Omega} < \ta' \frac{\omega}{\Omega}$ holds. Plugging that into $F$ and multiplying by $n$ yields $nF \left(\ta \frac{\omega}{\Omega}\right) <nF \left( \ta' \frac{\omega}{\Omega}\right)$ due to $F$ being increasing on the original domain. Therefore $\ta < \ta'$ implies $F(\ta) < F(\ta')$ which is equivalent to $F$ increasing.
-    Thus, we have established strict increasing monotonicity, continuity and \cref{proof-homogen-eq} for the extended function.
+    Thus, we have established strict increasing monotonicity, continuity and \Cref{proof-homogen-eq} for the extended function.
 
 		Repeatedly applying the arguments, extends the intervals in which $F$ is defined and in which monotonicity, continuity and homogeneity (\cref{proof-homogen-eq}) are valid by a factor of $\Omega/\omega$ each time. Thus, we can extend $F$ to $[0, \infty)$ while preserving these properties. We can prove further, that the homogeneity equation must also hold for $t \in [0, \infty)$.
 		Let $\ta_i > 0$ and $t > 1$. Then there exists $t' = \frac{1}{t} < 1$ such that $t' \cdot t \ta_i = \ta_i$. Therefore
@@ -111,9 +111,9 @@
 		\end{align*}
 		The last step holds, because both $t'<1$ and $t \ta_i < \infty$ hold.
 		Dividing both sides by $t'$ yields
-		\begin{equation}
-			F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] \quad \text{ for } \ta, t < \infty \label{proof-f-ext-eq}
-		\end{equation}
+		\begin{equation*}
+			F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] \quad \text{ for } \ta, t < \infty .
+		\end{equation*}
     To sum up, we have obtained an extended function which satisfies monotonicity, continuity and homogeneity for $t \in [0, \infty)$. This extended function must coincide with tie original $F$ on at least the interval $[0, \Omega]$ (because this was the domain of $F$ that we deduced, before extending it).
 	\end{proofpart}
 
@@ -133,11 +133,11 @@
     Since all requirements, except the functional equation, are already met by our extension, we will derive this equation now.
     
 
-		Firstly, applying \cref{proof-f-1-erw} on the left hand side yields
+		Firstly, applying \Cref{proof-f-1-erw} on the left hand side yields
 		\begin{equation*}
 			\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \ta_i) \right] = F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] .
 		\end{equation*}
-		Applying \cref{proof-f-1-erw} once more on the right hand side, yields
+		Applying \Cref{proof-f-1-erw} once more on the right hand side, yields
 		\begin{equation*}
 			\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(t \ta_i) \right] = F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] =\Omega / \omega t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{n} F(\ta_i) \right] .
 		\end{equation*}

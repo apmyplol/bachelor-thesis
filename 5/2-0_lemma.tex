@@ -28,7 +28,7 @@ For readers unfamiliar with convexity, we restate the definition of a convex set
 Now, we begin with the statement:
 
 \begin{thm}[Homogeneity Theorem] \label{thm-homogeneity}
-  Let $S$ be an open convex subset of $n$-dimensional Euclidean space. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity \footnote{i.e. $\metric$ takes the form $\metr{\ve{x}}{\ve{y}} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$.} with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates \footnote{Linear coordinates means that the vector representations are cartesian as opposed to, for example, polar, where each coordinate entry is not the value on the corresponding factor of the cartesian product.} in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $\ve{x}, \ve{z} \in S$ and any real $0 \leq t \leq 1$,
+  Let $S$ be an open convex subset of $n$-dimensional Euclidean space. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity (\cref{def-intradim-sub}) \footnote{i.e. $\metric$ takes the form $\metr{\ve{x}}{\ve{y}} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$.} with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates \footnote{Linear coordinates means that the vector representations are cartesian as opposed to, for example, polar, where each coordinate entry is not the value on the corresponding factor of the cartesian product.} in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $\ve{x}, \ve{z} \in S$ and any real $0 \leq t \leq 1$,
 	\begin{align*}
     \metric[\ve{x}, \ve{x} + t(\ve{z} - \ve{x})] = t\metric(\ve{x}, \ve{z}).
 	\end{align*}
@@ -112,7 +112,7 @@ The second one allows us to make arbitrary small $\metric$-balls which we will c
 We now proceed to the proof of the homogeneity theorem. First, we restate the theorem in the form in which we will prove it.
 
 \begin{lem*}[Restatement of the Homogeneity Theorem]
-  Let $S$ be an open convex subset of $n$-dimensional Euclidean space with $\ve{0} \in S$. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity with with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $\ve{z} \in S$ and any real $0 \leq t \leq 1$,
+  Let $S$ be an open convex subset of $n$-dimensional Euclidean space with $\ve{0} \in S$. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity (\cref{def-intradim-sub}) with with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $\ve{z} \in S$ and any real $0 \leq t \leq 1$,
 	\begin{align*}
     \metro{t\ve{z}} = t\metro{\ve{z}}.
 	\end{align*}
@@ -205,9 +205,9 @@ After this, we will expand this statement to the rationals and then use continui
 
     For the distance $\metr{\ve{0}}{\z[2]}$, we get the following two inequalities.
     Firstly,
-    \begin{equation}
+    \begin{equation*}
       \metr{\ve{0}}{\z[2]} \leq \metr{\ve{0}}{\z[1]} + \metr{\z[1]}{\z[2]} = \frac{2}{m} \metr{\ve{0}}{\z}.
-    \end{equation}
+    \end{equation*}
 
     Secondly,
 		\begin{align}

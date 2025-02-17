@@ -67,9 +67,9 @@
 
 		\begin{enumerate}
 			\item For the first point, we show that the derivative is greater than zero. Differentiation yields
-			      $$ \p e^x \cdot e^{\p e^x} - \p e^x = \p e^x \cdot (e^{\p e^x} - 1) > 0 $$ since $e^x > 0$.
-			\item
-			      $$ \lim_{x \rightarrow -\infty} e^{\p e^x}  - \p  e^x = \lim_{x \rightarrow -\infty} e^{\p e^x}  - \lim_{x \rightarrow -\infty} \p  e^x =  1 - 0 = 1 $$
+			      $$ \p e^x \cdot e^{\p e^x} - \p e^x = \p e^x \cdot (e^{\p e^x} - 1) > 0. $$ The inequality holds, since $e^x > 0$ for all $x \in \mathbb{R}$ and $e^x > 1$ for $x > 0$.
+      \item For the second point, we calculate the limit as $x \rightarrow -\infty$:
+			      $$ \lim_{x \rightarrow -\infty} e^{\p e^x}  - \p  e^x = \lim_{x \rightarrow -\infty} e^{\p e^x}  - \lim_{x \rightarrow -\infty} \p  e^x =  1 - 0 = 1. $$
 
 			      Thus, convexity is established, and the claim follows from Mulholland's theorem.
 		\end{enumerate}
