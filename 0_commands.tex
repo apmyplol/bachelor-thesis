@@ -53,6 +53,11 @@
 \@addtoreset{proofpart}{thm}
 \makeatother
 
+\newtheorem{proofpp}{Subpart}[proofpart]
+\makeatletter
+\@addtoreset{proofpart}{thm}
+\makeatother
+
 
 
 \theoremstyle{remark}
@@ -61,3 +66,11 @@
 
 
 % \DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+
+% \expandafter\def\expandafter\normalsize\expandafter{%
+%     \normalsize%
+%     \setlength\abovedisplayskip{0pt}%
+%     \setlength\belowdisplayskip{8pt}%
+%     \setlength\abovedisplayshortskip{-8pt}%
+%     \setlength\belowdisplayshortskip{2pt}%
+% }

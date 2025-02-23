@@ -1,15 +1,11 @@
 \chapter{Segmental Additivity} \label{chap-seg-additivity}
 
 \section{Segmentally Additive Metrics} \label{sec-seg-add-metrics}
-
-
-Da Metriken an sich wenig Struktur bieten, lohnt es sich noch eine Eigenschaft mehr mehr zu fordern.\\
-Diese Eigenschaft ist segmental additivity und beschreibt, dass es zu zwei Punkten immer eine Kurve gibt, die diese verbindet und die Abstände additiv sind, das heißt auf dem Segment die Dreiecksungleichung mit Gleichheit gilt. Für uns reicht es zu wissen, dass wenn $b$ auf dem Segment zwischen $a$ und $c$ liegt, dass dann $\delta(a,b) + \delta(b,c) = \delta(a, c)$ gilt.
-Für die genaue Definition siehe Anhang %\ref{appendix}.
-Am Ende dieses Abschnittes sind Beispiele für Metriken mit additiven Segmenten angegeben.
-
-
-Der Folgende Satz liefert eine (bis auf positive Skalierung) eindeutige Metrik die die Relation repräsentiert und zusätzlich zur Ordnung, die Eigenschaft segmental solvability erhält.
+% Da Metriken an sich wenig Struktur bieten, lohnt es sich noch eine Eigenschaft mehr mehr zu fordern.\\
+% Diese Eigenschaft ist segmental additivity und beschreibt, dass es zu zwei Punkten immer eine Kurve gibt, die diese verbindet und die Abstände additiv sind, das heißt auf dem Segment die Dreiecksungleichung mit Gleichheit gilt. Für uns reicht es zu wissen, dass wenn $b$ auf dem Segment zwischen $a$ und $c$ liegt, dass dann $\delta(a,b) + \delta(b,c) = \delta(a, c)$ gilt.
+% Für die genaue Definition siehe Anhang %\ref{appendix}.
+% Am Ende dieses Abschnittes sind Beispiele für Metriken mit additiven Segmenten angegeben.
+% Der Folgende Satz liefert eine (bis auf positive Skalierung) eindeutige Metrik die die Relation repräsentiert und zusätzlich zur Ordnung, die Eigenschaft segmental solvability erhält.
 
 The definitions and statements from this section are taken out from \parencite[Chapter 1]{busemann}.
 
@@ -17,22 +13,16 @@ The definitions and statements from this section are taken out from \parencite[C
 	\leavevmode \vspace{-\baselineskip}
 	\begin{enumerate}
 		\item Let $\metric$ be a metric on $X$. A parametric curve in $\langle X, \metric \rangle$ is a function $\curve$ that maps a closed interval $[a, b] \subset \mathbb{R}$ into $X$ and is continuous. The parametric curve $\curve$ is said to join $\curve(a)$ and $\curve(b)$. \index{Parametric Curve}
-
-		\item Let $\curve$ be a parametric curve in $\langle X, \metric \rangle$ with domain $[a, b]$. Its length $\len$ is the supremum of the sums
-		      \[
+		\item Let $\curve$ be a parametric curve in $\langle X, \metric \rangle$ with domain $[a, b]$. Its length $\len$ is the supremum of the sums \index{Parametric Curve!length}
+		      $$
 			      \sum_{i=1}^{n} \metric \left[ \curve(a_{i-1}), \curve(a_i) \right]
-		      \]
+		      $$
 		      over all finite sequences $a_0, a_1, \dots, a_n$ such that
-		      \[
+		      $$
 			      a = a_0 \leq a_1 \leq \dots \leq a_n = b.
-		      \]
-          \index{Parametric Curve!length}
-
-		      If $\len < \infty$, then $\curve$ is rectifiable. 
-          \index{Parametric Curve!rectifiable}
-
+		      $$ 
+		      If $\len < \infty$, then $\curve$ is rectifiable. \index{Parametric Curve!rectifiable}
         \item A rectifiable curve is a segment iff its length is equal to the distance between its endpoints, i.e. $\len = \metr{a}{b}$. \index{Segment}
-
         \item For $a \leq x \leq b$ we denote the length of the sub-curve $\curve(t),~ a \leq t \leq x$ from $a$ to $x$ by $\sublen$. This is also called the \emph{arc length} of the curve. \label{def-curve-sublen} \index{Parametric Curve!arc-length}
 	\end{enumerate}
 \end{defi}
@@ -44,5 +34,3 @@ The definitions and statements from this section are taken out from \parencite[C
 \begin{defi}[Metric Space with Additive Segments] \index{Metric space!with additive segments} \label{def-metric-space-add-segments}
 	Let $\metric$ be a metric on $X$. $\langle X, \metric \rangle$ is a metric space with additive segments iff for any $x, y \in  X$ there is a segment joining them.
 \end{defi}
-
-

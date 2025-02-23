@@ -1,59 +1,50 @@
 \subsection{Uniqueness Proof for Homogeneous Means} \label{sect-HLP_proof}
-
 In this section we will prove the Uniqueness Theorem for Homogeneous means, which states that the power means \footnote{In some literature this is also referred to as the Hölder mean or the generalized means} (including the geometric mean as a limit case) are the only homogeneous quasi-arithmetic means.
 Before beginning the proof, we will first define these means.
 
 \begin{defi}[Quasi Arithmetic Means and Homogeneity] \index{Quasi-arithmetic mean} \index{Quasi-arithmetic mean!homogeneous} %\gls{quasi-arith-mean}
-  Let $\phi : [0,\infty) \rightarrow [0,\infty)$ be continuous and strictly increasing and let $\ve{x}, \ve{w} \in \mathbb{R}_{\geq 0}^n$.
-  Then the quasi-arithmetic $\phi$-mean of $\ve{x}$ with weights $\ve{w}$
-  $$
-  \mean{\ve{x}} = \phi^{-1} \left ( \sum_{i=1}^{n} w_i \phi(x_i) \right)
-  $$
-
-  The mean is said to be \emph{homogeneous}, if
-  $$
-  \mean{t \cdot \ve{x}} = t \cdot \mean{\ve{x}}
-  $$
-  holds for all $t > 0$.
+	Let $\phi : [0,\infty) \rightarrow [0,\infty)$ be continuous and strictly increasing and let $\ve{x}, \ve{w} \in \mathbb{R}_{\geq 0}^n$.
+	Then the quasi-arithmetic $\phi$-mean of $\ve{x}$ with weights $\ve{w}$
+	$$\mean{\ve{x}} = \phi^{-1} \left ( \sum_{i=1}^{n} w_i \phi(x_i) \right)$$
+	The mean is said to be \emph{homogeneous}, if
+	$$\mean{t \cdot \ve{x}} = t \cdot \mean{\ve{x}}$$
+	holds for all $t > 0$.
 \end{defi}
 
 \begin{defi}[Power mean] \index{Power mean} %\gls{powermean}
-  For $n \in \mathbb{N}, r > 0$ and $\ve{x} \in \mathbb{R}_{\geq 0}^n$ we define the power means $\meanr{\ve{x}}$ as
-  $$ 
-  \meanr{\ve{x}} = \left ( \frac{1}{n} \sum_{i=1}^{n} x_i^p \right)^{1/p}.
-  $$
-
-  For $p=0$ we can define $\meanr[0]{\ve{x}}$ as the geometric mean
-  $$
-  \meanr[0]{\ve{x}} = \sqrt[n]{\prod_{i=1}^n x_i}
-  $$
-  since it is obtained as a limit case for $r \rightarrow 0$ \parencite[p. 176]{handbookMeans}.
+	For $n \in \mathbb{N}, r > 0$ and $\ve{x} \in \mathbb{R}_{\geq 0}^n$ we define the power means $\meanr{\ve{x}}$ as
+	$$ \meanr{\ve{x}} = \left ( \frac{1}{n} \sum_{i=1}^{n} x_i^p \right)^{1/p}. $$
+	For $p=0$ we can define $\meanr[0]{\ve{x}}$ as the geometric mean
+	$$
+		\meanr[0]{\ve{x}} = \sqrt[n]{\prod_{i=1}^n x_i}
+	$$
+	since it is obtained as a limit case for $r \rightarrow 0$ \parencite[p. 176]{handbookMeans}.
 \end{defi}
 
 \begin{rem}[Power Means are Quasi-Arithmetic]
-By setting $\phi(x) = x^p$ for $p>0$ or $\phi(x) = \log(x)$ we obtain the power means for $p>0$ and $p=0$ respectively.
+	By setting $\phi(x) = x^p$ for $p>0$ or $\phi(x) = \log(x)$ we obtain the power means for $p>0$ and $p=0$ respectively.
 \end{rem}
 
 
 \begin{thm}[Characterization of Equal Means] \label{thm-quasi-mean-equal-cond}
-  In order that
-  $$
-  \mean{\ve{a}}  = \mean[\Psi]{\ve{a}}
-  $$
-  for all $\ve{a}$ and $\ve{w}$, it is necessary and sufficient that 
-  $$
-    \phi = \alpha \cdot  \psi + \beta
-  $$
-  where $\alpha$ and $\beta$ are constants and $\alpha \neq 0$.
+	In order that
+	$$
+		\mean{\ve{a}}  = \mean[\Psi]{\ve{a}}
+	$$
+	for all $\ve{a}, \ve{w}$ and $n \in \mathbb{N}$, it is necessary and sufficient that
+	$$
+		\phi = \alpha \cdot  \psi + \beta
+	$$
+	where $\alpha$ and $\beta$ are constants and $\alpha \neq 0$.
 \end{thm}
 
 
 \begin{thm}[$\meanrempty$ are the only homogeneous means $\meanempty$] \label{thm-power-mean-uniqueness}
-      Suppose that $\phi$ is continuous and strictly increasing in the open interval $(0,\infty)$ and that the mean defined by $\phi$ is homogeneous, i.e.
-      $$ 
-      \mean{t \ve{a} } = t \mean{\ve{a}}
-      $$
-      for all positive $\ve{a}, \ve{w}$ and $t$. Then $\mean{ \ve{a}}$ is $\meanr{\ve{a} }$.
+	Suppose that $\phi$ is continuous and strictly increasing in the open interval $(0,\infty)$ and that the mean defined by $\phi$ is homogeneous, i.e.
+	$$
+		\mean{t \ve{a} } = t \mean{\ve{a}}
+	$$
+	for all positive $\ve{a}, \ve{w},t$ and all $n \in \mathbb{N}$ such that $\sum_{i=1}^{n} w_i = 1$. Then $\mean{ \ve{a}}$ is $\meanr{\ve{a} }$.
 
 \end{thm}
 

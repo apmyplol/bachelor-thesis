@@ -1,17 +1,11 @@
 \subsection{Homogeneity Theorem} \label{sect-homogeneity-theorem}
-
-
 Before beginning this section, we will first introduce some notation.\\
 $\metric_{\infty}$ is used to represent the $\infty$-metric (also called the maximum metric) which is induced by the maximum norm\footnote{The maximum norm is defined by $\|x,y\|_\infty := \max_{i \leq n} \{|x_i - y_i|\}.$}. This metric induces the natural topology of the euclidean space.
-$\ball{r} := \{x \in \mathbb{R}^{n}: \metro{x} < r\} $ denotes the open Ball with radius $r$ around $0$ with respect to the metric $\metric$; similarly $\cball{r}$ denotes the closed ball. We use $\infty$ as a subscript, to indicate that the ball is with respect to $\metric_{\infty}$.\\
+$\ball{r} := \{x \in \mathbb{R}^{n}: \metro{x} < r\} $ denotes the open Ball with radius $r$ around $0$ with respect to the metric $\metric$; similarly $\cball{r}$ denotes the closed ball. We use $\infty$ as a subscript, to indicate that the ball is with respect to $\metric_{\infty}$.
 
 % \gls{max-metr}
 % \gls{openball}
 % \gls{closedball}
-
-% Nur kurze zusammenfassung der Notation zur Übersicht
-
-
 In this section we will prove the homogeneity theorem, which is needed for the proof of the main result, \cref{thm-uniquene-repr-minkowski}.
 The proof is divided into 5 parts and a whole subsection which is devoted to showing the convexity of $\metric$-balls which is needed for the proof.
 First, we will state the theorem, give some remarks on it and prove some lemmas. Then we will prove the homogeneity theorem.
@@ -21,24 +15,22 @@ Moreover all topological terms(open, closed, continuous) are meant with respect 
 It is suggested to first read this section (including the proof) to get the main ideas and a big picture understanding, and then read the next section.
 
 For readers unfamiliar with convexity, we restate the definition of a convex set. The idea behind convexity is, that for every two points from a set, the line between these two points is also inside that set.
+
 \begin{defi}[Convexity]
   A set $A \subset \mathbb{R}^{n}$ is \emph{convex}, iff $(1 - \lambda) \ve{x} + \lambda \ve{y} \in A$ for all $\ve{x}, \ve{y} \in A$ and $\lambda \in [0,1]$. \index{Convex!set}
 \end{defi}
-
-Now, we begin with the statement:
+First, we begin with the statement of the theorem.
 
 \begin{thm}[Homogeneity Theorem] \label{thm-homogeneity}
   Let $S$ be an open convex subset of $n$-dimensional Euclidean space. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity (\cref{def-intradim-sub}) \footnote{i.e. $\metric$ takes the form $\metr{\ve{x}}{\ve{y}} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$.} with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates \footnote{Linear coordinates means that the vector representations are cartesian as opposed to, for example, polar, where each coordinate entry is not the value on the corresponding factor of the cartesian product.} in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $\ve{x}, \ve{z} \in S$ and any real $0 \leq t \leq 1$,
 	\begin{align*}
     \metric[\ve{x}, \ve{x} + t(\ve{z} - \ve{x})] = t\metric(\ve{x}, \ve{z}).
 	\end{align*}
-
 \end{thm}
-
-Now we continue with a remark that makes it possible to move the set such that $\ve{0} \in S$ by using the translation invariance of $\metric$.
+Now, we continue with some remarks that make it possible to move the set such that $\ve{0} \in S$ by using the translation invariance of $\metric$.
 
 \begin{rem}[Translation invariance and domain of $\metric$ and $F$] \label{lemma-rem}
-
+  This remark establishes the continuity of $\metric$ and shows that we can assume without loss of generality, that $\ve{0} \in S$.
 	\begin{enumerate}[(i)]
     \item $\metric$ is translation-invariant, i.e. $\metr{\ve{x}+\ve{y}}{\ve{z}+\ve{y}} = \metr{\ve{x}}{\ve{z}}$: \label{lemma-trans-invariance}
 		      \begin{align*}
@@ -60,8 +52,6 @@ Now we continue with a remark that makes it possible to move the set such that $
 		\item  Moreover, due to the continuity of $F$ and $| \cdot |$, the metric $\metric$ is continuous. \label{rem-lemma-continuity}
 	\end{enumerate}
 \end{rem}
-
-
 Before proceeding to the proof, we first establish two preliminary statements that will be needed at the beginning.
 The first one asserts that the distance between a compact and a closed set is greater than zero.
 
@@ -78,8 +68,7 @@ The first one asserts that the distance between a compact and a closed set is gr
   Hence,  $\ve{p}$ is a limit point of $C$, and since  $C$  is closed,  $\ve{p} \in C$ must hold which contradicts the assumption.
 \end{proof}
 
-The second one allows us to make arbitrary small $\metric$-balls which we will combine with the statement before to assure a distance in $\metric$ and not only in $\metric_{\infty}$.
-
+The second preliminary lemma allows us to make arbitrary small $\metric$-balls which we will combine with the statement before to assure a distance in $\metric$ and not only in $\metric_{\infty}$.
 
 \begin{lem}[arbitrary small $\metric$-Balls] \label{lemma-small-delta-balls}
 	Let $\varepsilon > 0$ such that $\ball[\infty]{\varepsilon} \subset S$. Then there exists $\dis > 0$ such that $\ball{\dis} \subset \ball[\infty]{\varepsilon}$.
@@ -87,27 +76,17 @@ The second one allows us to make arbitrary small $\metric$-balls which we will c
 
 \begin{proof}
   Since $\metric$ is a metric defined by $\metric(\ve{x},\ve{y}) = F[|x_1 - y_1|, \dots, |x_n - y_n|]$, we can define the $j$-th partial function of $F$ by setting all other arguments to zero, i.e. $F^j(x_j) := F(0, \dots, x_j, \dots, 0)$.
-
-	$F$ is strictly increasing in every argument implies that $F^j$ is increasing and the continuity of $F$ directly translates to $F^j$ being continuous.
-	Moreover, due to \crefpart{lemma-rem}{rem-lemma-domains}, $F^j(x_j) = 0$ if and only if $x_j = 0$ holds.
-
-	Together, this means that $F^j$ is an increasing, continuous real function with $F^j(0) = 0$.
-
+  $F$ is strictly increasing in every argument implies that $F^j$ is increasing and the continuity of $F$ directly translates to $F^j$ being continuous.
+  Moreover, due to \crefpart{lemma-rem}{rem-lemma-domains}, $F^j(x_j) = 0$ if and only if $x_j = 0$ holds.
+  Together, this means that $F^j$ is an increasing, continuous real function with $F^j(0) = 0$.
 
 	By setting $\dis_j = F^j(\varepsilon)$ we get by monotonicity, that $F^j(x_j) < \dis_j \implies x_j < \varepsilon$. Note, that $F^j(\varepsilon)$ is defined, because  $\ball[\infty]{\varepsilon} \subset S'$ implies that $\varepsilon$ is a possible distance for each coordinate. (See also \crefpart{lemma-rem}{rem-lemma-domains}. Using the $a_i$ from the remark, we get that $\varepsilon < a_i$ holds for all $i$ and thus $F^j(\varepsilon)$ is defined for all $j = 1, \dots n$.)
-
 	Doing this for $j = 1, \dots, n$ yields $\dis_1, \dots, \dis_n$.
 	By setting $\dis = \min \{\dis_1, \dots, \dis_n\}$ the above holds for every partial function $F^j$ which yields the boundary for the $\infty$ Metric:
-	$$
-  F^j(x_j) < \dis \leq \dis_j \implies x_j < \varepsilon \quad \forall j = 1, \dots, n \implies \|\ve{x}\|_{\infty} < \varepsilon.
-	$$
-
+	$$ F^j(x_j) < \dis \leq \dis_j \implies x_j < \varepsilon \quad \forall j = 1, \dots, n \implies \|\ve{x}\|_{\infty} < \varepsilon.$$
 	Using the monotonicity of $F$ we get
-	$$
-  \metro{\ve{x}} = F(\ve{x}) < \dis \implies F^j(x_j) < \dis \implies \|\ve{x}\|_\infty < \varepsilon.
-	$$
+	$$\metro{\ve{x}} = F(\ve{x}) < \dis \implies F^j(x_j) < \dis \implies \|\ve{x}\|_\infty < \varepsilon.$$
 \end{proof}
-
 
 We now proceed to the proof of the homogeneity theorem. First, we restate the theorem in the form in which we will prove it.
 
@@ -127,8 +106,8 @@ After this, we will expand this statement to the rationals and then use continui
 
 	\setcounter{proofpart}{-1}
 
-
 	%-------------- Proof part 0 ----------------------------%
+
 	\begin{proofpart}[Asserting a common distance for all points on the line segment] \label{lemma-part0}
     Let $\ve{z} \in S$.
     Since $S$ is open, $\mathbb{R}^{n} \setminus S$ is closed. The set $K := \{t \ve{z} : t \in [0,1]\}$ is compact, since continuous images($t \mapsto t \ve{z}$) of compact sets ($t \in [0,1]$) are compact.
@@ -137,44 +116,31 @@ After this, we will expand this statement to the rationals and then use continui
     By \cref{lemma-small-delta-balls}, there exists $\dis > 0$ such that $\ball{\dis} \subset \ball[\infty]{\varepsilon}$, and by translation invariance this holds for all points on the line: $\ballp{\dis}{t\ve{z}} \subset S$ for all $t \in [0,1]$.
     Now let $m \in \mathbb{N}$ such that $\frac{1}{m} \metro{\ve{z}} < \dis$.
     In particular, this means that $\ball{\dis}$ and therefore, $\ball{\frac{1}{m} \metro{\ve{z}}}$ is bounded (with respect to the $\infty$ metric).
-
 	\end{proofpart}
 
 
-
 	%-------------- Proof part 1 ----------------------------%
+
   \begin{proofpart}[$t \metro{\ve{z}} \leq \metro{t \ve{z}}$ for $t = \frac{1}{m} < d$ with $m \in \mathbb{N}$]\label{lemma-part1}
     Let $\z[k] := \frac{k}{m} \cdot \ve{z}$ for $k =0, \dots, m$. Then $\z[k] \in S$ for all $k$ due to convexity of $S$.
-
 		By applying translation invariance, we can calculate the distance between two consecutive points:
-		$$
-			\metr{\z[k-1]}{\z[k]} = \metr{\frac{k-1}{m} \z}{\frac{k-1}{m} \z + \frac1m \z} = \metro{\frac{1}{m} \z} \quad \forall k = 1, \dots, m.
-		$$
-
+		$$\metr{\z[k-1]}{\z[k]} = \metr{\frac{k-1}{m} \z}{\frac{k-1}{m} \z + \frac1m \z} = \metro{\frac{1}{m} \z} \quad \forall k = 1, \dots, m.$$
 		Applying the triangle inequality $m-1$-times and using the above result yields
-
-		$$
-			\metro{\z} \leq \sum_{k=0}^{m-1} \metr{\z[k]}{\z[k+1]} = m \cdot \metro{\frac{1}{m} \z}.
-		$$
-
+		$$\metro{\z} \leq \sum_{k=0}^{m-1} \metr{\z[k]}{\z[k+1]} = m \cdot \metro{\frac{1}{m} \z}.$$
 		Finally, dividing the right side by $m$ yields $\frac{1}{m} \metro{\z} \leq \metro{\frac{1}{m} \z}$, which concludes the first part.
 	\end{proofpart}
 
 	%-------------- Proof part 2 ----------------------------%
+
 	\begin{proofpart}[$t \metro{\z} \geq \metro{t \z}$ for $t = \frac{1}{m} < d$ with $m \in \mathbb{N}$] \label{lemma-part2}
     Since $\metric$ is a metric with additive segments, there exists a segment from $\ve{0}$ to $\z$ with length $\metro{\z}$. By \cref{thm-curve-sublen-cont} the arc length is a continuous, non-decreasing function. This means, we can divide the segment into $m$ subsegments with length $\frac{1}{m} \metro{\z}$ and choose $\y[0], \dots, \y[m]$ equally spaced on the segment such that $\metr{\y[k]}{\y[k-1]} = \frac{1}{m} \metro{\z}$ and $\y[0] = \ve{0}$ and $\y[m] = \z$.
 		Using this, we can define $\x := \y[k] - \y[k-1]$. Translation invariance yields $\metro{\x} =\metr{\y[k]}{\y[k-1]} = \frac{1}{m} \metro{\z}$ and, due to the choice of $m$ in \cref{lemma-part0},  $\x \in S$ holds. Note, that this is still true, if we increase $m$.
 
 		Further, we can observe that $\frac{1}{m} \z$ is a convex combination of $\x$:
-		$$
-    \sum_{k=1}^m \frac{1}{m} \x = \frac{1}{m} (\y[1] - \y[0] + \y[2] - \y[1] + \dots + \y[m]) = \frac{1}{m} (-\y[0] + \y[m]) = \frac{1}{m} \z
-		$$
-
+		$$\sum_{k=1}^m \frac{1}{m} \x = \frac{1}{m} (\y[1] - \y[0] + \y[2] - \y[1] + \dots + \y[m]) = \frac{1}{m} (-\y[0] + \y[m]) = \frac{1}{m} \z$$
 		We showed before, that $\metro{\x} = \frac{1}{m}\metro{\z}$, which implies $\x \in  \cball{\frac{1}{m}\metro{\z}}$.
 		By \cref{lemma-part0} $\ball{\frac{1}{m} \metro{\z}}$ is bounded. Therefore we can apply \cref{lem-metr-spheres-convex} from which we get that spheres are convex. This means, that the spheres are closed under convex combination, which implies that $\frac{1}{m} \z \in \cball{\frac{1}{m} \metro{\z}}$ must hold. Thus $\metro{\frac1m \z} \leq \frac1m \metro{\z}$ which concludes the second part of the proof.
-
 	\end{proofpart}
-
 
 
 	Now, by combining \cref{lemma-part1} and \cref{lemma-part2}, we have established the equality for $t = \frac{1}{m}$. Note, that the equality also holds for all $\mathbb{N} \ni m' > m$ since we only needed $m$ to be big enough in \cref{lemma-part2} for $\x$ to be in $S$ and for convexity of the spheres. Thus, by making $m$ bigger, the crucial points in \cref{lemma-part2} and therefore the equality are still true.
@@ -183,32 +149,27 @@ After this, we will expand this statement to the rationals and then use continui
 
 
 	%-------------- Proof part 3 ----------------------------%
+
 	\begin{proofpart}[$t \metro{\z} = \metro{t \z}$ for $t = \frac{k}{m}$ and $k \in \{0, \dots, m\}$] \label{lemma-part3}
 		% To show this part, we will first use translation invariance to prove $\metro{\frac1m z} = \frac1m \metro{z}$ from all points $\z$.
     For $\z[1]$ we already have $\metr{\ve{0}}{\z[1]} = \frac{1}{m} \metr{\ve{0}}{\z}$.
 		Now, for consecutive points, by translation invariance, it holds that
-		$$
-    \metr{\z[k-1]}{\z[k]} = \metr{\z[k-2]}{\z[k-1]} = \dots = \metr{\z[1]}{\z[0]} = \metr{\z[1]}{\ve{0}} = \frac{1}{m} \metr{\ve{0}}{\z}.
-		$$
+		$$\metr{\z[k-1]}{\z[k]} = \metr{\z[k-2]}{\z[k-1]} = \dots = \metr{\z[1]}{\z[0]} = \metr{\z[1]}{\ve{0}} = \frac{1}{m} \metr{\ve{0}}{\z}.$$
 		Using this and the triangle inequality, we get
 		\begin{align*}
       \metr{\ve{0}}{\z}          & \leq \metr{\ve{0}}{\z[1]} + \metr{\z[1]}{\z[2]} + \dots + \metr{\z[m-1]}{\z[m]} \\
                                  & = n \cdot \frac{1}{n} \metr{\ve{0}}{\z}                                          \\
                                  & = \metr{\ve{0}}{\z}.                                                            
 		\end{align*}
-
     This implies
-
     \begin{equation} \label{proof-eq-additive}
       \metr{\ve{0}}{\z} = \metr{\ve{0}}{\z[1]} + \metr{\z[1]}{\z[2]} + \dots + \metr{\z[m-1]}{\z[m]}.
     \end{equation}
-
-    For the distance $\metr{\ve{0}}{\z[2]}$, we get the following two inequalities.
+    For the distance $\metr{\ve{0}}{\z[2]}$, we get the following two inequalities.\\
     Firstly,
     \begin{equation*}
       \metr{\ve{0}}{\z[2]} \leq \metr{\ve{0}}{\z[1]} + \metr{\z[1]}{\z[2]} = \frac{2}{m} \metr{\ve{0}}{\z}.
     \end{equation*}
-
     Secondly,
 		\begin{align}
       \metr{\ve{0}}{\z}     & \leq \metr{\ve{0}}{\z[2]} + \metr{\z[2]}{\z}              \notag                                      \\
@@ -217,18 +178,15 @@ After this, we will expand this statement to the rationals and then use continui
                            & = \metr{\ve{0}}{\z} - \frac{m-2}{m} \metr{\ve{0}}{\z}                         \tag{using \cref{proof-eq-additive}}                     \\
                                & = \frac{2}{m} \metr{\ve{0}}{\z}. \notag
 		\end{align}
-
     Combining these two inequalities yields $\metr{\ve{0}}{\z[2]} = \frac{2}{m} \metr{\ve{0}}{\z}$.
     By repeating this for $\metr{\ve{0}}{\z[k]}$ for every $k = 2, \dots, m-1$, we get the equality for every rational number for $m$ big enough. However every rational number with a denominator smaller than $m$ can be represented by another rational number with denominator greater than $m$. This yields, that the result is true for every rational $t$.
 	\end{proofpart}
 
 
-
-
 	%-------------- Proof part 4 ----------------------------%
+
 	\begin{proofpart}[$t \metro{\z} = \metro{t \z}$ for $t \in {[0, 1]}$]
-		The final step can be completed using continuity of the metric. Now let $t \in [0,1]$ and $t_n \in \mathbb{Q}$ with $t_n \rightarrow t$ for $n \rightarrow \infty$.
-		Then
+		The final step can be completed using continuity of the metric. Now let $t \in [0,1]$ and $t_n \in \mathbb{Q}$ with $t_n \rightarrow t$ for $n \rightarrow \infty$. Then
 		\begin{align*}
 			\metro{t \z} & = \metro{ \lim_{n \rightarrow \infty } t_n \z }                                                 \\
 			            & = \lim_{n \rightarrow \infty } \metro{t_n \z} \tag{continuity}                                  \\
@@ -237,8 +195,3 @@ After this, we will expand this statement to the rationals and then use continui
 		\end{align*}
 	\end{proofpart}
 \end{proof}
-
-
-
-
-
