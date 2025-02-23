@@ -1,6 +1,9 @@
-\subsection{Uniqueness Proof for Homogeneous Means} \label{sect-HLP_proof}
-In this section we will prove the Uniqueness Theorem for Homogeneous means, which states that the power means \footnote{In some literature this is also referred to as the Hölder mean or the generalized means} (including the geometric mean as a limit case) are the only homogeneous quasi-arithmetic means.
-Before beginning the proof, we will first define these means.
+\subsection{Uniqueness Theorem for Homogeneous Means} \label{sect-HLP_proof}
+In this section we will prove the uniqueness theorem for homogeneous means, which states that the power means \footnote{In some literature this is also referred to as the Hölder mean or the generalized means.} (including the geometric mean as a limit case) are the only homogeneous quasi-arithmetic means.
+Before beginning the proof, we will first define quasi-arithmetic means and one class of this means, the power means.
+Both, the proof and the definitions are based on \parencite[p. 66-69]{hardy1952inequalities} and \parencite[p. 271-273]{handbookMeans}.
+
+We begin with defining quasi-arithmetic means. The name stems from generalizing the arithmetic mean by applying a function on each value before averaging and then using its inverse to transform the result back.
 
 \begin{defi}[Quasi Arithmetic Means and Homogeneity] \index{Quasi-arithmetic mean} \index{Quasi-arithmetic mean!homogeneous} %\gls{quasi-arith-mean}
 	Let $\phi : [0,\infty) \rightarrow [0,\infty)$ be continuous and strictly increasing and let $\ve{x}, \ve{w} \in \mathbb{R}_{\geq 0}^n$.
@@ -10,6 +13,8 @@ Before beginning the proof, we will first define these means.
 	$$\mean{t \cdot \ve{x}} = t \cdot \mean{\ve{x}}$$
 	holds for all $t > 0$.
 \end{defi}
+
+Next, we define the power means and remark that they are quasi-arithmetic means.
 
 \begin{defi}[Power mean] \index{Power mean} %\gls{powermean}
 	For $n \in \mathbb{N}, r > 0$ and $\ve{x} \in \mathbb{R}_{\geq 0}^n$ we define the power means $\meanr{\ve{x}}$ as
@@ -25,27 +30,113 @@ Before beginning the proof, we will first define these means.
 	By setting $\phi(x) = x^p$ for $p>0$ or $\phi(x) = \log(x)$ we obtain the power means for $p>0$ and $p=0$ respectively.
 \end{rem}
 
+Now we can continue with a theorem about equal means, which is needed in the proof of the uniqueness theorem for homogeneous means.
 
 \begin{thm}[Characterization of Equal Means] \label{thm-quasi-mean-equal-cond}
 	In order that
-	$$
+  \begin{equation} \label{thm-quasi-mean-eq-equal}
 		\mean{\ve{a}}  = \mean[\Psi]{\ve{a}}
-	$$
+  \end{equation}
 	for all $\ve{a}, \ve{w}$ and $n \in \mathbb{N}$, it is necessary and sufficient that
-	$$
-		\phi = \alpha \cdot  \psi + \beta
-	$$
+  \begin{equation} \label{thm-quasi-mean-eq-linear}
+		\phi = \alpha \cdot  \psi + \beta  \end{equation}
 	where $\alpha$ and $\beta$ are constants and $\alpha \neq 0$.
 \end{thm}
 
+\begin{proof}
+
+  \begin{proofpart}[$\Rightarrow$]
+    Assume that \Cref{thm-quasi-mean-eq-equal} holds. In particular, it also holds for $n=2$.
+    Thus we have
+    \begin{equation*}
+      \chi^{-1}(w_1 \chi(a_1) + w_2 \chi(a_2)) = \psi^{-1} (w_1 \psi(a_1) + w_2 \psi (a_2))
+    \end{equation*}
+
+    Putting $\phi(x) = \chi ( \psi^{-1} (x)), x_i = \psi (a_i)$ for $i=1, 2$ yields
+    \begin{equation*}
+      \phi(w_1 x_1 + w_2 + x_2) = w_1 \psi(x_1) + w_2 \psi(x_2) \quad x_1, x_1 \in \mathbb{R}_{\geq  0}.
+    \end{equation*}
+    In particular, this holds for $w_1, w_2 = 1/2$ which then reduces to
+    \begin{equation*}
+      \phi \left (\frac{x_1 + x_2}{2}\right ) = \frac{\phi(x_1)}{2} + \frac{\phi (x_2)}{2} \quad x_1, x_1 \in \mathbb{R}_{\geq  0}.
+    \end{equation*}
+
+    %TODO: fragen ob noch adden muss
+    By \parencite[p. 46]{aczel1966lectures}, the general continuous solution is $\psi(x) = \alpha x + \beta$, hence $\chi = \alpha \psi + \beta$.
+  \end{proofpart}
+
+  \begin{proofpart}[$\Leftarrow$]
+    Assume that \Cref{thm-quasi-mean-eq-linear} holds.
+    Then
+    \begin{align*}
+      \chi ( \mean[\chi]{\ve{a}}) &= \sum_{i=1}^{n} w_i \chi(a_i) \tag{cancellation of inverses} \\
+                                  &= \sum_{i=1}^{n} q_i \alpha \psi(a_i) + \beta \tag{\cref{thm-quasi-mean-eq-linear}} \\
+                                  &= \alpha \left ( \sum_{i=1}^{n} w_i \psi(a_i) \right ) + \beta \tag{rearranging} \\
+                                  &= \chi \left [ \mean[\psi]{\ve{a}} \right] \tag{\cref{thm-quasi-mean-eq-linear}}
+    \end{align*}
+    Applying $\chi^{-1}$ to both sides of the equation yields \Cref{thm-quasi-mean-eq-equal}.
+  \end{proofpart}
+\end{proof}
+
+Now we finally state and prove the main theorem of this section.
 
 \begin{thm}[$\meanrempty$ are the only homogeneous means $\meanempty$] \label{thm-power-mean-uniqueness}
 	Suppose that $\phi$ is continuous and strictly increasing in the open interval $(0,\infty)$ and that the mean defined by $\phi$ is homogeneous, i.e.
-	$$
+  \begin{equation} \label{thm-quasi-homogen-eq}
 		\mean{t \ve{a} } = t \mean{\ve{a}}
-	$$
+  \end{equation}
 	for all positive $\ve{a}, \ve{w},t$ and all $n \in \mathbb{N}$ such that $\sum_{i=1}^{n} w_i = 1$. Then $\mean{ \ve{a}}$ is $\meanr{\ve{a} }$.
 
 \end{thm}
+
+\begin{proof}
+  By \cref{thm-quasi-mean-equal-cond} we can assume that $\phi(1) = 0$, since we can replace $\phi(x)$ by $\phi(x) - \phi(1)$ without changing $\mean{\ve{a}}$. Next, we write \Cref{thm-quasi-homogen-eq} as
+  \begin{align*}
+    \mean{\ve{a}} = t^{-1} \mean{t\ve{a}} = t^{-1} \phi^{-1} \left ( \sum_{i=1}^{n} w_i \phi(t a_i) \right) = \mean[\psi]{\ve{a}}
+  \end{align*}
+  by setting $\psi(x) = \phi(t x)$. From this, it follows that $\psi^{-1}(x) = t^{-1} \cdot \phi(x)$ \footnote{For this, let $\psi^{-1}(x) = y$. Then, by applying $\psi$ to both sides, and using its definition, this yields $x = \phi(ty)$. Applying the inverse of $\phi$ and dividing by $t$ yields $t^{-1} \phi^{-1}(x) = y$, which in turn is equal to $\psi^{-1}(x)$ by the first equation.}, which in turn justifies the above equation.
+  Therefore, we have the equality of the means defined by $\psi$ and $\phi$. Since $\psi$ is defined for every $t > 0$, we have by \cref{thm-quasi-mean-equal-cond} that there are $\alpha(t), \beta(t) \in \mathbb{R}, \alpha(t) \neq  0$ such that
+  \begin{equation*}
+  \phi(t x) = \psi(x) = \alpha(t) \cdot \phi(x) + \beta(t).
+  \end{equation*}
+  Plugging in $x=1$ and using $\phi(1) = \phi(0)$ yields
+  \begin{equation*}
+  \phi(t) = \psi(1) = \beta(t).
+  \end{equation*}
+  Thus, for all positive $x, y$ by setting $y=t$
+  \begin{equation} \label{proof-quasi-eq2}
+    \phi(x y) = \alpha(y)\phi(x) + \phi(y)
+  \end{equation}
+  Similarly, by exchanging the roles of $x$ and $y$ we get
+  \begin{equation*}
+    \phi(x y) = \alpha(x)\phi(y) + \phi(x)
+  \end{equation*}
+  Combining these two equalities yields
+  \begin{align*}
+    \alpha(y)\phi(x) + \phi(y)  &= \alpha(x)\phi(y) + \phi(x) \tag{$- \phi(x) - \phi(y)$} \\
+    \alpha(y)\phi(x) - \phi(x)  &= \alpha(x)\phi(y) - \phi(y) \tag{divide\footnotemark by $\phi(x) \cdot \phi(y)$} \\
+    \frac{\alpha(x) -1}{\phi(x)} &= \frac{\alpha(y) - 1}{\phi(y)} := c
+  \end{align*} \footnotetext{Provided $x \neq 1, y \neq 1$. Since \Cref{proof-quasi-eq1} is true when $x$ or $y$ is $1$, we can ignore the exception.}
+  Since this must hold for all $x$ and $y$, the expressions must reduce to a constant $c$. This can be seen by settings, for example, $x=1$ and observing that the right hand side must equal to that for all $y$ and therefore must be constant. The same argument can be applied in reverse.
+  Using this, we get the following expression
+
+  \begin{equation*}
+    \alpha(y) = 1 + c \phi(y).
+  \end{equation*}
+  Plugging this expression for $\alpha(y)$ into \Cref{proof-quasi-eq2} yields
+
+  \begin{equation} \label{proof-quasi-eq1}
+    \phi(xy) = c \phi(x) \phi(y) + \phi(x) + \phi(y)
+  \end{equation}
+
+  For this equation, there are two cases to consider: $c=0$ and $c \neq 0$.
+  If $c=0$, then \Cref{proof-quasi-eq1} reduces to the well known logarithmic Cauchy equation
+  $$  \phi(xy) = \phi(x) + \phi(y), $$
+  of which the most general and for $x>0$ continuous solution is $\phi(x) = \alpha \log(x)$ for some constant $\alpha \in \mathbb{R}$; see \parencite[p. 39]{aczel1966lectures} and \parencite[p. 110-111]{cauchy1821}.
+
+  If $c \neq 0$, we set $f(x) = c \phi(x) + 1$ and \Cref{proof-quasi-eq1} reduces to the multiplicative Cauchy functional equation
+  $$ f(xy) = f(x)f(y), $$
+  whose general solution is $f(x) = x^r$; see \parencite[p. 39]{aczel1966lectures} and \parencite[p. 111-112]{cauchy1821}. Substituting back yields $\phi(x) = \frac{x^r -1}{c}$.
+\end{proof}
 
 
