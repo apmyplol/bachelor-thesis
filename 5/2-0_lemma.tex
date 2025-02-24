@@ -42,9 +42,9 @@ Now, we continue with some remarks that make it possible to move the set such th
           From now on, we assume that $\ve{0} \in S$, because by the argument just provided, we can shift $S$ and $\metric$ such that $\ve{0} \in S$.
 		      Thus we can proceed to proof the statement using the shorthand notation, by which we need to show that:
           $$ \metro{t \cdot  \ve{z}} = t \cdot \metro{\ve{z}} \qquad \forall t \in [0, 1] \text{ and } \forall \ve{z} \in S' .$$ \label{rem-lemma-translate-to-zero}
-          %TODO: Bei (iii) auf S.5 fehlt mir auch ein bisschen das Argument. Irgendeine Voraussetzung an F muss da noch eingehen. Nur weil \delta eine Metrik ist, muss ja nicht der Definitionsbereich ein kartesisches Produkt sein, oder uebersehe ich da etwas? 
+          %FIX: Bei (iii) auf S.5 fehlt mir auch ein bisschen das Argument. Irgendeine Voraussetzung an F muss da noch eingehen. Nur weil \delta eine Metrik ist, muss ja nicht der Definitionsbereich ein kartesisches Produkt sein, oder uebersehe ich da etwas? 
           % Nochmal überprüfen, ob meine argumentation passt
-          %TODO: warum sind die intervalle halboffen? Das muss aus der prox struct kommen iwie
+          %FIX: warum sind die intervalle halboffen? Das muss aus der prox struct kommen iwie
           % Argumentation mit 0 rauslassen nochmal checken
         \item Since $\metric$ is defined by $\metr{\ve{x}}{\ve{y}} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$ and $\metric$ is a metric, $F(\ve{x}) = 0$ iff $\ve{x}=0$ must hold. Moreover the function $F$ has to be defined on a set, where at least the "greatest possible difference" in coordinate $i$ is a possible $i$-th argument. We denote this value as $\rho_i$ and define it as 
       $$\rho_i := \sup \left \{ |x_i - y_i| : (x_1, \dots, x_n), (y_1, \dots, y_n) \in S \right \} \in \mathbb{R}_{> 0} \cup \{\infty\}.$$

@@ -57,7 +57,7 @@
 			F^{-1}(\ta) & = (\Omega/\omega) F^{-1}(\ta/n), \quad 0 \leq \ta \leq nF(\omega). \label{proof-f-1-erw}
 		\end{align}
 		These two equations can now be used to extend the domain of $F$ and $F^{-1}$.
-		%TODO: fragen ob ok mit so vielen linebreaks
+
 		We use \Cref{proof-f-erw} by defining $F$ through the right-hand side (for values where the right-hand side is defined, i.e., for $0 \leq \ta \leq \Omega^2/\omega$). Since $\Omega^2/\omega > \Omega$, this indeed extends $F$ beyond the interval $[0, \Omega]$.
 		Similarly, $F^{-1}$ satisfies \Cref{proof-f-1-erw} for the extended interval $0 \leq \ta \leq nF(\Omega) = n^2 F(\omega)$.
 		Moreover, \Cref{proof-homogen-eq} is now valid for $0 \leq t \leq 1$ and $0 \leq \ta_i \leq \Omega$:
@@ -170,7 +170,7 @@
 					x_N & i=q_{N-1}+1, \dots, q_N
 				\end{cases}.$$
 			Then
-			\begin{align*}%TODO: fragen ob ich das so aufschreiben kann
+			\begin{align*}%QUES: ask if "rversing the steps" is okay
 				F^{-1} \left[ \sum_{i=1}^{N} w_i F(t \ta_i) \right] & = F^{-1} \left[ \sum_{i=1}^{N} \frac{q_i}{n^l} F(t \ta_i) \right] \tag{plugging in $w_i = \frac{q_i}{n^l}$ }     \\
 				                                                    & = F^{-1} \left[ \frac{1}{n^l} \sum_{i=1}^{N} q_i F(t \ta_i) \right] \tag{rearranging}                            \\
 				                                                    & = F^{-1} \left[ \frac{1}{n^l} \sum_{i=1}^{N} \sum_{j=1}^{q_i} F(t \ta_i) \right] \tag{$q_i \in \mathbb{N}$}      \\
@@ -184,12 +184,12 @@
 			\begin{equation} \label{proof-homogen-rats}
 				F^{-1} \left[ \sum_{i=1}^{N} w_i F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{N} w_i F(\ta_i) \right] \quad w_i \in \mathbb{W}.
 			\end{equation}
-			%TODO: fragen wegen density
+			%QUES: ask if density proof is enough
 
 			Now, in order to approximate real weights, we need density of $\mathbb{W}$ in $\mathbb{R}_{\geq 0}$. Since $n^l$ gets arbitrarily small, there exists for every $\varepsilon >0$ an $l$ such that $n^l < \varepsilon$. Therefore, if $x - y < \varepsilon$, for $x, y \in \mathbb{R}_{\geq 0}$ and $x > y$ there exists $k \in \mathbb{N}$ such that $x < \frac{k}{n^l} < y$. Thus, $\mathbb{W}$ is dense in $\mathbb{R}_{\geq 0}$ and we can approximate real weights with converging sequences from $\mathbb{W}$.
 
 			Finally, let $w_i \in \mathbb{R}_{\geq 0}$ and $q_{i_k} \in \mathbb{W}$ be sequences for $i=1, \dots, N$ such that $q_{i_k} \rightarrow w_i$ for $k \rightarrow \infty$. Then
-			%TODO: aufschrieb reversing the steps okay?
+			%QUES: "Reversing the steps" okay?
 			\begin{align*}
 				F^{-1} \left[ \sum_{i=1}^{N} w_i F(t \ta_i) \right] & = F^{-1} \left[ \sum_{i=1}^{N} \lim_{k \rightarrow \infty} q_{i_k} F(t\ta_i) \right] \tag{\small{Convergence of $q_{i_k}$}}     \\
 				                                                    & = \lim_{k \rightarrow \infty} F^{-1} \left[  \sum_{i=1}^{N}  q_{i_k} F(t \ta_i) \right] \tag{$F^{-1}$ continuous \footnote{See \parencite[p. 337, Exercise 5.9.16]{elementaryAna}}} \\
