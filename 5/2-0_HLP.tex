@@ -17,17 +17,21 @@ We begin with defining quasi-arithmetic means. The name stems from generalizing 
 Next, we define the power means and remark that they are quasi-arithmetic means.
 
 \begin{defi}[Power mean] \index{Power mean} %\gls{powermean}
-	For $n \in \mathbb{N}, r > 0$ and $\ve{x} \in \mathbb{R}_{\geq 0}^n$ we define the power means $\meanr{\ve{x}}$ as
-	$$ \meanr{\ve{x}} = \left ( \frac{1}{n} \sum_{i=1}^{n} x_i^p \right)^{1/p}. $$
-	For $p=0$ we can define $\meanr[0]{\ve{x}}$ as the geometric mean
+	For $n \in \mathbb{N}, \ve{x}, \ve{w} \in \mathbb{R}_{\geq 0}^n$ and $ p > 0$ we define the power means $\meanp{\ve{x}}$ as
+	$$ \meanp{\ve{x}} = \left ( \frac{1}{\sum_{i=1}^{n} w_i} \sum_{i=1}^{n}w_i x_i^p \right)^{1/p}. $$
+	For $p=0$ we can define $\meanp[0]{\ve{x}}$ as the geometric mean
 	$$
-		\meanr[0]{\ve{x}} = \sqrt[n]{\prod_{i=1}^n x_i}
+\meanp[0]{\ve{x}} = \left ( \prod_{i=1}^n x_i^{w_i} \right )^{1 / \sum_{i=1}^{n}w_i}
 	$$
 	since it is obtained as a limit case for $r \rightarrow 0$ \parencite[p. 176]{handbookMeans}.
 \end{defi}
 
 \begin{rem}[Power Means are Quasi-Arithmetic]
-	By setting $\phi(x) = x^p$ for $p>0$ or $\phi(x) = \log(x)$ we obtain the power means for $p>0$ and $p=0$ respectively.
+	By setting $\phi(x) = x^p$ for $p>0$ or $\phi(x) = \log(x)$ we obtain the power means for $p>0$ and $p=0$ respectively.\\
+  In particular, setting $w_i = 1$ yields the familiar generalizations of the power mean
+	$$\left ( \frac{1}{n} \sum_{i=1}^{n}x_i^p \right)^{1/p}. $$
+  and the arithmetic mean
+  $$\sqrt[n]{\prod_{i=1}^n x_i}.$$
 \end{rem}
 
 Now we can continue with a theorem about equal means, which is needed in the proof of the uniqueness theorem for homogeneous means.
@@ -35,7 +39,7 @@ Now we can continue with a theorem about equal means, which is needed in the pro
 \begin{thm}[Characterization of Equal Means] \label{thm-quasi-mean-equal-cond}
 	In order that
   \begin{equation} \label{thm-quasi-mean-eq-equal}
-		\mean{\ve{a}}  = \mean[\Psi]{\ve{a}}
+    \mean[\chi]{\ve{a}}  = \mean[\psi]{\ve{a}}
   \end{equation}
 	for all $\ve{a}, \ve{w}$ and $n \in \mathbb{N}$, it is necessary and sufficient that
   \begin{equation} \label{thm-quasi-mean-eq-linear}
@@ -54,14 +58,13 @@ Now we can continue with a theorem about equal means, which is needed in the pro
 
     Putting $\phi(x) = \chi ( \psi^{-1} (x)), x_i = \psi (a_i)$ for $i=1, 2$ yields
     \begin{equation*}
-      \phi(w_1 x_1 + w_2 + x_2) = w_1 \psi(x_1) + w_2 \psi(x_2) \quad x_1, x_1 \in \mathbb{R}_{\geq  0}.
+      \phi(w_1 x_1 + w_2 x_2) = w_1 \psi(x_1) + w_2 \psi(x_2) \quad x_1, x_2 \in \mathbb{R}_{\geq  0}.
     \end{equation*}
     In particular, this holds for $w_1, w_2 = 1/2$ which then reduces to
     \begin{equation*}
-      \phi \left (\frac{x_1 + x_2}{2}\right ) = \frac{\phi(x_1)}{2} + \frac{\phi (x_2)}{2} \quad x_1, x_1 \in \mathbb{R}_{\geq  0}.
+      \phi \left (\frac{x_1 + x_2}{2}\right ) = \frac{\phi(x_1)}{2} + \frac{\phi (x_2)}{2} \quad x_1, x_2 \in \mathbb{R}_{\geq  0}.
     \end{equation*}
 
-    %QUES: ask if I have to further explain this part
     By \parencite[p. 46]{aczel1966lectures}, the general continuous solution is $\psi(x) = \alpha x + \beta$, hence $\chi = \alpha \psi + \beta$.
   \end{proofpart}
 
@@ -80,12 +83,12 @@ Now we can continue with a theorem about equal means, which is needed in the pro
 
 Now we finally state and prove the main theorem of this section.
 
-\begin{thm}[$\meanrempty$ are the only homogeneous means $\meanempty$] \label{thm-power-mean-uniqueness}
+\begin{thm}[$\meanpempty$ are the only homogeneous means $\meanempty$] \label{thm-power-mean-uniqueness}
 	Suppose that $\phi$ is continuous and strictly increasing in the open interval $(0,\infty)$ and that the mean defined by $\phi$ is homogeneous, i.e.
   \begin{equation} \label{thm-quasi-homogen-eq}
 		\mean{t \ve{a} } = t \mean{\ve{a}}
   \end{equation}
-	for all positive $\ve{a}, \ve{w},t$ and all $n \in \mathbb{N}$ such that $\sum_{i=1}^{n} w_i = 1$. Then $\mean{ \ve{a}}$ is $\meanr{\ve{a} }$.
+	for all positive $\ve{a}, \ve{w},t$ and all $n \in \mathbb{N}$ such that $\sum_{i=1}^{n} w_i = 1$. Then $\mean{ \ve{a}}$ is $\meanp{\ve{a} }$.
 
 \end{thm}
 
@@ -114,19 +117,17 @@ Now we finally state and prove the main theorem of this section.
   Combining these two equalities yields
   \begin{align*}
     \alpha(y)\phi(x) + \phi(y)  &= \alpha(x)\phi(y) + \phi(x) \tag{$- \phi(x) - \phi(y)$} \\
-    \alpha(y)\phi(x) - \phi(x)  &= \alpha(x)\phi(y) - \phi(y) \tag{divide\footnotemark by $\phi(x) \cdot \phi(y)$} \\
+    \alpha(y)\phi(x) - \phi(x)  &= \alpha(x)\phi(y) - \phi(y) \tag{divide \footnotemark by $\phi(x) \cdot \phi(y)$} \\
     \frac{\alpha(x) -1}{\phi(x)} &= \frac{\alpha(y) - 1}{\phi(y)} := c
   \end{align*} \footnotetext{Provided $x \neq 1, y \neq 1$. Since \Cref{proof-quasi-eq1} is true when $x$ or $y$ is $1$, we can ignore the exception.}
   Since this must hold for all $x$ and $y$, the expressions must reduce to a constant $c$. This can be seen by settings, for example, $x=1$ and observing that the right hand side must equal to that for all $y$ and therefore must be constant. The same argument can be applied in reverse.
   Using this, we get the following expression
-
   \begin{equation*}
     \alpha(y) = 1 + c \phi(y).
   \end{equation*}
   Plugging this expression for $\alpha(y)$ into \Cref{proof-quasi-eq2} yields
-
   \begin{equation} \label{proof-quasi-eq1}
-    \phi(xy) = c \phi(x) \phi(y) + \phi(x) + \phi(y)
+    \phi(xy) = c \phi(x) \phi(y) + \phi(x) + \phi(y).
   \end{equation}
 
   For this equation, there are two cases to consider: $c=0$ and $c \neq 0$.
