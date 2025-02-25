@@ -2,12 +2,55 @@
 % In diesem Abschnitt geht es darum, wann eine factorial proximity structure durch das additive difference model (siehe \ref{add-diff-model}) dargestellt werden kann. Die Axiome die dafür benötigt sind, werden hier nicht genauer dargestellt (siehe Anhang \ref{appendix}), sonder nur genannt.
 
 \begin{defi}[Additive-Difference Structure]\label{def-add-diff-ps} \index{Additive-difference!structure}
-  A factorial proximity structure $\langle \ps{A}, \succsim \rangle$ with $n \geq 3$ Factors is an \emph{additive-difference(AD) structure}, iff the following axioms are hold:
+  A factorial proximity structure $\langle \ps{A}, \succsim \rangle$ with $n \geq 3$ Factors is an \emph{additive-difference structure} (AD Structure), iff the following axioms are hold:
 \begin{enumerate}
-  \item Betweenness
-  \item restricted solvability
-  \item Archimedean axiom
-  \item Independence
+  \item \emph{Independence}: 
+  \item \emph{Betweenness axioms}:
+  \item \emph{Restricted solvability}:
+  \item \emph{Archimedean axiom}:
+\end{enumerate}
+\end{defi}
+
+\begin{rem}
+  For $n=2$ another axiom, the thomsen condition, must be assumed. For $n \geq 3$ this conditions follows from the other axioms, see \parencite[p. 182-184]{foundations2}.
+\end{rem}
+
+\begin{defi}[independence]
+A factorial proximity structure $\langle A, \succsim \rangle$ satisfies independence if the following holds for all $\ps{a}, \ps{b}, \ps{c}, \ps{d}, \ps{a'}, \ps{b'}, \ps{c'}, \ps{d'} \in A$:
+\begin{enumerate}
+  \item If the two elements inf each of the pairs $(\ps{a}, \ps{a'}), (\ps{b}, \ps{b'}), (\ps{c}, \ps{c'}), (\ps{d}, \ps{d'})$, have identical components on one factor, and
+  \item the two elements in each of the pairs $(\ps{a}, \ps{c})$, $(\ps{b}, \ps{d})$, $(\ps{a'}, \ps{c'})$, $(\ps{b'}, \ps{d'})$, have identical elements on the remaining factors, then
+\end{enumerate}
+$$
+(\ps{c}, \ps{d}) \succsim (\ps{c'}, \ps{d'}) \iff (\ps{a}, \ps{b}) \succsim (\ps{a'}, \ps{b'}).
+$$
+\end{defi}
+
+\begin{defi}[Restricted solvability]
+A factorial proximity structure $\langle A, \succsim \rangle$ satisfies restricted solvability if and only if, for all $\ps{e}, \ps{f}, \ps{d}, \ps{a}, \ps{c} \in A$, if $(\ps{d}, \ps{a}) \succsim (\ps{e}, \ps{f}) \succsim (\ps{d}, \ps{c})$, then there exists $\ps{b} \in A$ such that $\ps{a}|\ps{b}|\ps{c}$ and $(\ps{d}, \ps{b}) \sim (\ps{e}, \ps{f})$.
+\end{defi}
+
+\begin{defi}[Archimedean axiom]
+A proximity structure $\langle A, \succsim \rangle$ satisfies the Archimedean axiom if and only if, for all $\ps{a}, \ps{b}, \ps{c}, \ps{d} \in A$ with $\ps{a} \neq \ps{b}$, any sequence $\ps{e}^{(k)} \in A$, $k = 0, 1, \ldots$ such that $\ps{e}^{(0)} = \ps{c}$, $(\ps{e}^{(k)}, \ps{e}^{(k+1)}) \succ (\ps{a}, \ps{b})$, and $(\ps{c}, \ps{d}) \succ (\ps{c}, \ps{e}^{(k+1)}) \succ (\ps{c}, \ps{e}^{(k)})$ for all $k$ is finite.
+\end{defi}
+
+\begin{defi}[betweenness axiom]
+Let $\langle A = \prod_{i=1}^n A_i, \succsim \rangle$ be a factorial proximity structure that satisfies one-factor independence. Let $\succsim_i$ denote the induced order on $A^2_i$. We say that $\ps{b}$ is between $\ps{a}$ and $\ps{c}$, denoted $\ps{a}|\ps{b}|\ps{c}$, if and only if
+\[
+  (\ps{a}_i, \ps{c}_i) \succsim_i (\ps{a}_i, \ps{b}_i), (\ps{b}_i, \ps{c}_i) \quad \text{for each } i.
+\]
+We say that $\langle A, \succsim \rangle$ satisfies the betweenness axioms if and only if the following hold for all $\ps{a}, \ps{b}, \ps{c}, \ps{d}, \ps{a'}, \ps{b'}, \ps{c'} \in A$:
+
+\begin{enumerate}
+    \item Suppose $\ps{a}, \ps{b}, \ps{c}, \ps{d}$ differ on at most one factor, and $\ps{b} \neq \ps{c}$, then
+    \begin{enumerate}
+        \item[(i)] if $\ps{a}|\ps{b}|\ps{c}$ and $\ps{b}|\ps{c}|\ps{d}$, then $\ps{a}|\ps{b}|\ps{d}$ and $\ps{a}|\ps{c}|\ps{d}$;
+        \item[(ii)] if $\ps{a}|\ps{b}|\ps{c}$ and $\ps{a}|\ps{c}|\ps{d}$, then $\ps{a}|\ps{b}|\ps{d}$ and $\ps{b}|\ps{c}|\ps{d}$.
+    \end{enumerate}
+    \item Suppose $\ps{a}, \ps{b}, \ps{c}, \ps{a'}, \ps{b'}, \ps{c'}$ differ on at most one factor, $\ps{a}|\ps{b}|\ps{c}$, $\ps{a'}|\ps{b'}|\ps{c'}$, and $(\ps{b}, \ps{c}) \sim (\ps{b'}, \ps{c'})$, then
+    \[
+    (\ps{a}, \ps{c}) \succsim (\ps{a'}, \ps{c'}) \iff (\ps{a}, \ps{b}) \succsim (\ps{a'}, \ps{b'}).
+    \]
 \end{enumerate}
 \end{defi}
 
