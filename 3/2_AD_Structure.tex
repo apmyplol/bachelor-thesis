@@ -1,5 +1,28 @@
 \section{Additive Difference Structure} \label{sec-AD-ps}
 % In diesem Abschnitt geht es darum, wann eine factorial proximity structure durch das additive difference model (siehe \ref{add-diff-model}) dargestellt werden kann. Die Axiome die dafür benötigt sind, werden hier nicht genauer dargestellt (siehe Anhang \ref{appendix}), sonder nur genannt.
+In this section we will develop necessary and sufficient conditions for a proximity structure to be representable by an AD Model.
+We do this by examining each of the characteristics of the AD model, namely decomposability, intradimensional subtractivity and interdimensional additivity, and deriving conditions for a representation. All of these conditions are closely related to the theory developed in \parencite{foundations1} and most of the theorems utilize some sort of reduction to the structures developed there.
+At the end of this subsection, we will state the representation and uniqueness theorem.
+As decomposability is the basis assumption of each of the variants, we begin with it.
+
+Decomposability implies that we can represent the observed proximity of two stimuli pairs, characterized by a factorial representation, by a function that evaluates the proximity on each factors.
+Therefore, its necessary that each factor contributes its effect to the overall similarity independently from all the other factors. In particular, for two stimuli pairs that only differ on the $i$-th dimension, the ordering must be preserved, when the values on the remaining factors are changed in the same way.
+This is stated in the next definition, where $(\ps{a}, \ps{b})$ and $(\ps{a'}, \ps{b'})$ are the original stimuli and $\ps{c}, \ps{d}, \ps{c'}$ and $\ps{d'}$ are the stimuli we obtain by "changing" the remaining dimensions, as just described.
+
+\begin{defi}[One-Factor Independence] \label{def-onef-indep}
+A factorial proximity structure $\langle A, \succsim \rangle$ satisfies one-factor independence if and only if the following holds for all $\ps{a}, \ps{a'}, \ps{b}, \ps{b'}, \ps{c}, \ps{c'}, \ps{d}, \ps{d'} \in A$:  
+If the two elements in each of the pairs $(\ps{a}, \ps{a'})$, $(\ps{b}, \ps{b'})$, $(\ps{c}, \ps{c'})$, $(\ps{d}, \ps{d'})$ have identical components on all but one factor, and the two elements in each of the pairs $(\ps{a}, \ps{c})$, $(\ps{a'}, \ps{c'})$, $(\ps{b}, \ps{d})$, $(\ps{b'}, \ps{d'})$ have identical components on the remaining factor, then  
+$$
+(\ps{a}, \ps{b}) \succsim (\ps{a'}, \ps{b'}) \quad \text{if and only if} \quad (\ps{c}, \ps{d}) \succsim (\ps{c'}, \ps{d'}).
+$$
+\end{defi}
+
+This notion of one-factor independence induces an ordering on each factor. Therefore, one-factor independence asserts that the induced ordering is well defined, i.e., independent of the fixed components on the remaining factors.
+This induced ordering is denoted by $\succsim_i$. This ordering is of importance for developing intradimensional subtractivity, which we will do next.
+
+%Decomp
+% FM1 chap 6 p. 245, Notions of independence, 
+% Chapter 10: if the observed components influence each other
 
 \begin{defi}[Additive-Difference Structure]\label{def-add-diff-ps} \index{Additive-difference!structure}
   A factorial proximity structure $\langle \ps{A}, \succsim \rangle$ with $n \geq 3$ Factors is an \emph{additive-difference structure} (AD Structure), iff the following axioms are hold:
@@ -15,7 +38,8 @@
   For $n=2$ another axiom, the thomsen condition, must be assumed. For $n \geq 3$ this conditions follows from the other axioms, see \parencite[p. 182-184]{foundations2}.
 \end{rem}
 
-\begin{defi}[independence]
+
+\begin{defi}[independence] \label{def-independ}
 A factorial proximity structure $\langle A, \succsim \rangle$ satisfies independence if the following holds for all $\ps{a}, \ps{b}, \ps{c}, \ps{d}, \ps{a'}, \ps{b'}, \ps{c'}, \ps{d'} \in A$:
 \begin{enumerate}
   \item If the two elements inf each of the pairs $(\ps{a}, \ps{a'}), (\ps{b}, \ps{b'}), (\ps{c}, \ps{c'}), (\ps{d}, \ps{d'})$, have identical components on one factor, and
@@ -26,15 +50,15 @@ $$
 $$
 \end{defi}
 
-\begin{defi}[Restricted solvability]
+\begin{defi}[Restricted solvability] \label{defi-restrict-solv}
 A factorial proximity structure $\langle A, \succsim \rangle$ satisfies restricted solvability if and only if, for all $\ps{e}, \ps{f}, \ps{d}, \ps{a}, \ps{c} \in A$, if $(\ps{d}, \ps{a}) \succsim (\ps{e}, \ps{f}) \succsim (\ps{d}, \ps{c})$, then there exists $\ps{b} \in A$ such that $\ps{a}|\ps{b}|\ps{c}$ and $(\ps{d}, \ps{b}) \sim (\ps{e}, \ps{f})$.
 \end{defi}
 
-\begin{defi}[Archimedean axiom]
+\begin{defi}[Archimedean axiom] \label{def-archimed-ax}
 A proximity structure $\langle A, \succsim \rangle$ satisfies the Archimedean axiom if and only if, for all $\ps{a}, \ps{b}, \ps{c}, \ps{d} \in A$ with $\ps{a} \neq \ps{b}$, any sequence $\ps{e}^{(k)} \in A$, $k = 0, 1, \ldots$ such that $\ps{e}^{(0)} = \ps{c}$, $(\ps{e}^{(k)}, \ps{e}^{(k+1)}) \succ (\ps{a}, \ps{b})$, and $(\ps{c}, \ps{d}) \succ (\ps{c}, \ps{e}^{(k+1)}) \succ (\ps{c}, \ps{e}^{(k)})$ for all $k$ is finite.
 \end{defi}
 
-\begin{defi}[betweenness axiom]
+\begin{defi}[betweenness axiom] \label{def-between-ax}
 Let $\langle A = \prod_{i=1}^n A_i, \succsim \rangle$ be a factorial proximity structure that satisfies one-factor independence. Let $\succsim_i$ denote the induced order on $A^2_i$. We say that $\ps{b}$ is between $\ps{a}$ and $\ps{c}$, denoted $\ps{a}|\ps{b}|\ps{c}$, if and only if
 \[
   (\ps{a}_i, \ps{c}_i) \succsim_i (\ps{a}_i, \ps{b}_i), (\ps{b}_i, \ps{c}_i) \quad \text{for each } i.
