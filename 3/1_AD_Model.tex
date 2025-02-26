@@ -1,62 +1,39 @@
 \chapter{Additive Difference Models and Structures} \label{chap-AD-model-and-ps}
+In this chapter we will establish the additive difference model and additive difference structures which lead to representation with the AD model. At the end of the chapter we will provide an example for an AD model that is a metric.
+This chapter is based on the first four subsections of \parencite[Chapter 14.4, pp. 175-185]{foundations2}. A more elaborate explanation of the references can be found at the end of this chapter.
+
 \section{Additive Difference Model} \label{sec-ad-model}
 
+As mentioned in \cref{chap-ps-metrics} we wish to achieve a generalization of the minkowski metrics by inspecting 3 general properties that it has. Namely, these are decomposability, intradimensional subtractivity and interdimensional subtractivity which correspond to the first three steps mentioned after \cref{def-minkowski-metric} in the discussion of the minkowski metric.
+Here, we will define these terms for proximity structures and then remark how they translate to the reals.
+
 \begin{defi}[Additive-Difference Model]
-	\leavevmode \vspace{-\baselineskip}
   %\gls{ADPhi} \gls{ADFi}
-	% Es fällt auf, dass die $l^p$ Metrik eine besondere Form hat, die durch $\delta(x,y) = F^{-1} \left[ \sum_{i=1}^{n} F(|x_i - y_i|) \right]$ gegeben ist. Man kann diese Form auf 4 Stufen abstrahieren:
+  Given a factorial proximity structure $\langle \ps{A}, \succsim \rangle$ and two stimuli $\ps{a}, \ps{b} \in \ps{A}$. A numerical representation of the proximity structures satisfies
 	\begin{enumerate}
-    \item \emph{Decomposability}: The distance between stimuli is a function of componentwise contributions.\\ \index{Decomposability}
+    \item \emph{Decomposability}, if the distance between stimuli is a function of componentwise contributions. Then \index{Decomposability}
 		      \begin{equation}\label{def-decomp}
             \metric(\ps{a},\ps{b}) = F[\psi_1(\ps{a}_1, \ps{b}_1), \ldots , \psi_n(\ps{a}_n, \ps{b}_n)],
 		      \end{equation}
           where $F$ is an increasing \footnote{We use the terms increasing and decreasing to denote real-valued functions that are strictly monotonically increasing and decreasing, respectively.} real-valued function in each of its $n$ real arguments and $\psi_i$ is a real-valued symmetric function satisfying $\psi_i(\ps{a}_i, \ps{b}_i) > \psi_i(\ps{a}_i, \ps{a}_i)$ when $\ps{a}_i \neq \ps{b}_i$ for all $i = 1, ..., n$.
-        \item \emph{Intradimensional subtractivity}: Each componentwise contribution is the absolute value of an appropriate scale difference.\\ \index{Intradimensional subtractivity}
+        \item \emph{Intradimensional subtractivity}, if each componentwise contribution is the absolute value of an appropriate scale difference. Then \index{Intradimensional subtractivity}
 		      \begin{equation}\label{def-intradim-sub}
             \metric(\ps{a},\ps{b}) = F[ |\varphi_1(\ps{a}_1) - \varphi_1(\ps{b}_1)| , \ldots , | \varphi_n(\ps{a}_n) - \varphi_n(\ps{b}_n)| ],
 		      \end{equation}
           where $F$ is as in \Cref{def-decomp} and $\psi_i$ is replaced with $|\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for some real-valued function $\varphi_i$ defined on $\ps{A}_i$ for $i = 1, ..., n$.
-        \item \emph{Interdimensional additivity}: The distance is a function of the sum of componentwise contributions. \index{Interdimensional additivity}
+        \item \emph{Interdimensional additivity}, if the distance is a function of the sum of componentwise contributions. Then \index{Interdimensional additivity}
 		      \begin{equation}\label{def-iterdim-add}
             \metric(\ps{a},\ps{b}) = G \left [ \sum_{i=1}^{n} \psi_i(\ps{a}_i, \ps{b}_i) \right],
 		      \end{equation}
 		      where $\psi_i$ are as in \Cref{def-decomp} and $G$ is an increasing function in one argument.
-		\item \emph{Additive-difference model}: If both, additivity and subtractivity are assumed, we get the additive-difference (AD) model.
+		\item the \emph{Additive-difference model} (AD model), if both, additivity and subtractivity are assumed. Then
       \begin{equation}\label{def-add-diff-model} \index{Additive-difference!model}
         \metric(\ps{a},\ps{b}) = G \left \{ \sum_{i=1}^{n} F_i\left [ | \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right ] \right \},
 		      \end{equation}
 		      where $G$ and $F_i$, for $i=1, \ldots ,n$ , are all increasing functions in one argument.
 	\end{enumerate}
 \end{defi}
-%CON: explain difference between additive difference model on proximity structure and on R^n, remark below
 
-% \begin{rem}[additive difference model]\label{add-diff-model}
-%   Es fällt auf, dass die $l^p$ Metrik eine besondere Form hat, die durch $\delta(x,y) = F^{-1} \left[ \sum_{i=1}^{n} F(|x_i - y_i|) \right]$ gegeben ist. Man kann diese Form auf 4 Stufen abstrahieren:
-%   \begin{enumerate}
-%   \item Decomposability: Die Distanz ist eine Funktion von Beiträgen die Komponentenweise sind.\\
-%     \begin{equation}\label{decomp}
-%     \delta(a,b) = F[\psi(a_1, b_1), \ldots , \psi(a_n, b_n)]
-%     \end{equation}
-%   \item Intradimensional subtractivity: Die Komponentenweise Beiträge sind Beträge der Differenzen in den Dimensionen.\\
-%     \begin{equation}\label{subtr}
-%     \delta(a,b) = F[ |\varphi_1(a_1) - \varphi_1(b_a)| , \ldots , | \varphi_n(a_n) - \varphi_n(b_n)| ]
-%   \end{equation}
-%   \item Interdimensionale additivity: Der Abstand ist eine Summe der Komponentenweise Beiträge.
-%     \begin{equation}\label{iterdim-add}
-%     \delta(a,b) = G \left [ \sum_{i=1}^{n} \psi_i(a_i, b_i) \right]
-%   \end{equation}
-%   \item additive difference model: Wenn alle 3 Eigenschaften gelten.
-%     \begin{equation}\label{add-diff-model}
-%     \delta(a,b) = G \left \{ \sum_{i=1}^{n} F_i[ | \varphi_i(a_i) - \varphi_i(b_i)| ] \right \}
-%     \end{equation}
-%   \end{enumerate}
-%
-%   Falls die Elemente $a, b$ aus der proximity structure sind, sind noch Folgende Eigenschaften von den Funktionen gefordert:
-%   \begin{enumerate}
-%     \item $F$  ist steigend in allen Argumenten
-%     \item $\psi_i$ ist für alle $i = 1, ..., n$ reellwertig, symmetrischen und erfüllt $\psi_i(a_i, b_i) > \psi_i(a_i, a_i)$ wenn $a_i \neq b_i$
-%     \item $\phi_i$ ist reellwertig für alle $i = 1, ..., n$
-%     \item $G$ und $F_i$ sind steigend ($i = 1, ..., n$)
-%   \end{enumerate}
-%
-% \end{rem}
+\begin{rem}
+As noted above, this definition is formulated for proximity structures. However, we wish to make use of the model without having to rely on a proximity structure as the domain. For example the minkowski metric clearly is a case of the AD model. Thus, when talking about the AD model in the context of the real numbers, we interpret the functions that operate on the proximity structure, i.e. $\psi$ and $\phi$, as arbitrary real numbers, since these functions return real numbers.
+\end{rem}
