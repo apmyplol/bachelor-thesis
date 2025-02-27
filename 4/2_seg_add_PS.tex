@@ -1,5 +1,31 @@
 \section{Segmentally Additive Proximity Structures} \label{sect-seg-add-ps}
-% Da wir diese Additivität aus der proximity structure herleiten wollen, müssen wir Eigenschaften definieren, aus der man die Additivität herleiten kann. Dazu benötigen wir Folgenden Begriff:
+
+Now, we proceed with deriving segmentally additive proximity structures which ensure a metric representation with additive segments.
+We do this by examining necessary conditions for such a representation and translating them into ordinal criteria.
+
+We start by observing the additivity of distances given three points $x, y$ and $z$ in a metric space with additive segments where $y$ lies on the segment from $x$ to $y$.
+Then $\metr{x}{y} + \metr{y}{z} = \metr{x}{z}$ holds.
+Suppose that $x', y'$ and $z'$ are any three points such that
+\begin{equation} \label{seg-add-eq1}
+  \metr{x}{y} \geq \metr{x'}{y'}
+\end{equation}
+and 
+\begin{equation} \label{seg-add-eq2}
+  \metr{x}{z} \leq \metr{x'}{z'}.
+\end{equation}
+
+Then, by the triangle inequality and \Cref{seg-add-eq2}, we have
+\begin{equation*}
+  \metr{x'}{y'} + \metr{y'}{z'} \geq \metr{x'}{z'} \geq \metr{x}{z} = \metr{x}{y} + \metr{y}{z}.
+\end{equation*}
+Using \Cref{seg-add-eq1} on this equation yields
+\begin{equation*}
+  \metr{y'}{z'} \geq \metr{y}{z}.
+\end{equation*}
+
+Further, if all the equalities are strict, the resulting inequality is also strict.
+As this property only includes inequalities, it can be restated in a purely ordinal criterion.
+
 
 \begin{defi}[Ternary Relation on Proximity Structures] \index{Proximity structure!ternary relation} %\gls{ps-tern-rel}
   Let $\langle \ps{A}, \succsim \rangle$ be a factorial proximity structure. For $\ps{a}, \ps{b}, \ps{c} \in  \ps{A}$, the ternary relation $(\ps{a}, \ps{b}, \ps{c} \rangle$ is said to hold iff for all $\ps{a}', \ps{b}', \ps{c}' \in \ps{A}$:
@@ -7,30 +33,60 @@
     \item If $(\ps{a} ,\ps{b}) \succsim (\ps{a}', \ps{b}')$ and  $(\ps{a}', \ps{c}') \succsim (\ps{a}, \ps{c})$, then  $(\ps{b}', \ps{c}') \succsim (\ps{b}, \ps{c})$
 		\item If either of the preceding inequalities is strict, then the resulting inequality is also strict.
 	\end{enumerate}
-  Further the relation $\langle \ps{a}\ps{b}\ps{c} \rangle$ is said to hold if both $(\ps{a}, \ps{b}, \ps{c} \rangle$ and $(\ps{c}, \ps{b}, \ps{a}\rangle$ hold.
+  The relation $\langle \ps{a}\ps{b}\ps{c} \rangle$ is said to hold if both $(\ps{a}, \ps{b}, \ps{c} \rangle$ and $(\ps{c}, \ps{b}, \ps{a}\rangle$ hold.
 \end{defi}
 
-% Die Bedingungen, die notwendig sind, um eine Darstellung durch eine Metrik mit additiven Segmenten zu ermöglichen, sind in der folgenden Definition und dem Satz danach zusammengefasst. Der zweite Teil der Definition wird erst später, für das Hauptresultat (Satz \ref{lp-eindeutig}) relevant, im Prinzip geht es darum dass man sich Grenzwerte und Cauchy Folgen anschauen kann, also der normale Begriff von Vollständigkeit.
+This relation yields a notion of betweenness for the proximity structure in terms of the relation $\succsim$. We will briefly discuss this relation and its implications.
+When examining this relation, the notion of concentric spheres which are very much metric balls with a given radius. We denote them as $\ball{r}(p)$ for metrics and $\ball[]{\ps{cd}}(\ps{a}):= \{\ps{b} \in \ps{A}: (\ps{a}, \ps{b}) \sim (\ps{c}, \ps{d})\}$ for proximity structures.
+Using this notion, we can observe that $y$ minimalizes the distance from $y$ to $z$ on the given sphere. To see that, let $y'$ be such that $\metr{x}{y} = \metr{x}{y'}$. Using the triangle inequality and the addivitity yields
+$$
+\metr{x}{y} + \metr{y}{z} = \metr{x}{z} \leq \metr{x}{y'} + \metr{y'}{z}.
+$$
+By assumption, $\metr{x}{y} = \metr{x}{y'}$ holds, and therefore $\metr{y}{z} \leq \metr{y'}{z}$, which means that the minimal distance is the difference in the radii.\\
+Moreover, we can observe in a similar way, that given another point $z'$ with $\metr{x}{z} = \metr{x}{z'}$, the point $y'$ with minimal distance to $z'$ has the same distance to $z'$ -- $\metr{y'}{z'} = \metr{y}{z}$. Stated differently, this assures that the minimal distance is independent of the direction, i.e., independent of the choice of $z$.
+Put together with the fact that $x$ is arbitrary, this yields that the minimized distance is independent of the direction (choice of $z$) and the location of the sphere (choice of $x$) and only depends on the two radii.
+
+Since we represent the distance with a metric with additive segments, for every $\alpha \leq \metr{x}{z}$, there is a point $y$ on the segment from $x$ to $z$ such that $\metr{x}{y} = \alpha$.
+
+Thus, a necessary condition for a metric representation with additive segments is this condition reformulated for proximity structures.
+
+\begin{defi}[Segmental Solvability]
+  A proximity structure $\langle \ps{A}, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, satisfies \emph{segmental solvability} iff for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$ with $(\ps{a}, \ps{c}) \succsim (\ps{e}, \ps{f})$, there exists $\ps{b} \in \ps{A}$ such that $(\ps{a}, \ps{b}) \sim (\ps{e}, \ps{f})$ and $\langle \ps{abc} \rangle$.
+\end{defi}
+In this definition, the distance $\alpha$ is represented by $(\ps{e}, \ps{f})$ and the minimality is assured by the ternary betweenness relation.
+
+The next step is to construct the distances along the segments. The basic idea is the following: We wish to approximate the ratio of $\metr{\ps{a}}{\ps{b}}$ and $\metr{\ps{c}}{\ps{d}}$. This is done by choosing a common distance for the steps and using segmental solvability to iteratively partition the segments into subsegments of the common distance. This process yields two sequences, $\ps{a}=\ps{a}_0, \ps{a}_1, \dots$ and $\ps{c}=\ps{c}_0, \ps{c}_1 \dots$ of which all terms are between the start and end point, $\ps{a}$ and $\ps{b}$ or $\ps{c}$ and $\ps{d}$, respectively.
+If this construction terminates and we denote $p$ the steps needed for $\ps{a}_i$ to reach $\ps{b}$ and $q$ the steps for $\ps{c}_i$ to reach $\ps{d}$, then the ratio $\frac{\metr{\ps{a}}{\ps{b}}}{\metr{\ps{c}}{\ps{d}}}$ is approximately $\frac{p}{q}$.
+
+Since, at this point, we cannot ensure that this process terminates, we introduce another axiom, the archimedean or connectedness axiom, to guarantee that it does. This axiom states that there is no "infinitely small" distance that would allow the process to be executed infinitely.
+
+Putting all together we get the following definition:
 
 \begin{defi}[Segmentally Additive Proximity Structure] \index{Proximity structure!segmentally additive}
   A proximity structure $\langle \ps{A}, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, is segmentally additive if and only if the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
 	\begin{enumerate}
-    \item If $(\ps{a}, \ps{c}) \succsim (\ps{e}, \ps{f})$, then there exists $\ps{b} \in \ps{A}$ such that $(\ps{a}, \ps{b}) \sim (\ps{e}, \ps{f})$ and $\langle \ps{abc} \rangle$. (segmental solvability)
-    \item If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}_0, \ldots, \ps{b}_n \in \ps{A}$, such that $\ps{b}_0 = \ps{a}$, $\ps{b}_n = \ps{c}$, and $(\ps{e}, \ps{f}) \succsim (\ps{b}_{i-1}, \ps{b}_i)$ for $i = 1, \ldots, n$. (connectedness)
+    \item Segmental solvability
+    \item If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}_0, \ldots, \ps{b}_n \in \ps{A}$, such that $\ps{b}_0 = \ps{a}$, $\ps{b}_n = \ps{c}$, and $(\ps{e}, \ps{f}) \succsim (\ps{b}_{i-1}, \ps{b}_i)$ for $i = 1, \ldots, n$. (archimedean axiom)
 	\end{enumerate}
   A segmentally additive proximity structure is complete if and only if the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
 	\begin{enumerate}
-    \item[3.] If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}, \ps{d} \in \ps{A}$, with $\ps{b} \neq \ps{d}$, such that $(\ps{e}, \ps{f}) \succ (\ps{b}, \ps{d})$. (Non-discreteness of distances)
+    \item[3.] If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}, \ps{d} \in \ps{A}$, with $\ps{b} \neq \ps{d}$, such that $(\ps{e}, \ps{f}) \succ (\ps{b}, \ps{d})$. (Nondiscreteness of distances)
     \item[4.] Let $\ps{a}_1, \ldots, \ps{a}_n, \ldots$ be a sequence of elements of $\ps{A}$, such that for all $\ps{e}, \ps{f} \in \ps{A}$, if $\ps{e} \neq \ps{f}$, then $(\ps{e}, \ps{f}) \succsim (\ps{a}_i, \ps{a}_j)$ for all but finitely many pairs $(i, j)$. Then there exists $\ps{b} \in \ps{A}$, such that for all $\ps{e}, \ps{f} \in \ps{A}$, if $\ps{e} \neq \ps{f}$, then $(\ps{e}, \ps{f}) \succsim (\ps{a}_i, \ps{b})$ for all but finitely many $i$. (Limits for Cauchy sequences)
 	\end{enumerate}
 \end{defi}
 
+A segmentally additive proximity structure provides a metric representation with additive segments, see \parencite[p. 168]{foundations2}. However, as our goal is to establish a representation by the minkowski metric, we need a representation in a complete metric space with additive segments.
+For this, two further conditions must be added.
+The first one is the nondiscreteness of distances which assures that there is no smallest distance. The second one is the familiar notion of convergence of cauchy sequences, which assures that the underlying space is complete. Here $(\ps{e}, \ps{f})$ corresponds to $\varepsilon$ and $\ps{b}$ to the limit point of the sequence $\ps{a}_i$.
+These 4 conditions are both sufficient and necessary for such a representation, see \parencite[p. 168]{foundations2}.
+
 \addcontentsline{toc}{subsection}{Representation and Uniqueness Theorem for Segmentally Additive PS}
 
-\begin{thm}[Representation and Uniqueness Theorem for Segmentally Additive Proximity Structures]\label{thm-repr-seg-add-ps} \index{Theorem!representation and uniqueness!for segmentally additive proximity structures}
-  Suppose $\langle \ps{A}, \succsim \rangle$ is a segmentally additive proximity structure. Then $\langle \ps{A}, \succsim \rangle$ is representable by a metric, and additionally, for all $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$:
+\begin{thm}[Representation and Uniqueness Theorem for Complete Segmentally Additive Proximity Structures]\label{thm-repr-seg-add-ps} \index{Theorem!representation and uniqueness!for segmentally additive proximity structures}
+  Suppose $\langle \ps{A}, \succsim \rangle$ is a complete segmentally additive proximity structure. Then $\langle \ps{A}, \succsim \rangle$ is representable by a metric, and additionally, for all $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$:
 	\begin{enumerate}
     \item $\langle \ps{abc} \rangle \text{ iff } \metric(\ps{a}, \ps{b}) + \metric(\ps{b}, \ps{c}) = \metric(\ps{a}, \ps{c})$.
     \item If $\metric'$ is another metric on $\ps{A}$ that satisfies the above conditions, then there exists $\alpha > 0$ such that $\metric' = \alpha \metric$ ($\metric$ is a ratio scale).
 	\end{enumerate}
+    Furthermore, $\langle \ps{A}, \metric \rangle$ is a complete metric space with additive segments.
 \end{thm}

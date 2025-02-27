@@ -1,13 +1,14 @@
 \chapter{Segmental Additivity} \label{chap-seg-additivity}
 
-\section{Segmentally Additive Metrics} \label{sec-seg-add-metrics}
-% Da Metriken an sich wenig Struktur bieten, lohnt es sich noch eine Eigenschaft mehr mehr zu fordern.\\
-% Diese Eigenschaft ist segmental additivity und beschreibt, dass es zu zwei Punkten immer eine Kurve gibt, die diese verbindet und die Abstände additiv sind, das heißt auf dem Segment die Dreiecksungleichung mit Gleichheit gilt. Für uns reicht es zu wissen, dass wenn $b$ auf dem Segment zwischen $a$ und $c$ liegt, dass dann $\delta(a,b) + \delta(b,c) = \delta(a, c)$ gilt.
-% Für die genaue Definition siehe Anhang %\ref{appendix}.
-% Am Ende dieses Abschnittes sind Beispiele für Metriken mit additiven Segmenten angegeben.
-% Der Folgende Satz liefert eine (bis auf positive Skalierung) eindeutige Metrik die die Relation repräsentiert und zusätzlich zur Ordnung, die Eigenschaft segmental solvability erhält.
+In this chapter we will develop the theory for segmentally additive metrics. First we will define what segmentally additive metrics are and then develop segmentally additive proximity structures which lead to representation by such metrics. At the end we give some examples.
+This chapter is based on \parencite[Chapter 1]{busemann} and Chapters 12.3.1 and 14.2 from \parencite{foundations2}. A more detailed explanation of the sources can be found at the end of the chapter.
 
-The definitions and statements from this section are taken out from \parencite[Chapter 1]{busemann}.
+\section{Segmentally Additive Metrics} \label{sec-seg-add-metrics}
+
+As explained in \cref{chap-ps-metrics}, the goal is to find a metric representation in which, for any two points, there exists a curve connecting them such that the distances are additive -- that is, the triangle inequality holds with equality.
+In order to establish this, we first introduce parametric curves, their length and recitifiable curves, which are curves with finite length.
+Since, at this point, recitifiable curves do not ensure additivity of distances, we introduce segments -- rectifiable curves whose length is equal to the distance between the two points they connect. This guarantees the additivity of distances along the segment.
+Furthermore, we introduce the arc length, which is essentially the length of a sub-curve from the starting point to an intermediate point. Since this will be needed for a later proof, we define it here and provide a remark on it.
 
 \begin{defi}[Curves and Segments] %\gls{Pcurve} \gls{Pcurve-len}
 	\leavevmode \vspace{-\baselineskip}
@@ -27,10 +28,15 @@ The definitions and statements from this section are taken out from \parencite[C
 	\end{enumerate}
 \end{defi}
 
+The remark we provide on the arc length is intuitive and states that the arc length is continuous and non-decreasing. This will be useful in a later proof.
+
 \begin{rem}[Continuity \& Monotonicity of Sub Length] \label{thm-curve-sublen-cont} %\gls{Pcurve-sublen}
 	For a rectifiable curve $\curve(t), ~ a \leq t \leq b$, the arc length $\sublen$ is a continuous, non-decreasing function of $x$.
 \end{rem}
 
+Finally, we want all points in the metric space to be joined by a segment. Therefore, we define a metric space with additive segments where this property holds.
+An example for this is the minkowski metric in $\mathbb{R}^n$ which we will demonstrate in \cref{sect-seg-add-ex}.
+
 \begin{defi}[Metric Space with Additive Segments] \index{Metric space!with additive segments} \label{def-metric-space-add-segments}
-	Let $\metric$ be a metric on $X$. $\langle X, \metric \rangle$ is a metric space with additive segments iff for any $x, y \in  X$ there is a segment joining them.
+	Let $\metric$ be a metric on $X$. $\langle X, \metric \rangle$ is a \emph{metric space with additive segments} iff for any $x, y \in  X$ there is a segment joining them.
 \end{defi}
