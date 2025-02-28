@@ -1,25 +1,38 @@
 \chapter{Introduction}
 
+% Critics by physicist, most notably campbell
+In the beginning of the 19th century the physicist and philosopher N. R. Campbell heavily criticized psychology and the social sciences and argued that, in contrast to physics, it is impossible to construct measurement in these areas.
+However, these claims were proven to be incorrect. One of the first psychologists that responded to this critique was S. S. Stevens who argued that Campbells view on measurement was too narrow. This has led S. S. Stevens to develop the four scales of measurement, which are introduced in beginner psychology lectures.
+Later, philosophers, mathematicians and psychologists, namely Patrick Suppes, David H. Krantz, R. D. Luce, Amos Tversky and others developed the representational measurement theory, which also proved the claims of Campball to be incorrect.
+This theory aims to create a more rigorous and axiomatized foundation for measurement and can be found in the three volumes of Foundations of Measurement.
+
+Representational measurement is expressed in mathematical terms and begins with the observation, that there are essentially two structures -- one empirical and one numerical -- which should be connected by a homomorphic function. We explain what we mean by that with an example.\\
+For example, one could measure the perceived loudness of sounds in an experiment, and ask the participants to rate, which of two presented sounds is louder.
+In this case, the empirical structure is the set of the sounds presented in the experiment, denoted by $\ps{A}$.
+The relation on this set is the ordering of loudness, i.e., whether the loudness of the sound $\ps{a}$ is greater than or equal to that of sound $\ps{b}$, denoted by $\ps{a} \succsim \ps{b}$. Together, we denote this as the \emph{empirical structure} $\langle \ps{A}, \succsim \rangle$.\\
+One natural choice, is to try to map this structure into the positive real numbers with the ordinary "greater or equal to" relation. Then, $\langle \mathbb{R}_{\geq 0}, \geq \rangle$ is the corresponding \emph{numerical structure}.\\
+This means, we search for a function $\varphi$ that maps each sound $\ps{a}$ to a real number $\varphi(\ps{a})$ , which we can call the "loudness" of sound $\ps{a}$. Naturally, we want the function $\varphi$ to preserve the ordering by $\succsim$. If sound $\ps{a}$ is perceived louder than $\ps{b}$ (i.e. $\ps{a} \succsim \ps{b}$), then we want the corresponding numbers to be in the same order, that means, $\varphi(\ps{a}) \geq \varphi(\ps{b})$. A function satisfying these properties is called a \emph{homomorphism}.
+
+The goal of representational measurement is to establish conditions under which such a homomorphism exists and to which degree it is unique. A \emph{representation} (or \emph{existence}) theorem establishes the existence of a certain representation given some conditions and a \emph{uniqueness} theorem answers the question of uniqueness. The conditions that are used in these theorems are called \emph{axioms} and can be seen as empirical laws that may or may not be true for certain applications.
+Homomorphisms that map into the real numbers are called scales. We will briefly introduce the four scales of measurement developed by Stevens, ranked by their uniqueness (this corresponds to the amount of admissible transformations that preserve the homomorphism properties).
+
+\begin{defi}[Four Scale Types]
+	\leavevmode \vspace{-\baselineskip}
+	\begin{enumerate}
+		\item \emph{Nominal scale}: Scale where only one-to-one assignments are made. The permissible transformations are all bijective mappings. Examples include genders (e.g., in questionnaires: 1 = female, 2 = male, 3 = diverse) or postal codes.
+		\item  \emph{Ordinal scale}: In addition to one-to-one assignments, there is an order. Therefore, the permissible transformations are strictly monotonic mappings. Examples include grades (1 to 6) or earthquake magnitude.
+		\item \emph{Interval scale}: In addition to order, the difference between values matter. The permissible transformations are affine linear mappings $f(x) = \alpha x + \beta, \alpha > 0$. Examples include the Celsius and Fahrenheit scales.
+		\item \emph{Ration scale}: In addition to the differences in the interval scale, there is a fixed zero point. Therefore, the permissible transformations are all linear mappings $f(x) = \alpha x, \alpha > 0$. Examples include length or mass.
+	\end{enumerate}
+\end{defi}
+
+If we consider similarity of colors, for example, we cannot simply use the empirical structures described above as there is no simple $\succsim$ relation for colors, i.e., there is no direct way to compare two colors.
+However, it is possible to compare pairs by asking whether colors $\ps{a}$ and $\ps{b}$ are more similar than colors $\ps{c}$ and $\ps{d}$. This gives rise to proximity structures, which are often used to infer how the data is structures and which elements are close to each other.
+In this thesis we focus on proximity structures and present empirical and numerical structures and the representation and uniqueness theorems associated with them.
+We begin by defining proximity structures and the notation used above.
+
 % ZI: Reference for beginner math literature for LA / Ana 1
 
-%   Die Grundlegende Idee von Proximity measurement ist es, jeweils zwei Stimulipaare auf deren Ähnlichkeit zu vergleichen. Zum Beispiel könnten in einem Experiment Vier Farben $a, b, c, d$ zusammen mit der Frage ''Sind sich die Farben $a$ und $b$ ähnlicher als die Farben $c$ und $d$'' Präsentiert werden. Die Aufgabe wäre dann, immer die Stimulipaare nach Ihren Ähnlichkeiten zu sortieren.
-%   Diese Ähnlichkeitsvergleiche will man anschließend durch eine Metrik repräsentieren. Dies macht man, indem man fordert, dass wenn zwei Stimuli $a$ und $b$ ähnlicher sind, als zwei weitere Stimuli $c$ und $d$, dass dann der metrische Abstand zwischen $a$ und $b$ kleiner ist als der Abstand zwischen $c$ und $d$.
-% In der Sprache der Messbarkeitstheorie heißt das, man möchte ordinale Daten mithilfe einer ordinalen Skala repräsentieren, die metrische Eigenschaften erfüllt.
-% Da im weiteren die Grundlegenden Skalen noch öfters vorkommen, definieren wir diese hier in der Einleitung kurz und intuitiv, ohne die genaue mathematische Definition zu nennen.
-%
-%   \begin{defi}[Skalentypen]
-%     Die Skala ist eine Eigenschaft von Messdaten und enthält Information über deren Struktur. Dabei wird zwischen Vier Grundlegenden Skalen unterschieden, die sich jeweils mathematisch durch die zulässigen Operationen und die zugrundeliegende Struktur unterscheiden.
-%     \begin{enumerate}
-%       \item Nominalskala: Skala bei der man nur 1-zu-1 Zuordnungen macht. Die zulässigen Transformationen sind alle bijektiven Abbildungen. Beispiele sind z.B. Geschlechter (in Fragebögen z.B. 1 weibl. 2 männl. 3 divers) oder Postleizahlen.
-%       \item Ordinalskala Zusätzlich zu 1-zu-1 Zuordnungen hat man eine Reihenfolge. Daher sind die zulässigen Transformationen die streng monotonen Abbildungen. Beispiele sind Noten (1 bis 6) oder Erdbebenstärke.
-%       \item Intervallskala Zusätzlich zur Reihenfolge, spielen die Abstände zweier Werte eine Rolle. Damit sind die zulässigen Transformationen affin lineare Abbildungen $f(x) = ax + b, a > 0$. Beispiele sind die Celsius und Fahrenheit Skala.
-%       \item Verhältnisskala Zusätzlich zu den Abständen in der Intervallskala, gibt es eine feste Null. Daher sind die zulässigen Transformationen alle linearen Abbildungen $f(x) = ax, a > 0$. Beispiele sind Länge oder die Kelvin Skala.
-%     \end{enumerate}
-%
-%     Da wir uns mit Ordinaldaten beschäftigen werden, spiele diese Skala und streng monotone steigende Abbildungen eine wichtige Rolle. Daher wird streng monoton steigend nur mit steigend bezeichnet.
-%
-%
-%     In den Abschnitten 2 bis 4 geht es erstmal um die Mathematische Basis, die benötigt wird um die Hauptresultate aus Abschnitt 5 herzuleiten. Daher werden die wichtigsten Definitionen und Sätze in den Abschnitten 2 bis 4 erläutert aber nicht bewiesen. An ein paar Stellen sind die Feinheiten der Definitionen auch nicht so wichtig, dort wird dann auf den Anhang verwiesen, wo die genauen Definitionen von einigen Begriffen zu finden sind.
-  % \end{defi}
+
 
 % \section*{Danksagung}\index{Danksagung}
