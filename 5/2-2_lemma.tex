@@ -10,9 +10,9 @@ In this section we will prove the homogeneity theorem, which is needed for the p
 The proof is divided into 5 parts and a whole subsection which is devoted to showing the convexity of $\metric$-balls which is needed for the proof.
 First, we will state the theorem, give some remarks on it and prove some lemmas. Then we will prove the homogeneity theorem.
 Everything in this section is assumed as in this theorem. For example, if we write $\metric$, this implies not any metric but the metric from this theorem with its properties.
-Moreover all topological terms(open, closed, continuous) are meant with respect to the natural topology of $\mathbb{R}^{n}$ (i.e. the topology induced by the $\metric_{\infty}$ and the euclidean metric), not the topology induced by $\metric$ or the induced topology on $S$. This will be especially important for the subsection on convexity of the balls.
+Moreover all topological terms(open, closed, continuous) are meant with respect to the natural topology of $\mathbb{R}^{n}$ (i.e. the topology induced by the $\metric_{\infty}$ and the euclidean metric), not the topology induced by $\metric$ or the induced topology on a subset $S$. This will be especially important in the subsection on convexity of the balls.
 
-It is suggested to first read this section (including the proof) to get the main ideas and a big picture understanding, and then read the next section.
+It is recommended to first read this section, including the proof, to grasp the main ideas and gain broad understanding before proceeding to the next section.
 
 For readers unfamiliar with convexity, we restate the definition of a convex set. The idea behind convexity is, that for every two points from a set, the line between these two points is also inside that set.
 
@@ -49,7 +49,7 @@ Now, we continue with some remarks that make it possible to move the set such th
 	\end{enumerate}
 \end{rem}
 Before proceeding to the proof, we first establish two preliminary statements that will be needed at the beginning.
-The first one asserts that the distance between a compact and a closed set is greater than zero.
+The first one asserts that the distance between disjoint compact and closed sets is greater than zero.
 
 \begin{lem} \label{lemma-distance}
   If $K \subset \mathbb{R}^{n}$ is compact, $C \subset \mathbb{R}^{n}$ is closed and $K$ and $C$ are disjoint, then there exists $\varepsilon > 0$ such that $\metr[\infty]{\ve{p}}{\ve{y}} > \varepsilon$ for all $\ve{p} \in K$ and $\ve{p'} \in C$.
@@ -191,3 +191,5 @@ After this, we will expand this statement to the rationals and then use continui
 		\end{align*}
 	\end{proofpart}
 \end{proof}
+
+\input{./5/2-3_convex_spheres.tex}

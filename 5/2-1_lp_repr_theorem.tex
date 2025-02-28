@@ -1,6 +1,8 @@
 \section{Unique Representation Theorem} \label{sec-unique-repr-thm}
 
-In this chapter we present the main theorem and complete the proofs of krantz \& tversky.
+In this chapter, we present the main theorem and complete the proofs given by \parencite[pp. 195-199]{foundations2}. The remainder of this chapter, except for the final section, consists of the proof of this theorem. The last section is dedicated to proving an intermediate result from functional analysis that is used in the proof.\\
+We begin by stating the theorem, and follow a top-down approach in the proof to provide a broad understanding. This means, we use results established in \cref{sect-homogeneity-theorem}. The same approach applies to the proofs in that section; see \cref{sect-homogeneity-theorem} for further explanation.
+We start with the statement of the theorem.
 
 \begin{thm}[Unique Representation Theorem: The Power Metric as the Sole Representation for Segmentally Additive AD Structures]\label{thm-uniquene-repr-minkowski} \index{Theorem!unique representation}
 	Suppose $\langle \ps{A}, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.
@@ -15,7 +17,7 @@ In this chapter we present the main theorem and complete the proofs of krantz \&
 \begin{proof}
 	This proof proceeds in multiple steps.
 	First, we make observations about the domains and ranges of the functions $F_i$, use this to find bounds for the domain of $F$. Using these bounds, we argue that $F$ can be extended to the positive reals.
-	Next, we derive from this a functional equation, that is only satisfied by $f(x) = \alpha x^p$ for $\alpha > 0$.
+	Next, we derive from this a functional equation, that is only satisfied by $f(x) = \alpha x^p$.
 	Finally, we prove that $F$ is equal to this extension on the whole domain, and therefore $\metric$ is a Minkowski metric.
 	\setcounter{proofpart}{-1}
 	\begin{proofpart}[Establishing the basics and using the \cref{thm-homogeneity}]
