@@ -36,9 +36,11 @@ As this property only includes inequalities, it can be restated in a purely ordi
   The relation $\langle \ps{a}\ps{b}\ps{c} \rangle$ is said to hold if both $(\ps{a}, \ps{b}, \ps{c} \rangle$ and $(\ps{c}, \ps{b}, \ps{a}\rangle$ hold.
 \end{defi}
 
+%FIX: vllt umschreiben
 This relation yields a notion of betweenness for the proximity structure in terms of the relation $\succsim$. We will briefly discuss this relation and its implications.
-When examining this relation, the notion of concentric spheres which are very much metric balls with a given radius. We denote them as $\ball{r}(p)$ for metrics and $\ball[]{\ps{cd}}(\ps{a}):= \{\ps{b} \in \ps{A}: (\ps{a}, \ps{b}) \sim (\ps{c}, \ps{d})\}$ for proximity structures.
-Using this notion, we can observe that $y$ minimalizes the distance from $y$ to $z$ on the given sphere. To see that, let $y'$ be such that $\metr{x}{y} = \metr{x}{y'}$. Using the triangle inequality and the addivitity yields
+It is practical to examine this relation in terms of isosimilarity countours.
+Intuitively, we have a circle around $x$ with radius $\metr{x}{z}$. The set of all points at a distance $\metr{x}{z}$ to $x$ forms the isosimilarity contour for this distance.
+Using this notion, we can observe that $y$ minimizes the distance to $z$ on the given sphere where $y$ resides. To see that, let $y'$ be such that $\metr{x}{y} = \metr{x}{y'}$. Using the triangle inequality and the addivitity yields
 $$
 \metr{x}{y} + \metr{y}{z} = \metr{x}{z} \leq \metr{x}{y'} + \metr{y'}{z}.
 $$
