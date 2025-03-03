@@ -72,11 +72,20 @@ The first one is, comes directly from the definition of the metric. For two vect
 	\item sum up the transformed differences for all coordinates
 	\item transform the sum using the inverse $F^{-1}$ (in this case $x^{1/p}$)
 \end{enumerate}
-
 This generalization of the metric, yields the Additive-Difference Model (\cref{def-add-diff-model}) which will be covered in \cref{chap-AD-model-and-ps}.
 
-The second thing we can observe in the Minkowski Metric is the fact, that distances across straight lines are additive (we will show this in \cref{ex-minkowski-seg-additive}). This is not the case for all metrics, but only for a special class of metrics. This class of metrics will be inspected in \cref{chap-seg-additivity}.
+The second thing we can observe in the Minkowski Metric is the fact, that distances across straight lines are additive (we will show this in \cref{ex-minkowski-seg-additive}). This is not the case for all metrics, but only for a special class of metrics. This class of metrics, called metric with additive segments, will be studied in \cref{chap-seg-additivity}.
 
-One interesting question is, finding conditions that assert a metric representations for a proximity structure (that preserve the $\succsim$ relation in the way we just defined). The concrete representation that are of interest to us, are the additive-difference model (which in itself is not a metric, and we therefore will combine it with a metric) and segmentally additive metrics. In both cases, this can be done by inspecting the constraints that each representation imposes on the proximity structure, and then deducing sufficient conditions for the proximity structure that allow such representations.
-In this thesis, we will briefly introduce and explain these conditions, but will not prove them. For that refer to \parencite[Chapter 14]{foundations2}.
-Instead, we will focus on the unique representation theorem for segmentally additive AD models (\cref{thm-uniquene-repr-minkowski}) and prove it given the representations.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{./images/content.pdf}
+	\caption{Illustration of the chapter content. This provides a general overview of the content, which can be revisited while reading the chapters.\\
+  \small Purple lines represent theorems and grey numbers are the associated chapter numbers. Lines with a circle denote that the given structure is representable by a metric. Our focus is on chapter 5. First, we will combine the AD model with a metric and use these results to, secondly, combine it with a metric with additive segments to obtain the Minkowski metric. The dotted black line indicates that the results from combining a metric with the AD model are used in the main theorem.}
+	\label{fig-content}
+\end{figure}
+
+In \cref{chap-AD-model-and-ps} and \cref{chap-seg-additivity}, we will inspect the constraints that each representation imposes on the proximity structure and deduce necessary axioms. These axioms then lead to new structures which allow such representations. This is shown by the representation and uniqueness theorems which are presented at the end of both chapter. We do not prove these theorem, for that refer to \parencite[Chapter 14]{foundations2}.
+
+Instead, we will focus on combining both representations. This leads to the main result: the unique representation theorem for segmentally additive AD models (\cref{thm-uniquene-repr-minkowski}), which states that the Minkowski metric is the only additive difference metric that is also segmentally additive.
+Most of the \cref{chap-combination} is devoted to proving this theorem. For a visual representation of the content, see \Cref{fig-content}.
+

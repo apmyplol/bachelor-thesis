@@ -7,20 +7,20 @@ We start by observing the additivity of distances given three points $x, y$ and 
 Then $\metr{x}{y} + \metr{y}{z} = \metr{x}{z}$ holds.
 Suppose that $x', y'$ and $z'$ are any three points such that
 \begin{equation} \label{seg-add-eq1}
-  \metr{x}{y} \geq \metr{x'}{y'}
+	\metr{x}{y} \geq \metr{x'}{y'}
 \end{equation}
-and 
+and
 \begin{equation} \label{seg-add-eq2}
-  \metr{x}{z} \leq \metr{x'}{z'}.
+	\metr{x}{z} \leq \metr{x'}{z'}.
 \end{equation}
 
 Then, by the triangle inequality and \Cref{seg-add-eq2}, we have
 \begin{equation*}
-  \metr{x'}{y'} + \metr{y'}{z'} \geq \metr{x'}{z'} \geq \metr{x}{z} = \metr{x}{y} + \metr{y}{z}.
+	\metr{x'}{y'} + \metr{y'}{z'} \geq \metr{x'}{z'} \geq \metr{x}{z} = \metr{x}{y} + \metr{y}{z}.
 \end{equation*}
 Using \Cref{seg-add-eq1} on this equation yields
 \begin{equation*}
-  \metr{y'}{z'} \geq \metr{y}{z}.
+	\metr{y'}{z'} \geq \metr{y}{z}.
 \end{equation*}
 
 Further, if all the equalities are strict, the resulting inequality is also strict.
@@ -28,12 +28,12 @@ As this property only includes inequalities, it can be restated in a purely ordi
 
 
 \begin{defi}[Ternary Relation on Proximity Structures] \index{Proximity structure!ternary relation} %\gls{ps-tern-rel}
-  Let $\langle \ps{A}, \succsim \rangle$ be a factorial proximity structure. For $\ps{a}, \ps{b}, \ps{c} \in  \ps{A}$, the ternary relation $(\ps{a}, \ps{b}, \ps{c} \rangle$ is said to hold iff for all $\ps{a}', \ps{b}', \ps{c}' \in \ps{A}$:
+	Let $\langle \ps{A}, \succsim \rangle$ be a factorial proximity structure. For $\ps{a}, \ps{b}, \ps{c} \in  \ps{A}$, the ternary relation $(\ps{a}, \ps{b}, \ps{c} \rangle$ is said to hold iff for all $\ps{a}', \ps{b}', \ps{c}' \in \ps{A}$:
 	\begin{enumerate}
-    \item If $(\ps{a} ,\ps{b}) \succsim (\ps{a}', \ps{b}')$ and  $(\ps{a}', \ps{c}') \succsim (\ps{a}, \ps{c})$, then  $(\ps{b}', \ps{c}') \succsim (\ps{b}, \ps{c})$
+		\item If $(\ps{a} ,\ps{b}) \succsim (\ps{a}', \ps{b}')$ and  $(\ps{a}', \ps{c}') \succsim (\ps{a}, \ps{c})$, then  $(\ps{b}', \ps{c}') \succsim (\ps{b}, \ps{c})$
 		\item If either of the preceding inequalities is strict, then the resulting inequality is also strict.
 	\end{enumerate}
-  The relation $\langle \ps{a}\ps{b}\ps{c} \rangle$ is said to hold if both $(\ps{a}, \ps{b}, \ps{c} \rangle$ and $(\ps{c}, \ps{b}, \ps{a}\rangle$ hold.
+	The relation $\langle \ps{a}\ps{b}\ps{c} \rangle$ is said to hold if both $(\ps{a}, \ps{b}, \ps{c} \rangle$ and $(\ps{c}, \ps{b}, \ps{a}\rangle$ hold.
 \end{defi}
 
 %FIX: vllt umschreiben
@@ -42,18 +42,26 @@ It is practical to examine this relation in terms of isosimilarity countours.
 Intuitively, we have a circle around $x$ with radius $\metr{x}{z}$. The set of all points at a distance $\metr{x}{z}$ to $x$ forms the isosimilarity contour for this distance.
 Using this notion, we can observe that $y$ minimizes the distance to $z$ on the given sphere where $y$ resides. To see that, let $y'$ be such that $\metr{x}{y} = \metr{x}{y'}$. Using the triangle inequality and the addivitity yields
 $$
-\metr{x}{y} + \metr{y}{z} = \metr{x}{z} \leq \metr{x}{y'} + \metr{y'}{z}.
+	\metr{x}{y} + \metr{y}{z} = \metr{x}{z} \leq \metr{x}{y'} + \metr{y'}{z}.
 $$
 By assumption, $\metr{x}{y} = \metr{x}{y'}$ holds, and therefore $\metr{y}{z} \leq \metr{y'}{z}$, which means that the minimal distance is the difference in the radii.\\
-Moreover, we can observe in a similar way, that given another point $z'$ with $\metr{x}{z} = \metr{x}{z'}$, the point $y'$ with minimal distance to $z'$ has the same distance to $z'$ -- $\metr{y'}{z'} = \metr{y}{z}$. Stated differently, this assures that the minimal distance is independent of the direction, i.e., independent of the choice of $z$.
+Moreover, we can observe in a similar way, that given another point $\tilde  z$ with $\metr{x}{z} = \metr{x}{\tilde  z}$, the point $\tilde y$ with minimal distance to $\tilde z$ has the same distance to $\tilde z$ -- $\metr{\tilde y}{\tilde z} = \metr{y}{z}$. Stated differently, this assures that the minimal distance is independent of the direction, i.e., independent of the choice of $z$.
 Put together with the fact that $x$ is arbitrary, this yields that the minimized distance is independent of the direction (choice of $z$) and the location of the sphere (choice of $x$) and only depends on the two radii.
+These necessary conditions we just derived are visualized in \Cref{fig-circles}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.3\textwidth]{./images/circs.pdf}
+	\caption{Illustration of betweenness with isosimilarity contours.\\
+  \small For an explanation, see the text above. Green lines represent minimal distances, white red lines indicate that the distance is not minimal. The isosimilarity curves are illustrated intuitively as circles; however, this is generally not the case.}
+	\label{fig-circles}
+\end{figure}
 
 Since we represent the distance with a metric with additive segments, for every $\alpha \leq \metr{x}{z}$, there is a point $y$ on the segment from $x$ to $z$ such that $\metr{x}{y} = \alpha$.
-
 Thus, a necessary condition for a metric representation with additive segments is this condition reformulated for proximity structures.
 
 \begin{defi}[Segmental Solvability]
-  A proximity structure $\langle \ps{A}, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, satisfies \emph{segmental solvability} iff for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$ with $(\ps{a}, \ps{c}) \succsim (\ps{e}, \ps{f})$, there exists $\ps{b} \in \ps{A}$ such that $(\ps{a}, \ps{b}) \sim (\ps{e}, \ps{f})$ and $\langle \ps{abc} \rangle$.
+	A proximity structure $\langle \ps{A}, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, satisfies \emph{segmental solvability} iff for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$ with $(\ps{a}, \ps{c}) \succsim (\ps{e}, \ps{f})$, there exists $\ps{b} \in \ps{A}$ such that $(\ps{a}, \ps{b}) \sim (\ps{e}, \ps{f})$ and $\langle \ps{abc} \rangle$.
 \end{defi}
 In this definition, the distance $\alpha$ is represented by $(\ps{e}, \ps{f})$ and the minimality is assured by the ternary betweenness relation.
 
@@ -65,15 +73,15 @@ Since, at this point, we cannot ensure that this process terminates, we introduc
 Putting all together we get the following definition:
 
 \begin{defi}[Segmentally Additive Proximity Structure] \index{Proximity structure!segmentally additive} \label{def-seg-add-ps}
-  A proximity structure $\langle \ps{A}, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, is segmentally additive if and only if the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
+	A proximity structure $\langle \ps{A}, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, is segmentally additive if and only if the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
 	\begin{enumerate}
-    \item Segmental solvability
-    \item If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}_0, \ldots, \ps{b}_n \in \ps{A}$, such that $\ps{b}_0 = \ps{a}$, $\ps{b}_n = \ps{c}$, and $(\ps{e}, \ps{f}) \succsim (\ps{b}_{i-1}, \ps{b}_i)$ for $i = 1, \ldots, n$. (archimedean axiom)
+		\item Segmental solvability
+		\item If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}_0, \ldots, \ps{b}_n \in \ps{A}$, such that $\ps{b}_0 = \ps{a}$, $\ps{b}_n = \ps{c}$, and $(\ps{e}, \ps{f}) \succsim (\ps{b}_{i-1}, \ps{b}_i)$ for $i = 1, \ldots, n$. (archimedean axiom)
 	\end{enumerate}
-  A segmentally additive proximity structure is complete if and only if the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
+	A segmentally additive proximity structure is complete if and only if the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
 	\begin{enumerate}
-    \item[3.] If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}, \ps{d} \in \ps{A}$, with $\ps{b} \neq \ps{d}$, such that $(\ps{e}, \ps{f}) \succ (\ps{b}, \ps{d})$. (Nondiscreteness of distances)
-    \item[4.] Let $\ps{a}_1, \ldots, \ps{a}_n, \ldots$ be a sequence of elements of $\ps{A}$, such that for all $\ps{e}, \ps{f} \in \ps{A}$, if $\ps{e} \neq \ps{f}$, then $(\ps{e}, \ps{f}) \succsim (\ps{a}_i, \ps{a}_j)$ for all but finitely many pairs $(i, j)$. Then there exists $\ps{b} \in \ps{A}$, such that for all $\ps{e}, \ps{f} \in \ps{A}$, if $\ps{e} \neq \ps{f}$, then $(\ps{e}, \ps{f}) \succsim (\ps{a}_i, \ps{b})$ for all but finitely many $i$. (Limits for Cauchy sequences)
+		\item[3.] If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}, \ps{d} \in \ps{A}$, with $\ps{b} \neq \ps{d}$, such that $(\ps{e}, \ps{f}) \succ (\ps{b}, \ps{d})$. (Nondiscreteness of distances)
+		\item[4.] Let $\ps{a}_1, \ldots, \ps{a}_n, \ldots$ be a sequence of elements of $\ps{A}$, such that for all $\ps{e}, \ps{f} \in \ps{A}$, if $\ps{e} \neq \ps{f}$, then $(\ps{e}, \ps{f}) \succsim (\ps{a}_i, \ps{a}_j)$ for all but finitely many pairs $(i, j)$. Then there exists $\ps{b} \in \ps{A}$, such that for all $\ps{e}, \ps{f} \in \ps{A}$, if $\ps{e} \neq \ps{f}$, then $(\ps{e}, \ps{f}) \succsim (\ps{a}_i, \ps{b})$ for all but finitely many $i$. (Limits for Cauchy sequences)
 	\end{enumerate}
 \end{defi}
 
@@ -85,10 +93,10 @@ These 4 conditions are both sufficient and necessary for such a representation, 
 \addcontentsline{toc}{subsection}{Representation and Uniqueness Theorem for Segmentally Additive PS}
 
 \begin{thm}[Representation and Uniqueness Theorem for Complete Segmentally Additive Proximity Structures]\label{thm-repr-seg-add-ps} \index{Theorem!representation and uniqueness!for segmentally additive proximity structures}
-  Suppose $\langle \ps{A}, \succsim \rangle$ is a complete segmentally additive proximity structure. Then $\langle \ps{A}, \succsim \rangle$ is representable by a metric, and additionally, for all $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$:
+	Suppose $\langle \ps{A}, \succsim \rangle$ is a complete segmentally additive proximity structure. Then $\langle \ps{A}, \succsim \rangle$ is representable by a metric, and additionally, for all $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$:
 	\begin{enumerate}
-    \item $\langle \ps{abc} \rangle \text{ iff } \metric(\ps{a}, \ps{b}) + \metric(\ps{b}, \ps{c}) = \metric(\ps{a}, \ps{c})$.
-    \item $\metric'$ is a ratio scale.
-  \end{enumerate}
-    Furthermore, $\langle \ps{A}, \metric \rangle$ is a complete metric space with additive segments.
+		\item $\langle \ps{abc} \rangle \text{ iff } \metric(\ps{a}, \ps{b}) + \metric(\ps{b}, \ps{c}) = \metric(\ps{a}, \ps{c})$.
+		\item $\metric'$ is a ratio scale.
+	\end{enumerate}
+	Furthermore, $\langle \ps{A}, \metric \rangle$ is a complete metric space with additive segments.
 \end{thm}
