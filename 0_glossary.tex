@@ -1,5 +1,5 @@
-
 \setglossarypreamble{
+\addcontentsline{toc}{chapter}{Symbols and Mathematical Prerequisites}
 Throughout this thesis, we follow a consistent notation and try to use conventional notations and notations introduced in the used literature. Here we will provide a quick overview over the notation.
 
 $\mathbb{R}$ and $\mathbb{Q}$ denote the real and rational numbers, respectively, with restrictions indicated via subscripts (e.g. $\mathbb{R}_{>0}$ and $\mathbb{R}_{\geq 0}$).
@@ -10,21 +10,8 @@ Greek letters are either real-valued functions and have a special meaning (such 
 Other symbols are used according to conventions, e.g. $\lambda$ for convex combinations, $\varepsilon$ for small real quantities and $|x|$ for the absolute value of $x$.
 
 
-% sets 
 Any symbols not mentioned here will be introduced as needed within the relevant sections.
 }
-
-
-% Muss adden
-% $\varphi, \psi, \phi, \delta$ and $\gamma$ are all real valued function where $\varphi$ and $\psi$ are defined on a proximity structure, $\phi$ is the generator function of a quasi-arithmetic mean, $\delta$ is a metric and $\gamma$ is a parametric curve. For $\delta$ we use subscripts to differentiate between different metrics, however $\delta$ without subscripts is defined in the context and is most of the time the metric from the segmentally additive AD model. $| x |$ denotes the absolute value of $x$.
-%
-% % Other conventions maybe
-% The letter $t$ is used for scaling real arguments, such as in the context of homogeneity.
-
-% Functions
-
-
-% Sets and numbers
 
 
 
@@ -132,8 +119,6 @@ For $p > 0$ the $p$-th power mean, for $p = 0$, the geometric mean of $\ve{x}$ w
 }, group={other}]{powermean}
 {\ensuremath{\meanp{\ve{x}}}}
 
-% \glsxtrnewsymbol[description={Test entry for power mean}, group={first}]{powermeanbla}{testttt}
-
 
 
 \renewcommand\glstreegroupheaderfmt[1]{\begingroup\centering \textbf{#1}\par\endgroup}
@@ -143,108 +128,3 @@ For $p > 0$ the $p$-th power mean, for $p = 0$, the geometric mean of $\ve{x}$ w
 \glsxtrsetgrouptitle{func}{Functions}
 \glsxtrsetgrouptitle{ms-topo}{Metric Spaces and Topology}
 \glsxtrsetgrouptitle{other}{Other symbols}
-
-
-% Indices and vectors
-
-
-
-% General conventions
-
-% %   PS_Metrics
-% \newglossaryentry{metric}{name={\ensuremath{\metric}}, description={A metric function. Depending on the context, this refers to an arbitrary metric, or the metric from the segmentally additive AD model}, text={}}
-%
-% \newglossaryentry{metricSpace}{name={\ensuremath{\langle X, \metric \rangle}}, description={A metric space}, text={}}
-%
-% \newglossaryentry{PS}{
-%   name={\ensuremath{\langle \ps{A}, \succsim \rangle}},
-% description={A proximity structure, most of the time a factorial PS}, text={}}
-%
-% \newglossaryentry{minkMetric}{
-%   name={\ensuremath{\metric_{r}}},
-% description={A Minkowski (or power) metric}, text={}}
-%
-% %   AD_Model
-%
-% \newglossaryentry{ADPhi}{
-%   name={\ensuremath{\varphi_i: \ps{A}_i \rightarrow \mathbb{R}}},
-% description={A real-valued function defined on a factor of a factorial proximity structure}, text={}}
-%
-% \newglossaryentry{ADFi}{
-%   name={\ensuremath{F_i}},
-% description={The coordinate Function in the AD Model}, text={}}
-%
-% % seg_add_metrics
-%
-% \newglossaryentry{Pcurve}{
-%   name={\ensuremath{\curve}},
-% description={A parametric curve}, text={}}
-%
-% \newglossaryentry{Pcurve-len}{
-%   name={\ensuremath{\len}},
-% description={The length of a parametric curve}, text={}}
-%
-% \newglossaryentry{Pcurve-sublen}{
-%   name={\ensuremath{\sublen}},
-% description={The arc-length of the curve $\curve$}, text={}}
-%
-% % seg_add_ps
-%
-%
-% \newglossaryentry{ps-tern-rel}{
-%   name={\ensuremath{\langle \ps{a}\ps{b}\ps{c} \rangle}},
-% description={The ternary relation on a proximity structure}, text={}}
-%
-% % 1_necessary_and_suff_conds
-%
-% \newglossaryentry{ps-abc-between}{
-%   name={\ensuremath{\ps{a}|\ps{b}|\ps{c}}},
-% description={$\ps{a, b}$ and $\ps{c}$ differ only on one factor, and $\ps{b}$ is between $\ps{a}$ and $\ps{c}$}, text={}}
-%
-%
-% % 2-0_lemma
-%
-% \newglossaryentry{max-metr}{
-%   name={\ensuremath{\metric_{\infty}}},
-% description={The maximum metric (or also called the Tchebychev distance)}, text={}}
-%
-% \newglossaryentry{openball}{
-%   name={\ensuremath{\ball{r}}},
-% description={The open ball with radius $r$ around $0$ wrt. the metric $\metric$}, text={}}
-%
-% \newglossaryentry{closedball}{
-%   name={\ensuremath{\cball{r}}},
-% description={The closed ball with radius $r$ around $0$ wrt. the metric $\metric$}, text={}}
-%
-% % convexity of balls
-%
-% \newglossaryentry{convhull}{
-%   name={\ensuremath{\co(A)}},
-% description={The convex Hull of $A$}, text={}}
-%
-% \newglossaryentry{extr-point}{
-%   name={\ensuremath{\extr(A)}},
-% description={The extreme points of $A$}, text={}}
-%
-%
-% % HLP
-%
-% \newglossaryentry{quasi-arith-mean}{
-%   name={\ensuremath{\mean{\ve{a}}}},
-% description={The quasi arithmetic $\phi$-mean of $\ve{a}$ with weights $\ve{w}$}, text={}}
-%
-%
-% \newglossaryentry{powermean}{
-%   name={\ensuremath{\meanr{\ve{a}}}},
-% description={The $r$-power mean of $\ve{a}$. For $r=$ the geometric mean of $\ve{a}$}, text={}}
-%
-% \newglossaryentry{powermeanbla}{
-%   name={testttt},
-% description={The $r$-power mean of $\ve{a}$. For $r=$ the geometric mean of $\ve{a}$}, text={}}
-
-
-% ---- Metrics and Metric Spaces ----
-
-% Numbers and sets
-
-% \glsxtrsetgrouptitle{second}{Sets}
