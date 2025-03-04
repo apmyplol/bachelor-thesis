@@ -60,9 +60,9 @@ These necessary conditions we just derived are visualized in \Cref{fig-circles}.
 Since we represent the distance with a metric with additive segments, for every $\alpha \leq \metr{x}{z}$, there is a point $y$ on the segment from $x$ to $z$ such that $\metr{x}{y} = \alpha$.
 Thus, a necessary condition for a metric representation with additive segments is this condition reformulated for proximity structures.
 
-\begin{defi}[Segmental Solvability]
+\begin{ax}[Segmental Solvability]
 	A proximity structure $\langle \ps{A}, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, satisfies \emph{segmental solvability} iff for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$ with $(\ps{a}, \ps{c}) \succsim (\ps{e}, \ps{f})$, there exists $\ps{b} \in \ps{A}$ such that $(\ps{a}, \ps{b}) \sim (\ps{e}, \ps{f})$ and $\langle \ps{abc} \rangle$.
-\end{defi}
+\end{ax}
 In this definition, the distance $\alpha$ is represented by $(\ps{e}, \ps{f})$ and the minimality is assured by the ternary betweenness relation.
 
 The next step is to construct the distances along the segments. The basic idea is the following: We wish to approximate the ratio of $\metr{\ps{a}}{\ps{b}}$ and $\metr{\ps{c}}{\ps{d}}$. This is done by choosing a common distance for the steps and using segmental solvability to iteratively partition the segments into subsegments of the common distance. This process yields two sequences, $\ps{a}=\ps{a}_0, \ps{a}_1, \dots$ and $\ps{c}=\ps{c}_0, \ps{c}_1 \dots$ of which all terms are between the start and end point, $\ps{a}$ and $\ps{b}$ or $\ps{c}$ and $\ps{d}$, respectively.

@@ -129,6 +129,7 @@ After this, we will expand this statement to the rationals and then use continui
 	\begin{proofpart}[$t \metro{\ve{z}} \leq \metro{t \ve{z}}$ for $t = \frac{1}{m} < d$ with $m \in \mathbb{N}$]\label{lemma-part1}
 		Let $\z[k] := \frac{k}{m} \cdot \ve{z}$ for $k =0, \dots, m$. Then $\z[k] \in S$ for all $k$ due to convexity of $S$.
 		By applying translation invariance, we can calculate the distance between two consecutive points:
+    %METR
 		$$\metr{\z[k-1]}{\z[k]} = \metr{\frac{k-1}{m} \z}{\frac{k-1}{m} \z + \frac1m \z} = \metro{\frac{1}{m} \z} \quad \forall k = 1, \dots, m.$$
 		Applying the triangle inequality $m-1$-times and using the above result yields
 		$$\metro{\z} \leq \sum_{k=0}^{m-1} \metr{\z[k]}{\z[k+1]} = m \cdot \metro{\frac{1}{m} \z}.$$
