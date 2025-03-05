@@ -1,19 +1,19 @@
 \chapter{Segmental Additivity} \label{chap-seg-additivity}
 
 In this chapter we will develop the theory for segmentally additive metrics. First we will define what segmentally additive metrics are and then develop segmentally additive proximity structures which lead to representation by such metrics. At the end we give some examples.
-This chapter is based on \parencite[Chapter 1]{busemann} and Chapters 12.3.1 and 14.2 from \parencite{foundations2}. A more detailed explanation of the sources can be found at the end of the chapter.
+This chapter is based on \textcite[Chapter 1]{busemann} and Chapters 12.3.1 and 14.2 from \textcite{foundations2}. A more detailed explanation of the sources can be found at the end of the chapter.
 
 \section{Segmentally Additive Metrics} \label{sec-seg-add-metrics}
 
 As explained in \cref{chap-ps-metrics}, the goal is to find a metric representation in which, for any two points, there exists a curve connecting them such that the distances are additive -- that is, the triangle inequality holds with equality.
-In order to establish this, we first introduce parametric curves, their length and recitifiable curves, which are curves with finite length.
-Since, at this point, recitifiable curves do not ensure additivity of distances, we introduce segments -- rectifiable curves whose length is equal to the distance between the two points they connect. This guarantees the additivity of distances along the segment.
+In order to establish this, we first introduce parametric curves, their length and rectifiable curves, which are curves with finite length.
+Since, at this point, rectifiable curves do not ensure additivity of distances, we introduce segments -- rectifiable curves whose length is equal to the distance between the two points they connect. This guarantees the additivity of distances along the segment.
 Furthermore, we introduce the arc length, which is essentially the length of a sub-curve from the starting point to an intermediate point. Since this will be needed for a later proof, we define it here and provide a remark on it.
 
 \begin{defi}[Curves and Segments] %\gls{Pcurve} \gls{Pcurve-len}
 	\leavevmode \vspace{-\baselineskip}
 	\begin{enumerate}
-		\item Let $\metric$ be a metric on $X$. A parametric curve in $\langle X, \metric \rangle$ is a function $\curve$ that maps a closed interval $[a, b] \subset \mathbb{R}$ into $X$ and is continuous. The parametric curve $\curve$ is said to join $\curve(a)$ and $\curve(b)$. \index{Parametric Curve}
+		\item Let $\metric$ be a metric on $X$. A \emph{parametric curve} in $\langle X, \metric \rangle$ is a function $\curve$ that maps a closed interval $[a, b] \subset \mathbb{R}$ into $X$ and is continuous. The parametric curve $\curve$ is said to join $\curve(a)$ and $\curve(b)$. \index{Parametric Curve}
 		\item Let $\curve$ be a parametric curve in $\langle X, \metric \rangle$ with domain $[a, b]$. Its length $\len$ is the supremum of the sums \index{Parametric Curve!length}
 		      $$
 			      \sum_{i=1}^{n} \metric \left[ \curve(a_{i-1}), \curve(a_i) \right]
@@ -22,8 +22,8 @@ Furthermore, we introduce the arc length, which is essentially the length of a s
 		      $$
 			      a = a_0 \leq a_1 \leq \dots \leq a_n = b.
 		      $$ 
-		      If $\len < \infty$, then $\curve$ is rectifiable. \index{Parametric Curve!rectifiable}
-        \item A rectifiable curve is a segment iff its length is equal to the distance between its endpoints, i.e. $\len = \metr{a}{b}$. \index{Segment}
+		      If $\len < \infty$, then $\curve$ is \emph{rectifiable}. \index{Parametric Curve!rectifiable}
+        \item A rectifiable curve is a \emph{segment} iff its length is equal to the distance between its endpoints, i.e., $\len = \metr{a}{b}$. \index{Segment}
         \item For $a \leq x \leq b$ we denote the length of the sub-curve $\curve(t),~ a \leq t \leq x$ from $a$ to $x$ by $\sublen$. This is also called the \emph{arc length} of the curve. \label{def-curve-sublen} \index{Parametric Curve!arc-length}
 	\end{enumerate}
 \end{defi}
@@ -35,7 +35,7 @@ The remark we provide on the arc length is intuitive and states that the arc len
 \end{rem}
 
 Finally, we want all points in the metric space to be joined by a segment. Therefore, we define a metric space with additive segments where this property holds.
-An example for this is the minkowski metric in $\mathbb{R}^n$ which we will demonstrate in \cref{sect-seg-add-ex}.
+An example for this is the Minkowski metric in $\mathbb{R}^n$ which we will demonstrate in \cref{sect-seg-add-ex}.
 
 \begin{defi}[Metric Space with Additive Segments] \index{Metric space!with additive segments} \label{def-metric-space-add-segments}
 	Let $\metric$ be a metric on $X$. $\langle X, \metric \rangle$ is a \emph{metric space with additive segments} iff for any $x, y \in  X$ there is a segment joining them.

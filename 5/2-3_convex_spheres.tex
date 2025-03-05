@@ -1,19 +1,19 @@
 \subsubsection{Convexity of $\metric$ Balls} \label{sec-ball-convexity}
-In this subsection we will prove the following lemma which is needed to conclude the proof of \cref{thm-homogeneity}. Everything will be assumed as in \cref{thm-homogeneity}. Note, that all topological terms are with respect to the natural topology of the euclidean space.
+In this subsection we will prove the following lemma which is needed to conclude the proof of \cref{thm-homogeneity}. Everything will be assumed as in \cref{thm-homogeneity}. Note, that all topological terms are with respect to the natural topology of the Euclidean space.
 
 \begin{lem}[Convexity of $\metric$-Spheres] \label{lem-metr-spheres-convex}
 	For $\dis> 0$ if $\cball{\dis} \subset S$ is bounded, then it is convex.
 \end{lem}
-First, we will state some definitions and results on basic convex geometry that we need, and prove the lemma at the end of this section. The definitions and results on convex geometry are taken out of \parencite{lecturesConvGeo}.
+First, we will state some definitions and results on basic convex geometry that we need, and prove the lemma at the end of this section. The definitions and results on convex geometry are taken out of \textcite{lecturesConvGeo}.
 
-First of all, we need the notions of convex combinations, the convex hull and extreme points.
+We begin by introducing the notions of convex combinations, the convex hull and extreme points.
 Recall, that a set is convex if for all two pairs of points of that set, the linear interpolation between these points stays inside the set. By increasing the amount of points, we get what is called the convex combination of these points. A convex combination is similar to a linear combination, but has the additional constraint that the coefficients must be positive and add up to $1$. The convex hull of a set is, like any other hull, the smallest convex set that contains the set.
 
 \begin{defi}[Convex Combination and Hull] \label{def-conv-and-comb-hull}
 	\leavevmode \vspace{-\baselineskip}
 	\begin{enumerate}
     \item Let $k \in \mathbb{N}$, let $\ve{x_1}, \dots, \ve{x_k} \in \mathbb{R}^{n}$, and let $\lambda_1, \dots, \lambda_k \in [0,1]$ be such that $\lambda_1 + \dots + \lambda_k = 1$. Then $\lambda_1 \ve{x_1} + \dots + \lambda_k \ve{x_k}$ is called a \emph{convex combination} of the points $\ve{x_1}, \dots, \ve{x_k}$. \index{Convex!combination}
-    \item For $A \subset \mathbb{R}^{n}$ the \emph{convex Hull} $\co(A)$ is the smallest convex set containing $A$, i.e. $$\co(A) := \cap \left \{ C \subset \mathbb{R}^n:A \subset C,  C \text{ convex} \right \}$$ \index{Convex!hull} %\gls{convhull}
+    \item For $A \subset \mathbb{R}^{n}$ the \emph{convex Hull} $\co(A)$ is the smallest convex set containing $A$, i.e., $$\co(A) := \cap \left \{ C \subset \mathbb{R}^n:A \subset C,  C \text{ convex} \right \}$$ \index{Convex!hull} %\gls{convhull}
 	\end{enumerate}
 \end{defi}
 The next theorem sums up the relationship between convex combination and convex hulls.
@@ -34,14 +34,14 @@ Next, we will introduce extreme points, which are, in a sense, characteristic po
   Let $A \subset \mathbb{R}^{n}$ be closed and convex. A point $\ve{x} \in A$ is called an \emph{extreme point of $A$} if $\ve{x}$ cannot be represented as a nontrivial (or strict) convex combination of points of A, that is, if $\ve{x} = \lambda \cdot \ve{y} + (1-\lambda) \cdot \ve{z}$ with $\ve{y}, \ve{z} \in A$ and $\lambda \in (0,1)$, implies that $\ve{x} = \ve{y} = \ve{z}$. The set of all extreme points of $A$ is denoted by $\extr(A)$.
 \end{defi}
 
-For compact and convex sets, the extreme points are enough to "build" the convex hull of the set by doing convex combinations.
+For compact and convex sets, the extreme points are enough to ``build'' the convex hull of the set by doing convex combinations.
 In particular, this means that for a compact and convex set, every point can be expressed as a convex combination of extreme points.
 
 \begin{thm}[Minkowski Theorem] \label{thm-minkowski}
 	Let $A \subset \mathbb{R}^{n}$ be compact and convex. Then $A = \co (\extr A)$.
 \end{thm}
 
-Before proving the convexity of $\metric$ balls, we will first establish two lemmas that will be needed in the proof.
+Before proving the convexity of $\metric$-balls, we will first establish two lemmas that will be needed in the proof.
 The first one is the openness/closedness of $\metric$-balls.
 
 \begin{lem}[$\metric$-Balls are open/closed] \label{lemma-delta-balls-closed}
@@ -60,7 +60,7 @@ The first one is the openness/closedness of $\metric$-balls.
 	Moreover, we can obtain the same result for open balls by repeating this proof and replacing the closed interval with an open one and $\leq$ with $<$.
 \end{proof}
 
-The second lemma shows, that extreme points of balls get compressed by a factor of $\frac{1}{m} \in \mathbb{N}$, if the radius of the ball gets shrinked by the same factor.
+The second lemma shows, that extreme points of balls are compressed by a factor of $\frac{1}{m} \in \mathbb{N}$, if the radius of the ball gets reduced by the same factor.
 
 \begin{lem}[compressing extreme points] \label{lem-compr-extr-points}
 	Let $\dis \in \mathbb{R}_{> 0}$ and $m \in \mathbb{N}_{>0}$. Further let $\E := \extr ( \cball{\dis})$ and $\CO := \co(\cball{\dis})$.
@@ -74,10 +74,10 @@ The second lemma shows, that extreme points of balls get compressed by a factor 
 \begin{proof}
 	We prove this statement by contraposition.
 
-  Assume, that $\frac{1}{m}\ve{y}$ is not an extreme point, i.e. $\frac{1}{m}\ve{y} \in \CO[\frac{\dis}{m}] \setminus \E[\frac{\dis}{m}]$.
+  Assume, that $\frac{1}{m}\ve{y}$ is not an extreme point, i.e., $\frac{1}{m}\ve{y} \in \CO[\frac{\dis}{m}] \setminus \E[\frac{\dis}{m}]$.
   Then we can write $\frac{1}{m}\ve{y}$ as a strict convex combination of elements $\x \in \CO[\frac{\dis}{m}]$:
   $$\frac{1}{m}\ve{y} = \sum_{i=1}^p \lambda_i \x \quad \text{with } \sum_{i=1}^p \lambda_i = 1, \quad \lambda_i > 0,~ \x \in \CO[\frac{\dis}{m}] \text{ and } p \in \mathbb{N} $$
-	But because $\CO[\frac{\dis}{m}] = \co(\cball{\frac{\dis}{m}})$ holds, we can write any element from $\CO[\frac{\dis}{m}]$ as a convex combination of elements from $\cball{\frac{\dis}{m}}$ and therefore we can assume $\x \in \cball{\frac{\dis}{m}}$.
+	But because $\CO[\frac{\dis}{m}] = \co(\cball{\frac{\dis}{m}})$ holds, we can write any element from $\CO[\frac{\dis}{m}]$ as a convex combination of elements from $\cball{\frac{\dis}{m}}$, and therefore we can assume $\x \in \cball{\frac{\dis}{m}}$.
 	By translation invariance and the triangle inequality we get for all $i$:
 	\begin{align*}
 		\metro{m \x}  & \leq \metr{0}{\x} + \metr{\x}{m \x} \tag*{\text{triangle inequality}}                       \\
@@ -87,7 +87,7 @@ The second lemma shows, that extreme points of balls get compressed by a factor 
 		              & \dots                                                                                       \\
 		              & \leq m \cdot \metro{\x}                                                                     \\
 		              & = m \cdot \frac{\dis}{m} = \dis                                                         \\
-		\implies m \x & \in \cball{\dis}
+		\implies m \x & \in \cball{\dis}.
 	\end{align*}
 
   This yields, that $\ve{y} = \sum_{i=1}^{p} \lambda_i m \x$ is a strict convex combination (because $\lambda_i m \neq 0$) and therefore $\ve{y}$ is not in $\E$.
@@ -99,7 +99,7 @@ Now we can prove the convexity of $\metric$-balls.
 
 \begin{proof}[Proof of \cref{lem-metr-spheres-convex}] \label{proof-metr-spheres-convex}
 	Let $\E := \extr ( \cball{\dis})$ and $\CO := \co(\cball{\dis})$.
-	By \cref{lemma-delta-balls-closed} $\cball{\dis}$ is closed and by assumption it is also bounded. Therefore, from the Heine-Borel Theorem, it follows that $\cball{\dis}$ is compact.	By definition and \cref{thm-compact-hull-compact} it follows, that $\CO$ is compact (and therefore closed, which is the reason why we denote it with square brackets) and convex. Application of the Minkowski Theorem (\cref{thm-minkowski}) yields
+	By \cref{lemma-delta-balls-closed} $\cball{\dis}$ is closed and by assumption it is also bounded. Therefore, from the Heine-Borel Theorem, it follows that $\cball{\dis}$ is compact.	By definition and \cref{thm-compact-hull-compact} it follows, that $\CO$ is compact (and therefore closed, which is the reason for our square bracket notation) and convex. Application of the Minkowski Theorem (\cref{thm-minkowski}) yields
 	$$ \CO = \co(\extr ( \CO )). $$
 	Further, it holds that $\extr(\CO) = \extr(\cball{\dis})$ (By doing convex combinations, no new extreme points can be introduced because these are the points, which cannot be represented by a convex combination).
   Combining this and the statement above yields:

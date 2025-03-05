@@ -2,29 +2,29 @@
 
 Now we briefly discuss the results from a psychological perspective.
 In the AD model (\cref{def-add-diff-model}) the functions $F_i$ and $\varphi$ can be interpreted as two distinct processes that lead to similarity judgements: a perceptual process that satisfies intradimensional subtractivity and an evaluative process that satisfies interdimensional additivity \parencite{tversky1970dimensional}.
-The perceptual process is represented by $\varphi$, known as psychophysical functions, while the evaluative process is captures by $F_i$, reffered to as similarity functions.
-Furthermore, \textcite{tversky1970dimensional} argue that interdimensional additivity and intradimensional subtractivity can be considered as defining properties for psychological dimensions in the context of multidimensional similarity. This results provide methods for testing whether a factor satisfies these properties and, therefore, is a psychological dimension.
+The perceptual process is represented by $\varphi$, known as psychophysical functions, while the evaluative process is captures by $F_i$, referred to as similarity functions.
+Furthermore, \textcite{tversky1970dimensional} argue that interdimensional additivity and intradimensional subtractivity can be considered as defining properties for psychological dimensions in the context of multidimensional similarity. The outcomes outlined in this thesis provide methods for testing whether a factor satisfies these properties and, therefore, is a candidate for a psychological dimension.
 
-However, arguably, these results have the greatest implications for the theory of multidimensional scaling (MDS) which is a widely used data analysis technique (for example usages of MDS in psychology see \textcite{psychoMDS}).
+However, arguably, the presented results have the greatest implications for the theory of multidimensional scaling (MDS) which is a widely used data analysis technique (for example usages of MDS in psychology see \textcite{psychoMDS}).
 The goal of (ordinal) multidimensional scaling is to embed the stimuli objects in some multidimensional metric space (usually Euclidean) in such a way that the dissimilarity orderings are represented, as accurately as possible, by the metric distance between the points.
 Thus, objects that are more similar are placed closer together, and the dimensionality of the metric space is typically chosen to be as low as possible while still maintaining an accurate representation.
 In most contexts, MDS is viewed as a method for data reduction and is often used without proper justification, as its underlying theory has not been explored much \parencite{foundationsMDS}.
-The embedding of ordinal stimuli in a metric space is not trivial, and these results illustrate the ordinal assumptions that must be made to justify such an emdedding.
+The embedding of ordinal stimuli in a metric space is not trivial, and these results illustrate the ordinal assumptions that must be made to justify such an embedding.
 Therefore, the results presented in this thesis can be interpreted in two ways: first, as conditions that must be tested to justify the use of MDS, and, second, as psychological theories about mental representations that can be applied to study psychological similarity \parencite{foundationsMDS, tversky1970dimensional, foundations2}.
 
 The idea of metric and dimensional representations are intuitively and computationally very appealing.
 Note, that these assumptions are, distinct: the results in \cref{chap-seg-additivity} do not rely on a dimensional structure, while \cref{chap-AD-model-and-ps} does not assume a metric representation.
-However, some of their fundamental assumptions present difficulties in justifying their use. These, along with some of the axioms, will be discussed next.
+However, some of their fundamental assumptions present difficulties in justifying their use. These, along with some axioms, will be discussed next.
 
 
 In representational measurement, in addition to distinguishing between necessary and sufficient axioms, there is also a distinction between testable and non-testable axioms.
 Non-testable (or technical) axioms cannot be empirically falsified, whereas testable axioms can.
 The axioms of a complete segmentally additive proximity structure (\cref{def-seg-add-ps}) are both necessary and sufficient \parencite[p. 168]{foundations2}. In the AD structure (\cref{def-add-diff-ps}), all axioms except restricted solvability are necessary \parencite[p. 184]{foundations2}.\\
-In the following we discuss some of the testable and non-testable axioms.
+In the following we discuss some testable and non-testable axioms.
 First, we discuss the Archimedean Axiom, which is a fundamental and technical axiom in representational measurement. Its name stems from the Archimedean property of the real numbers, which states that for every pair of real numbers $x < y$ there exists an integer $n$ such that $n x > y$.
 This can be reinterpreted as: given the sequence $x, x+x, x+x+x \dots$ then the number of terms smaller than $y$ is bounded.
 Interpreting this property in this way reveals its close connection to both the Archimedean Axiom for AD structures (\cref{def-archimed-ax-adm}) and for segmentally additive proximity structures (\cref{def-seg-add-ps}).
-In both cases, we require a finite sequence of equally spaced\footnote{We do require the spacing to be exactly equal (as in the Archimedean propery for real numbers), but rather that it is bounded.} objects that exceeds or reaches some point or radius.
+In both cases, we require a finite sequence of equally spaced\footnote{We do require the spacing to be exactly equal (as in the Archimedean property for real numbers), but rather that it is bounded.} objects that exceeds or reaches some point or radius.
 As we have seen in \cref{sect-seg-add-ps}, this axiom is fundamental for the construction of distance between objects.
 For further discussion see \textcite[pp. 25-26]{foundations1} and \textcite[pp. 165-167]{foundations2}.
 
@@ -41,11 +41,11 @@ Since both, additivity and subtractivity imply one-factor independence, this pro
 By one-factor independence, changing a common value on one factor does not change the similarity ordering. This corresponds to a translation from the initial common value to the new common value after the change.
 This was used in a study by \textcite{gatiWeightingCommonDistinctive1984}, which demonstrated highly predictable violations of this property.
 In this study, participants rated the dissimilarity between pairs of schematic faces (hand-drawn faces) that varied along three dimensions: the presence or absence of eyeglasses, a hat and a beard.
-The systematic violation stems from the fact, that, in this study, adding a common attribute to a pair of faces  -- where the attribute was previously absent in both -- increased their similarity \footnote{\textcite{tverskySimilaritySchematicFaces1969} conducted a very similar study in which the dimensions were long vs. wide face, empty vs. filled eyes and straight vs. curved mouth. This study provided strong support for both, independence and interdimensional additivity. \textcite[p. 204]{foundations2} argue that this is due to the nature of the attributes: in the first study, the attributes were additive (e.g., presence or absence of glasses), whereas in this study, they were substitutive for a face. }.
+The systematic violation stems from the fact, that, in this study, adding a common attribute to a pair of faces  -- where the attribute was previously absent in both -- increased their similarity\footnote{\textcite{tverskySimilaritySchematicFaces1969} conducted a very similar study in which the dimensions were long vs. wide face, empty vs. filled eyes and straight vs. curved mouth. This study provided strong support for both, independence and interdimensional additivity. \textcite[p. 204]{foundations2} argue that this is due to the nature of the attributes: in the first study, the attributes were additive (e.g., presence or absence of glasses), whereas in this study, they were substitutive for a face. }.
 Other systematic violations of subtractivity and the triangle inequality are discussed in \textcite[pp. 200-207]{foundations2}.
 
 These violations led to the development of features representations which offer an alternative approach to proximity measurement.
-They are neither metric, nor dimensional in the usual sense; instead, they are set-theoretical and assess similarity by weighting common and distinctive features. These models are discussed in \parencite[Chapter 14.7]{foundations2} and solve a lot of the violations described above.
+They are neither metric nor dimensional in the usual sense; instead, they are set-theoretical and assess similarity by weighting common and distinctive features. These models are discussed in \parencite[Chapter 14.7]{foundations2} and solve a lot of the violations described above.
 
 In this thesis, we have presented metric and dimensional models for proximity measurement and provided insights into representational measurement and how such models are formalized and proved.
 As we have seen, geometrical models are mathematically and intuitively appealing, but they pose several difficulties in their practical usage.

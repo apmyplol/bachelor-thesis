@@ -1,6 +1,6 @@
 \section{Unique Representation Theorem} \label{sec-unique-repr-thm}
 
-In this chapter, we present the main theorem and complete the proofs given by \parencite[pp. 195-199]{foundations2}. The remainder of this chapter, except for the final section, consists of the proof of this theorem. The last section is dedicated to proving an intermediate result from functional analysis that is used in the proof.\\
+In this chapter, we present the main theorem and complete the proofs given by \textcite[pp. 195-199]{foundations2}. The remainder of this chapter, except for the final section, consists of the proof of this theorem. The last section is dedicated to proving an intermediate result from functional analysis that is used in the proof.\\
 We begin by stating the theorem, and follow a top-down approach in the proof to provide a broad understanding. This means, we use results established in \cref{sect-homogeneity-theorem}. The same approach applies to the proofs in that section; see \cref{sect-homogeneity-theorem} for further explanation.
 We start with the statement of the theorem.
 
@@ -25,20 +25,20 @@ We start with the statement of the theorem.
 		\begin{equation*}
 			\metr{\ps{a}}{\ps{b}} = F^{-1} \left [ \sum_{i=1}^{n} F(| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|)  \right]
 		\end{equation*}
-		where $F$ is continuous, convex and increasing.
-		By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a cartesian product of intervals of the form $[0,\rho_i)$ where $\rho_i$ are the ranges of $| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for $i=1, \dots, n$. This cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore the requirements for \cref{thm-homogeneity} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for for $\ve{x}, \ve{z} \neq \ve{0}$:
+		where $F$ is continuous, convex, and increasing.
+		By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a Cartesian product of intervals of the form $[0,\rho_i)$ where $\rho_i$ are the ranges of $| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for $i=1, \dots, n$. This Cartesian product is convex and, by leaving out $0$ in each product, also open. Therefore, the requirements for \cref{thm-homogeneity} are met if we leave out $\ve{0}$ and applying the lemma yields homogeneity for $\ve{x}, \ve{z} \neq \ve{0}$:
     %METR
 		$$\metr{\ve{x}}{\ve{x}+ t(\ve{z}-\ve{x})} = t \metr{\ve{x}}{\ve{z}}.$$
 		Applying homogeneity for the definition of $\metric$ above and setting $\ta_i = |\varphi_i(\ps{b}_i) - \varphi_i(\ps{a}_i)|$ yields
 		\begin{equation}\label{proof-homogen-eq}
 			F^{-1} \left [ \sum_{i=1}^{n} F(t \ta_i)  \right] = t \cdot F^{-1} \left [ \sum_{i=1}^{n} F(\ta_i)  \right].
 		\end{equation}
-		However, due to translation invariance, homogeneity also holds for $\ve{x} = \ve{0}$ \footnote{By adding $0 = \ve{y} - \ve{y}$ for some $\ve{y}$ in the domain, we get homogeneity for $\ve{0}$:
+		However, due to translation invariance, homogeneity also holds for $\ve{x} = \ve{0}$\footnote{By adding $0 = \ve{y} - \ve{y}$ for some $\ve{y}$ in the domain, we get homogeneity for $\ve{0}$:
 			\begin{equation*}
 				\metr{\ve{0}}{t \ve{z}} =F^{-1} \left [ \sum_{i=1}^{n} F(t (y_i - (y_i - z_i))) \right]
 				= t F^{-1} \left [ \sum_{i=1}^{n} F(y_i - (y_i - z_i)) \right]
 				= t \metr{\ve{0}}{\ve{z}}.
-			\end{equation*}}. We will show, that the only solutions to this equation are of the form $F(x) = \alpha x^p$, i.e. the power functions.
+			\end{equation*}}. We will show, that the only solutions to this equation are of the form $F(x) = \alpha x^p$, i.e., the power functions.
 
 		First, we start by observing the domains and the ranges of $F$.
 		By \cref{thm-conds}, the additive difference model
@@ -56,7 +56,7 @@ We start with the statement of the theorem.
 			                & = (\ta/\omega) F^{-1}[nF(\omega)] \\
 			                & = \ta \Omega/\omega.
 		\end{align*}
-		Thus $F$ satisfies the following, by plugging in the correct values for $\ta$ ($\ta \frac{\omega}{\Omega}$ and $F^{-1}( \frac{\ta}{n} )$)
+		Thus, $F$ satisfies the following, by plugging in the correct values for $\ta$ ($\ta \frac{\omega}{\Omega}$ and $F^{-1}( \frac{\ta}{n} )$)
 		\begin{align}
 			F(\ta)      & = nF(\ta \omega/\Omega), \quad 0 \leq \ta \leq \Omega; \label{proof-f-erw}               \\
 			F^{-1}(\ta) & = (\Omega/\omega) F^{-1}(\ta/n), \quad 0 \leq \ta \leq nF(\omega). \label{proof-f-1-erw}
@@ -87,12 +87,12 @@ We start with the statement of the theorem.
 		\end{align*}
 		which is equivalent to $F$ begin continuous on the extended domain.
 
-		For monotonicity we can use a similar argument. Let $\ta < \ta'$ with $\omega < \ta, \ta' < \Omega$. Then $\ta \frac{\omega}{\Omega} < \ta' \frac{\omega}{\Omega}$ holds. Plugging that into $F$ and multiplying by $n$ yields $nF \left(\ta \frac{\omega}{\Omega}\right) <nF \left( \ta' \frac{\omega}{\Omega}\right)$ due to $F$ being increasing on the original domain. Therefore $\ta < \ta'$ implies $F(\ta) < F(\ta')$ which is equivalent to $F$ increasing.
+		For monotonicity, we can use a similar argument. Let $\ta < \ta'$ with $\omega < \ta, \ta' < \Omega$. Then $\ta \frac{\omega}{\Omega} < \ta' \frac{\omega}{\Omega}$ holds. Plugging that into $F$ and multiplying by $n$ yields $nF \left(\ta \frac{\omega}{\Omega}\right) <nF \left( \ta' \frac{\omega}{\Omega}\right)$ due to $F$ being increasing on the original domain. Therefore, $\ta < \ta'$ implies $F(\ta) < F(\ta')$ which is equivalent to $F$ increasing.
 		Thus, we have established strict increasing monotonicity, continuity and \Cref{proof-homogen-eq} for the extended function.
 
-		Repeatedly applying the arguments, extends the intervals in which $F$ is defined and in which monotonicity, continuity and homogeneity (\cref{proof-homogen-eq}) are valid by a factor of $\Omega/\omega$ each time. Thus, we can extend $F$ to $[0, \infty)$ while preserving these properties.
+		Repeatedly applying the arguments, extends the intervals in which $F$ is defined and in which monotonicity, continuity, and homogeneity (\cref{proof-homogen-eq}) are valid by a factor of $\Omega/\omega$ each time. Thus, we can extend $F$ to $[0, \infty)$ while preserving these properties.
 
-		We can prove further, that the homogeneity equation must also hold for $t \in [0, \infty)$.	For that, let $\ta_i > 0$ and $t > 1$. Then there exists $t' = \frac{1}{t} < 1$ such that $t' \cdot t \ta_i = \ta_i$. Therefore
+		We can prove further, that the homogeneity equation must also hold for $t \in [0, \infty)$.	For that, let $\ta_i > 0$ and $t > 1$. Then there exists $t' = \frac{1}{t} < 1$ such that $t' \cdot t \ta_i = \ta_i$. Therefore,
 		\begin{align*}
 			t t' F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] \tag{$t t' = 1$}     \\
 			                                                   & = F^{-1} \left[ \sum_{i=1}^{n} F(t t'\ta_i) \right] \tag{$t t' = 1$} \\
@@ -103,26 +103,24 @@ We start with the statement of the theorem.
 		\begin{equation*}
 			F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] \quad \text{ for } \ta, t < \infty .
 		\end{equation*}
-		To sum up, we have obtained an extended function which satisfies monotonicity, continuity and homogeneity for $t \in [0, \infty)$. This extended function must coincide with tie original $F$ on at least the interval $[0, \Omega]$ (because this was the domain of $F$ that we deduced, before extending it).
+		To sum up, we have obtained an extended function which satisfies monotonicity, continuity, and homogeneity for $t \in [0, \infty)$. This extended function must coincide with tie original $F$ on at least the interval $[0, \Omega]$ (because this was the domain of $F$ that we deduced, before extending it).
 	\end{proofpart}
 
 	\begin{proofpart}[Deriving functional equation]
-		Next, we derive a functional equation that allows us to use results on quasi-arithmetic homogeneous means \parencite[p. 68]{hardy1952inequalities}. The theorem states as follows:
+		Next, we derive a functional equation that allows us to use results on quasi-arithmetic homogeneous means. The theorem states as follows:
 		\begin{thm*}[Uniqueness of homogeneous quasi-arithmetic means, \cref{thm-power-mean-uniqueness}]
 			Suppose that $\phi$ is continuous and strictly increasing in the open interval $(0,\infty)$ and that
 			\begin{equation*}
 				\mean{t \ve{x}} = t \mean{ \ve{x}} \quad  \text{with} \quad \mean{\ve{x} } = \phi^{-1} \left ( \sum_{i=1}^{n} w_i \phi(x_i) \right)
 			\end{equation*}
-			for all positive $\ve{x}, \ve{w}, t$ and all $n \in \mathbb{N}$ such that $\sum_{i=1}^{n} w_i = 1$. Then $\mean{\ve{x}} = \meanp{\ve{x}}$. (i.e. $\mean{\ve{x}}$ is either a power mean with $\phi(x) = \alpha x^p + \beta$ and $\alpha, \beta, p \in \mathbb{R}, p > 0$ or a geometric mean with $\phi(x) = \alpha \log (x)$, $\alpha \in \mathbb{R}$.)
+			for all positive $\ve{x}, \ve{w}, t$ and all $n \in \mathbb{N}$ such that $\sum_{i=1}^{n} w_i = 1$. Then $\mean{\ve{x}} = \meanp{\ve{x}}$. (i.e., $\mean{\ve{x}}$ is either a power mean with $\phi(x) = \alpha x^p + \beta$ and $\alpha, \beta, p \in \mathbb{R}, p > 0$ or a geometric mean with $\phi(x) = \alpha \log (x)$, $\alpha \in \mathbb{R}$.)
 		\end{thm*}
 		The proof of this statement will be presented in \cref{sect-HLP_proof}, here we will apply the theorem for our proof.
 
-		Since all requirements for $\phi$ are already met by $F$, we have to derive the functional equation for all $n \in \mathbb{N}$ and all positive weights. First, we will prove that the homogeneity holds not only for sums with $n$ summands, but for arbitrary many summands $N \in \mathbb{N}$. Then we will incorporate equal weights into this equation, extend them to commensurable weights (i.e. rational weights with a common denominator) and then use this to approximate arbitrary real weights.
-		blablabla\\
-		thist
+		Since all requirements for $\phi$ are already met by $F$, we have to derive the functional equation for all $n \in \mathbb{N}$ and all positive weights. First, we will prove that the homogeneity holds not only for sums of $n$ summands, but for arbitrary many summands $N \in \mathbb{N}$. Then we will incorporate equal weights into this equation, extend them to commensurable weights (i.e., rational weights with a common denominator) and then use this to approximate arbitrary real weights.
 
 		\begin{proofpp}[Homogeneity for arbitrary long sums]
-			Let for $N < n$ the first $N$ coordinates of $\ve{x}$ be zero, i.e. $\ve{x} = (\ta_1, \dots, \ta_N, 0, \dots , 0)$. Then, since $F(0) = 0$ it holds that, $F(x_i) = 0$ for $i > N$. Applying homogeneity for this $\ve{x}$ yields
+			Let for $N < n$ the first $N$ coordinates of $\ve{x}$ be zero, i.e., $\ve{x} = (\ta_1, \dots, \ta_N, 0, \dots , 0)$. Then, since $F(0) = 0$ it holds that, $F(x_i) = 0$ for $i > N$. Applying homogeneity for this $\ve{x}$ yields
 			\begin{align}
 				F^{-1} \left[ \sum_{i=1}^{N} F(t \ta_i) \right] & = F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] \tag{$x_i = 0$ for $i > N$}  \\
 				                                                & = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] \tag{homogeneity}            \\
@@ -150,15 +148,15 @@ We start with the statement of the theorem.
 		\end{proofpp}
 
 		\begin{proofpp}[Homogeneity with weights]
-			Now, we proceed with incorporating weights into the equation. Firstly, applying \Cref{proof-f-1-erw} on the left hand side of \Cref{proof-homogen-kbig} yields
+			Now, we proceed with incorporating weights into the equation. Firstly, applying \Cref{proof-f-1-erw} on the left-hand side of \Cref{proof-homogen-kbig} yields
 			\begin{equation*}
 				\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{N} F(t \ta_i) \right] = F^{-1} \left[ \sum_{i=1}^{N} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{N} F(\ta_i) \right] .
 			\end{equation*}
-			Applying \Cref{proof-f-1-erw} once more on the right hand side, yields
+			Applying \Cref{proof-f-1-erw} once more on the right-hand side, yields
       {\small \begin{equation*}
 				\Omega / \omega F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{N} F(t \ta_i) \right] = F^{-1} \left[ \sum_{i=1}^{N} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{N} F(\ta_i) \right] =\Omega / \omega t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{N} F(\ta_i) \right].
     \end{equation*}}
-			Hence
+			Hence,
 			\begin{equation*}
 				F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{N} F(t \ta_i) \right] = t F^{-1} \left[ \frac{1}{n} \sum_{i=1}^{N} F(\ta_i) \right]
 			\end{equation*}
@@ -192,18 +190,18 @@ We start with the statement of the theorem.
 				F^{-1} \left[ \sum_{i=1}^{N} w_i F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{N} w_i F(\ta_i) \right] \quad w_i \in \mathbb{W}.
 			\end{equation}
 
-			Now, in order to approximate real weights, we need density of $\mathbb{W}$ in $\mathbb{R}_{\geq 0}$. Since $n^l$ gets arbitrarily small, there exists for every $\varepsilon >0$ an $l$ such that $n^l < \varepsilon$. Therefore, if $x - y < \varepsilon$, for $x, y \in \mathbb{R}_{\geq 0}$ and $x > y$ there exists $k \in \mathbb{N}$ such that $x < \frac{k}{n^l} < y$. Thus, $\mathbb{W}$ is dense in $\mathbb{R}_{\geq 0}$ and we can approximate real weights with converging sequences from $\mathbb{W}$.
+			Now, in order to approximate real weights, we need density of $\mathbb{W}$ in $\mathbb{R}_{\geq 0}$. Since $n^l$ gets arbitrarily small, there exists for every $\varepsilon >0$ an $l$ such that $n^l < \varepsilon$. Therefore, if $x - y < \varepsilon$, for $x, y \in \mathbb{R}_{\geq 0}$ and $x > y$ there exists $k \in \mathbb{N}$ such that $x < \frac{k}{n^l} < y$. Thus, $\mathbb{W}$ is dense in $\mathbb{R}_{\geq 0}$, and we can approximate real weights with converging sequences from $\mathbb{W}$.
 
 			Finally, let $w_i \in \mathbb{R}_{\geq 0}$ and $q_{i_k} \in \mathbb{W}$ be sequences for $i=1, \dots, N$ such that $q_{i_k} \rightarrow w_i$ for $k \rightarrow \infty$. Then
 			\begin{align*}
 				F^{-1} \left[ \sum_{i=1}^{N} w_i F(t \ta_i) \right] & = F^{-1} \left[ \sum_{i=1}^{N} \lim_{k \rightarrow \infty} q_{i_k} F(t\ta_i) \right] \tag{\small{Convergence of $q_{i_k}$}}                                                         \\
-				                                                    & = \lim_{k \rightarrow \infty} F^{-1} \left[  \sum_{i=1}^{N}  q_{i_k} F(t \ta_i) \right] \tag{$F^{-1}$ continuous \footnote{See \parencite[p. 337, Exercise 5.9.16]{elementaryAna}}} \\
+				                                                    & = \lim_{k \rightarrow \infty} F^{-1} \left[  \sum_{i=1}^{N}  q_{i_k} F(t \ta_i) \right] \tag{$F^{-1}$ continuous \footnote{See \textcite[p. 337, Exercise 5.9.16]{elementaryAna}}} \\
 				                                                    & =  \lim_{k \rightarrow \infty} t F^{-1} \left[  \sum_{i=1}^{N}  q_{i_k} F(\ta_i) \right] \tag{\cref{proof-homogen-rats}}                                                            \\
 				                                                    & =  t F^{-1} \left[  \sum_{i=1}^{N}  w_i F(\ta_i) \right]. \tag{reversing the steps}
 			\end{align*}
 			Hence, the homogeneity holds for all $x_i, w_i, t \in \mathbb{R}_{\geq 0}$ and $N \in \mathbb{N}$, in particular, it holds for weights with sum $1$.
-			By \cref{thm-power-mean-uniqueness} the only monotonic solutions are the power functions $\alpha x ^ p + \beta$ or the logarithm $\alpha \log(x)$ with $\alpha, \beta, p \in \mathbb{R}$ and $p > 0$. However, since $F(x) \geq 0$, it cannot be the logarithm and by $F(0) = 0$, the vertical shift $\beta$ must be equal to $0$. Therefore the only solution is, that the extended function takes the form $\alpha x^p$, since we applied this theorem on the extension of $F$.
-			Therefore $F(x) = \alpha x^p$ must hold at least on the interval $[0, \Omega)$.
+			By \cref{thm-power-mean-uniqueness} the only monotonic solutions are the power functions $\alpha x ^ p + \beta$ or the logarithm $\alpha \log(x)$ with $\alpha, \beta, p \in \mathbb{R}$ and $p > 0$. However, since $F(x) \geq 0$, it cannot be the logarithm and by $F(0) = 0$, the vertical shift $\beta$ must be equal to $0$. Therefore, the only solution is, that the extended function takes the form $\alpha x^p$, since we applied this theorem on the extension of $F$.
+			Therefore, $F(x) = \alpha x^p$ must hold at least on the interval $[0, \Omega)$.
 		\end{proofpp}
 	\end{proofpart}
 
@@ -217,7 +215,7 @@ We start with the statement of the theorem.
 			                       & = \left( \sum_{i=1}^{n} |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|^p \right)^{1/p}                                                                                                      \\
 			                       & = \metr[p]{\varphi_i(\ps{a}_i)}{\varphi_i(\ps{b}_i)}
 		\end{align*}
-		Thus, $\delta$ is a Minkowski metric and, by \cref{thm-repr-add-diff-struct}, the $F_i$ are interval scales, allowing for affine transformations. However, since we set $F_i(0)=0$, the affinity vanishes, and we are left with $F_i(x)= \alpha \cdot x^p$. Finally, the restriction $1 \leq p < \infty$ follows from Minkowski's inequality; see \parencite[pp. 189-191 Theorem 9]{handbookMeans}.
+		Thus, $\delta$ is a Minkowski metric and, by \cref{thm-repr-add-diff-struct}, the $F_i$ are interval scales, allowing for affine transformations. However, since we set $F_i(0)=0$, the affinity vanishes, and we are left with $F_i(x)= \alpha \cdot x^p$. Finally, the restriction $1 \leq p < \infty$ follows from Minkowski's inequality \parencite[pp. 189-191 Theorem 9]{handbookMeans}.
 	\end{proofpart}
 \end{proof}
 

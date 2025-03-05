@@ -1,10 +1,10 @@
 \chapter{Combining Segmental Additivity with the AD Model} \label{chap-combination}
 \chaptermark{Segmental Additivity in the AD Model}
 
-In this chapter we aim to connect the previous two chapter and working with proximity structures that are both, segmentally additive and AD structures. We will present and prove the two main results. 
+In this chapter we aim to connect the previous two chapters and working with proximity structures that are both, segmentally additive and AD structures. We will present and prove the two main results. 
 The first one are sufficient and necessary conditions for the AD model to be a metric that is additive on the coordinate axes.
-The second one is the unique representation theorem which states that the only additive difference model that is compatible with a metric with additive segments is the minkowski metric.
-We will prove both theorems, specifically extending and completing the proof of the second theorem, as the proofs presented in \parencite[pp. 192-199]{foundations2} are incomplete in some aspects. As in the previous chapters, the sources are further explained at the end of this chapter.
+The second one is the unique representation theorem which states that the only additive difference model that is compatible with a metric with additive segments is the Minkowski metric.
+We will prove both theorems, specifically extending and completing the proof of the second theorem, as the proofs presented in \textcite[pp. 192-199]{foundations2} are incomplete in some aspects. As in the previous chapters, the sources are further explained at the end of this chapter.
 
 \section{Conditions for Metric Representation of AD Structures} \label{sec-conds}
 
@@ -30,7 +30,7 @@ Before beginning with the proof we remark what additivity on the coordinate axes
 	Additivity on the coordinate axes means the following: If $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$ differ only on one factor $\ps{A}_i$, then the triangle inequality of the metric holds with equality. In mathematical terms:
 	$$ \ps{a}_j = \ps{b}_j = \ps{c}_j \text{ for all } j \neq i \text{ and } (\ps{a}, \ps{c}) \succsim (\ps{a}, \ps{b}), (\ps{b}, \ps{c})$$
 	implies that $\metr{\ps{a}}{\ps{b}} + \metr{\ps{b}}{\ps{c}} = \metr{\ps{a}}{\ps{c}}$.
-  This can be also formulated in terms of betweenness (\cref{def-between-ax}). If $\ps{a}, \ps{b}$ and $\ps{c}$ differ only on one factor and $\ps{a}|\ps{b}|\ps{c}$, then $\metr{\ps{a}}{\ps{b}} + \metr{\ps{b}}{\ps{c}} = \metr{\ps{a}}{\ps{c}}$ \index{Proximity structure!betweenness}
+  This can be also formulated in terms of betweenness (\cref{def-between-ax}). If $\ps{a}, \ps{b}$ and $\ps{c}$ differ only on one factor and $\ps{a}|\ps{b}|\ps{c}$, then $\metr{\ps{a}}{\ps{b}} + \metr{\ps{b}}{\ps{c}} = \metr{\ps{a}}{\ps{c}}.$ \index{Proximity structure!betweenness}
 \end{rem}
 
 In this section, until the proof of this theorem is finished, everything will be assumed as in \cref{thm-conds}, unless otherwise stated.
@@ -41,7 +41,7 @@ Now we proceed with the proof of the theorem.
 	$$
 		f(\ps{a},\ps{b}) \leq f(\ps{c},\ps{d}) \quad \text{  iff  } \quad \delta(\ps{a},\ps{b}) \leq \delta(\ps{c},\ps{d}) \quad \text{for all } \ps{a}, \ps{b}, \ps{c}, \ps{d} \in \ps{A} .
 	$$
-	Therefore, there exists an increasing function $G$ \footnote{A possible perspective on this is, that the metric $\metric$ induces an ordinal scale for pairs of elements. The same holds for the function $f$ and these orderings are the same. Because ordinal scales, by definition, are invariant under increasing bijections, there must exist an increasing function $G$, which transforms the $f$-scale into the $\metric$-scale.}, such that for all $\ps{a}, \ps{b} \in \ps{A}$
+	Therefore, there exists an increasing function $G$\footnote{A possible perspective on this is, that the metric $\metric$ induces an ordinal scale for pairs of elements. The same holds for the function $f$ and these orderings are the same. Because ordinal scales, by definition, are invariant under increasing bijections, there must exist an increasing function $G$, which transforms the $f$-scale into the $\metric$-scale.}, such that for all $\ps{a}, \ps{b} \in \ps{A}$
 	$$
 		\delta(\ps{a}, \ps{b}) = G(f(\ps{a},\ps{b})) =  G \left( \sum_{i=1}^{n} F_i \left( |\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right) \right).
 	$$
@@ -54,11 +54,11 @@ Now we proceed with the proof of the theorem.
 		G[F_i(x)] + G[F_i(y)] = G[F_i(x + y)].
 	$$
 
-	Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i, 1 \leq i \leq n$. By \cref{thm-repr-add-diff-struct}, the domain is $\mathbb{R}$. This is Cauchy's functional equation and, under the assumption of monotonicity, the only solution is $H_i = t_i x$ for $t_i \in \mathbb{R}$, as shown in \parencite[p. 15]{aczelFunctionalEquationsSeveral1989}. Since the values are positive (as we are dealing with metrics), $H_i = t_i x$ with $t_i > 0$ must hold for all $i=1, ..., n$. Additionally, since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
+	Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i, 1 \leq i \leq n$. By \cref{thm-repr-add-diff-struct}, the domain is $\mathbb{R}$. This is Cauchy's functional equation and, under the assumption of monotonicity, the only solution is $H_i = t_i x$ for $t_i \in \mathbb{R}$ \parencite[p. 15]{aczelFunctionalEquationsSeveral1989}. Since the values are positive (as we are dealing with metrics), $H_i = t_i x$ with $t_i > 0$ must hold for all $i=1, ..., n$. Additionally, since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
 	$$
 		G^{-1}[H_i(x)] = G^{-1}[t_i x] = F_i(x)
 	$$
-	where $F_i$ is defined. Since $G^{-1}$ is independent of $i$, the $F_i$ can only differ in range and in the unit of the domain (i.e. the scaling factor $t_i$ which defines the domain of $F_i$ by adjusting the domain of $G^{-1}$). Without loss of generality, we can assume that the range of $F_n$ is the largest among the $F_i$. This assumption allows us to define $F = F_n$ as the reference function, and the other $F_i$ can be expressed as $F_i(x) = F_n(t_i x) = F(t_i x)$ for $t_i > 0$ and for every $x$ in the domain of $F_i$.\\
+	where $F_i$ is defined. Since $G^{-1}$ is independent of $i$, the $F_i$ can only differ in range and in the unit of the domain (i.e., the scaling factor $t_i$ which defines the domain of $F_i$ by adjusting the domain of $G^{-1}$). Without loss of generality, we can assume that the range of $F_n$ is the largest among the $F_i$. This assumption allows us to define $F = F_n$ as the reference function, and the other $F_i$ can be expressed as $F_i(x) = F_n(t_i x) = F(t_i x)$ for $t_i > 0$ and for every $x$ in the domain of $F_i$.\\
 	Continuity and convexity will be proven in the next lemmas. After that, we proceed with sufficiency.
 \end{proof}
 
@@ -86,8 +86,8 @@ Now we proceed with the proof of the theorem.
 \end{lem}
 
 \begin{proof}
-  Since $F$ is increasing and defined on an interval, all discontinuities are gaps \parencite[p. 335]{elementaryAna} \footnote{\parencite{elementaryAna} prove the following statement: Let $f$ be a real-valued monotonic function defined on an interval $[a, b]$. Then the set of points of discontinuity of $f$ in that interval is countable. Combining this statement with the paragraph above it, yields that these discontinuities must be gaps. Since any interval (open, half-open and unbouded intervals) can be represented by a countable union of closed intervals, this theorem can be extended to arbitrary intervals since countable unions of countable sets are still countable. This can be done by using $(a,b) = \bigcup_{n=1}^{\infty}[a+1/n, b-1/n]$, or $(a, \infty) = \bigcup_{n=1}^{\infty}[a+1/n, a+n]$. Similar arguments apply to other types of intervals.}. Real analysis yields, that real monotonic functions have at most countable many gaps. We will derive a contradiction from this.
-	Assume $F(\aa)$ is the lower boundary of a gap, then there exists $\varepsilon > 0$ such that for all $\delta > 0$ \footnote{Here, $\delta$ differs from our usual usage and is not a metric; rather it follows the standard notation for continuity and is only used in this proof this way.}, it must hold that $F(\aa + \delta) - F(\aa) > \varepsilon$. However, by \cref{necc-lemma-ineq}, for every $\bb > 0$,
+  Since $F$ is increasing and defined on an interval, all discontinuities are gaps \parencite[p. 335]{elementaryAna}\footnote{\parencite{elementaryAna} prove the following statement: Let $f$ be a real-valued monotonic function defined on an interval $[a, b]$. Then the set of points of discontinuity of $f$ in that interval is countable. Combining this statement with the paragraph above it, yields that these discontinuities must be gaps. Since any interval (open, half-open and unbounded intervals) can be represented by a countable union of closed intervals, this theorem can be extended to arbitrary intervals since countable unions of countable sets are still countable. This can be done by using $(a,b) = \bigcup_{n=1}^{\infty}[a+1/n, b-1/n]$, or $(a, \infty) = \bigcup_{n=1}^{\infty}[a+1/n, a+n]$. Similar arguments apply to other types of intervals.}. Real analysis yields, that real monotonic functions have at most countable many gaps. We will derive a contradiction from this.
+	Assume $F(\aa)$ is the lower boundary of a gap, then there exists $\varepsilon > 0$ such that for all $\delta > 0$\footnote{Here, $\delta$ differs from our usual usage and is not a metric; rather it follows the standard notation for continuity and is only used in this proof this way.}, it must hold that $F(\aa + \delta) - F(\aa) > \varepsilon$. However, by \cref{necc-lemma-ineq}, for every $\bb > 0$,
 	$$F(\aa + \bb + \delta) - F(\aa + \bb) \geq F(\aa + \delta) - F(\aa) > \varepsilon,$$
 	and so there is a gap at any $\aa + \bb$, and $F$ would have to be discontinuous everywhere. This is impossible, so $F$ must be continuous.
 \end{proof}
@@ -105,11 +105,11 @@ Now we proceed with the proof of the theorem.
 				(1 - \lambda)(\aa + \bb + \cc) +  \lambda \cc & = \bb + \cc.
 			\end{align*}
 			Hence, by convexity,
-			\begin{align*}
+      {\small \begin{align*}
 				F(\aa + \cc) + F(\bb + \cc) & = F \left[ \lambda (\aa + \bb + \cc) + (1 - \lambda) \cc \right] + F \left[ (1 - \lambda) (\aa + \bb + \cc) + \lambda \cc \right] \\
 				                            & \leq \lambda F(\aa + \bb + \cc) + (1 - \lambda) F(\cc) + (1 - \lambda) F(\aa + \bb + \cc) + \lambda F(\cc)                        \\
 				                            & = F(\aa + \bb + \cc) + F(\cc).
-			\end{align*}
+    \end{align*}}
 		\end{proofpart}
 
 		\begin{proofpart}[$\Leftarrow$]
@@ -127,8 +127,8 @@ Now we proceed with the proof of the theorem.
 We proceed with the proof of sufficiency.
 
 \begin{proof}[Proof of \crefpart{thm-conds}{thm-suff-cond}]
-  Sufficiency is established by the Mullholland Theorem, which was already used in \cref{sec-ad-ex}.
-  By this theorem, the triangle inequality holds for the AD model, and therefore, the models defines a metric. The proofs of symmetry and positivity are identical to those presented in \cref{sec-ad-ex}.
+  Sufficiency is established by the Mulholland Theorem, which was already used in \cref{sec-ad-ex}.
+  By this theorem, the triangle inequality holds for the AD model, and therefore, the model defines a metric. The proofs of symmetry and positivity are identical to those presented in \cref{sec-ad-ex}.
 \end{proof}
 
 
@@ -139,7 +139,7 @@ We conclude this section by discussing the implications of this theorem for the 
 	\begin{equation*}
 		\delta(\ps{a},\ps{b}) = F^{-1} \Big \{ \sum_{i=1}^{n} F(| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i) |) \Big \}
 	\end{equation*}
-	where $F$ is continuous, convex and increasing.	This follows form two arguments.
+	where $F$ is continuous, convex, and increasing.	This follows from two arguments.
 
 	Firstly, incorporating the $t_i$ into the $\varphi_i$ (which is possible because, by \cref{thm-repr-add-diff-struct}, the $\varphi_i$ are interval scales)
 	\begin{align*}

@@ -38,14 +38,14 @@ As this property only includes inequalities, it can be restated in a purely ordi
 
 %FIX: vllt umschreiben
 This relation yields a notion of betweenness for the proximity structure in terms of the relation $\succsim$. We will briefly discuss this relation and its implications.
-It is practical to examine this relation in terms of isosimilarity countours.
+It is practical to examine this relation in terms of isosimilarity contours.
 Intuitively, we have a circle around $x$ with radius $\metr{x}{z}$. The set of all points at a distance $\metr{x}{z}$ to $x$ forms the isosimilarity contour for this distance.
-Using this notion, we can observe that $y$ minimizes the distance to $z$ on the given sphere where $y$ resides. To see that, let $y'$ be such that $\metr{x}{y} = \metr{x}{y'}$. Using the triangle inequality and the addivitity yields
+Using this notion, we can observe that $y$ minimizes the distance to $z$ on the given sphere where $y$ resides. To see that, let $y'$ be such that $\metr{x}{y} = \metr{x}{y'}$. Using the triangle inequality and the additivity yields
 $$
 	\metr{x}{y} + \metr{y}{z} = \metr{x}{z} \leq \metr{x}{y'} + \metr{y'}{z}.
 $$
 By assumption, $\metr{x}{y} = \metr{x}{y'}$ holds, and therefore $\metr{y}{z} \leq \metr{y'}{z}$, which means that the minimal distance is the difference in the radii.\\
-Moreover, we can observe in a similar way, that given another point $\tilde  z$ with $\metr{x}{z} = \metr{x}{\tilde  z}$, the point $\tilde y$ with minimal distance to $\tilde z$ has the same distance to $\tilde z$ -- $\metr{\tilde y}{\tilde z} = \metr{y}{z}$. Stated differently, this assures that the minimal distance is independent of the direction, i.e., independent of the choice of $z$.
+Moreover, we can observe similarly, that given another point $\tilde  z$ with $\metr{x}{z} = \metr{x}{\tilde  z}$, the point $\tilde y$ with minimal distance to $\tilde z$ has the same distance to $\tilde z$ -- $\metr{\tilde y}{\tilde z} = \metr{y}{z}$. Stated differently, this assures that the minimal distance is independent of the direction, i.e., independent of the choice of $z$.
 Put together with the fact that $x$ is arbitrary, this yields that the minimized distance is independent of the direction (choice of $z$) and the location of the sphere (choice of $x$) and only depends on the two radii.
 These necessary conditions we just derived are visualized in \Cref{fig-circles}.
 
@@ -66,9 +66,9 @@ Thus, a necessary condition for a metric representation with additive segments i
 In this definition, the distance $\alpha$ is represented by $(\ps{e}, \ps{f})$ and the minimality is assured by the ternary betweenness relation.
 
 The next step is to construct the distances along the segments. The basic idea is the following: We wish to approximate the ratio of $\metr{\ps{a}}{\ps{b}}$ and $\metr{\ps{c}}{\ps{d}}$. This is done by choosing a common distance for the steps and using segmental solvability to iteratively partition the segments into subsegments of the common distance. This process yields two sequences, $\ps{a}=\ps{a}_0, \ps{a}_1, \dots$ and $\ps{c}=\ps{c}_0, \ps{c}_1 \dots$ of which all terms are between the start and end point, $\ps{a}$ and $\ps{b}$ or $\ps{c}$ and $\ps{d}$, respectively.
-If this construction terminates and we denote $p$ the steps needed for $\ps{a}_i$ to reach $\ps{b}$ and $q$ the steps for $\ps{c}_i$ to reach $\ps{d}$, then the ratio $\frac{\metr{\ps{a}}{\ps{b}}}{\metr{\ps{c}}{\ps{d}}}$ is approximately $\frac{p}{q}$.
+If this construction terminates, and we denote $p$ the steps needed for $\ps{a}_i$ to reach $\ps{b}$ and $q$ the steps for $\ps{c}_i$ to reach $\ps{d}$, then the ratio $\frac{\metr{\ps{a}}{\ps{b}}}{\metr{\ps{c}}{\ps{d}}}$ is approximately $\frac{p}{q}$.
 
-Since, at this point, we cannot ensure that this process terminates, we introduce another axiom, the archimedean or connectedness axiom, to guarantee that it does. This axiom states that there is no "infinitely small" distance that would allow the process to be executed infinitely.
+Since, at this point, we cannot ensure that this process terminates, we introduce another axiom, the Archimedean or connectedness axiom, to guarantee that it does. This axiom states that there is no ``infinitely small'' distance that would allow the process to be executed infinitely.
 
 Putting all together we get the following definition:
 
@@ -76,19 +76,19 @@ Putting all together we get the following definition:
 	A proximity structure $\langle \ps{A}, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, is segmentally additive if and only if the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
 	\begin{enumerate}
 		\item Segmental solvability
-		\item If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}_0, \ldots, \ps{b}_n \in \ps{A}$, such that $\ps{b}_0 = \ps{a}$, $\ps{b}_n = \ps{c}$, and $(\ps{e}, \ps{f}) \succsim (\ps{b}_{i-1}, \ps{b}_i)$ for $i = 1, \ldots, n$. (archimedean axiom)
+		\item If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}_0, \ldots, \ps{b}_n \in \ps{A}$, such that $\ps{b}_0 = \ps{a}$, $\ps{b}_n = \ps{c}$, and $(\ps{e}, \ps{f}) \succsim (\ps{b}_{i-1}, \ps{b}_i)$ for $i = 1, \ldots, n$. (Archimedean axiom)
 	\end{enumerate}
 	A segmentally additive proximity structure is complete if and only if the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
 	\begin{enumerate}
-		\item[3.] If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}, \ps{d} \in \ps{A}$, with $\ps{b} \neq \ps{d}$, such that $(\ps{e}, \ps{f}) \succ (\ps{b}, \ps{d})$. (Nondiscreteness of distances)
+		\item[3.] If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}, \ps{d} \in \ps{A}$, with $\ps{b} \neq \ps{d}$, such that $(\ps{e}, \ps{f}) \succ (\ps{b}, \ps{d})$. (nondiscreteness of distances)
 		\item[4.] Let $\ps{a}_1, \ldots, \ps{a}_n, \ldots$ be a sequence of elements of $\ps{A}$, such that for all $\ps{e}, \ps{f} \in \ps{A}$, if $\ps{e} \neq \ps{f}$, then $(\ps{e}, \ps{f}) \succsim (\ps{a}_i, \ps{a}_j)$ for all but finitely many pairs $(i, j)$. Then there exists $\ps{b} \in \ps{A}$, such that for all $\ps{e}, \ps{f} \in \ps{A}$, if $\ps{e} \neq \ps{f}$, then $(\ps{e}, \ps{f}) \succsim (\ps{a}_i, \ps{b})$ for all but finitely many $i$. (Limits for Cauchy sequences)
 	\end{enumerate}
 \end{defi}
 
-A segmentally additive proximity structure provides a metric representation with additive segments, see \parencite[p. 168]{foundations2}. However, as our goal is to establish a representation by the minkowski metric, we need a representation in a complete metric space with additive segments.
+A segmentally additive proximity structure provides a metric representation with additive segments, see \textcite[p. 168]{foundations2}. However, as our goal is to establish a representation by the Minkowski metric, we need a representation in a complete metric space with additive segments.
 For this, two further conditions must be added.
-The first one is the nondiscreteness of distances which assures that there is no smallest distance. The second one is the familiar notion of convergence of cauchy sequences, which assures that the underlying space is complete. Here $(\ps{e}, \ps{f})$ corresponds to $\varepsilon$ and $\ps{b}$ to the limit point of the sequence $\ps{a}_i$.
-These 4 conditions are both sufficient and necessary for such a representation, see \parencite[p. 168]{foundations2}.
+The first one is the nondiscreteness of distances which assures that there is no smallest distance. The second one is the familiar notion of convergence of Cauchy sequences, which assures that the underlying space is complete. Here $(\ps{e}, \ps{f})$ corresponds to $\varepsilon$ and $\ps{b}$ to the limit point of the sequence $\ps{a}_i$.
+These 4 conditions are both sufficient and necessary for such a representation, see \textcite[p. 168]{foundations2}.
 
 \addcontentsline{toc}{subsection}{Representation and Uniqueness Theorem for Segmentally Additive PS}
 

@@ -1,6 +1,6 @@
 \subsection{Homogeneity Theorem} \label{sect-homogeneity-theorem}
 Before beginning this section, we will first introduce some notation.\\
-$\metric_{\infty}$ is used to represent the $\infty$-metric (also called the maximum metric) which is induced by the maximum norm\footnote{The maximum norm is defined by $\|x,y\|_\infty := \max_{i \leq n} \{|x_i - y_i|\}.$}. This metric induces the natural topology of the euclidean space.
+$\metric_{\infty}$ is used to represent the $\infty$-metric (also called the maximum metric) which is induced by the maximum norm\footnote{The maximum norm is defined by $\|x,y\|_\infty := \max_{i \leq n} \{|x_i - y_i|\}.$}. This metric induces the natural topology of the Euclidean space.
 $\ball{r} := \{x \in \mathbb{R}^{n}: \metro{x} < r\} $ denotes the open Ball with radius $r$ around $0$ with respect to the metric $\metric$; similarly $\cball{r}$ denotes the closed ball. We use $\infty$ as a subscript, to indicate that the ball is with respect to $\metric_{\infty}$.
 
 % \gls{max-metr}
@@ -10,7 +10,7 @@ In this section we will prove the homogeneity theorem, which is needed for the p
 The proof is divided into 5 parts and a whole subsection which is devoted to showing the convexity of $\metric$-balls which is needed for the proof.
 First, we will state the theorem, give some remarks on it and prove some lemmas. Then we will prove the homogeneity theorem.
 Everything in this section is assumed as in this theorem. For example, if we write $\metric$, this implies not any metric but the metric from this theorem with its properties.
-Moreover all topological terms(open, closed, continuous) are meant with respect to the natural topology of $\mathbb{R}^{n}$ (i.e. the topology induced by the $\metric_{\infty}$ and the euclidean metric), not the topology induced by $\metric$ or the induced topology on a subset $S$. This will be especially important in the subsection on convexity of the balls.
+Moreover, all topological terms (open, closed, continuous) are meant with respect to the natural topology of $\mathbb{R}^{n}$ (i.e., the topology induced by the $\metric_{\infty}$ and the Euclidean metric), not the topology induced by $\metric$ or the induced topology on a subset $S$. This will be especially important in the subsection on convexity of the balls.
 
 It is recommended to first read this section, including the proof, to grasp the main ideas and gain broad understanding before proceeding to the next section.
 
@@ -22,7 +22,7 @@ For readers unfamiliar with convexity, we restate the definition of a convex set
 First, we begin with the statement of the theorem.
 
 \begin{thm}[Homogeneity Theorem] \label{thm-homogeneity}
-	Let $S$ be an open convex subset of $n$-dimensional Euclidean space. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity (\cref{def-intradim-sub}) \footnote{i.e. $\metric$ takes the form $\metr{\ve{x}}{\ve{y}} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$.} with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates \footnote{Linear coordinates means that the vector representations are cartesian as opposed to, for example, polar, where each coordinate entry is not the value on the corresponding factor of the cartesian product.} in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $\ve{x}, \ve{z} \in S$ and any real $0 \leq t \leq 1$,
+	Let $S$ be an open convex subset of $n$-dimensional Euclidean space. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity (\cref{def-intradim-sub}) \footnote{i.e., $\metric$ takes the form $\metr{\ve{x}}{\ve{y}} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$.} with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates \footnote{Linear coordinates means that the vector representations are Cartesian as opposed to, for example, polar, where each coordinate entry is not the value on the corresponding factor of the Cartesian product.} in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $\ve{x}, \ve{z} \in S$ and any real $0 \leq t \leq 1$,
 	\begin{align*}
 		\metric[\ve{x}, \ve{x} + t(\ve{z} - \ve{x})] = t\metric(\ve{x}, \ve{z}).
 	\end{align*}
@@ -32,7 +32,7 @@ Now, we continue with some remarks that make it possible to move the set such th
 \begin{rem}[Translation invariance and domain of $\metric$ and $F$] \label{lemma-rem}
 	This remark establishes the continuity of $\metric$ and shows that we can assume without loss of generality, that $\ve{0} \in S$.
 	\begin{enumerate}[(i)]
-		\item $\metric$ is translation-invariant, i.e. $\metr{\ve{x}+\ve{y}}{\ve{z}+\ve{y}} = \metr{\ve{x}}{\ve{z}}$: \label{lemma-trans-invariance}
+		\item $\metric$ is translation-invariant, i.e., $\metr{\ve{x}+\ve{y}}{\ve{z}+\ve{y}} = \metr{\ve{x}}{\ve{z}}$: \label{lemma-trans-invariance}
 		      \begin{align*}
 			      \metr{\ve{x}+\ve{y}}{\ve{z}+\ve{y}} & = F[|x_1 + y_1 - (z_1 + y_1)|, \dots, x_n + |y_n - (z_n + y_n)|] \\
 			                                          & = F[|x_1 - z_1|, \dots, |x_n - z_n|]                             \\
@@ -40,38 +40,44 @@ Now, we continue with some remarks that make it possible to move the set such th
 		      \end{align*}
 		\item Because $\metric$ is invariant to translation in its domain, we can move $S$ and redefine the metric on the shifted set. We do this by defining $S' = \{\ve{s} - \ve{x} : \ve{s} \in S\}$ for $\ve{x} \in S$ and $\metric'(\ve{a},\ve{b}) := \metr{\ve{a}+\ve{x}}{\ve{b}+\ve{x}}$ for $\ve{a}, \ve{b} \in S'$. Since $\ve{0} \in S'$, we also can introduce the following shorthand Notation $\metric'(\ve{x}') := \metric'(\ve{0}, \ve{x}')$ for $\ve{x}' \in S'$.
 		      From now on, we assume that $\ve{0} \in S$, because by the argument just provided, we can shift $S$ and $\metric$ such that $\ve{0} \in S$.
-		      Thus we can proceed to proof the statement using the shorthand notation, by which we need to show that: \label{rem-lemma-translate-to-zero}
+		      Thus, we can proceed to proof the statement using the shorthand notation, by which we need to show that: \label{rem-lemma-translate-to-zero}
 		      $$ \metro{t \cdot  \ve{z}} = t \cdot \metro{\ve{z}} \qquad \forall t \in [0, 1] \text{ and } \forall \ve{z} \in S' .$$
-		\item Since $\metric$ is defined by $\metr{\ve{x}}{\ve{y}} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$ and $\metric$ is a metric, $F(\ve{x}) = 0$ iff $\ve{x}=0$ must hold. Moreover the function $F$ has to be defined on a set, where at least the "greatest possible difference" in coordinate $i$ is a possible $i$-th argument. We denote this value as $\rho_i$ and define it as
+		\item Since $\metric$ is defined by $\metr{\ve{x}}{\ve{y}} = F(|x_1 - y_1|, \dots, |x_n - y_n|)$ and $\metric$ is a metric, $F(\ve{x}) = 0$ iff $\ve{x}=0$ must hold. Moreover, the function $F$ has to be defined on a set, where at least the ``greatest possible difference'' in coordinate $i$ is a possible $i$-th argument. We denote this value as $\rho_i$ and define it as
 		      $$\rho_i := \sup \left \{ |x_i - y_i| : (x_1, \dots, x_n), (y_1, \dots, y_n) \in S \right \} \in \mathbb{R}_{> 0} \cup \{\infty\}.$$
-		      Since $\metric$ is segmentally additive, every value between $0$ and $\rho_i$ must be in the domain of $\metric$. Since this is true for all $i$, this implies that $F$ is defined on a cartesian product of half-open, real intervals of the form $[0,\rho_i)$. \label{rem-lemma-domains}
+		      Since $\metric$ is segmentally additive, every value between $0$ and $\rho_i$ must be in the domain of $\metric$. Since this is true for all $i$, this implies that $F$ is defined on a Cartesian product of half-open, real intervals of the form $[0,\rho_i)$. \label{rem-lemma-domains}
 		\item  Moreover, due to the continuity of $F$ and $| \cdot |$, the metric $\metric$ is continuous. \label{rem-lemma-continuity}
 	\end{enumerate}
 \end{rem}
 Before proceeding to the proof, we first establish two preliminary statements that will be needed at the beginning.
-The first one asserts that the distance between disjoint compact and closed sets is greater than zero.
+The first is intuitive and asserts that the distance between disjoint compact and closed sets is greater than zero.
 
 \begin{lem} \label{lemma-distance}
-	If $K \subset \mathbb{R}^{n}$ is compact, $C \subset \mathbb{R}^{n}$ is closed and $K$ and $C$ are disjoint, then there exists $\varepsilon > 0$ such that $\metr[\infty]{\ve{p}}{\ve{y}} > \varepsilon$ for all $\ve{p} \in K$ and $\ve{p'} \in C$.
+	If $K \subset \mathbb{R}^{n}$ is compact, $C \subset \mathbb{R}^{n}$ is closed and $K$ and $C$ are disjoint, then there exists $\varepsilon > 0$ such that $\metr[\infty]{\ve{p}}{\ve{p}'} > \varepsilon$ for all $\ve{p} \in K$ and $\ve{p'} \in C$.
 \end{lem}
 
 \begin{proof}
-	We prove this statement by contradiction.
-	Assume that for all $\varepsilon > 0$ there exists $\ve{p} \in K$ and $\ve{p'} \in C$ such that $\metr[\infty]{\ve{p}}{\ve{p'}} < \varepsilon$. This means, we can construct two sequences $\ve{p_n} \in K$ and $\ve{p'_n} \in C$ such that $\metr[\infty]{\ve{p_n}}{\ve{p'_n}} \to 0$ as $n \to \infty$.
-	$K$ is compact, thus there exists a convergent subsequence $\ve{p_{n_m}}$ such that $\ve{p_{n_m}} \to \ve{p} \in K$ for $n \rightarrow \infty$.
-	With the triangle inequality we get
-	$$\metr[\infty]{\ve{p}}{\ve{p'_{n_m}}} \leq \metr[\infty]{\ve{p}}{\ve{p_{n_m}}} + \metr[\infty]{\ve{p_{n_m}}}{\ve{p'_{n_m}}} \to \ve{0} \text{ as } m \to \infty.$$
-	Hence,  $\ve{p}$ is a limit point of $C$, and since  $C$  is closed,  $\ve{p} \in C$ must hold which contradicts the assumption.
+  This statement follows directly from \textcite[p. 886, Exercise 13.12.10]{elementaryAna}\footnote{The complete statement of the theorem is: Given two closed subsets $E$ and $F$ of a metric space $(X, d)$, where at least one of the sets is compact, then there exist points $e \in E$ and $f \in F$ such that $$d(e,f) = \inf \{d(x,y): x \in E, y \in F\}.$$}, which asserts that there exist $\ve{p} \in K$ and $\ve{p}' \in C$ such that
+  $$
+  \metr[\infty]{\ve{p}}{\ve{p}'} = \inf \{\metr[\infty]{\ve{x}}{\ve{y}}: \ve{x} \in K, \ve{y} \in C\}.
+  $$
+  If we assume the infimum to be zero, then by that theorem, $\metr[\infty]{\ve{p}}{\ve{p}'} = 0$, which implies $\ve{p} = \ve{p}'$. This cannot be the case since $K$ and $C$ are disjoint.
+  Therefore, the infimum must be strictly greater than zero.
+	% We prove this statement by contradiction.
+	% Assume that for all $\varepsilon > 0$ there exists $\ve{p} \in K$ and $\ve{p'} \in C$ such that $\metr[\infty]{\ve{p}}{\ve{p'}} < \varepsilon$. This means, we can construct two sequences $\ve{p_n} \in K$ and $\ve{p'_n} \in C$ such that $\metr[\infty]{\ve{p_n}}{\ve{p'_n}} \to 0$ as $n \to \infty$.
+	% $K$ is compact, thus there exists a convergent subsequence $\ve{p_{n_m}}$ such that $\ve{p_{n_m}} \to \ve{p} \in K$ for $n \rightarrow \infty$.
+	% With the triangle inequality we get
+	% $$\metr[\infty]{\ve{p}}{\ve{p'_{n_m}}} \leq \metr[\infty]{\ve{p}}{\ve{p_{n_m}}} + \metr[\infty]{\ve{p_{n_m}}}{\ve{p'_{n_m}}} \to \ve{0} \text{ as } m \to \infty.$$
+	% Hence,  $\ve{p}$ is a limit point of $C$, and since  $C$  is closed,  $\ve{p} \in C$ must hold which contradicts the assumption.
 \end{proof}
 
 The second preliminary lemma allows us to make arbitrary small $\metric$-balls which we will combine with the statement before to assure a distance in $\metric$ and not only in $\metric_{\infty}$.
 
-\begin{lem}[arbitrary small $\metric$-Balls] \label{lemma-small-delta-balls}
+\begin{lem}[Arbitrary small $\metric$-balls] \label{lemma-small-delta-balls}
 	Let $\varepsilon > 0$ such that $\ball[\infty]{\varepsilon} \subset S$. Then there exists $\dis > 0$ such that $\ball{\dis} \subset \ball[\infty]{\varepsilon}$.
 \end{lem}
 
 \begin{proof}
-	Since $\metric$ is a metric defined by $\metric(\ve{x},\ve{y}) = F[|x_1 - y_1|, \dots, |x_n - y_n|]$, we can define the $j$-th partial function of $F$ by setting all other arguments to zero, i.e. $F^j(x_j) := F(0, \dots, x_j, \dots, 0)$.
+	Since $\metric$ is a metric defined by $\metric(\ve{x},\ve{y}) = F[|x_1 - y_1|, \dots, |x_n - y_n|]$, we can define the $j$-th partial function of $F$ by setting all other arguments to zero, i.e., $F^j(x_j) := F(0, \dots, x_j, \dots, 0)$.
 	$F$ is strictly increasing in every argument implies that $F^j$ is increasing and the continuity of $F$ directly translates to $F^j$ being continuous.
 	Moreover, due to \crefpart{lemma-rem}{rem-lemma-domains}, $F^j(x_j) = 0$ if and only if $x_j = 0$ holds.
 	Together, this means that $F^j$ is an increasing, continuous real function with $F^j(0) = 0$.
@@ -87,14 +93,14 @@ The second preliminary lemma allows us to make arbitrary small $\metric$-balls w
 We now proceed to the proof of the homogeneity theorem. First, we restate the theorem in the form in which we will prove it.
 
 \begin{lem*}[Restatement of the Homogeneity Theorem]
-	Let $S$ be an open convex subset of $n$-dimensional Euclidean space with $\ve{0} \in S$. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity (\cref{def-intradim-sub}) with with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $\ve{z} \in S$ and any real $0 \leq t \leq 1$,
+	Let $S$ be an open convex subset of $n$-dimensional Euclidean space with $\ve{0} \in S$. Let $\metric$ be a metric on $S$ that satisfies intradimensional subtractivity (\cref{def-intradim-sub}) with respect to a continuous function $F: \mathbb{R}_{\geq 0}^n \rightarrow \mathbb{R}_{\geq 0}$ and linear coordinates in $S$. If $\langle S, \metric \rangle$ is a metric space with additive segments, then $\metric$ is homogeneous, i.e., for any $\ve{z} \in S$ and any real $0 \leq t \leq 1$,
 	\begin{align*}
 		\metro{t\ve{z}} = t\metro{\ve{z}}.
 	\end{align*}
 \end{lem*}
 
 The proof consists of 4 parts.
-First we will find a radius such that all balls with this radius on line from $\ve{0}$ to $\ve{z}$ are in $S$.
+First we will find a radius such that all balls with this radius on the line from $\ve{0}$ to $\ve{z}$ are in $S$.
 Then we will prove the theorem for $t = \frac{1}{m}$ for $m \in \mathbb{N}$ by proving the two inequalities.
 After this, we will expand this statement to the rationals and then use continuity to expand it to all real numbers between $0$ and $1$.
 
@@ -108,7 +114,7 @@ After this, we will expand this statement to the rationals and then use continui
 		Let $\ve{z} \in S$.
 		Since $S$ is open, $\mathbb{R}^{n} \setminus S$ is closed. The set $K := \{t \ve{z} : t \in [0,1]\}$ is compact, since continuous images($t \mapsto t \ve{z}$) of compact sets ($t \in [0,1]$) are compact.
 		Thus, by \cref{lemma-distance} there exists a distance $\varepsilon > 0$ such that $\metr[\infty]{\ve{p}}{\ve{p'}} < \varepsilon$ for all $\ve{p} \in K$ and $\ve{p'} \in \mathbb{R}^{n} \setminus S$.
-    This means, for all points on the line from $\ve{0}$ to $\ve{z}$ the ball with radius $\varepsilon$ is a subset of $S$, i.e. for all $t \in [0,1]: \ballp[\infty]{\varepsilon}{t\ve{z}} \subset S$. This is illustrated in \Cref{fig-homo0}.
+    This means, for all points on the line from $\ve{0}$ to $\ve{z}$ the ball with radius $\varepsilon$ is a subset of $S$, i.e., for all $t \in [0,1]: \ballp[\infty]{\varepsilon}{t\ve{z}} \subset S$. This is illustrated in \Cref{fig-homo0}.
 
 		\begin{figure}[htbp]
 			\centering
@@ -155,7 +161,7 @@ After this, we will expand this statement to the rationals and then use continui
 		Further, we can observe that $\frac{1}{m} \z$ is a convex combination of $\x$:
 		$$\sum_{k=1}^m \frac{1}{m} \x = \frac{1}{m} (\y[1] - \y[0] + \y[2] - \y[1] + \dots + \y[m]) = \frac{1}{m} (-\y[0] + \y[m]) = \frac{1}{m} \z.$$
 		We showed before, that $\metro{\x} = \frac{1}{m}\metro{\z}$, which implies $\x \in  \cball{\frac{1}{m}\metro{\z}}$.
-		By \cref{lemma-part0} $\ball{\frac{1}{m} \metro{\z}}$ is bounded. Therefore we can apply \cref{lem-metr-spheres-convex} from which we get that spheres are convex. This means, that the spheres are closed under convex combination, which implies that $\frac{1}{m} \z \in \cball{\frac{1}{m} \metro{\z}}$ must hold. Thus $\metro{\frac1m \z} \leq \frac1m \metro{\z}$ which concludes the second part of the proof.
+		By \cref{lemma-part0} $\ball{\frac{1}{m} \metro{\z}}$ is bounded. Therefore, we can apply \cref{lem-metr-spheres-convex} from which we get that spheres are convex. This means, that the spheres are closed under convex combination, which implies that $\frac{1}{m} \z \in \cball{\frac{1}{m} \metro{\z}}$ must hold. Thus, $\metro{\frac1m \z} \leq \frac1m \metro{\z}$ which concludes the second part of the proof.
 	\end{proofpart}
 
 
@@ -197,7 +203,7 @@ After this, we will expand this statement to the rationals and then use continui
 			                     & = \frac{2}{m} \metr{\ve{0}}{\z}. \notag
 		\end{align}
 		Combining these two inequalities yields $\metr{\ve{0}}{\z[2]} = \frac{2}{m} \metr{\ve{0}}{\z}$.
-		By repeating this for $\metr{\ve{0}}{\z[k]}$ for every $k = 2, \dots, m-1$, we get the equality for every rational number for $m$ big enough. However every rational number with a denominator smaller than $m$ can be represented by another rational number with denominator greater than $m$. This yields, that the result is true for every rational $t$.
+		By repeating this for $\metr{\ve{0}}{\z[k]}$ for every $k = 2, \dots, m-1$, we get the equality for every rational number for $m$ big enough. However, every rational number with a denominator smaller than $m$ can be represented by another rational number with denominator greater than $m$. This yields, that the result is true for every rational $t$.
 	\end{proofpart}
 
 
@@ -209,7 +215,7 @@ After this, we will expand this statement to the rationals and then use continui
 			\metro{t \z} & = \metro{ \lim_{n \rightarrow \infty } t_n \z }                                                 \\
 			             & = \lim_{n \rightarrow \infty } \metro{t_n \z} \tag{continuity}                                  \\
 			             & = \lim_{n \rightarrow \infty } t_n \metro{\z} \tag{$t_n \in \mathbb{Q}$ and \cref{lemma-part3}} \\
-			             & = t \metro{\z}
+			             & = t \metro{\z}.
 		\end{align*}
 	\end{proofpart}
 \end{proof}
