@@ -1,7 +1,7 @@
 \section{Unique Representation Theorem} \label{sec-unique-repr-thm}
 
 In this section, we present the main theorem and complete the proofs given by \textcite[pp. 195-199]{foundations2}. The remainder of this chapter, except for the final section, consists of the proof of this theorem. The last section is dedicated to proving an intermediate result from functional analysis that is used in the proof.\\
-We begin by stating the theorem, and follow a top-down approach in the proof to provide a broad understanding. This means, we use results established in \cref{sect-homogeneity-theorem}. The same approach applies to the proofs in that section; see \cref{sect-homogeneity-theorem} for further explanation.
+We begin by stating the theorem and follow a top-down approach in the proof to provide a broad understanding. This means that we use results established in \cref{sect-homogeneity-theorem}. The same approach applies to the proofs in that section; see \cref{sect-homogeneity-theorem} for further explanation.
 We start with the statement of the theorem.
 
 \begin{thm}[Unique Representation Theorem: The Power Metric as the Sole Representation for Segmentally Additive AD Structures]\label{thm-uniquene-repr-minkowski} \index{Theorem!unique representation}
@@ -103,7 +103,7 @@ We start with the statement of the theorem.
 		\begin{equation*}
 			F^{-1} \left[ \sum_{i=1}^{n} F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{n} F(\ta_i) \right] \quad \text{ for } \ta, t < \infty .
 		\end{equation*}
-		To sum up, we have obtained an extended function which satisfies monotonicity, continuity, and homogeneity for $t \in [0, \infty)$. This extended function must coincide with tie original $F$ on at least the interval $[0, \Omega]$ (because this was the domain of $F$ that we deduced, before extending it).
+		To sum up, we have obtained an extended function which satisfies monotonicity, continuity, and homogeneity for $t \in [0, \infty)$. This extended function must coincide with the original $F$ on at least the interval $[0, \Omega]$ (because this was the domain of $F$ that we deduced, before extending it).
 	\end{proofpart}
 
 	\begin{proofpart}[Deriving functional equation]
@@ -113,9 +113,9 @@ We start with the statement of the theorem.
 			\begin{equation*}
 				\mean{t \ve{x}} = t \mean{ \ve{x}} \quad  \text{with} \quad \mean{\ve{x} } = \phi^{-1} \left ( \sum_{i=1}^{n} w_i \phi(x_i) \right)
 			\end{equation*}
-			for all positive $\ve{x}, \ve{w}, t$ and all $n \in \mathbb{N}$ such that $\sum_{i=1}^{n} w_i = 1$. Then $\mean{\ve{x}} = \meanp{\ve{x}}$. (i.e., $\mean{\ve{x}}$ is either a power mean with $\phi(x) = \alpha x^p + \beta$ and $\alpha, \beta, p \in \mathbb{R}, p > 0$ or a geometric mean with $\phi(x) = \alpha \log (x)$, $\alpha \in \mathbb{R}$.)
+			for all positive $\ve{x}, \ve{w}, t$ and all $n \in \mathbb{N}$ such that $\sum_{i=1}^{n} w_i = 1$. Then $\mean{\ve{x}} = \meanp{\ve{x}}$. (i.e., $\mean{\ve{x}}$ is either a power mean with $\phi(x) = \alpha x^p + \beta$ and $\alpha, \beta, p \in \mathbb{R}, p > 0$ or a geometric mean with $\phi(x) = \alpha \log (x)$, $\alpha \in \mathbb{R}.$)
 		\end{thm*}
-		The proof of this statement will be presented in \cref{sect-HLP_proof}, here we will apply the theorem for our proof.
+		The proof of this statement will be presented in \cref{sect-HLP_proof}, here we will only apply the theorem.
 
 		Since all requirements for $\phi$ are already met by $F$, we have to derive the functional equation for all $n \in \mathbb{N}$ and all positive weights. First, we will prove that the homogeneity holds not only for sums of $n$ summands, but for arbitrary many summands $N \in \mathbb{N}$. Then we will incorporate equal weights into this equation, extend them to commensurable weights (i.e., rational weights with a common denominator) and then use this to approximate arbitrary real weights.
 

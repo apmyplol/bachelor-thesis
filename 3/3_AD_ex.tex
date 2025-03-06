@@ -12,7 +12,7 @@
 \end{ex}
 
 \begin{proof}
-	First, we will prove positivity and symmetry of this function, and then turn to the triangle inequality which is a result of theorem which provides a generalization of the Minkowski inequality.
+	First, we will prove positivity and symmetry of this function, and then turn to the triangle inequality which is a result of Mulholland's theorem.
 	\begin{proofpart}[Positivity and Symmetry]
 		Positivity and symmetry are both straight forward.
 		\begin{enumerate}
@@ -57,13 +57,13 @@
 			e^{\p e^x}  - \p  e^x     & > 1
 		\end{align*}
 		holds.
-		This can be shown in two steps. First, we show that the left-hand side is strictly increasing. Second, we prove that its limit as $x \rightarrow -\infty$ is $1$.
+		This can be shown in two steps. First, we show that the left-hand side is strictly increasing. Second, we prove that its limit as $x$ approaches $-\infty$ is $1$.
 		Therefore, the inequality holds for all $x \in \mathbb{R}$.
 
 		\begin{enumerate}
 			\item For the first point, we show that the derivative is greater than zero. Differentiation yields
 			      $$ \p e^x \cdot e^{\p e^x} - \p e^x = \p e^x \cdot (e^{\p e^x} - 1) > 0. $$ The inequality holds, since $e^x > 0$ for all $x \in \mathbb{R}$ and $e^x > 1$ for $x > 0$.
-			\item For the second point, we calculate the limit as $x \rightarrow -\infty$:
+			\item For the second point, we calculate the limit as $x$ tends to $-\infty$:
 			      $$ \lim_{x \rightarrow -\infty} e^{\p e^x}  - \p  e^x = \lim_{x \rightarrow -\infty} e^{\p e^x}  - \lim_{x \rightarrow -\infty} \p  e^x =  1 - 0 = 1. $$
 
 			      Thus, convexity is established, and the claim follows from Mulholland's Inequality.
@@ -78,7 +78,7 @@
 \begin{proof}
 	Setting $\q = \p ^{-\r}$ yields
 	$$ \p ^{-\r}(e^{\p x} - 1)^\r = \left( \frac{e^{\p x} -1}{\p } \right)^\r .$$
-	As $\p  \rightarrow 0$, both the numerator and denominator tend to $0$ (we can pull the limit inside the exponent since the exponentiation is continuous), therefore we can apply L'Hospital's rule.
+	As $\p  \rightarrow 0$, both the numerator and denominator tend to $0$ (we can take the limit inside the exponent since the exponentiation is continuous), therefore we can apply L'Hospital's rule.
 	Hence,
 	\begin{align*}
 		\lim_{\p  \rightarrow 0} \left( \frac{e^{\p x} -1}{\p } \right)^\r & = \left( \lim_{\p  \rightarrow 0} \frac{e^{\p x} -1}{\p } \right)^\r \tag{continuity}              \\
