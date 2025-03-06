@@ -6,10 +6,9 @@ This chapter is based on \textcite[Chapter 1]{busemann} and Chapters 12.3.1 and 
 \section{Segmentally Additive Metrics} \label{sec-seg-add-metrics}
 
 As explained in \cref{chap-ps-metrics}, the goal is to find a metric representation in which, for any two points, there exists a curve connecting them such that the distances are additive -- that is, the triangle inequality holds with equality.
-In order to establish this, we first introduce parametric curves, their length and rectifiable curves, which are curves with finite length.
-Since, at this point, rectifiable curves do not ensure additivity of distances, we introduce segments -- rectifiable curves whose length is equal to the distance between the two points they connect. This guarantees the additivity of distances along the segment.
-Furthermore, we introduce the arc length, which is essentially the length of a sub-curve from the starting point to an intermediate point. Since this will be needed for a later proof, we define it here and provide a remark on it.
-
+In order to establish this, we first introduce rectifiable curves, which are curves with finite length.
+To ensure additivity of distances, we introduce segments, which are rectifiable curves whose length is equal to the distance between the two endpoints. This guarantees the additivity of distances along the segment.
+Furthermore, we introduce the arc length and provide a remark on it, since we this will be needed for a later proof.
 \begin{defi}[Curves and Segments] %\gls{Pcurve} \gls{Pcurve-len}
 	\leavevmode \vspace{-\baselineskip}
 	\begin{enumerate}
@@ -28,7 +27,7 @@ Furthermore, we introduce the arc length, which is essentially the length of a s
 	\end{enumerate}
 \end{defi}
 
-The remark we provide on the arc length is intuitive and states that the arc length is continuous and non-decreasing. This will be useful in a later proof.
+The remark we provide on the arc length is intuitive and states that the arc length is continuous and non-decreasing.
 
 \begin{rem}[Continuity \& Monotonicity of Sub Length] \label{thm-curve-sublen-cont} %\gls{Pcurve-sublen}
 	For a rectifiable curve $\curve(t), ~ a \leq t \leq b$, the arc length $\sublen$ is a continuous, non-decreasing function of $x$.

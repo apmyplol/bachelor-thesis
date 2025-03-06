@@ -3,7 +3,7 @@
 Now, we proceed with deriving segmentally additive proximity structures which ensure a metric representation with additive segments.
 We do this by examining necessary conditions for such a representation and translating them into ordinal criteria.
 
-We start by observing the additivity of distances given three points $x, y$ and $z$ in a metric space with additive segments where $y$ lies on the segment from $x$ to $y$.
+We start by observing the additivity of distances given three points $x, y$ and $z$ in a metric space with additive segments where $y$ lies on the segment from $x$ to $z$.
 Then $\metr{x}{y} + \metr{y}{z} = \metr{x}{z}$ holds.
 Suppose that $x', y'$ and $z'$ are any three points such that
 \begin{equation} \label{seg-add-eq1}
@@ -73,12 +73,12 @@ Since, at this point, we cannot ensure that this process terminates, we introduc
 Putting all together we get the following definition:
 
 \begin{defi}[Segmentally Additive Proximity Structure] \index{Proximity structure!segmentally additive} \label{def-seg-add-ps}
-	A proximity structure $\langle \ps{A}, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, is segmentally additive if and only if the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
+	A proximity structure $\langle \ps{A}, \succsim \rangle$, with a ternary relation $\langle \rangle$ defined in terms of $\succsim$, is segmentally additive iff the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
 	\begin{enumerate}
 		\item Segmental solvability
 		\item If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}_0, \ldots, \ps{b}_n \in \ps{A}$, such that $\ps{b}_0 = \ps{a}$, $\ps{b}_n = \ps{c}$, and $(\ps{e}, \ps{f}) \succsim (\ps{b}_{i-1}, \ps{b}_i)$ for $i = 1, \ldots, n$. (Archimedean axiom)
 	\end{enumerate}
-	A segmentally additive proximity structure is complete if and only if the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
+	A segmentally additive proximity structure is \emph{complete} iff the following two axioms hold for all $\ps{a}, \ps{c}, \ps{e}, \ps{f} \in \ps{A}$:
 	\begin{enumerate}
 		\item[3.] If $\ps{e} \neq \ps{f}$, then there exist $\ps{b}, \ps{d} \in \ps{A}$, with $\ps{b} \neq \ps{d}$, such that $(\ps{e}, \ps{f}) \succ (\ps{b}, \ps{d})$. (nondiscreteness of distances)
 		\item[4.] Let $\ps{a}_1, \ldots, \ps{a}_n, \ldots$ be a sequence of elements of $\ps{A}$, such that for all $\ps{e}, \ps{f} \in \ps{A}$, if $\ps{e} \neq \ps{f}$, then $(\ps{e}, \ps{f}) \succsim (\ps{a}_i, \ps{a}_j)$ for all but finitely many pairs $(i, j)$. Then there exists $\ps{b} \in \ps{A}$, such that for all $\ps{e}, \ps{f} \in \ps{A}$, if $\ps{e} \neq \ps{f}$, then $(\ps{e}, \ps{f}) \succsim (\ps{a}_i, \ps{b})$ for all but finitely many $i$. (Limits for Cauchy sequences)
@@ -86,9 +86,9 @@ Putting all together we get the following definition:
 \end{defi}
 
 A segmentally additive proximity structure provides a metric representation with additive segments, see \textcite[p. 168]{foundations2}. However, as our goal is to establish a representation by the Minkowski metric, we need a representation in a complete metric space with additive segments.
-For this, two further conditions must be added.
+For this, two further conditions have been added.
 The first one is the nondiscreteness of distances which assures that there is no smallest distance. The second one is the familiar notion of convergence of Cauchy sequences, which assures that the underlying space is complete. Here $(\ps{e}, \ps{f})$ corresponds to $\varepsilon$ and $\ps{b}$ to the limit point of the sequence $\ps{a}_i$.
-These 4 conditions are both sufficient and necessary for such a representation, see \textcite[p. 168]{foundations2}.
+These 4 conditions are both sufficient and necessary for such a representation \parencite[p. 168]{foundations2}.
 
 \addcontentsline{toc}{subsection}{Representation and Uniqueness Theorem for Segmentally Additive PS}
 

@@ -1,14 +1,14 @@
 \chapter{Combining Segmental Additivity with the AD Model} \label{chap-combination}
 \chaptermark{Segmental Additivity in the AD Model}
 
-In this chapter we aim to connect the previous two chapters and working with proximity structures that are both, segmentally additive and AD structures. We will present and prove the two main results. 
+In this chapter we aim to connect the previous two chapters and work with proximity structures that are both, segmentally additive and AD structures. We will present and prove the two main results. 
 The first one are sufficient and necessary conditions for the AD model to be a metric that is additive on the coordinate axes.
 The second one is the unique representation theorem which states that the only additive difference model that is compatible with a metric with additive segments is the Minkowski metric.
 We will prove both theorems, specifically extending and completing the proof of the second theorem, as the proofs presented in \textcite[pp. 192-199]{foundations2} are incomplete in some aspects. As in the previous chapters, the sources are further explained at the end of this chapter.
 
 \section{Conditions for Metric Representation of AD Structures} \label{sec-conds}
 
-We begin by combining additive difference structures with a metric. However, since metrics are too general, we restrict our focus to a specific class of metric -- those that are additive on the coordinate axes. This leads to necessary and sufficient conditions, which are stated in the following theorem.
+We begin by combining AD structures with a metric. We restrict our focus to a specific subclass of segmentally additive metric -- those that are only additive on the coordinate axes. This leads to necessary and sufficient conditions, which are stated in the following theorem.
 
 \begin{thm}[Conditions for Metric Representation of AD Structures] \label{thm-conds}
 	Suppose $\langle \ps{A}, \succsim \rangle$ is an additive-difference proximity structure such that $f$ is the additive-difference representation from \cref{thm-repr-add-diff-struct}, i.e.,
@@ -34,7 +34,7 @@ Before beginning with the proof we remark what additivity on the coordinate axes
 \end{rem}
 
 In this section, until the proof of this theorem is finished, everything will be assumed as in \cref{thm-conds}, unless otherwise stated.
-Now we proceed with the proof of the theorem.
+We begin by proving the necessary conditions.
 
 \begin{proof}[Proof of \crefpart{thm-conds}{thm-necc-cond}]
 	According to the assumptions of the theorem, the additive difference representation $f(\ps{a},\ps{b})$ is compatible with a metric $\delta$ on $\ps{A}$, i.e.,
@@ -54,7 +54,7 @@ Now we proceed with the proof of the theorem.
 		G[F_i(x)] + G[F_i(y)] = G[F_i(x + y)].
 	$$
 
-	Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i, 1 \leq i \leq n$. By \cref{thm-repr-add-diff-struct}, the domain is $\mathbb{R}$. This is Cauchy's functional equation and, under the assumption of monotonicity, the only solution is $H_i = t_i x$ for $t_i \in \mathbb{R}$ \parencite[p. 15]{aczelFunctionalEquationsSeveral1989}. Since the values are positive (as we are dealing with metrics), $H_i = t_i x$ with $t_i > 0$ must hold for all $i=1, ..., n$. Additionally, since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
+	Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i$ for $1 \leq i \leq n$. By \cref{thm-repr-add-diff-struct}, the domain is $\mathbb{R}$. This is Cauchy's functional equation and, under the assumption of monotonicity, the only solution is $H_i = t_i x$ with $t_i \in \mathbb{R}$ \parencite[p. 15]{aczelFunctionalEquationsSeveral1989}. Since the values are positive (as we are dealing with metrics), $H_i = t_i x$ with $t_i > 0$ must hold for all $i=1, ..., n$. Additionally, since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
 	$$
 		G^{-1}[H_i(x)] = G^{-1}[t_i x] = F_i(x)
 	$$
@@ -86,7 +86,7 @@ Now we proceed with the proof of the theorem.
 \end{lem}
 
 \begin{proof}
-  Since $F$ is increasing and defined on an interval, all discontinuities are gaps \parencite[p. 335]{elementaryAna}\footnote{\parencite{elementaryAna} prove the following statement: Let $f$ be a real-valued monotonic function defined on an interval $[a, b]$. Then the set of points of discontinuity of $f$ in that interval is countable. Combining this statement with the paragraph above it, yields that these discontinuities must be gaps. Since any interval (open, half-open and unbounded intervals) can be represented by a countable union of closed intervals, this theorem can be extended to arbitrary intervals since countable unions of countable sets are still countable. This can be done by using $(a,b) = \bigcup_{n=1}^{\infty}[a+1/n, b-1/n]$, or $(a, \infty) = \bigcup_{n=1}^{\infty}[a+1/n, a+n]$. Similar arguments apply to other types of intervals.}. Real analysis yields, that real monotonic functions have at most countable many gaps. We will derive a contradiction from this.
+  Since $F$ is increasing and defined on an interval, all discontinuities are gaps \textcite[p. 335]{elementaryAna}\footnote{\parencite{elementaryAna} prove the following statement: Let $f$ be a real-valued monotonic function defined on an interval $[a, b]$. Then the set of points of discontinuity of $f$ in that interval is countable. Combining this statement with the paragraph above it, yields that these discontinuities must be gaps. Since any interval (open, half-open and unbounded intervals) can be represented by a countable union of closed intervals, this theorem can be extended to arbitrary intervals since countable unions of countable sets are still countable. This can be done by using $(a,b) = \bigcup_{n=1}^{\infty}[a+1/n, b-1/n]$, or $(a, \infty) = \bigcup_{n=1}^{\infty}[a+1/n, a+n]$. Similar arguments apply to other types of intervals.}. Real analysis yields, that real monotonic functions have at most countable many gaps. We will derive a contradiction from this.
 	Assume $F(\aa)$ is the lower boundary of a gap, then there exists $\varepsilon > 0$ such that for all $\delta > 0$\footnote{Here, $\delta$ differs from our usual usage and is not a metric; rather it follows the standard notation for continuity and is only used in this proof this way.}, it must hold that $F(\aa + \delta) - F(\aa) > \varepsilon$. However, by \cref{necc-lemma-ineq}, for every $\bb > 0$,
 	$$F(\aa + \bb + \delta) - F(\aa + \bb) \geq F(\aa + \delta) - F(\aa) > \varepsilon,$$
 	and so there is a gap at any $\aa + \bb$, and $F$ would have to be discontinuous everywhere. This is impossible, so $F$ must be continuous.
