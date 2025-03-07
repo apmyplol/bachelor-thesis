@@ -65,8 +65,17 @@ Thus, a necessary condition for a metric representation with additive segments i
 \end{ax}
 In this definition, the distance $\alpha$ is represented by $(\ps{e}, \ps{f})$ and the minimality is assured by the ternary betweenness relation.
 
-The next step is to construct the distances along the segments. The basic idea is the following: We wish to approximate the ratio of $\metr{\ps{a}}{\ps{b}}$ and $\metr{\ps{c}}{\ps{d}}$. This is done by choosing a common distance for the steps and using segmental solvability to iteratively partition the segments into subsegments of the common distance. This process yields two sequences, $\ps{a}=\ps{a}_0, \ps{a}_1, \dots$ and $\ps{c}=\ps{c}_0, \ps{c}_1 \dots$ of which all terms are between the start and end point, $\ps{a}$ and $\ps{b}$ or $\ps{c}$ and $\ps{d}$, respectively.
+The next step is to construct the distances along the segments. The basic idea is depicted in \Cref{fig-archimed} and is the following: We wish to approximate the ratio of $\metr{\ps{a}}{\ps{b}}$ and $\metr{\ps{c}}{\ps{d}}$. This is done by choosing a common distance for the steps and using segmental solvability to iteratively partition the segments into subsegments of the common distance. This process yields two sequences, $\ps{a}=\ps{a}_0, \ps{a}_1, \dots$ and $\ps{c}=\ps{c}_0, \ps{c}_1 \dots$ of which all terms are between the start and end point, $\ps{a}$ and $\ps{b}$ or $\ps{c}$ and $\ps{d}$, respectively.
 If this construction terminates, and we denote $p$ the steps needed for $\ps{a}_i$ to reach $\ps{b}$ and $q$ the steps for $\ps{c}_i$ to reach $\ps{d}$, then the ratio $\frac{\metr{\ps{a}}{\ps{b}}}{\metr{\ps{c}}{\ps{d}}}$ is approximately $\frac{p}{q}$.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/archimed.pdf}
+	\caption{Illustration of the construction of distances.\\
+    \small Given a fixed radius, we construct sequences of equally spaced points for each segment. The dashed circular arcs are wrt. the previous point and the given radius and correspond to arcs on isosimilarity countours. The ratio of the lengths of the given segments is approximately $7/6$. A better approximation can be obtained by decreasing the radius (note the similarity to the definition of the length of a curve; see \cref{def-curve}).\\
+Keep in mind that isosimilarity contours in general are not circles and that the segment shape was chosen arbitrarily.}
+	\label{fig-archimed}
+\end{figure}
 
 Since, at this point, we cannot ensure that this process terminates, we introduce another axiom, the Archimedean or connectedness axiom, to guarantee that it does. This axiom states that there is no ``infinitely small'' distance that would allow the process to be executed infinitely.
 

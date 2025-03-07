@@ -8,11 +8,11 @@ As explained in \cref{chap-ps-metrics}, the goal is to find a metric representat
 In order to establish this, we first introduce rectifiable curves, which are curves with finite length.
 To ensure additivity of distances, we introduce segments, which are rectifiable curves whose length is equal to the distance between the two endpoints. This guarantees the additivity of distances along the segment.
 Furthermore, we introduce the arc length and provide a remark on it, since we this will be needed for a later proof.
-\begin{defi}[Curves and Segments] %\gls{Pcurve} \gls{Pcurve-len}
+\begin{defi}[Curves and Segments] \label{def-curve} %\gls{Pcurve} \gls{Pcurve-len}
 	\leavevmode \vspace{-\baselineskip}
 	\begin{enumerate}
 		\item Let $\metric$ be a metric on $X$. A \emph{parametric curve} in $\langle X, \metric \rangle$ is a function $\curve$ that maps a closed interval $[a, b] \subset \mathbb{R}$ into $X$ and is continuous. The parametric curve $\curve$ is said to join $\curve(a)$ and $\curve(b)$. \index{Parametric Curve}
-		\item Let $\curve$ be a parametric curve in $\langle X, \metric \rangle$ with domain $[a, b]$. Its length $\len$ is the supremum of the sums \index{Parametric Curve!length}
+    \item Let $\curve$ be a parametric curve in $\langle X, \metric \rangle$ with domain $[a, b]$. Its length $\len$ is the supremum of the sums \index{Parametric Curve!length} \label{def-curve-len}
 		      $$
 			      \sum_{i=1}^{n} \metric \left[ \curve(a_{i-1}), \curve(a_i) \right]
 		      $$
