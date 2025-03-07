@@ -1,7 +1,5 @@
 \subsection{Uniqueness Theorem for Homogeneous Means} \label{sect-HLP_proof}
 In this section we will prove the uniqueness theorem for homogeneous means, which states that the power means \footnote{In some literature this is also referred to as the Hölder mean or the generalized means.} (including the geometric mean as a limit case) are the only homogeneous quasi-arithmetic means.
-Before beginning the proof, we will first define quasi-arithmetic means and one class of this means, the power means.
-Both, the proof and the definitions are based on \textcite{hardy1952inequalities} and \textcite{handbookMeans}.
 
 We begin with defining quasi-arithmetic means. The name stems from generalizing the arithmetic mean by applying a function on each value before averaging and then using its inverse to transform the result back.
 
@@ -23,7 +21,7 @@ Next, we define the power means and remark that they are quasi-arithmetic means.
 	$$
 \meanp[0]{\ve{x}} = \left ( \prod_{i=1}^n x_i^{w_i} \right )^{1 / \sum_{i=1}^{n}w_i}
 	$$
-	since it is obtained as a limit case for $r \rightarrow 0$ \parencite[p. 176]{handbookMeans}.
+	since it is obtained as a limit case for $p \rightarrow 0$ \parencite[p. 176]{handbookMeans}.
 \end{defi}
 
 \begin{rem}[Power Means are Quasi-Arithmetic]
@@ -34,7 +32,7 @@ Next, we define the power means and remark that they are quasi-arithmetic means.
   $$\sqrt[n]{\prod_{i=1}^n x_i} .$$
 \end{rem}
 
-Now we can continue with a theorem about equal means, which is needed in the proof of the uniqueness theorem for homogeneous means.
+Now we continue with a characterization of equal means.
 
 \begin{thm}[Characterization of Equal Means] \label{thm-quasi-mean-equal-cond}
 	In order that
@@ -56,7 +54,7 @@ Now we can continue with a theorem about equal means, which is needed in the pro
       \chi^{-1}(w_1 \chi(a_1) + w_2 \chi(a_2)) = \psi^{-1} (w_1 \psi(a_1) + w_2 \psi (a_2))
     \end{equation*}
 
-    Putting $\phi(x) = \chi ( \psi^{-1} (x)), x_i = \psi (a_i)$ for $i=1, 2$ yields
+    Putting $\phi(x) = \chi ( \psi^{-1} (x))$ and $x_i = \psi (a_i)$ for $i=1, 2$ yields
     \begin{equation*}
       \phi(w_1 x_1 + w_2 x_2) = w_1 \psi(x_1) + w_2 \psi(x_2) \quad x_1, x_2 \in \mathbb{R}_{\geq  0}.
     \end{equation*}
@@ -81,7 +79,7 @@ Now we can continue with a theorem about equal means, which is needed in the pro
   \end{proofpart}
 \end{proof}
 
-Now we finally state and prove the main theorem of this section.
+Now we proceed with the main theorem of this subsection.
 
 \begin{thm}[$\meanpempty$ are the only homogeneous means $\meanempty$] \label{thm-power-mean-uniqueness}
 	Suppose that $\phi$ is continuous and strictly increasing in the open interval $(0,\infty)$ and that the mean defined by $\phi$ is homogeneous, i.e.,
@@ -97,30 +95,30 @@ Now we finally state and prove the main theorem of this section.
   \begin{align*}
     \mean{\ve{a}} = t^{-1} \mean{t\ve{a}} = t^{-1} \phi^{-1} \left ( \sum_{i=1}^{n} w_i \phi(t a_i) \right) = \mean[\psi]{\ve{a}}
   \end{align*}
-  by setting $\psi(x) = \phi(t x)$. From this, it follows that $\psi^{-1}(x) = t^{-1} \cdot \phi(x)$\footnote{For this, let $\psi^{-1}(x) = y$. Then, by applying $\psi$ to both sides, and using its definition, this yields $x = \phi(ty)$. Applying the inverse of $\phi$ and dividing by $t$ yields $t^{-1} \phi^{-1}(x) = y$, which in turn is equal to $\psi^{-1}(x)$ by the first equation.}, which in turn justifies the above equation.
+  by setting $\psi(x) = \phi(t x)$. From this, it follows that $\psi^{-1}(x) = t^{-1} \cdot \phi(x)$\footnote{For this, let $\psi^{-1}(x) = y$. Applying $\psi$ to both sides, and using its definition gives $x = \phi(ty)$. Applying $\phi^{-1}$ and dividing by $t$ results in $t^{-1} \phi^{-1}(x) = y$, which in turn is equal to $\psi^{-1}(x)$ by the first equation.}, which in turn justifies the above equation.
   Therefore, we have the equality of the means defined by $\psi$ and $\phi$. Since $\psi$ is defined for every $t > 0$, we have by \cref{thm-quasi-mean-equal-cond} that there are $\alpha(t), \beta(t) \in \mathbb{R}, \alpha(t) \neq  0$ such that
   \begin{equation*}
   \phi(t x) = \psi(x) = \alpha(t) \cdot \phi(x) + \beta(t).
   \end{equation*}
-  Plugging in $x=1$ and using $\phi(1) = \phi(0)$ yields
+  Plugging in $x=1$ and using $\phi(1) = 0$ yields
   \begin{equation*}
   \phi(t) = \psi(1) = \beta(t).
   \end{equation*}
   Thus, for all positive $x, y$ by setting $y=t$
   \begin{equation} \label{proof-quasi-eq2}
-    \phi(x y) = \alpha(y)\phi(x) + \phi(y)
+    \phi(x y) = \alpha(y)\phi(x) + \phi(y).
   \end{equation}
   Similarly, by exchanging the roles of $x$ and $y$ we get
   \begin{equation*}
-    \phi(x y) = \alpha(x)\phi(y) + \phi(x)
+    \phi(x y) = \alpha(x)\phi(y) + \phi(x).
   \end{equation*}
   Combining these two equalities yields
   \begin{align*}
     \alpha(y)\phi(x) + \phi(y)  &= \alpha(x)\phi(y) + \phi(x) \tag{$- \phi(x) - \phi(y)$} \\
     \alpha(y)\phi(x) - \phi(x)  &= \alpha(x)\phi(y) - \phi(y) \tag{divide \footnotemark by $\phi(x) \cdot \phi(y)$} \\
-    \frac{\alpha(x) -1}{\phi(x)} &= \frac{\alpha(y) - 1}{\phi(y)} := c
+    \frac{\alpha(x) -1}{\phi(x)} &= \frac{\alpha(y) - 1}{\phi(y)} := c.
   \end{align*} \footnotetext{Provided $x \neq 1, y \neq 1$. Since \Cref{proof-quasi-eq1} is true when $x$ or $y$ is $1$, we can ignore the exception.}
-  Since this must hold for all $x$ and $y$, the expressions must reduce to a constant $c$. This can be seen by settings, for example, $x=1$ and observing that the right-hand side must equal to that for all $y$ and therefore must be constant. The same argument can be applied in reverse.
+  Since this must hold for all $x$ and $y$, the expressions must reduce to a constant $c$. This can be seen by setting, for example, $x=1$ and observing that the right-hand side must equal the left-hand side for all $y$, and therefore must be constant. The same argument can be applied in reverse.
   Using this, we get the following expression
   \begin{equation*}
     \alpha(y) = 1 + c \phi(y).
