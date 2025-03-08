@@ -1,7 +1,7 @@
 \section{Additive Difference Structure} \label{sec-AD-ps}
 % In diesem Abschnitt geht es darum, wann eine factorial proximity structure durch das additive difference model (siehe \ref{add-diff-model}) dargestellt werden kann. Die Axiome die dafür benötigt sind, werden hier nicht genauer dargestellt (siehe Anhang \ref{appendix}), sonder nur genannt.
 In this section we will develop necessary and sufficient conditions for a proximity structure to be representable by an AD Model.
-We do this by examining each of the characteristics of the AD model, namely decomposability, intradimensional subtractivity and interdimensional additivity, and deriving conditions for a representation. All of these conditions are closely related to the theory developed in \textcite{foundations1} and most of the theorems utilize some sort of reduction to the structures developed there.
+We do this by examining each of the characteristics of the AD model, namely decomposability, intradimensional subtractivity and interdimensional additivity, and deriving conditions for a representation. The conditions we derive are closely related to the theory developed in \textcite{foundations1} and most of the theorems utilize some sort of reduction to the structures developed there.
 At the end of this subsection, we will state the representation and uniqueness theorem.
 We begin with decomposability because it is the basis assumption of each of the variants.
 %Decomp
@@ -9,8 +9,8 @@ We begin with decomposability because it is the basis assumption of each of the 
 % Chapter 10: if the observed components influence each other
 
 Decomposability implies that we can represent the observed proximity of two stimuli pairs by a function that evaluates the proximity on each factor.
-Using the monotonicity in each argument, its necessary that each factor contributes its effect to the overall similarity independently of all the other factors. In particular, for two stimuli pairs that only differ on the $i$-th dimension, the ordering must be preserved when the values on the remaining factors are changed in the same way.
-This is stated in the next definition, where $(\ps{a}, \ps{b})$ and $(\ps{a'}, \ps{b'})$ are the original stimuli and $\ps{c}, \ps{d}, \ps{c'}$ and $\ps{d'}$ are the stimuli we obtain by ``changing'' the remaining dimensions, as just described.
+By monotonicity in each argument, for two stimuli pairs that only differ on the $i$-th dimension, the ordering must be preserved when the values on the remaining factors are changed in the same way.
+This means that each factor contributes its effect to the overall similarity independently of all the other factors. In particular, This is stated in the next definition, where $(\ps{a}, \ps{b})$ and $(\ps{a'}, \ps{b'})$ are the original stimuli and $\ps{c}, \ps{d}, \ps{c'}$ and $\ps{d'}$ are the stimuli we obtain by ``changing'' the remaining dimensions, as just described.
 
 \begin{ax}[One-Factor Independence] \label{def-onef-indep}
 A factorial proximity structure $\langle A, \succsim \rangle$ satisfies \emph{one-factor independence} iff the following holds for all $\ps{a}, \ps{a'}, \ps{b}, \ps{b'}, \ps{c}, \ps{c'}, \ps{d}, \ps{d'} \in A$:
@@ -26,11 +26,18 @@ $$
 One-factor independence induces an ordering on each factor and asserts that the induced ordering is well-defined, i.e., independent of the fixed components on the remaining factors.
 This induced ordering is denoted by $\succsim_i$. This ordering is of importance for developing intradimensional subtractivity, which we do next.
 
-Intradimensional subtractivity is obtained by establishing decomposability for the entire structure and then imposing an absolute-difference structure from \textcite[pp. 170-173, Definition 4.8]{foundations1} on each factor $\langle \ps{A}_i^2, \succsim_i \rangle$. Therefore, the axioms for intradimensional subtractivity are essentially the same as for absolute-difference structures, but reformulated for proximity structures.
-In absolute-difference structures, just as in proximity structures, the basis is an ordering of pairs which is exactly $\langle \ps{A}_i^2, \succsim_i \rangle$ for each $i=1, \dots, n$.\\
-Since absolute-difference structures are unidimensional, the comparison of two pairs can be seen as the comparison of two intervals, and therefore the ordering can be seen as an ordering of intervals. Furthermore, the axioms for absolute-difference structures are also unidimensional. These axioms are based on the notion of unidimensional betweenness which is very intuitive, i.e., betweenness of real numbers, but formulated in terms of the ordering relation. The same holds for the betweenness axioms.
-Since our representation is in the reals, these intuitive concepts must apply to the empirical structure, and therefore are necessary conditions.
-Next, we present the definitions of betweenness and the betweenness axioms. Note that these can be easily verified for the reals using 6 points on a line.
+Intradimensional subtractivity is obtained by establishing decomposability for the entire structure and then imposing an absolute-difference structure from \textcite[pp. 170-173, Definition 4.8]{foundations1} on each factor $\langle \ps{A}_i^2, \succsim_i \rangle$. Therefore, the axioms for intradimensional subtractivity are essentially the same as for absolute-difference structures, but reformulated in terms of $\langle \ps{A}_i^2, \succsim_i \rangle$ for each $i=1, \dots, n$.\\
+Since absolute-difference structures and its axioms are unidimensional, the comparison of two pairs can be seen as the comparison of two intervals, and therefore the ordering can be seen as an ordering of intervals. This introduces the intuitive notion of betweenness on the real number line, but reformulated in terms of the unidimensional ordering relation.
+By one-factor independence, we get that these concepts must apply for each factor of the proximity structure, and therefore are necessary conditions.
+Next, we present the definitions of betweenness and the betweenness axioms. The first betweenness axiom can easily be verified using 4 points on the number line. For a visualization of the second axiom, see \Cref{fig-between}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./images/between_1.pdf}
+	\caption{Illustration of the second betweenness axiom.\\
+  \small The arcs between two points represent the distances between these points. Given that the distances represented by the gray lines are equal, then the orderings of the green lines is the same as the orderings of the purple lines.}
+	\label{fig-between}
+\end{figure}
 
 \begin{ax}[Betweenness and Betweenness Axioms] \label{def-between-ax}
 Let $\langle A = \prod_{i=1}^n A_i, \succsim \rangle$ be a factorial proximity structure that satisfies one-factor independence. Let $\succsim_i$ denote the induced order on $A^2_i$. We say that $\ps{b}$ is \emph{between} $\ps{a}$ and $\ps{c}$, denoted $\ps{a}|\ps{b}|\ps{c}$, if and only if
@@ -57,7 +64,7 @@ The first one is restricted solvability which asserts that, given a range of dis
 Formulated in terms of a proximity structures this yields the following axiom, where $\ps{d}$ is the starting point, $(\ps{d}, \ps{a})$ and $(\ps{d}, \ps{c})$ define the range of dissimilarity and $\ps{b}$ is the point, that realizes this dissimilarity and is between $\ps{a}$ and $\ps{c}$.
 
 \begin{ax}[Restricted Solvability] \label{defi-restrict-solv}
-A factorial proximity structure $\langle A, \succsim \rangle$ satisfies \emph{restricted solvability} iff, for all $\ps{e}, \ps{f}, \ps{d}, \ps{a}, \ps{c} \in A$, if $(\ps{d}, \ps{a}) \succsim (\ps{e}, \ps{f}) \succsim (\ps{d}, \ps{c})$, then there exists $\ps{b} \in A$ such that $\ps{a}|\ps{b}|\ps{c}$ and $(\ps{d}, \ps{b}) \sim (\ps{e}, \ps{f})$.
+A factorial proximity structure $\langle A, \succsim \rangle$ satisfies \emph{restricted solvability} iff, for all elements $\ps{e}, \ps{f}, \ps{d}, \ps{a}, \ps{c} \in A$, if $(\ps{d}, \ps{a}) \succsim (\ps{e}, \ps{f}) \succsim (\ps{d}, \ps{c})$, then there exists $\ps{b} \in A$ such that $\ps{a}|\ps{b}|\ps{c}$ and $(\ps{d}, \ps{b}) \sim (\ps{e}, \ps{f})$.
 \end{ax}
 
 The second axiom is the Archimedean axiom, which is a basic axiom in most representation measurement structures.
@@ -69,13 +76,13 @@ This can be formulated with respect to $\succsim$ as follows.
 A proximity structure $\langle A, \succsim \rangle$ satisfies the \emph{Archimedean axiom} if and only if, for all $\ps{a}, \ps{b}, \ps{c}, \ps{d} \in A$ with $\ps{a} \neq \ps{b}$, any sequence $\ps{e}^{(k)} \in A$, $k = 0, 1, \ldots$ such that $\ps{e}^{(0)} = \ps{c}$, $(\ps{e}^{(k)}, \ps{e}^{(k+1)}) \succ (\ps{a}, \ps{b})$, and $(\ps{c}, \ps{d}) \succ (\ps{c}, \ps{e}^{(k+1)}) \succ (\ps{c}, \ps{e}^{(k)})$ for all $k$ is finite.
 \end{ax}
 
-Given these axioms, we can establish an absolute-difference structure on each factor and therefore get an intradimensionally subtractive representation.
+Given these axioms, we can establish an absolute-difference structure on each factor and therefore get an intradimensionally subtractive representation \parencite[p. 181]{foundations2}.
 
 Finally, we investigate some consequences of interdimensional additivity.
 Let $\ps{a}$ and $\ps{a}'$ be two stimuli that coincide on the $i$-th factor, and let the same hold for $\ps{b}$ and $\ps{b}'$. Then $\psi_i(\ps{a}_i, \ps{b}_i) = \psi_i(\ps{a}'_i, \ps{b}'_i)$ and, since our representation is additive, the relation $(\ps{a}, \ps{b}) \succsim (\ps{a}', \ps{b}')$ must be independent of the $i$-th component.
 Moreover, changing the common value of $\ps{a}$ and $\ps{a}'$ and the common value of $\ps{b}$ and $\ps{b}'$ should preserve the ordering.
 Therefore, the ordering is independent of the common value.
-This independence is different from one-factor independence which we defined above and, in fact, is stronger, as it implies one-factor independence but not conversely.
+This independence is different from one-factor independence which we defined above and, in fact, is stronger, as, in the presence of the other axioms, it implies one-factor independence but not conversely \parencite[p. 184]{foundations2}.
 
 \begin{ax}[Independence] \label{def-independ}
 A factorial proximity structure $\langle A, \succsim \rangle$ satisfies \emph{independence} if the following holds for all $\ps{a}, \ps{b}, \ps{c}, \ps{d}, \ps{a'}, \ps{b'}, \ps{c'}, \ps{d'} \in A$:
