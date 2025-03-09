@@ -4,14 +4,14 @@ In this chapter we will develop the theory for segmentally additive metrics. Fir
 
 \section{Segmentally Additive Metrics} \label{sec-seg-add-metrics}
 
-As explained in \cref{chap-ps-metrics}, the goal is to find a metric representation in which, for any two points, there exists a curve connecting them such that the distances are additive -- that is, the triangle inequality holds with equality.
+As explained in \cref{chap-ps-metrics}, the goal is to find a metric representation in which, for any two points, there exists a curve connecting them such that the distances are additive -- that is, the triangle inequality holds with equality for any point on the curve.
 In order to establish this, we first introduce rectifiable curves, which are curves with finite length.
 To ensure additivity of distances, we introduce segments, which are rectifiable curves whose length is equal to the distance between the two endpoints. This guarantees the additivity of distances along the segment.
-Furthermore, we introduce the arc length and provide a remark on it, since we this will be needed for a later proof.
+Furthermore, we introduce the concept of an arc length, since this will be needed for a later proof.
 \begin{defi}[Curves and Segments] \label{def-curve} %\gls{Pcurve} \gls{Pcurve-len}
 	\leavevmode \vspace{-\baselineskip}
 	\begin{enumerate}
-		\item Let $\metric$ be a metric on $X$. A \emph{parametric curve} in $\langle X, \metric \rangle$ is a function $\curve$ that maps a closed interval $[a, b] \subset \mathbb{R}$ into $X$ and is continuous. The parametric curve $\curve$ is said to join $\curve(a)$ and $\curve(b)$. \index{Parametric Curve}
+		\item Let $\langle X, \metric \rangle$ be a metric space. A \emph{parametric curve} in $\langle X, \metric \rangle$ is a function $\curve$ that maps a closed interval $[a, b] \subset \mathbb{R}$ into $X$ and is continuous. The parametric curve $\curve$ is said to join $\curve(a)$ and $\curve(b)$. \index{Parametric Curve}
     \item Let $\curve$ be a parametric curve in $\langle X, \metric \rangle$ with domain $[a, b]$. Its length $\len$ is the supremum of the sums \index{Parametric Curve!length} \label{def-curve-len}
 		      $$
 			      \sum_{i=1}^{n} \metric \left[ \curve(a_{i-1}), \curve(a_i) \right]
@@ -21,7 +21,7 @@ Furthermore, we introduce the arc length and provide a remark on it, since we th
 			      a = a_0 \leq a_1 \leq \dots \leq a_n = b.
 		      $$ 
 		      If $\len < \infty$, then $\curve$ is \emph{rectifiable}. \index{Parametric Curve!rectifiable}
-        \item A rectifiable curve is a \emph{segment} iff its length is equal to the distance between its endpoints, i.e., $\len = \metr{a}{b}$. \index{Segment}
+        \item A rectifiable curve is a \emph{segment} iff its length is equal to the distance between its endpoints, i.e., $\len = \metr{\curve(a)}{\curve(b)}$. \index{Segment}
         \item For $a \leq x \leq b$ we denote the length of the sub-curve $\curve(t),~ a \leq t \leq x$ from $a$ to $x$ by $\sublen$. This is also called the \emph{arc length} of the curve. \label{def-curve-sublen} \index{Parametric Curve!arc-length}
 	\end{enumerate}
 \end{defi}

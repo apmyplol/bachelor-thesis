@@ -3,36 +3,37 @@ In this chapter we will establish the additive difference model and additive dif
 
 \section{Additive Difference Model} \label{sec-ad-model}
 
-As mentioned in \cref{chap-ps-metrics} we wish to achieve a generalization of the Minkowski metrics by inspecting the properties decomposability, intradimensional subtractivity and interdimensional subtractivity which correspond to the first three steps mentioned after \cref{def-minkowski-metric}.
-Here, we will define these terms for proximity structures and then remark how they translate to the real numbers.
+As mentioned in \cref{chap-ps-metrics} we wish to achieve a generalization of the Minkowski metrics by inspecting the properties \emph{decomposability}, \emph{intradimensional subtractivity} and \emph{interdimensional subtractivity} corresponding to the first three steps mentioned after \cref{def-minkowski-metric}.
+Here, we will define these terms for proximity structures and then note how they translate to the real numbers.
 
 \begin{defi}[Additive-Difference Model]
   %\gls{ADPhi} \gls{ADFi}
-  Given a factorial proximity structure $\langle \ps{A}, \succsim \rangle$ and two stimuli $\ps{a}, \ps{b} \in \ps{A}$. A numerical representation of the proximity structures satisfies
+  Let $\langle \ps{A}, \succsim \rangle$ be a factorial proximity structure and $\ps{a}, \ps{b} \in \ps{A}$ two stimuli. A numerical representation of the proximity structure satisfies
 	\begin{enumerate}
     \item \emph{Decomposability}, if the distance between stimuli is a function of componentwise contributions. Then \index{Decomposability}
 		      \begin{equation}\label{def-decomp}
             \metric(\ps{a},\ps{b}) = F[\psi_1(\ps{a}_1, \ps{b}_1), \ldots , \psi_n(\ps{a}_n, \ps{b}_n)],
 		      \end{equation}
           where $F$ is an increasing \footnote{We use the terms increasing and decreasing to denote real-valued functions that are strictly monotonically increasing and decreasing, respectively.} real-valued function in each of its $n$ real arguments and $\psi_i$ is a real-valued symmetric function satisfying $\psi_i(\ps{a}_i, \ps{b}_i) > \psi_i(\ps{a}_i, \ps{a}_i)$ when $\ps{a}_i \neq \ps{b}_i$ for all $i = 1, ..., n$.
-        \item \emph{Intradimensional subtractivity}, if each componentwise contribution is the absolute value of an appropriate scale difference. Then \index{Intradimensional subtractivity}
+        \item \emph{Intradimensional subtractivity}, if, in addition to decomposability, each componentwise contribution is the absolute value of an appropriate scale difference. Then \index{Intradimensional subtractivity}
 		      \begin{equation}\label{def-intradim-sub}
             \metric(\ps{a},\ps{b}) = F[ |\varphi_1(\ps{a}_1) - \varphi_1(\ps{b}_1)| , \ldots , | \varphi_n(\ps{a}_n) - \varphi_n(\ps{b}_n)| ],
 		      \end{equation}
           where $F$ is as in \Cref{def-decomp} and $\psi_i$ is replaced with $|\varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for some real-valued function $\varphi_i$ defined on $\ps{A}_i$ for $i = 1, ..., n$.
-        \item \emph{Interdimensional additivity}, if the distance is a function of the sum of componentwise contributions. Then \index{Interdimensional additivity}
+        \item \emph{Interdimensional additivity}, if, in addition to decomposability, the distance is a function of the sum of componentwise contributions. Then \index{Interdimensional additivity}
 		      \begin{equation}\label{def-iterdim-add}
             \metric(\ps{a},\ps{b}) = G \left [ \sum_{i=1}^{n} \psi_i(\ps{a}_i, \ps{b}_i) \right],
 		      \end{equation}
 		      where $\psi_i$ are as in \Cref{def-decomp} and $G$ is an increasing function in one argument.
+          %TODO: check implications
 		\item The \emph{Additive-difference model} (AD model), if both, additivity and subtractivity are assumed. Then
       \begin{equation}\label{def-add-diff-model} \index{Additive-difference!model}
         \metric(\ps{a},\ps{b}) = G \left \{ \sum_{i=1}^{n} F_i\left [ | \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)| \right ] \right \},
 		      \end{equation}
-		      where $G$ and $F_i$, for $i=1, \ldots ,n$, are all increasing functions in one argument.
+          where $G$ and $F_i$, for $i=1, \ldots ,n$, are all increasing functions in one argument. In \cref{chap-disc} we will briefly discuss the psychological interpretation of the functions $F_i$ and $\varphi_i$.
 	\end{enumerate}
 \end{defi}
 
 \begin{rem}
-As noted above, this definition is formulated for proximity structures. However, we wish to make use of the model without having to rely on a proximity structure as the domain. For example the Minkowski metric clearly is a case of the AD model. Thus, when talking about the AD model in the context of the real numbers, we interpret the functions that operate on the proximity structure, i.e., $\psi$ and $\phi$, as arbitrary real numbers, since these functions return real numbers.
+As noted above, this definition is formulated for proximity structures. However, we wish to make use of the model without having to rely on a proximity structure as the domain. For example the Minkowski metric clearly is a case of the AD model. Thus, when talking about the AD model in the context of the real numbers, we interpret the functions that operate on the proximity structure, i.e., $\psi$ and $\varphi$, as arbitrary real numbers.
 \end{rem}

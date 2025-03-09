@@ -2,11 +2,11 @@
 
 \begin{ex}[Segmental Additivity of the Minkowski Metric] \label{ex-minkowski-seg-additive}
 	% Die $l^p$ Metrik, die durch $\delta(a, b) = \left[\sum_{i=1}^{n} |\varphi_i(a_i) - \varphi_i(b_i)|^p\right]^{1/p}$ definiert ist, ist für $p \geq 1$ eine Metrik mit additiven Segmenten. Die Segmente sind genau die Verbindungslinien zwischen zwei Punkten, also alle Geraden.
-  For $p \geq 1$ the Minkowski Metric is a metric with additive segments\footnote{This is shorthand for: $\mathbb{R}^n$ with the Minkowski metric is a metric space with additive segments.}. The segments are all straight lines (i.e., the line segments between two arbitrary points).
+  For $p \geq 1$ the Minkowski Metric is a metric with additive segments. The segments are all straight lines (i.e., the line segments between two arbitrary points).
 
 	\begin{proof}
-    Let $\ve{x}, \ve{z} \in \mathbb{R}^{n}$ and $0 \leq t \leq 1$. Then, for $\ve{y} = (1-t) \ve{x} + t \ve{z}$ ($\ve{y}$ is on the line segment between $\ve{z}$ and $\ve{x}$, iff $\ve{y}$ can be represented in this way) it holds that:
-    {\small \begin{align*}
+    Let $\ve{x}, \ve{z} \in \mathbb{R}^{n}$ and $0 \leq t \leq 1$. Then, for $\ve{y} = (1-t) \ve{x} + t \ve{z}$ (the point $\ve{y}$ is on the line segment between $\ve{z}$ and $\ve{x}$, iff $\ve{y}$ can be represented in this way) it holds that:
+    {\allowdisplaybreaks \small \begin{align*}
       \metr[p]{\ve{x}}{\ve{y}} + \metr[p]{\ve{y}}{\ve{z}} & = \left[ \sum_{i=1}^{n} \left| x_i - (1 - t) x_i - t z_i \right|^p \right]^{1/p} + \left[ \sum_{i=1}^{n} \left| (1 - t) x_i + t z_i - z_i \right|^p \right]^{1/p} \\
                         & = \left[ \sum_{i=1}^{n} \left| x_i - x_i + t x_i - t z_i \right|^p \right]^{1/p} + \left[ \sum_{i=1}^{n} \left| x_i  - t x_i + t z_i - z_i \right|^p \right]^{1/p} \\
 			                  & = t \left[ \sum_{i=1}^{n} \left| x_i - z_i \right|^p \right]^{1/p} + (1 - t) \left[ \sum_{i=1}^{n} \left| x_i - z_i \right|^p \right]^{1/p}                       \\

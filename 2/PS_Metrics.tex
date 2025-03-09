@@ -3,6 +3,7 @@ To be able to compare two stimuli pairs in a mathematical sense, we introduce a 
 If we have four stimuli $\ps{a}, \ps{b}, \ps{c}$ and $\ps{d}$, then $(\ps{a},\ps{b})\succsim(\ps{c},\ps{d})$ denotes that the stimuli $\ps{a}$ and $\ps{b}$ are equal or less similar to each other than the stimuli $\ps{c}$ and $\ps{d}$ (or more precisely, the dissimilarity between $\ps{a}$ and $\ps{b}$ is at least as great as that between $\ps{c}$ and $\ps{d}$). Analogously, $\sim$ means that the similarity of two pairs is equal.
 The essence of a proximity structure is precisely that, with some additional constraints.
 
+%TODO: sim and succ defs okay?
 \begin{defi}[Proximity Structure] \index{Proximity structure} \label{def-prox-struct} %\gls{PS}
 	Suppose $\ps{A}$ is a set and $\succsim$ a quaternary relation on $\ps{A}$, i.e., a binary relation on $\ps{A} \times \ps{A}$. Then $\langle \ps{A}, \succsim \rangle$ is a \emph{proximity structure} (PS) iff (if and only if) the following axioms hold for all $\ps{a}, \ps{b} \in \ps{A}$:
 	\begin{enumerate}
@@ -11,7 +12,9 @@ The essence of a proximity structure is precisely that, with some additional con
 		\item $(\ps{a}, \ps{a}) \sim (\ps{b}, \ps{b})$ (minimality).
 		\item $(\ps{a}, \ps{b}) \sim (\ps{b}, \ps{a})$ (symmetry).
 	\end{enumerate}
-	The structure is \emph{factorial} iff \index{Proximity structure!factorial} \label{def-fact-prox-struct}
+  Here, we write $(\ps{a}, \ps{b}) \sim (\ps{c}, \ps{d})$ if both $(\ps{a}, \ps{b}) \succsim (\ps{c}, \ps{d})$ and $(\ps{c}, \ps{d}) \succsim (\ps{a}, \ps{b})$ hold.
+  Further, we write $(\ps{a}, \ps{b}) \succ (\ps{c}, \ps{d})$ if $(\ps{a}, \ps{b}) \succsim (\ps{c}, \ps{d})$ holds and $(\ps{c}, \ps{d}) \succsim (\ps{a}, \ps{b})$ does not hold.\\
+  The structure is \emph{factorial} iff $\ps{A}$ is the Cartesian product of some sets $\ps{A}_i$: \index{Proximity structure!factorial} \label{def-fact-prox-struct}
 	$$
 		\ps{A} = \prod_{i=1}^{n} \ps{A}_i.
 	$$
@@ -40,7 +43,7 @@ The mathematical concept we aim to connect proximity structures to is the concep
 
 Metrics are measures of distance in a space. The third property is called the \emph{triangle inequality} and is central to the intuition of measuring distances. The triangle inequality can be formulated as follows: Adding a detour through $y$ on the way from $x$ to $z$ can only increase the distance.
 
-Note, that $\langle \mathbb{R}_{\geq 0}, \geq \rangle$, the image of a metric, is the desired numerical structure that we aim to connect to a proximity structure (i.e., the empirical structure).
+Note, that $\langle \mathbb{R}_{\geq 0}, \geq \rangle$, the codomain of a metric, is the desired numerical structure that we aim to connect to a proximity structure (i.e., the empirical structure).
 Therefore, $\metric$ is our desired homomorphism in the sense that it should transform $\succsim$ into $\geq$.
 If such a metric $\metric$ exists, then we say that the proximity structure is representable by a metric. This is captured in the next definition.
 
@@ -55,7 +58,7 @@ If such a metric $\metric$ exists, then we say that the proximity structure is r
 	\end{enumerate}
 \end{defi}
 \textcite[p. 162]{foundations2} prove that representability by a metric does not impose any empirical constraints.
-However, simple metrics do not provide enough structure, and we therefore require the metrics to satisfy additional conditions, which can be observed in often used metrics.
+However, general metrics do not provide enough structure, and we therefore require the metrics to satisfy additional conditions, which can be observed in frequently used metrics.
 One of the most used metrics is the Minkowski $p$-metric or Minkowski distance (also called the power or $L^p$ metric) and is defined in the following way.
 
 \begin{defi}[Minkowski Metric] \index{Metric!Minkowski} \index{Metric!power} \index{Minkowski!metric} \index{Minkowski!distance} \label{def-minkowski-metric} %\gls{minkMetric}
@@ -68,7 +71,7 @@ One of the most used metrics is the Minkowski $p$-metric or Minkowski distance (
 For $p \geq 1$, this is indeed a metric, as the Minkowski inequality establishes the triangle inequality \parencite[pp. 189-191 Theorem 9]{handbookMeans}. \index{Minkowski!inequality}
 
 If we closely inspect this metric, we can observe two interesting properties.
-The first one, arises from the way the metric is computed, which can be broken down into four steps.
+The first one arises from the way the metric is computed, which can be broken down into four steps.
 \begin{enumerate}[1.]
 	\item Decompose two vectors $\ve{x}$ and $\ve{y}$ into their underlying coordinates $(x_1, \dots x_n)$ and $(y_1, \dots, y_n)$.
 	\item Calculate the coordinatewise differences $|x_i - y_i|$ and transform them with a bijection $F(x)$ (in this case $x^p$).
@@ -89,7 +92,7 @@ This is not the case for all metrics, but only for a special class, called \emph
 \end{figure}
 
 In \cref{chap-AD-model-and-ps} and \cref{chap-seg-additivity}, we will inspect the constraints that each representation imposes on the proximity structure and deduce necessary axioms. These axioms then lead to new structures which allow such representations. This is shown by the representation and uniqueness theorems which are presented at the end of both chapters. We do not prove these theorems, for that refer to \textcite[Chapter 14]{foundations2}.
-Here, we will focus on combining both representations. This leads to the main result of this thesis: the Unique Representation Theorem for Segmentally Additive AD Models (\cref{thm-uniquene-repr-minkowski}), which states that the Minkowski metric is the only additive difference metric that is also segmentally additive.
+Here, we will focus on combining both representations. This leads to the main result of this work: the Unique Representation Theorem for Segmentally Additive AD Models (\cref{thm-uniquene-repr-minkowski}), which states that the Minkowski metric is the only additive difference metric that is also segmentally additive.
 Most of \cref{chap-combination} is devoted to proving this theorem. For a visual representation of the content, see \Cref{fig-content}.
  In the last chapter we discuss the usage of proximity structures and the axioms together with their empirical testability.
 At the end of each chapter, there is a section dedicated to references and original contributions, explaining the literature used in writing the chapter.

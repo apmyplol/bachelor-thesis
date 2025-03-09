@@ -1,7 +1,7 @@
 \section{Segmentally Additive Proximity Structures} \label{sect-seg-add-ps}
 
 Now, we proceed with deriving segmentally additive proximity structures which ensure a metric representation with additive segments.
-We do this by examining necessary conditions for such a representation and translating them into ordinal criteria.
+We do this by examining necessary conditions for such a representation and translating them into ordinal criteria, that is, conditions that only involve the relations $\succsim$ and $\geq$.
 
 We start by observing the additivity of distances given three points $x, y$ and $z$ in a metric space with additive segments where $y$ lies on the segment from $x$ to $z$.
 Then $\metr{x}{y} + \metr{y}{z} = \metr{x}{z}$ holds.
@@ -37,16 +37,17 @@ As this property only includes inequalities, it can be restated in a purely ordi
 \end{defi}
 
 This relation yields a notion of betweenness for the proximity structure in terms of the relation $\succsim$. We will briefly discuss this relation and its implications.
-It is practical to examine this relation in terms of isosimilarity contours.
+It is practical to examine this relation in terms of isosimilarity contours, which are illustrated in \cref{fig-circles}.
+
 Intuitively, we have a circle around $x$ with radius $\metr{x}{z}$. The set of all points at a distance $\metr{x}{z}$ to $x$ forms the isosimilarity contour for this distance.
 Using this notion, we can observe that $y$ minimizes the distance to $z$ on the given sphere where $y$ resides. To see that, let $y'$ be such that $\metr{x}{y} = \metr{x}{y'}$. Using the triangle inequality and the additivity yields
 $$
 	\metr{x}{y} + \metr{y}{z} = \metr{x}{z} \leq \metr{x}{y'} + \metr{y'}{z}.
 $$
-By assumption, $\metr{x}{y} = \metr{x}{y'}$ holds, and therefore $\metr{y}{z} \leq \metr{y'}{z}$, which means that the minimal distance is the difference in the radii.\\
+By assumption, $\metr{x}{y} = \metr{x}{y'}$ holds, and therefore $\metr{y}{z} \leq \metr{y'}{z}$, which means that the minimal distance is the difference in the radii.
+
 Moreover, we can observe similarly, that given another point $\tilde  z$ with equal distance to $x$ (i.e., $\metr{x}{z} = \metr{x}{\tilde  z}$), the minimized distance by a point $\tilde y$ is the same as that of $y$ (i.e., $\metr{\tilde y}{\tilde z} = \metr{y}{z}$). Stated differently, this assures that the minimal distance is independent of the direction, i.e., independent of the choice of $z$.
 Put together with the fact that $x$ is arbitrary, this yields that the minimized distance is independent of the direction (choice of $z$) and the location of the sphere (choice of $x$) and only depends on the two radii.
-These necessary conditions we just derived are visualized in \Cref{fig-circles}.
 
 \begin{figure}[htbp]
 	\centering
@@ -56,7 +57,7 @@ These necessary conditions we just derived are visualized in \Cref{fig-circles}.
 	\label{fig-circles}
 \end{figure}
 
-Since we represent the distance with a metric with additive segments, for every $\alpha \leq \metr{x}{z}$, there is a point $y$ on the segment from $x$ to $z$ such that $\metr{x}{y} = \alpha$.
+Since we represent the distance with a metric with additive segments, for every $\alpha \leq \metr{x}{z}$, there is a point \footnote{This follows form \cref{thm-curve-sublen-cont} and the intermediate value theorem.}$y$ on the segment from $x$ to $z$ such that $\metr{x}{y} = \alpha$.
 Thus, a necessary condition for a metric representation with additive segments is this condition reformulated for proximity structures.
 
 \begin{ax}[Segmental Solvability]
@@ -95,16 +96,16 @@ Putting all together we get the following definition:
 
 A segmentally additive proximity structure provides a metric representation with additive segments, see \textcite[p. 168]{foundations2}. However, as our goal is to establish a representation by the Minkowski metric, we need a representation in a complete metric space with additive segments.
 For this, two further conditions have been added.
-The first one is the nondiscreteness of distances which assures that there is no smallest distance. The second one is the familiar notion of convergence of Cauchy sequences, which assures that the underlying space is complete. Here $(\ps{e}, \ps{f})$ corresponds to $\varepsilon$ and $\ps{b}$ to the limit point of the sequence $\ps{a}_i$.
+The first one is the nondiscreteness of distances which assures that there is no ``smallest'' distance. The second one is the familiar notion of convergence of Cauchy sequences, which assures that the underlying space is complete. Here $(\ps{e}, \ps{f})$ corresponds to $\varepsilon$ and $\ps{b}$ to the limit point of the sequence $\ps{a}_i$.
 These 4 conditions are both sufficient and necessary for such a representation \parencite[p. 168]{foundations2}.
 
 \addcontentsline{toc}{subsection}{Representation and Uniqueness Theorem for Segmentally Additive PS}
 
 \begin{thm}[Representation and Uniqueness Theorem for Complete Segmentally Additive Proximity Structures]\label{thm-repr-seg-add-ps} \index{Theorem!representation and uniqueness!for segmentally additive proximity structures}
-	Suppose $\langle \ps{A}, \succsim \rangle$ is a complete segmentally additive proximity structure. Then $\langle \ps{A}, \succsim \rangle$ is representable by a metric, and additionally, for all $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$:
+	Suppose $\langle \ps{A}, \succsim \rangle$ is a complete segmentally additive proximity structure. In this case, $\langle \ps{A}, \succsim \rangle$ is representable by a metric, and additionally, for all $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$:
 	\begin{enumerate}
 		\item $\langle \ps{abc} \rangle \text{ iff } \metric(\ps{a}, \ps{b}) + \metric(\ps{b}, \ps{c}) = \metric(\ps{a}, \ps{c})$.
-		\item $\metric'$ is a ratio scale.
+		\item $\metric$ is a ratio scale.
 	\end{enumerate}
 	Furthermore, $\langle \ps{A}, \metric \rangle$ is a complete metric space with additive segments.
 \end{thm}

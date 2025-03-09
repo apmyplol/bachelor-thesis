@@ -14,14 +14,14 @@
 \begin{proof}
 	First, we will prove positivity and symmetry of this function, and then turn to the triangle inequality which is a result of Mulholland's theorem.
 	\begin{proofpart}[Positivity and Symmetry]
-		Positivity and symmetry are both straight forward.
+		Positivity and symmetry are both straightforward.
 		\begin{enumerate}
 			\item Positivity: $\delta(\ve{x},\ve{y}) = 0$ implies $F(|x_i - y_i|) = 0$ for all $i=1, \dots, n$, which is only possible if $|x_i - y_i| \cdot r = 0$, meaning $x_i = y_i$ for all $i=1, \dots, n$.\\
 			      Conversely, if $\ve{x} \neq \ve{y}$, then $x_i \neq y_i$ for at least one $i$ in $1, \dots n$, which implies $F_i(|x_i - y_i|) > 0$, and thus $\delta(\ve{x},\ve{y}) > 0$.
 			\item Symmetry: Symmetry follows directly from the fact that $|x_i - y_i| = |y_i - x_i|$ holds.
 		\end{enumerate}
 	\end{proofpart}
-	The triangle inequality follows from Mulholland's Inequality \parencite[p. 297]{mulholland}.
+	The triangle inequality follows from Mulholland's Inequality \parencite[p. 297]{mulholland}, which we will restate here for completeness:
 
 	\begin{thm}[Mulholland's Inequality]
 		The inequality
@@ -32,13 +32,13 @@
 		\begin{enumerate}
 			\item $f$ is continuous, increasing and $f(0) = 0$.
 			\item $f$ is convex on $[0, \infty)$.
-			\item $\log f(e^x)$ is convex for $x \in (-\infty, \infty)$.
+			\item $\log f(e^x)$ is convex for $x \in \mathbb{R}$.
 		\end{enumerate}
 	\end{thm}
 
 	% \setcounter{proofpart}{1}
 	\begin{proofpart}[Proof that \cref{def-p-exp-eq} satisfies Mulholland's conditions]
-		Regarding Point 1: Continuity and $f(0) = 0$ are clear. For monotonicity, note that $e^{\p x} - 1$ is increasing, exponentiation is also increasing, and multiplying by $\q > 0$ preserves monotonicity. Thus, the composition is also increasing.\\
+		Regarding point 1: Continuity and $F(0) = 0$ are clear. For monotonicity, note that $e^{\p x} - 1$ is increasing, exponentiation is also increasing, and multiplying by $\q > 0$ preserves monotonicity. Thus, the composition is also increasing.\\
 		Regarding point 2: Similar reasoning applies for convexity. The composition of convex functions is convex, if the outer function is non-decreasing \parencite[p. 481, Note 207]{elementaryAna}. Since multiplication by a positive constant and exponentiation for exponents greater than $1$ is both convex and increasing, the resulting function must be convex.
 
 		We now proceed to prove the convexity of $\log F(e^x)$.
@@ -51,11 +51,9 @@
 			\frac{\p  e^{\p e^x + x} \left( \p  (-e^x) + e^{\p e^x} - 1 \right)}{\left( e^{\p e^x} - 1 \right)^2} \overset{!}{>} 0.
 		$$
 		The denominator is always positive and non-zero, so we can ignore it. Similarly, the factor $\p  e^{\p e^x + x}$ is always positive and can also be omitted. It remains to show that
-		\begin{align*}
-			-\p  e^x + e^{\p e^x} - 1 & > 0 \\
-			\Updownarrow                    \\
-			e^{\p e^x}  - \p  e^x     & > 1
-		\end{align*}
+			$$-\p  e^x + e^{\p e^x} - 1 > 0,$$
+    or equivalently, 
+			$$e^{\p e^x}  - \p  e^x     > 1$$
 		holds.
 		This can be shown in two steps. First, we show that the left-hand side is strictly increasing. Second, we prove that its limit as $x$ approaches $-\infty$ is $1$.
 		Therefore, the inequality holds for all $x \in \mathbb{R}$.
@@ -78,18 +76,24 @@
 \begin{proof}
 	Setting $\q = \p ^{-\r}$ yields
 	$$ \p ^{-\r}(e^{\p x} - 1)^\r = \left( \frac{e^{\p x} -1}{\p } \right)^\r .$$
-	As $\p  \rightarrow 0$, both the numerator and denominator tend to $0$ (we can take the limit inside the exponent since the exponentiation is continuous), therefore we can apply L'Hospital's rule.
+	As $\p  \rightarrow 0$, both the numerator and denominator tend to $0$, therefore we can apply L'Hospital's rule.
 	Hence,
 	\begin{align*}
 		\lim_{\p  \rightarrow 0} \left( \frac{e^{\p x} -1}{\p } \right)^\r & = \left( \lim_{\p  \rightarrow 0} \frac{e^{\p x} -1}{\p } \right)^\r \tag{continuity}              \\
-		                                                                   & = \left( \lim_{\p  \rightarrow 0} \frac{x \cdot e^{\p x} - 1}{1} \right)^\r \tag{L'Hôpital's rule} \\
+		                                                                   & = \left( \lim_{\p  \rightarrow 0} \frac{x \cdot e^{\p x}}{1} \right)^\r \tag{L'Hôpital's rule} \\
 		                                                                   & = x^\r.
 	\end{align*}
 \end{proof}
 
 
 % MA: add example for additive difference model not a metric
-Not every function that can be represented by the additive difference model is a metric.
+Not every function that can be represented by the additive difference model is a metric. For example the model defined by
+$$
+F(x) = \begin{cases}
+x &\quad 0 \leq x \leq 1\\
+1 + \alpha(x-1) &\quad x >1, p > 1
+\end{cases}
+$$
 
 
 \input{./3/4_sc.tex}

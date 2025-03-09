@@ -54,14 +54,14 @@ We say that $\langle A, \succsim \rangle$ satisfies the \emph{betweenness axioms
     \end{enumerate}
     \item Suppose $\ps{a}, \ps{b}, \ps{c}, \ps{a'}, \ps{b'}, \ps{c'}$ differ on at most one factor, $\ps{a}|\ps{b}|\ps{c}$, $\ps{a'}|\ps{b'}|\ps{c'}$, and $(\ps{b}, \ps{c}) \sim (\ps{b'}, \ps{c'})$, then
     \[
-    (\ps{a}, \ps{c}) \succsim (\ps{a'}, \ps{c'}) \iff (\ps{a}, \ps{b}) \succsim (\ps{a'}, \ps{b'}).
+    (\ps{a}, \ps{c}) \succsim (\ps{a'}, \ps{c'}) \quad  \text{iff} \quad  (\ps{a}, \ps{b}) \succsim (\ps{a'}, \ps{b'}).
     \]
 \end{enumerate}
 \end{ax}
 
 The betweenness axioms are, however, not enough to establish an absolute-difference structure on each factor. We further need two technical axioms, which are not empirically testable.\\
 The first one is restricted solvability which asserts that, given a range of dissimilarity defined by a starting point and two end points, we can construct a second point \emph{between the two end points} which attains that dissimilarity.
-Formulated in terms of a proximity structures this yields the following axiom, where $\ps{d}$ is the starting point, $(\ps{d}, \ps{a})$ and $(\ps{d}, \ps{c})$ define the range of dissimilarity and $\ps{b}$ is the point, that realizes this dissimilarity and is between $\ps{a}$ and $\ps{c}$.
+Formulated in terms of a proximity structure this yields the following axiom, where $\ps{d}$ is the starting point, $(\ps{d}, \ps{a})$ and $(\ps{d}, \ps{c})$ define the range of dissimilarity and $\ps{b}$ is the point, that realizes this dissimilarity and is between $\ps{a}$ and $\ps{c}$.
 
 \begin{ax}[Restricted Solvability] \label{defi-restrict-solv}
 A factorial proximity structure $\langle A, \succsim \rangle$ satisfies \emph{restricted solvability} iff, for all elements $\ps{e}, \ps{f}, \ps{d}, \ps{a}, \ps{c} \in A$, if $(\ps{d}, \ps{a}) \succsim (\ps{e}, \ps{f}) \succsim (\ps{d}, \ps{c})$, then there exists $\ps{b} \in A$ such that $\ps{a}|\ps{b}|\ps{c}$ and $(\ps{d}, \ps{b}) \sim (\ps{e}, \ps{f})$.
@@ -82,7 +82,7 @@ Finally, we investigate some consequences of interdimensional additivity.
 Let $\ps{a}$ and $\ps{a}'$ be two stimuli that coincide on the $i$-th factor, and let the same hold for $\ps{b}$ and $\ps{b}'$. Then $\psi_i(\ps{a}_i, \ps{b}_i) = \psi_i(\ps{a}'_i, \ps{b}'_i)$ and, since our representation is additive, the relation $(\ps{a}, \ps{b}) \succsim (\ps{a}', \ps{b}')$ must be independent of the $i$-th component.
 Moreover, changing the common value of $\ps{a}$ and $\ps{a}'$ and the common value of $\ps{b}$ and $\ps{b}'$ should preserve the ordering.
 Therefore, the ordering is independent of the common value.
-This independence is different from one-factor independence which we defined above and, in fact, is stronger, as, in the presence of the other axioms, it implies one-factor independence but not conversely \parencite[p. 184]{foundations2}.
+This independence is different from one-factor independence which we defined above and is, in fact, stronger, as, in the presence of the other axioms, it implies one-factor independence, but not conversely \parencite[p. 184]{foundations2}.
 
 \begin{ax}[Independence] \label{def-independ}
 A factorial proximity structure $\langle A, \succsim \rangle$ satisfies \emph{independence} if the following holds for all $\ps{a}, \ps{b}, \ps{c}, \ps{d}, \ps{a'}, \ps{b'}, \ps{c'}, \ps{d'} \in A$:
@@ -100,7 +100,7 @@ The theorem after that shows, that additive difference structures can be represe
 Note, that one-factor independence is implied by independence and is therefore omitted.
 
 \begin{defi}[Additive-Difference Structure]\label{def-add-diff-ps} \index{Additive-difference!structure}
-  A factorial proximity structure $\langle \ps{A}, \succsim \rangle$ with $n \geq 3$ Factors is an \emph{additive-difference structure} (AD Structure), iff the following axioms hold:
+  A factorial proximity structure $\langle \ps{A}, \succsim \rangle$ with $n \geq 3$ factors is an \emph{additive-difference structure} (AD Structure), iff the following axioms hold:
 \begin{enumerate}
   \item Independence
   \item Betweenness axioms
