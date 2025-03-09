@@ -1,11 +1,11 @@
 \section{Unique Representation Theorem} \label{sec-unique-repr-thm}
 
 In this section, we present the main theorem and complete the proofs given by \textcite[pp. 195-199]{foundations2}. The remainder of this chapter, except for the final section, consists of the proof of this theorem. The last section is dedicated to proving an intermediate result from functional analysis that is used in the proof.\\
-We begin by stating the theorem and follow a top-down approach in the proof to provide a broad understanding. This means that we use results established in \cref{sect-homogeneity-theorem}. The same approach applies to the proofs in that section; see \cref{sect-homogeneity-theorem} for further explanation.
+We begin by stating the theorem and follow a top-down approach in the proof to provide a broad understanding. This means that we use results from \cref{sect-homogeneity-theorem}. The same approach applies to the proofs in that section; see \cref{sect-homogeneity-theorem} for further explanation.
 We start with the statement of the theorem.
 
 \begin{thm}[Unique Representation Theorem: The Power Metric as the Sole Representation for Segmentally Additive AD Structures]\label{thm-uniquene-repr-minkowski} \index{Theorem!unique representation}
-	Suppose $\langle \ps{A}, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also and additive difference structure.
+	Suppose $\langle \ps{A}, \succsim \rangle$ is a complete, segmentally additive, factorial proximity structure, that is also an additive difference structure.
 	Then there exists a unique $p \geq 1$ and real-valued functions $\varphi_i$, defined on $\ps{A}_i$, $i = 1, \ldots, n$, that are unique up to a positive linear transformation, such that, for all $\ps{a}, \ps{b}, \ps{c}, \ps{d} \in \ps{A}$,
 	$$(\ps{a}, \ps{b}) \succsim (\ps{c}, \ps{d}) \quad  \text{ iff } \quad  \delta(\ps{a}, \ps{b}) \geq \delta(\ps{c}, \ps{d}),$$
 	where
@@ -15,7 +15,7 @@ We start with the statement of the theorem.
 \newcommand\ta{x}
 
 \begin{proof}
-	This proof proceeds in multiple steps.
+	We proceed in multiple steps.
 	First, we make observations about the domains and ranges of the functions $F_i$ and use this to find bounds for the domain of $F$. Using these bounds, we argue that $F$ can be extended to the positive real numbers.
 	Next, we derive from this a functional equation, that is only satisfied by $f(x) = \alpha x^p$.
 	Finally, we prove that $F$ is equal to this extension on the whole domain, and therefore $\metric$ is a Minkowski metric.
@@ -26,19 +26,19 @@ We start with the statement of the theorem.
 			\metr{\ps{a}}{\ps{b}} = F^{-1} \left [ \sum_{i=1}^{n} F(| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|)  \right]
 		\end{equation*}
 		where $F$ is continuous, convex, and increasing.
-    By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a Cartesian product of intervals of the form $[0,\rho_i)$ where $\rho_i$ are the ranges of $| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for $i=1, \dots, n$. This Cartesian product is a subset of $\mathbb{R}^{n}$, convex and, by leaving out $\ve{0}$ in each product, also open which satisfies the requirements for \cref{thm-homogeneity}\footnote{The other requirements are all fulfilled by the assumptions of this theorem: $\metric$ satisfies intradimensional subtractivity, is segmentally additive on $\mathbb{R}^{n}$ and $F$ is continuous.}. Applying the theorem yields homogeneity for $\ve{x}, \ve{z} \neq \ve{0}$:
+    By the same argument as in \crefpart{lemma-rem}{rem-lemma-domains}, $\metric$ must be defined on a Cartesian product of intervals of the form $[0,\rho_i)$ where $\rho_i$ are the ranges of $| \varphi_i(\ps{a}_i) - \varphi_i(\ps{b}_i)|$ for $i=1, \dots, n$. By leaving out $\ve{0}$ in each factor, this Cartesian product is open and satisfies the requirements\footnote{The other requirements are all fulfilled by the assumptions of this theorem: $\metric$ satisfies intradimensional subtractivity, is segmentally additive on $\mathbb{R}^{n}$ and $F$ is continuous.} of \cref{thm-homogeneity}. Applying the theorem yields homogeneity for $\ve{x}, \ve{z} \neq \ve{0}$:
     %METR
 		$$\metr{\ve{x}}{\ve{x}+ t(\ve{z}-\ve{x})} = t \metr{\ve{x}}{\ve{z}}.$$
 		Applying homogeneity for the definition of $\metric$ above and setting $\ta_i = |\varphi_i(\ps{b}_i) - \varphi_i(\ps{a}_i)|$ yields
 		\begin{equation}\label{proof-homogen-eq}
 			F^{-1} \left [ \sum_{i=1}^{n} F(t \ta_i)  \right] = t \cdot F^{-1} \left [ \sum_{i=1}^{n} F(\ta_i)  \right].
 		\end{equation}
-		Due to translation invariance, homogeneity also holds for $\ve{x} = \ve{0}$\footnote{By adding $0 = \ve{y} - \ve{y}$ for some $\ve{y}$ in the domain, we get homogeneity for $\ve{0}$:
+		Due to translation invariance, homogeneity also holds\footnote{By adding $0 = \ve{y} - \ve{y}$ for some $\ve{y}$ in the domain, we get homogeneity for $\ve{0}$:
 			\begin{equation*}
 				\metr{\ve{0}}{t \ve{z}} =F^{-1} \left [ \sum_{i=1}^{n} F(t (y_i - (y_i - z_i))) \right]
 				= t F^{-1} \left [ \sum_{i=1}^{n} F(y_i - (y_i - z_i)) \right]
 				= t \metr{\ve{0}}{\ve{z}}.
-			\end{equation*}}. We will show, that the only solutions to this equation are power functions of the form $F(x) = \alpha x^p$.
+			\end{equation*}} for $\ve{x} = \ve{0}$. We will show, that the only solutions to this equation are power functions of the form $F(x) = \alpha x^p$.
 
 		First, we start by observing the domains and the ranges of $F$.
 		By \cref{thm-conds}, the additive difference model
@@ -85,7 +85,7 @@ We start with the statement of the theorem.
 			                                     & = n F \left ( \ta \frac{\omega}{\Omega} \right) \tag{Convergence of $\ta_k$}                                                             \\
 			                                     & = F(\ta) \tag{Definition of $F(t)$ for $\omega \leq t \leq \Omega$}
 		\end{align*}
-		which is equivalent to $F$ begin continuous on the extended domain.
+		which is equivalent to $F$ being continuous on the extended domain.
 
 		For monotonicity, we can use a similar argument. Let $\ta < \ta'$ with $\omega < \ta, \ta' < \Omega$. Then $\ta \frac{\omega}{\Omega} < \ta' \frac{\omega}{\Omega}$ holds. Plugging that into $F$ and multiplying by $n$ yields $nF \left(\ta \frac{\omega}{\Omega}\right) <nF \left( \ta' \frac{\omega}{\Omega}\right)$ due to $F$ being increasing on the original domain. Therefore, $\ta < \ta'$ implies $F(\ta) < F(\ta')$ which is equivalent to $F$ increasing.
 		Thus, we have established that the extended function is increasing, continuous and homogeneous.
@@ -106,7 +106,7 @@ We start with the statement of the theorem.
 	\end{proofpart}
 
 	\begin{proofpart}[Deriving functional equation]
-		Next, we derive a functional equation that allows us to use results on quasi-arithmetic homogeneous means. The theorem states as follows:
+		Next, we derive a functional equation that allows us to use results on quasi-arithmetic homogeneous means. The theorem we apply is the following:
 		\begin{thm*}[Uniqueness of Homogeneous Quasi-Arithmetic Means, \cref{thm-power-mean-uniqueness}]
 			Suppose that $\phi$ is continuous and strictly increasing in the open interval $(0,\infty)$ and that
 			\begin{equation*}
@@ -189,7 +189,7 @@ We start with the statement of the theorem.
 				F^{-1} \left[ \sum_{i=1}^{N} w_i F(t \ta_i) \right] = t F^{-1} \left[ \sum_{i=1}^{N} w_i F(\ta_i) \right] \quad w_i \in \mathbb{W}.
 			\end{equation}
 
-			Now, in order to approximate real weights, we need density of $\mathbb{W}$ in $\mathbb{R}_{\geq 0}$. Since $n^l$ gets arbitrarily small, there exists for every $\varepsilon >0$ an $l$ such that $n^l < \varepsilon$. Therefore, if $x - y < \varepsilon$, for $x, y \in \mathbb{R}_{\geq 0}$ and $x > y$ there exists $k \in \mathbb{N}$ such that $x < \frac{k}{n^l} < y$. Thus, $\mathbb{W}$ is dense in $\mathbb{R}_{\geq 0}$, and we can approximate real weights with converging sequences from $\mathbb{W}$.
+      Now, in order to approximate real weights, we need density of $\mathbb{W}$ in $\mathbb{R}_{\geq 0}$. Since $\frac{1}{n^l}$ gets arbitrarily small, there exists for every $\varepsilon >0$ an $l$ such that $\frac{1}{n^l} < \varepsilon$. Therefore, if $x - y < \varepsilon$, for $x, y \in \mathbb{R}_{\geq 0}$ and $x > y$ there exists $k \in \mathbb{N}$ such that $x < \frac{k}{n^l} < y$. Thus, $\mathbb{W}$ is dense in $\mathbb{R}_{\geq 0}$, and we can approximate real weights with converging sequences from $\mathbb{W}$.
 
 			Finally, let $w_i \in \mathbb{R}_{\geq 0}$ and $q_{i_k} \in \mathbb{W}$ be sequences for $i=1, \dots, N$ such that $q_{i_k} \rightarrow w_i$ for $k \rightarrow \infty$. Then
 			\begin{align*}

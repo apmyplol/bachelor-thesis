@@ -7,7 +7,7 @@ $\ball{r} := \{x \in \mathbb{R}^{n}: \metro{x} < r\} $ denotes the open Ball wit
 % \gls{openball}
 % \gls{closedball}
 In this section we will prove the homogeneity theorem, which is used in the beginning of the proof of \cref{thm-uniquene-repr-minkowski}.
-The proof is divided into 5 parts and a whole subsection which is devoted to showing the convexity of $\metric$-balls which is used throughout the proof.
+The proof is divided into 5 parts and a subsection which is devoted to showing the convexity of $\metric$-balls which is used throughout the proof.
 First, we will state the theorem, give some remarks on it and establish some lemmas. Then we will continue with proving the homogeneity theorem.\\
 Everything in this section is assumed as in this theorem. For example, if we write $\metric$, this implies not any metric but the metric from this theorem with its properties.
 Moreover, all topological terms (open, closed, continuous) are meant with respect to the natural topology of $\mathbb{R}^{n}$ (i.e., the topology induced by the $\metric_{\infty}$ and the Euclidean metric), not the topology induced by $\metric$ or the induced topology on a subset. This will be especially important in the subsection on convexity of the balls.
@@ -82,7 +82,7 @@ The second preliminary lemma allows us to make arbitrary small $\metric$-balls w
 	Moreover, due to \crefpart{lemma-rem}{rem-lemma-domains}, $F^j(x_j) = 0$ if and only if $x_j = 0$ holds.
 	Together, this means that $F^j$ is an increasing, continuous real function with $F^j(0) = 0$.
 
-	By setting $\dis_j = F^j(\varepsilon)$ monotonicity yields, that if $F^j(x_j) < \dis_j$ then $x_j < \varepsilon$ must hold. Note, that $F^j(\varepsilon)$ is defined, because  $\ball[\infty]{\varepsilon} \subset S'$ implies that $\varepsilon$ is a possible distance for each coordinate\footnote{See also \crefpart{lemma-rem}{rem-lemma-domains}. Using the $a_i$ from the remark, we get that $\varepsilon < a_i$ holds for all $i$ and thus $F^j(\varepsilon)$ is defined for all $j = 1, \dots n$.}.
+	By setting $\dis_j = F^j(\varepsilon)$ monotonicity yields that, if $F^j(x_j) < \dis_j$ then $x_j < \varepsilon$ must hold. Note, that $F^j(\varepsilon)$ is defined, because  $\ball[\infty]{\varepsilon} \subset S'$ implies that $\varepsilon$ is a possible distance for each coordinate\footnote{See also \crefpart{lemma-rem}{rem-lemma-domains}. Using the $a_i$ from the remark, we get that $\varepsilon < a_i$ holds for all $i$ and thus $F^j(\varepsilon)$ is defined for all $j = 1, \dots n$.}.
 	Repeating this for $j = 1, \dots, n$ yields $\dis_1, \dots, \dis_n$ which we use to define $\dis = \min \{\dis_1, \dots, \dis_n\}$.
   This $\dis$ can be used to bound every coordinate:
 	$$ F^j(x_j) < \dis \leq \dis_j \implies x_j < \varepsilon \quad \forall j = 1, \dots, n \implies \|\ve{x}\|_{\infty} < \varepsilon.$$
@@ -210,7 +210,7 @@ After this, we will extend this statement to the rational numbers and then use c
 	%-------------- Proof part 4 ----------------------------%
 
 	\begin{proofpart}[$t \metro{\z} = \metro{t \z}$ for $t \in {[0, 1]}$]
-		The final is using the continuity of the metric. For that let $t \in [0,1]$ and $t_n \in \mathbb{Q}$ with $t_n \rightarrow t$ for $n \rightarrow \infty$. Then
+		The final step is using the continuity of the metric. For that let $t \in [0,1]$ and $t_n \in \mathbb{Q}$ with $t_n \rightarrow t$ for $n \rightarrow \infty$. Then
 		\begin{align*}
 			\metro{t \z} & = \metro{ \lim_{n \rightarrow \infty } t_n \z }                                                 \\
 			             & = \lim_{n \rightarrow \infty } \metro{t_n \z} \tag{continuity}                                  \\

@@ -24,7 +24,7 @@ We begin by combining AD structures with a metric. We restrict our focus to a sp
 	\end{enumerate}
 \end{thm}
 
-Before beginning the proof we remark what additivity on the coordinate axes means for elements in the proximity structure.
+Before beginning the proof we remark what additivity on the coordinate axes means for elements of the proximity structure.
 
 \begin{rem}[Additivity on the Coordinate Axes] %\gls{ps-abc-between}
 	Additivity on the coordinate axes means the following: If $\ps{a}, \ps{b}, \ps{c} \in \ps{A}$ differ only on one factor $\ps{A}_i$, then the triangle inequality of the metric holds with equality. In mathematical terms:
@@ -54,7 +54,7 @@ We begin by proving the necessary conditions.
 		G[F_i(x)] + G[F_i(y)] = G[F_i(x + y)].
 	$$
 
-	Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i$ for $1 \leq i \leq n$. By \cref{thm-repr-add-diff-struct}, the domain is $\mathbb{R}$. This is Cauchy's functional equation and, under the assumption of monotonicity, the only solution is $H_i = t_i x$ with $t_i \in \mathbb{R}$ \parencite[p. 15]{aczelFunctionalEquationsSeveral1989}. Since the values are positive (as we are dealing with metrics), $H_i = t_i x$ with $t_i > 0$ must hold for all $i=1, ..., n$. Additionally, since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
+	Further, define $H_i(x) = G[F_i(x)]$. This reduces the above equation to $H_i(x) + H_i(y) = H_i(x + y)$ for all $x, y$ in the domain of $F_i$ for $1 \leq i \leq n$. By \cref{thm-repr-add-diff-struct}, the domain is $\mathbb{R}$. This is Cauchy's functional equation and, under the assumption of monotonicity, the only solution is $H_i(x) = t_i x$ with $t_i \in \mathbb{R}$ \parencite[p. 15]{aczelFunctionalEquationsSeveral1989}. Since the values are positive (as we are dealing with metrics), $H_i(x) = t_i x$ with $t_i > 0$ must hold for all $i=1, ..., n$. Additionally, since $G$ is increasing, it has an inverse $G^{-1}$ satisfying
 	$$
 		G^{-1}[H_i(x)] = G^{-1}[t_i x] = F_i(x)
 	$$
@@ -86,8 +86,8 @@ We begin by proving the necessary conditions.
 \end{lem}
 
 \begin{proof}
-  Since $F$ is increasing and defined on an interval, all discontinuities are gaps \textcite[p. 335]{elementaryAna}\footnote{\parencite{elementaryAna} prove the following statement: Let $f$ be a real-valued monotonic function defined on an interval $[a, b]$. Then the set of points of discontinuity of $f$ in that interval is countable. Combining this statement with the paragraph above it, yields that these discontinuities must be gaps. Since any interval (open, half-open and unbounded intervals) can be represented by a countable union of closed intervals, this theorem can be extended to arbitrary intervals since countable unions of countable sets are still countable. This can be done by using $(a,b) = \bigcup_{n=1}^{\infty}[a+1/n, b-1/n]$, or $(a, \infty) = \bigcup_{n=1}^{\infty}[a+1/n, a+n]$. Similar arguments apply to other types of intervals.}. Real analysis yields, that real monotonic functions have at most countable many gaps. We will derive a contradiction from this.
-	Assume $F(\aa)$ is the lower boundary of a gap, then there exists $\varepsilon > 0$ such that for all $\delta > 0$\footnote{Here, $\delta$ differs from our usual usage and is not a metric; rather it follows the standard notation for continuity and is only used in this proof this way.}, it must hold that $F(\aa + \delta) - F(\aa) > \varepsilon$. However, by \cref{necc-lemma-ineq}, for every $\bb > 0$,
+  Since $F$ is increasing and defined on an interval, all discontinuities are gaps \parencite[p. 335]{elementaryAna}\footnote{\parencite{elementaryAna} prove the following statement: Let $f$ be a real-valued monotonic function defined on an interval $[a, b]$. Then the set of points of discontinuity of $f$ in that interval is countable. Combining this statement with the paragraph above it yields that these discontinuities must be gaps. Since any interval (open, half-open and unbounded intervals) can be represented by a countable union of closed intervals, this theorem can be extended to arbitrary intervals since countable unions of countable sets are still countable. This can be done by using $(a,b) = \bigcup_{n=1}^{\infty}[a+1/n, b-1/n]$, or $(a, \infty) = \bigcup_{n=1}^{\infty}[a+1/n, a+n]$. Similar arguments apply to other types of intervals.}. Real analysis yields that real monotonic functions have at most countable many gaps. We will derive a contradiction from this.
+	Assume $F(\aa)$ is the lower boundary of a gap, then there exists $\varepsilon > 0$ such that for all $\delta > 0$, it must hold\footnote{Here, $\delta$ differs from our usual usage and is not a metric; rather it follows the standard notation for continuity and is only used in this proof this way.} that $F(\aa + \delta) - F(\aa) > \varepsilon$. However, by \cref{necc-lemma-ineq}, for every $\bb > 0$,
 	$$F(\aa + \bb + \delta) - F(\aa + \bb) \geq F(\aa + \delta) - F(\aa) > \varepsilon,$$
 	and so there is a gap at any $\aa + \bb$, and $F$ would have to be discontinuous everywhere. This is impossible, so $F$ must be continuous.
 \end{proof}
@@ -152,3 +152,15 @@ We conclude this section by discussing the implications of this theorem for the 
 	Secondly, by using $F_i(x) = F_n(t_i x)$ and $F_i(x) = G^{-1}(t_i x)$.
 	The first equation applied for $i=n$ yields $F_n(x) = F_n(t_n x)$ which implies $t_n = 1$. Using this in the second equation for $i=n$ yields $F(x) = F_n(x) = G^{-1}(t_n x) = G^{-1}(x)$. Hence, by taking the inverse on both sides (which is possible due to $F$ and $G$ both being increasing), we get the desired form for $\delta$.
 \end{rem}
+
+\begin{ex} \label{ex-not-metric}
+Not every function $F$ satisfying these conditions defines a valid metric.
+For example the model defined by
+$$
+F(x) = \begin{cases}
+x &\quad 0 \leq x \leq 1\\
+1 + \alpha(x-1) &\quad x >1, p > 1
+\end{cases}
+$$
+is continuous and convex, but the triangle inequality does not hold \parencite[p. 187]{foundations2}.
+\end{ex}

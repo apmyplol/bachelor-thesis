@@ -6,8 +6,9 @@
 \begin{ex}[p-exp Metric Family]\label{def-p-exp-metric-family} \index{p-exp metric family}
 	Let the $F$ in the AD model (\cref{def-add-diff-model}) be given by
 	\begin{equation}\label{def-p-exp-eq}
-		F(x) = \q \cdot (e^{\p \cdot x} - 1)^\r \qquad \q, \p > 0, \r \geq 1.
+		F(x) = \q \cdot (e^{\p \cdot x} - 1)^\r \qquad \q, \p > 0, \r \geq 1
 	\end{equation}
+  and let $G$ be its inverse\footnote{Since we prove that this functions satisfies the conditions of Mulholland's inequality, the function is increasing and therefore is invertible.}.
 	The model defined by this $F$ is a metric.
 \end{ex}
 
@@ -86,14 +87,6 @@
 \end{proof}
 
 
-% MA: add example for additive difference model not a metric
-Not every function that can be represented by the additive difference model is a metric. For example the model defined by
-$$
-F(x) = \begin{cases}
-x &\quad 0 \leq x \leq 1\\
-1 + \alpha(x-1) &\quad x >1, p > 1
-\end{cases}
-$$
-
+Not every function that can be represented by the additive difference model is a metric, see \cref{ex-not-metric}.
 
 \input{./3/4_sc.tex}
